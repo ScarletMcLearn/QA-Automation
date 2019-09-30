@@ -3,14 +3,15 @@ Feature: Scenarios for testing the LSS Site.
     Scenario: Launch LSS Site
 
         Given Browser is opened
-        And navigated to AIM Inspect Site
+        And navigated to AIM Inspect Site   //https://selfschedule.aiminspect.com/
         Then Lessee selfschedule site is displayed
 
 
     
     Scenario: Go to LSS Log in Site
 
-        Given current page is Home Page
+        Given current page is Home Page     //https://selfschedule-qa.aiminspect.com/log-in
+        
         And clicked on 'Schedule Appointment' button
         Then LSS Log in site is displayed
 
@@ -136,7 +137,7 @@ Feature: Scenarios for testing the LSS Site.
 
 
 
-    Scenario:  Able to move to 'Schedule' page after entering in location type, address,            availability information
+    Scenario:  Able to move to 'Schedule' page after entering in location type, address, availability information
 
         Given user is on Inspection location page
         And user is logged in to the LSS site
@@ -148,20 +149,22 @@ Feature: Scenarios for testing the LSS Site.
         And Schedule Appointment page is displayed
 
 
-    Scenario:  Unable to move to 'schedule' page if any required fields in inspection               location page are missing
+    Scenario:  Unable to move to 'schedule' page if any required fields in inspection location page are missing
        
 
         Given user is on Inspection location page
         And user is logged in to the LSS site
         And continue button is disabled
-        AWhen select location type "Home"
+        And select location type "Home"
         And select presence "I will be there"
         And enter no address
         Then continue button is disabled
 
 
+        
 
-    Scenario:  Entering information for when someone else will be there and able to                 continue to 'schedule' page
+
+    Scenario:  Entering information for when someone else will be there and able to continue to 'schedule' page
 
         Given user is on Inspection location page
         And user is logged in to the LSS site
@@ -190,7 +193,7 @@ Feature: Scenarios for testing the LSS Site.
         Then Contact Info page is displayed
 
 
-    Scenario:  Move to 'review appointment' page after selecting date and time when                 click is available
+    Scenario:  Move to 'review appointment' page after selecting date and time when click is available
 
         Given user is on Appointment Schedule page
         And user is logged in to the LSS site
@@ -204,7 +207,7 @@ Feature: Scenarios for testing the LSS Site.
 
 
 
-    Scenario:  Move to confirmation page after appointment scheduled and get                        confirmation ID
+    Scenario:  Move to confirmation page after appointment scheduled and get confirmation ID
 
         Given user is on Review Appointment page
         And user is logged in to the LSS site
@@ -216,7 +219,15 @@ Feature: Scenarios for testing the LSS Site.
 
     Scenario:  Verify that the appointment is scheduled in CRM
 
-        TO DO
+        Given scheduled an appointment through LSS
+        And the appointment is tied to a request and request is scheduled in CRM
+        When logs in to https://crm-qa.aiminspect.com 
+        And uses 'CSR/DISPATCH' as the user
+        And the password is 'crmisnice'
+        And search for the request using the confirmation # displayed in LSS
+        And the request is displayed
+        And view the request
+        Then will see the request status as on 'H'old -awaitng dispatch
 
 
     Scenario:  Display alternative message when invalid location adddres is entered
@@ -237,12 +248,26 @@ Feature: Scenarios for testing the LSS Site.
         Then 'Server Down page' is displayed
 
 
-    Scenario:  Take user to 'Existing appointment' page when trying schedule appointment            when one already existsDisplay alternative message when system is down
+    Scenario:  Take user to 'Existing appointment' page when trying schedule appointment when one already exists
 
-        //Given user is on Review page
-        //And there is no internet connection
-       // When click on confirm appointment button
-        //Then 'Server Down page' is displayed
+        Given user is on LSS log in page
+        And uses vin and account number that is associated with a request that already has been 
+        When  vin field is inputted with '1N4AA5AP3DC805530'
+        And account field is inputted with '346568967967'
+        And clicks on 'Get started' button.
+        Then 'Existing appointment' page is displayed
+
+
+
+    
+    Scenario: Display alternative message when invalid location     adddres is entered and  schedule a request
+
+        Given user is logged on to LSS site.
+        And enters invalid address in 'inspection location' page.
+        And is on on 'Review request' page.
+        When click on 'send request'
+        Then confirmation message "Appointment Requested" displayed
+
 
 
 
