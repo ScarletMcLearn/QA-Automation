@@ -111,96 +111,98 @@ Feature: TO DO
 
     Scenario: Using the App, UTC a home request where a messge is sent CSR queue for rescheduling
 
-    "1. Create a home request in CRM.
-    2. Then schedule an appointment.
-    3. Then the request status will automatically update to 'Scheduled' status and the appointment status should be scheduled as well.
-    3. Then log in to Aim inspect app and UTC the inspection and select reason as 'weather' or 'Missed Appointment with sub reason as (lessee cancel, No one at location, Could not find location)
-    4. Then come back to CRM and see if the appointment has been UTC'd."
+    When Create a home request in CRM
+    And schedule an appointment
+    And the request status will automatically update to 'Scheduled' status
+    And the appointment status should be scheduled as well
+    And log in to Aim inspect app 
+    And UTC the inspection 
+    And select reason as 'weather' or 'Missed Appointment with sub reason as (lessee cancel, No one at location, Could not find location)'
+    Then come back to CRM 
+    And see appointment has been UTC'd
 
-    "1. The request is sent CSR queue with request status shown as 'H' On Hold and when clicking on the reason. The reason shows 'awaiting CSR action'.
-    2. Also in 'Current Appointment Detail' section, user  sees a message in red dispalying ""The previous appointment was
-    completed as UTC""  and the reason for utc.
-    3. The appointment status should show 'C with UTC' badge.
-    4. And the calender icon should show 'Schedule'.
-    "
+   
 
 
 
 
     Scenario: Using the App, UTC a home request where the appointment gets cancelled
 
-    "1. Create a home request in CRM.
-    2. Then schedule an appointment.
-    3. Then the request status will automatically update to 'Scheduled' status and the appointment status should be scheduled as well.
-    3. Then log in to Aim inspect app and UTC the inspection and select reason as 'Vehicle Purchased/Sold' or 'Extended Lease'
-    4. Then come back to CRM and see if the appointment has been UTC'd."
+    When create a home request in CRM
+    And schedule an appointment
+    And the request status will automatically update to 'Scheduled' status 
+    And the appointment status should be scheduled as well
+    And log in to Aim inspect app 
+    And UTC the inspection 
+    And select reason as 'Vehicle Purchased/Sold' or 'Extended Lease'
+    Then come back to CRM 
+    And see the appointment has been UTC'd
 
-    "1. The request status should show as 'C' for cancelled'.
-    2. Also in 'Current Appointment Detail' section, user should see a message in red dispalying ""The previous appointment was
-    completed as UTC""  and the reason for utc.
-    3. The appointment status should show 'C with UTC' badge.
-    4. And the calender icon should show 'Schedule'.
-    "
-
+   
 
 
 
 
     Scenario: Successfully complete an inspection for home request and make sure it has a CR after completion of the inspection in CRM
 
-    "1. Create a home request and schedule an inspection.
-    2. Using Aim inspect app complete the inspection.
-    3. Come back to CRM and search for the request and see if inspection has a completed check mark and a CR is displayed and viewable."
+    When create a home request 
+    And schedule an inspection.
+    And using Aim inspect app complete the inspection.
+    And come back to CRM 
+    And search for the request 
+    Then see if inspection has a completed check mark 
+    And a CR is displayed and viewable.
 
-    User should see the completed check mark and CR should be visible and viewable by clicking on it which it will open another window.
+   
 
 
 
 
     Scenario: Successfully complete an inspection for dealer request and make sure it has a CR after completion of the inspection in CRM
 
-    "1. Create or import a dealer request and schedule an inspection.
-    2. Using Aim inspect app complete the inspection.
-    3. Come back to CRM and search for the request and see if inspection has a completed check mark and a CR is displayed and viewable."
+    When create or import a dealer request 
+    And schedule an inspection
+    And using Aim inspect app complete the inspection
+    And come back to CRM 
+    And search for the request 
+    Then see inspection has a completed check mark 
+    And a CR is displayed and viewable.
 
-    User should see the completed check mark and CR should be visible and viewable by clicking on it which it will open another window.
+    
 
 
 
 
     Scenario: Dealer request not matching up to home request properly
 
-    Make sure that the dealer import doesn't have any lessee info.
+    Given dealer import does not have any lessee info
 
-    "1. Create  a home request and keep a copy of lessee acct #.
-    2. Using the home request acct #, set up a dealer request using postman.
-    3. Then import a dealer request"
-
-    "Lessee's info should display in dealer request.
-    Also go to Click scheduler and see if lessee info is displayed."
+    When create  a home request 
+    And keep a copy of lessee acct #
+    And using the home request acct # set up a dealer request using postman
+    And import a dealer request"
+    Then  dealer request displayed
+   
 
 
 
 
     Scenario: Import a dealer request when a home request exists 
 
-    "1. Create a home request in CRM.
-    2. Then submit a dealer import using postman and use the same customer, account # and vin used to create a home request.
-    "
-
-    The home request should be cancelled and the dealer request should be created with an active appointment.
+    When create a home request in CRM
+    And submit a dealer import using postman 
+    And suse the same customer, account # and vin used to create a home request
+    Then the home request should be cancelled and the dealer request should be created with an active appointment
 
 
 
 
     Scenario: Import a dealer request when a home request is active 
 
-    "1. Create a home request in CRM.
-    2. Schedule an appointment.
-    3. Then submit a dealer import using postman using the same customer, account # and vin used to create a home request.
-    "
-
-    The home request should be cancelled and the dealer request should be created with an active appointment.
+    When create a home request in CRM
+    And schedule an appointment.
+    And submit a dealer import using postman using the same customer, account # and vin used to create a home request
+    Then the home request should be cancelled and the dealer request should be created with an active appointment
 
 
 
@@ -208,15 +210,12 @@ Feature: TO DO
 
     Scenario: Import a dealer request when a home request is complete
 
-    The dealer request has to come in before 58 days to associate it with the home request.
-
-    "1. Create a home request.
-    2. Schedule an appointment then complete it using the Aim inspect app.
-    3. Then send a dealer import using postman for the same customer, account # and vin.
-    "
-
-    "The home request status should stay at completed.
-    The dealer request is set to complete and CR from home request is copied over."
+    Given the dealer request has to come in before 58 days to associate it with the home request
+    When create a home request
+    And Schedule an appointment then complete it using the Aim inspect app
+    And send a dealer import using postman for the same customer, account # and vin.
+    Then the home request status should stay at completed.
+    
 
 
 
@@ -225,12 +224,10 @@ Feature: TO DO
 
     Scenario: Reschedule a home request that has been completed
 
-    "1. Create a home request.
-    2. Schedule an appointment and complete the inspection.
-    3. Then reschedule an appointment
-    "
-
-    Use should be able to reschedule an appointment
+    When create a home request
+    And schedule an appointment and complete the inspection.
+    And reschedule an appointment
+    Then user should be able to reschedule an appointment
 
 
 
@@ -238,9 +235,8 @@ Feature: TO DO
 
     Scenario: Dealer request Import
 
-    Send a dealer request import via Postman
-
-    If successful, postman should give 200 as the code and ID for the request that was created
+    When send a dealer request import via Postman
+    Then if successful, postman should give 200 as the code and ID for the request that was created
 
 
 
@@ -248,9 +244,8 @@ Feature: TO DO
 
     Scenario: Cancel Dealer request Import
 
-    Send a cancel dealer request import via Postman
-
-    If successful, postman should give 200 as the code and ID for the request should be the same
+    When send a cancel dealer request import via Postman
+    Then if successful, postman should give 200 as the code and ID for the request should be the same
 
 
 
@@ -258,44 +253,37 @@ Feature: TO DO
 
     Scenario: Cancel Dealer request Import customer with mix letter
 
-    Send a cancel dealer request import via Postman where customer name is mixed with upper and lower case
-
-    If successful, postman should give 200 as the code and ID for the request should be the same
+    When send a cancel dealer request import via Postman where customer name is mixed with upper and lower case
+    Then if successful, postman should give 200 as the code and ID for the request should be the same
 
 
 
 
     Scenario: Cancel Dealer request Import customer with upper case letters
 
-    Send a cancel dealer request import via Postman where customer name is only Uppser case
-
-    If successful, postman should give 200 as the code and ID for the request should be the same
+    When send a cancel dealer request import via Postman where customer name is only Uppser case
+    Then if successful, postman should give 200 as the code and ID for the request should be the same
 
 
 
 
     Scenario: ESB lease import 
 
-    "1. Send a lease import file through FTP /test/dev/nissan/inbox/ then wait for 30 secs.
-    2. And then go to sdrive/dataload/AIM/InspexDev/Nissan_Lease_Load/In to see if a lease import fiel that you sent is in this folder.
-    #. Then go to CRM and search for lessee(s) from the lease import file using lessee's name or VIN and or address.
-
-    "
-
-    "1. User should be able to see the file under that folder.
-    2. User should be able to find lessee's request using lessee's name or VIN and or adress."
+    When send a lease import file through FTP /test/dev/nissan/inbox/ then wait for 30 secs
+    And go to sdrive/dataload/AIM/InspexDev/Nissan_Lease_Load/In to see if a lease import fiel that you sent is in this folder
+    And go to CRM and search for lessee(s) from the lease import file using lessee's name or VIN and or address
+    Then User should be able to see the file under that folder
+    And User should be able to find lessee's request using lessee's name or VIN and or adress
 
 
 
-
+    TO DO
     Scenario: ESB lease import processing logic (Insert)
 
-    Lease load file needs to be processed first
-
-    "1. Grab/copy an account number from the lease load file that has 'A' to indicate it's an insert request data.
-    2. Go to CRM and search for the reuqest using the account number by pasting the copied account number in the basic search field."
-
-    "If the request already exists in CRM then the system will do nothing.
+    Given Lease load file needs to be processed first
+    When Grab/copy an account number from the lease load file that has 'A' to indicate it's an insert request data.
+    And go to CRM and search for the reuqest using the account number by pasting the copied account number in the basic search field.
+    Then if the request already exists in CRM then the system will do nothing.
     If the request is not found then following will happen:
     - New request will be created and the request status will be in""Potential"" status.
     - Also expend the request histosry and check to see the status shows 'potential'"
