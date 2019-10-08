@@ -284,27 +284,18 @@ Feature: TO DO
     When Grab/copy an account number from the lease load file that has 'A' to indicate it's an insert request data.
     And go to CRM and search for the reuqest using the account number by pasting the copied account number in the basic search field.
     Then if the request already exists in CRM then the system will do nothing.
-    If the request is not found then following will happen:
-    - New request will be created and the request status will be in""Potential"" status.
-    - Also expend the request histosry and check to see the status shows 'potential'"
+    And if the request is not found then appropriate actions will happen
 
 
 
 
     Scenario: ESB lease import processing logic (Update)
 
-    Lease load file needs to be processed first
-
-    "1. Grab/copy an account number from the lease load file that has 'C' to indicate it's an update request data.
-    2. Go to CRM and search for the reuqest using the account number by pasting the copied account number in the basic search field."
-
-    "Look for a record that matches this customer, inspection type, VIN, and lease #
-    If it's not found, create a new request in the ""Potential"" status
-    If it is found:
-    If its status is in Scheduled, Completed, or Cancelled (other statuses that should block updates?), do nothing
-    Otherwise, update all fields to match values in this file
-    Also in the request history, check to see if the updated data does show as being updated. "
-
+    Given Lease load file processed first
+    And grab/copy an account number from the lease load file that has 'C' to indicate it's an update request data.
+    When go to CRM and search for the reuqest using the account number by pasting the copied account number in the basic search field.
+    And look for a record that matches this customer, inspection type, VIN, and lease #
+    Then appropriate response received
 
 
 
@@ -312,17 +303,11 @@ Feature: TO DO
 
     Scenario: ESB lease import processing logic (Cancel)
 
-    Lease load file needs to be processed first
-
-    "1. Grab/copy an account number from the lease load file that has 'T' to indicate it's a cancelled request data.
-    2. Go to CRM and search for the reuqest using the account number by pasting the copied account number in the basic search field."
-
-    "Look for a record that matches this customer, inspection type, VIN, and lease #
-    If it's not found, do nothing
-    If it is found:
-    If its status is in Scheduled, Completed, or Cancelled (other statuses that should block updates?), do nothing
-    Otherwise, update the status to ""Cancelled""
-    Also in the request history, it should show status as 'Cencelled' and not potential."
+    Given Lease load file processed first
+    And Grab/copy an account number from the lease load file that has 'T' to indicate it's a cancelled request data.
+    When Go to CRM and search for the reuqest using the account number by pasting the copied account number in the basic search field.
+    Then Look for a record that matches this customer, inspection type, VIN, and lease #
+    And appropriate response is received case 2
 
 
 
@@ -330,28 +315,26 @@ Feature: TO DO
 
     Scenario: Test ESB Dealer file import
 
-    "1. Place a dealer import file in the ftp.aiminspections.com/nissan/test2/,
+    When Place a dealer import file in the ftp.aiminspections.com/nissan/test2/,
     the nissan_dealer_load proxy will move the file from ftp.
-    2. A copy will be saved to the existing inspex folder on the s drive (S/dataload/AIM/(Inspex, InspexQA, InspexDEV)/Nissan_Dealer_Load_Code/IN).
-    3. Then go to CRM under search org page and search for dealer/org."
-
-    "1. User should be able to see the file under that folder.
-    2. User should be able to search and find dealer/org using dealer/org name from the import file."
+    And a copy will be saved to the existing inspex folder on the s drive (S/dataload/AIM/(Inspex, InspexQA, InspexDEV)/Nissan_Dealer_Load_Code/IN).
+    And go to CRM under search org page and search for dealer/org
+    Then User should be able to see the file under that folder
+    And User should be able to search and find dealer/org using dealer/org name from the import file
 
 
 
 
     Scenario: Test that Click scheduling appointments updates in CRM
 
-    Create request for home inspection in CRM and schedule an appointment and then update the task in Click Scheduler and see if the changes are updated in CRM 
+    # Create request for home inspection in CRM and schedule an appointment and then update the task in Click Scheduler and see if the changes are updated in CRM 
 
-    "1. Create a Home request and then scheduled an appointment.
-    2. Then go to Click Scheduler and search for the task using 'Task Explore and enter the Request ID from CRM.
-    3. When Task is found, double click on the task to open up 'request form'.
-    4. Then go to 'Assignment' tab and edit the 'Start' & 'Finish' time and click 'OK' to save the changes.
-    5. Then come back to CRM and check 'Appointment' section and click on the appointment to launch 'appointment audit' window and look at the latest update message received from Click and see if the assignment start and finish time has been updated."
-
-    In CRM the user should see the updated assignment/appointment start and finish time reflect accordingly in the latest message received from click.
+    When create a Home request and then scheduled an appointment.
+    And go to Click Scheduler and search for the task using Task Explore and enter the Request ID from CRM.
+    And Task is found, double click on the task to open up 'request form'.
+    And go to 'Assignment' tab and edit the 'Start' & 'Finish' time and click 'OK' to save the changes.
+    And come back to CRM and check 'Appointment' section and click on the appointment to launch 'appointment audit' window and look at the latest update message received from Click and see if the assignment start and finish time has been updated
+    Then in CRM the user should see the updated assignment/appointment start and finish time reflect accordingly in the latest message received from click.
 
 
 
@@ -374,27 +357,25 @@ Feature: TO DO
 
     Scenario: Test that status updates in Click are sent to CRM
 
-    Change statuses of a Task in Click that have been assigned an appointment and check in CRM to see if the statuses are updating in appointment section of that request. 
+    # Change statuses of a Task in Click that have been assigned an appointment and check in CRM to see if the statuses are updating in appointment section of that request. 
 
-    "1. Create or use existing Home request and schedule an appointment. 
-    2. Then in Click Scheduler, search for the Task and update the statuses.
-    3. Simutaneously check CRM againt the request to see if the statuses are updating accordingly  "
-
-    The statuses should update accordingly in CRM.
+    When Create or use existing Home request and schedule an appointment. 
+    And in Click Scheduler, search for the Task and update the statuses.
+    And Simutaneously check CRM againt the request to see if the statuses are updating accordingly  
+    Then statuses should update accordingly in CRM.
 
 
 
 
     Scenario: Test that when appointments from imported dealer inspection requests are scheduled in Click and the times are updated in CRM
 
-    Create request for dealer inspection using import API in Postman and then update the task in Click Scheduler and see if the changes are updated in CRM 
+    # Create request for dealer inspection using import API in Postman and then update the task in Click Scheduler and see if the changes are updated in CRM 
 
-    "1. Create a Dealer request using the import API, which should automatically create a click task.
-    2. Then go to Click Scheduler and search for the task using the Request ID.
-    3. When Task is found, double click on the task to open up Task form.
-    4. Update appointment time "
-
-    Changes made in Click Seheduler should show up in CRM for the request
+    When Create a Dealer request using the import API, which should automatically create a click task.
+    And go to Click Scheduler and search for the task using the Request ID.
+    And Task is found, double click on the task to open up Task form.
+    And Update appointment time
+    Then Changes made in Click Seheduler should show up in CRM for the request
 
 
 
@@ -405,51 +386,48 @@ Feature: TO DO
 
     E.g. Now is 6/5/17 4:00 am and we have a Nissan Home Request schedule for 6/5/17 8:30am with AccountNo 123987. A Nissan dealer import coming in at 4:01 am. The status of the dealer request is set to On Hold and the reason is Pending Home Inspection."
 
-    "1. Schedule home request for now
-    2. Import dealer request with home request accountNo and customer.
-    3. Check to see if dealer import request is set to 'On-hold'.
-    3. Then call the endpoint http://crm-api-qa.aiminspect.com/api/v1/inspection-requests/process-pending-home-inspection
-    "
-
-    "After calling the endpoint, the system should return successful.
+    When Schedule home request for now
+    And Import dealer request with home request accountNo and customer.
+    And Check to see if dealer import request is set to 'On-hold'.
+    And  call the endpoint http://crm-api-qa.aiminspect.com/api/v1/inspection-requests/process-pending-home-inspection
+    Then after calling the endpoint, the system should return successful.
     Home request is set to cancel.
     Dealer request status is changed to pending.
-    "
+    
 
 
 
 
     Scenario: Pending home request job acts on requests it shouldn't. When calling the endpoint, it should call using the customer’s name.
 
-    "1. Call the following endpoint http://crm-api-qa.aiminspect.com/api/v1/inspection-requests/process-pending-home-inspection
-    2. in the body, leave customer is blank. E.g (""customer"": """") and call the endpoint. "
-
-    After calling the endpoint without the customer’s name, the system will return 422.
-
-
-
-
-    Scenario: Click scheduler should not create a new task after canceling the original task when cancelling 'On-hold' home request 
-
-    "1. Create a home request manually in CRM or search for a home request that is in 'P'otantial request status from advance search page and then schedule home request for now.
-    2. Then Import dealer request with home request accountNo and customer.
-    3. After that call the endpoint http://crm-api-qa.aiminspect.com/api/v1/inspection-requests/process-pending-home-inspection"
-
-    "1. The home request should be cancelled, and it's click task should be deleted and not re-created. Verify this in Click and in the appointment audit history. 
-    2. The dealer request should have an appointment created and sent to click."
-
+    When Call the following endpoint http://crm-api-qa.aiminspect.com/api/v1/inspection-requests/process-pending-home-inspection
+    And in the body, leave customer is blank. E.g (""customer"": "") and call the endpoint. 
+    Then After calling the endpoint without the customer’s name, the system will return 422.
 
 
 
 
     Scenario: Click scheduler should not create a new task after canceling the original task when cancelling 'On-hold' home request 
 
-    "1. Create a home request manually in CRM or search for a home request that is in 'P'otantial request status from advance search page and then schedule home request for now.
-    2. Then Import dealer request with home request accountNo and customer.
-    3. After that call the endpoint http://crm-api-qa.aiminspect.com/api/v1/inspection-requests/process-pending-home-inspection"
+    When Create a home request manually in CRM or search for a home request that is in 'P'otantial request status from advance search page and then schedule home request for now.
+    And Import dealer request with home request accountNo and customer.
+    And After that call the endpoint http://crm-api-qa.aiminspect.com/api/v1/inspection-requests/process-pending-home-inspection"
 
-    "1. The home request should be cancelled, and it's click task should be deleted and not re-created. Verify this in Click and in the appointment audit history. 
-    2. The dealer request should have an appointment created and sent to click."
+    Then The home request should be cancelled, and it's click task should be deleted and not re-created. Verify this in Click and in the appointment audit history. 
+    And The dealer request should have an appointment created and sent to click
+
+
+
+
+
+    Scenario: Click scheduler should not create a new task after canceling the original task when cancelling 'On-hold' home request 
+
+    # When Create a home request manually in CRM or search for a home request that is in 'P'otantial request status from advance search page and then schedule home request for now.
+    # And Import dealer request with home request accountNo and customer.
+    # And After that call the endpoint http://crm-api-qa.aiminspect.com/api/v1/inspection-requests/process-pending-home-inspection"
+
+    When The home request should be cancelled, and it's click task should be deleted and not re-created. Verify this in Click and in the appointment audit history. 
+    Then The dealer request should have an appointment created and sent to click."
 
 
 
@@ -461,30 +439,12 @@ Feature: TO DO
 
     E.g. Now is 6/5/17 4:00 am and we have a Nissan Home Request schedule for 6/5/17 8:30am with AccountNo 123987. A Nissan dealer import coming in at 4:01 am. The status of the dealer request is set to On Hold and the reason is Pending Home Inspection."
 
-    "1. Schedule home request for now.
-    2. Import dealer request with home request accountNo and customer for now"
+    Given Schedule home request for now.
+    When Import dealer request with home request accountNo and customer for now"
 
-    "After importing the dealer request, the dealer request in the ""On Hold"" status with ""Pending Home Inspection"" as the reason code.
-    The system should not schedule the dealer request to Click."
+    Then After importing the dealer request, the dealer request in the ""On Hold"" status with ""Pending Home Inspection"" as the reason code.
+    And The system should not schedule the dealer request to Click."
 
-
-
-
-
-
-
-    Scenario: Process "On Hold - Awaiting Home Inspection" requests
-
-    "When a dealer inspection request is imported and there is a matching (customer and accountNo) home inspection request and when the home request is scheduled at the time of the dealer import, set the status of the dealer request to 'On Hold' with reason Pending Home Inspection.
-
-    E.g. Now is 6/5/17 4:00 am and we have a Nissan Home Request schedule for 6/5/17 8:30am with AccountNo 123987. A Nissan dealer import coming in at 4:01 am. The status of the dealer request is set to On Hold and the reason is Pending Home Inspection."
-
-    "1. Schedule home request for now.
-    2. Import dealer request with home request accountNo and customer.
-    3. Using the app complete the home inspection.
-    4. Then Call the endpoint http://crm-api-qa.aiminspect.com/api/v1/inspection-requests/process-pending-home-inspection."
-
-    After calling the endpoint, the system should put the status of the dealer request will be set to complete and the CR from the home request will be copied over.
 
 
 
@@ -497,12 +457,28 @@ Feature: TO DO
 
     E.g. Now is 6/5/17 4:00 am and we have a Nissan Home Request schedule for 6/5/17 8:30am with AccountNo 123987. A Nissan dealer import coming in at 4:01 am. The status of the dealer request is set to On Hold and the reason is Pending Home Inspection."
 
-    "1. Schedule home request for now.
-    2. Import dealer request with home request accountNo and customer.
-    3. Using the app, UTC the inspection and select Vehicle Purchased/Sold.
-    4. Then Call the endpoint http://crm-api-qa.aiminspect.com/api/v1/inspection-requests/process-pending-home-inspection."
+    When Schedule home request for now.
+    And Import dealer request with home request accountNo and customer.
+    And Using the app complete the home inspection.
+    And Call the endpoint http://crm-api-qa.aiminspect.com/api/v1/inspection-requests/process-pending-home-inspection.
+    Then After calling the endpoint, the system should put the status of the dealer request will be set to complete and the CR from the home request will be copied over.
 
-    After calling the endpoint, the system should put the status of the dealer request to scheduled for next available date.
+
+
+
+
+
+    Scenario: Process "On Hold - Awaiting Home Inspection" requests
+
+    "When a dealer inspection request is imported and there is a matching (customer and accountNo) home inspection request and when the home request is scheduled at the time of the dealer import, set the status of the dealer request to 'On Hold' with reason Pending Home Inspection.
+
+    E.g. Now is 6/5/17 4:00 am and we have a Nissan Home Request schedule for 6/5/17 8:30am with AccountNo 123987. A Nissan dealer import coming in at 4:01 am. The status of the dealer request is set to On Hold and the reason is Pending Home Inspection."
+
+    When Schedule home request for now.
+    And Import dealer request with home request accountNo and customer.
+    And Using the app, UTC the inspection and select Vehicle Purchased/Sold.
+    And  Call the endpoint http://crm-api-qa.aiminspect.com/api/v1/inspection-requests/process-pending-home-inspection.
+    Then After calling the endpoint, the system should put the status of the dealer request to scheduled for next available date.
 
 
 
@@ -511,12 +487,11 @@ Feature: TO DO
 
     Scenario: UTC reschedule date shows on all UTCs, not just the proper one
 
-    "1. Schedule an inspection for dealer request now (for current date).
-    2. UTC that appointment with an ""In body"" UTC, saying it won't be ready until two days later.
-    3. Check in CRM to see if the appointment has been rescheduled  new appointment for that day. 4. Then UTC the new appointment again, but this time don't give it a date when it will be ready, just choose ""Weather""."
-
-    "In the appointment audit for the original UTC, it should show date that was selected using the app.
-    And the second appointment should not have a date."
+    When Schedule an inspection for dealer request now (for current date).
+    And UTC that appointment with an ""In body"" UTC, saying it won't be ready until two days later.
+    And Check in CRM to see if the appointment has been rescheduled  new appointment for that day. 
+    And UTC the new appointment again, but this time don't give it a date when it will be ready, just choose ""Weather""."
+    Then In the appointment audit for the original UTC, it should show date that was selected using the app and the second appointment should not have a date.
 
 
 
@@ -550,37 +525,30 @@ Feature: TO DO
 
     Scenario: "CRM: Do not allow ""Pending Home"" to be chosen in UI
 
-    "
-
-    "1. search for a request.
-    2. View the request and then change the request status to 'on hold' and try to select sub reason as 'pending home inspection'."
-
-    User should not be allowed to select 'pending home inspection' as the subreason.
+    When search for a request.
+    And View the request and then change the request status to 'on hold' and try to select sub reason as 'pending home inspection'."
+    Then User should not be allowed to select 'pending home inspection' as the subreason.
 
 
 
 
     Scenario: Add SMS to preferred contact methods
 
-    "Go to add request page and select nissan dealer or manhiem as the customer.
-    2. Then in preferred method of contact, select SMS as the option to contact.
-    3. create the request and then view the request."
-
-    "User should see SMS as of the option for contact.
-    And also when viewing the request user should see SMS is displayed as the choice of contact."
+    When Go to add request page and select nissan dealer or manhiem as the customer.
+    And in preferred method of contact, select SMS as the option to contact.
+    And create the request and then view the request."
+    Then User should see SMS as of the option for contact and also when viewing the request user should see SMS is displayed as the choice of contact.
 
 
 
 
     Scenario: Provide friendly error when user tries to create an appointment when one already exists
 
-    "1. Open up chrome browser and log in to CRM and look up a request that is in 'P'ending satus.
-    2. Then open up another window in chrome and then log in to CRM and look up the same request that you were viewing on another browser. 
-    3. Now schedule an appointment for that request using any of the window that you're in. Make sure it's all scheduled.
-    4. Now come back to the window where the request has not been scheduled and now try scheduling an appointment."
-
-    "1. Upon trying to schedule an appointment, user should be promted with a friendly  error message  such as ""Oops an appointment is already scheduled by another associate. Please refresh the page to see the updates"".
-    2. And when user refreshes the page, the user should see the request status change to 'S'cheduled and and appointment date and time should also display and the engineer the appointment has been assigned to."
+    When Open up chrome browser and log in to CRM and look up a request that is in 'P'ending satus.
+    And open up another window in chrome and then log in to CRM and look up the same request that you were viewing on another browser. 
+    And schedule an appointment for that request using any of the window that you're in. Make sure it's all scheduled.
+    And come back to the window where the request has not been scheduled and now try scheduling an appointment."
+    Then Upon trying to schedule an appointment, user should be promted with a friendly  error message  such as ""Oops an appointment is already scheduled by another associate. Please refresh the page to see the updates"" And when user refreshes the page, the user should see the request status change to 'S'cheduled and and appointment date and time should also display and the engineer the appointment has been assigned to."
 
 
 
@@ -627,25 +595,22 @@ Feature: TO DO
 
     Scenario: Appointment schedule on dealer requests allows you to submit invalid requests
 
-    "1. Import dealer request
-    2. Navigate to it
-    3. Cancel existing appointment if needed
-    4. Click ""Schedule"" button
-    5. Click the save button in the dialogue
-    "
-
-    You can't, because you never clicked "Check Availability" and selected a time.
+    When Import dealer request
+    And Navigate to it
+    And Cancel existing appointment if needed
+    And Click ""Schedule"" button
+    And Click the save button in the dialogue
+    Then user can't, because user never clicked "Check Availability" and selected a time
 
 
 
 
     Scenario: Advanced search should not allow server-killing queries
 
-    "1. perform a basic search using Postman, for a query that will return a lot of results (e.g., '1'), with no limit query parameter.
-    Then, do the same for advance search except for an advanced search that will return a lot of results (e.g., country: 'US').
-    2. While that is running, use the CRM and verify that the server is still performing adequately. "
-
-    The server should not crash when searching for data that is too large. 
+    When perform a basic search using Postman, for a query that will return a lot of results (e.g., '1'), with no limit query parameter
+    And do the same for advance search except for an advanced search that will return a lot of results (e.g., country: 'US')
+    And While that is running, use the CRM and verify that the server is still performing adequately
+    Then the server should not crash when searching for data that is too large.
 
 
 
@@ -659,14 +624,13 @@ Feature: TO DO
     }"
 
 
-    "1. Import a lease with an AP state
-    2. Click on ""Schedule""
-    3. DO NOT choose a state.
-    4. Select a date.
-    5.Click ""Choose Availability"""
-
-    "It validates the address and highlights invalid state.
-    and 'check availability' button is disabled untill the state is entered. "
+    When Import a lease with an AP state
+    And Click on ""Schedule"
+    And DO NOT choose a state.
+    And Select a date.
+    And Click "Choose Availability"
+    Then It validates the address and highlights invalid state.
+    and 'check availability' button is disabled untill the state is entered. 
 
 
 
@@ -675,10 +639,9 @@ Feature: TO DO
 
     Scenario: When importing dealer request, match to lease to populate lessee info
 
-    "Import a dealer request with matching home request account number.
-    And also make sure that the dealer import has no lessee name and address. "
-
-    1. When viewing the request, in the lessee info section user should see lesssee info being displayed.
+    When Import a dealer request with matching home request account number
+    And also make sure that the dealer import has no lessee name and address 
+    Then when viewing the request, in the lessee info section user should see lesssee info being displayed
 
 
 
@@ -688,11 +651,10 @@ Feature: TO DO
 
     Scenario: When Click determines an address isn't valid, use 200 instead of 422 to communicate that to CRM
 
-    "1. Enter in a valid address and click on 'check availability' and at the same time have network tab open.
-    2. Check the network tab in the browser.
-    3. Enter in an invalid address and click on check availability and at the same time check the network tab."
-
-    In the network tab, user should see 200 status ok instead of 422. Meaning that the address is invalid and that's the valid response returnig 200 and not 422.
+    When Enter in a valid address and click on 'check availability' and at the same time have network tab open
+    And Check the network tab in the browser
+    And Enter in an invalid address and click on check availability and at the same time check the network tab
+    Then In the network tab, user should see 200 status ok instead of 422
 
 
 
@@ -712,12 +674,10 @@ Feature: TO DO
 
     SELECT id, sla_date FROM req.inspection_request WHERE sla_date < now()
 
-    "1. Find requests with SLA date in the past in the DB.
-    2. Then go to CRM look up a request from the query and then schedule an appointment.
-    3. Then using the app log in to aim inspect and UTC the inspection and select (weather) as the reason and check the system when the inspection is rescheduled."
-
-    "1. The rescheduled date should be the start of the day tomorrow from the current date, and the due date should be the end of the day two days from the current date. 
-    2. The request's SLA date should be left as-is."
+    When Find requests with SLA date in the past in the DB.
+    And go to CRM look up a request from the query and then schedule an appointment.
+    And using the app log in to aim inspect and UTC the inspection and select (weather) as the reason and check the system when the inspection is rescheduled.
+    SThen the rescheduled date should be the start of the day tomorrow from the current date, and the due date should be the end of the day two days from the current date and the request's SLA date should be left as-is.
 
 
 
@@ -725,10 +685,9 @@ Feature: TO DO
 
     Scenario: UTC reschedule date should show on the proper UTC and not all UTC's inspection.
 
-    "1. Schedule an appointment on a request for (let's say) 6/1 UTC that appointment with an ""In body"" UTC, saying it won't be ready until 6/3.
-    2. Then A new appointment will be created. UTC that one, but don't give it a date when it will be ready, just choose ""Weather""."
-
-    User should see UTC earlist date the inspection can be done for the first UTC and not the second UTC when looking at the appointment audit.
+    When Schedule an appointment on a request for (let's say) 6/1 UTC that appointment with an ""In body"" UTC, saying it won't be ready until 6/3
+    And A new appointment will be created. UTC that one, but don't give it a date when it will be ready, just choose ""Weather""."
+    Then User should see UTC earlist date the inspection can be done for the first UTC and not the second UTC when looking at the appointment audit
 
 
 
@@ -736,12 +695,11 @@ Feature: TO DO
 
     Scenario: For home appointments, do not send dealer name to Click
 
-    "1. Create a home request manually in CRM or import a home request.
-    2. Then schedule an inspection and make sure the inspection is schedule by refreshing the page.
-    3. Then request status will change to 'S'cheduled from 'P'ending. 
-    4. Then log in to click scheduler and search for the request and look up 'location' tab."
-
-    Lessee's name should display as the locaiton name in location tab.
+    When Create a home request manually in CRM or import a home request.
+    And schedule an inspection and make sure the inspection is schedule by refreshing the page.
+    And make sure request status changed to 'S'cheduled from 'P'ending. 
+    And  log in to click scheduler and search for the request and look up 'location' tab."
+    Then Lessee's name should display as the locaiton name in location tab.
 
 
 
@@ -751,10 +709,9 @@ Feature: TO DO
 
     Remove a state or two from skyward_db - core.customer options column such as NJ, FL
 
-    "1. Import a dealer request with a state that was removed from pre-condition column. 
-    2. Check crm and click scheduler if the system creates an appointment for the requerst"
-
-    The system should not automatically create appointment for that request(s).
+    When Import a dealer request with a state that was removed from pre-condition column. 
+    And Check crm and click scheduler if the system creates an appointment for the requerst"
+    Then the system should not automatically create appointment for that request(s).
 
 
 
@@ -763,29 +720,24 @@ Feature: TO DO
 
     Scenario: Previously inspected' UTC should cancel request and appointment
 
-    "1. Import/ find a dealer request that has not been scheduled.
-    2. Scheduled it for today's date to show up in the app. 
-    3. Log in to the Aim inspect app and UTC the inspection and for reason select 'Previously inspected'.
-    4. Come back to CRM and search for the request and see what happens to it's request status and appointment. "
-
-    "1. The request be cancelled.
-    2. And in request history section there should be a log for the action and in the appointment section as well.
-    3. Appointment will be complted w/UTC."
+    When Import/ find a dealer request that has not been scheduled.
+    And Scheduled it for today's date to show up in the app. 
+    And Log in to the Aim inspect app and UTC the inspection and for reason select 'Previously inspected'.
+    And Come back to CRM and search for the request and see what happens to it's request status and appointment. 
+    Then the request be cancelled, in request history section there should be a log for the action and in the appointment section as well and Appointment will be complted w/UTC.
 
 
 
 
     Scenario: Force create at specific time, and actually force create
 
-    "1. Create/find a request that has no appointment scheduled or a request that has an inspection scheduled.
-    2. Schedule an appointment for non scheduled request and or edit an appointment that has appointment schedule to a request.
-    3. Select a date from calender date picker and click on 'check availability'.
-    4. Force create button will dispaly when time and dates displayed, click on It.
-    5. enter in a time in the assigned time field and enter in date in any of required field and save your changes.
-    6. Come back to view request details page and refresh the page and look at the schedule appointment section. "
-
-    "1. The force create appointment time should display for the request and to make it working as it should, check click scheduler to make sure that the time slot is blocked for that request.
-    2. Also this should create real Force create regardless of other inspections is scheduled for that time slot. "
+    When Create/find a request that has no appointment scheduled or a request that has an inspection scheduled.
+    And Schedule an appointment for non scheduled request and or edit an appointment that has appointment schedule to a request.
+    And Select a date from calender date picker and click on 'check availability'.
+    And Force create button will dispaly when time and dates displayed, click on It.
+    And enter in a time in the assigned time field and enter in date in any of required field and save your changes.
+    And Come back to view request details page and refresh the page and look at the schedule appointment section. "
+    Then The force create appointment time should display for the request and to make it working as it should, check click scheduler to make sure that the time slot is blocked for that request, and also this should create real Force create regardless of other inspections is scheduled for that time slot. "
 
 
 
@@ -987,28 +939,24 @@ Feature: TO DO
 
     Scenario: Request status updates should be driven by Click-Enabled customer (Pending)
 
-    "1. Log on to CRM and search for requests that is in 'P'ending status.
-    2. Click on a request from the list to view it.
-    3. Then click on request status 'P' icon to launch 'update status' window.
-    4. In 'Update Status' window see if 'pending' option can be selected."
-
-    "1. Clicking on 'pending' option shouldn't trigger anything in the UI.
-    2. User can only select 'C' and or 'H' as the options given.
-    3. User should not be allowed to choose 'Pending' option directly from UI."
+    When Log on to CRM and search for requests that is in 'P'ending status.
+    And Click on a request from the list to view it.
+    And click on request status 'P' icon to launch 'update status' window.
+    And In 'Update Status' window see if 'pending' option can be selected.
+    Then Clicking on 'pending' option shouldn't trigger anything in the UI.
+    
 
 
 
 
     Scenario: Request status updates should be driven by Click-Enabled customer (Cancelled)
 
-    "1. Log on to CRM and search for requests that are not in either completed or cancelled status.
-    2. Click on a request from the list to view it.
-    3. Then click on request status icon to launch 'update status' window.
-    4. In 'Update Status' window click on 'C'ancel option in new status field. "
-
-    "1. User should be able to cencel the request by changing the current status to 'C'ancelled.
-    2. After saving the chages the request should should update accrodingly and in request history section a log should for the request status cancellation should be recorded.
-    3. Also cancelling the request should trigger cancelling any active appointment as well. "
+    When Log on to CRM and search for requests that are not in either completed or cancelled status.
+    And Click on a request from the list to view it.
+    And click on request status icon to launch 'update status' window.
+    And In 'Update Status' window click on 'C'ancel option in new status field. "
+    Then User should be able to cencel the request by changing the current status to 'C'ancelled.
+   
 
 
 
