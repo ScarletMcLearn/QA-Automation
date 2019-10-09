@@ -662,10 +662,10 @@ Feature: TO DO
 
     Scenario: Display loading spinner (basic, Advance search page)
 
-    "1. In basic search page, search for a request by entering '123' in the search box.
-    2. Also in advance search apge, filter the search and enter submit and see if the spinner diaplays"
-
-    The spinner should display
+    Given In basic search page
+    When search for a request by entering '123' in the search box.
+    And in advance search apge, filter the search and enter submit 
+    Then spinner should display
 
 
 
@@ -677,7 +677,7 @@ Feature: TO DO
     When Find requests with SLA date in the past in the DB.
     And go to CRM look up a request from the query and then schedule an appointment.
     And using the app log in to aim inspect and UTC the inspection and select (weather) as the reason and check the system when the inspection is rescheduled.
-    SThen the rescheduled date should be the start of the day tomorrow from the current date, and the due date should be the end of the day two days from the current date and the request's SLA date should be left as-is.
+    Then the rescheduled date should be the start of the day tomorrow from the current date, and the due date should be the end of the day two days from the current date and the request's SLA date should be left as-is.
 
 
 
@@ -777,15 +777,11 @@ Feature: TO DO
 
     Scenario: Completing an inspection where the vin is lower case should not cause any issue updating it coresponding request
 
-    "1. Create a dealer or home request for Nissan with a lower-case VIN.
-    2. Do an inspection and complete it.
-    3. Come to CRM and search for that request.
-    "
-
-    "1. It updates this vehicle with CR link, and completes request.
-    2. Also it should change the request status as 'C'omplete and re-inspection option be displayed.
-    3. A green check mark should also display next to the vin.
-    4. And request history should also display request complete as the action and who and when and date and time should also reflect the completion of the inspection."
+    When Create a dealer or home request for Nissan with a lower-case VIN.
+    And Do an inspection and complete it.
+    And Come to CRM and search for that request.
+    Then It updates this vehicle with CR link, and completes request and it should change the request status as 'C'omplete and re-inspection option be displayed.
+   
 
 
 
@@ -806,11 +802,9 @@ Feature: TO DO
 
     Scenario: Able to search for single/multiple vins in advance search page
 
-    "1. Log on to CRM and go to 'Advance' search page.
-    2. In vin field, enter in single or multiple vins and click on search"
-
-    "1. The search shoud return results that match exactly, e.g. abcd1234 will match ABCD1234, but not ABCD12345.
-    2. And the search should be case insensitive."
+    When Log on to CRM and go to 'Advance' search page
+    And In vin field, enter in single or multiple vins and click on search
+    Then The search shoud return results that match exactly, e.g. abcd1234 will match ABCD1234, but not ABCD12345 and the search should be case insensitive
 
 
 
@@ -819,16 +813,13 @@ Feature: TO DO
 
     Scenario: When inspection is UTC'd and the appointmet status is at "Dispatched/Acknowledged/etc" then move the request to complete
 
-    "1. Create/import a dealer request.
-    2. Schedule an inspection for today and make sure it gets scheduled through click.
-    3. Then go to Click scheduler and search for the reuest and view the request and go to 'general' tab and see the status, which is 'scheduled'.
-    4. Change the status to ""Dispatched/Acknowledged/etc"" and save the changes.
-    5. Then log in to Aim inspect app and UTC the inspection and select reason as 'wrong location'.
-    6. Come back to CRM and search for the request that was UTC'd"
-
-    "The system completed the inspection with UTC reason and sub-reason displayed. 
-    Request status was changed to On Hold' awaiting CSR. 
-    And then went back to click and did not find that task/assignment after searching for it."
+    When Create/import a dealer request.
+    And Schedule an inspection for today and make sure it gets scheduled through click.
+    And  go to Click scheduler and search for the reuest and view the request and go to 'general' tab and see the status, which is 'scheduled'.
+    And Change the status to ""Dispatched/Acknowledged/etc"" and save the changes.
+    And  log in to Aim inspect app and UTC the inspection and select reason as 'wrong location'.
+    And Come back to CRM and search for the request that was UTC'd"
+    Then system completed the inspection with UTC reason and sub-reason displayed, and request status was changed to On Hold awaiting CSR, and then went back to click and did not find that task/assignment after searching for it."
 
 
 
@@ -836,56 +827,49 @@ Feature: TO DO
 
     Scenario: Restrict "callcenter" from creating dealer request
 
-    "1. Log on to CRM using username/password as 'callcenrter/crmiscool'.
-    2. Go to 'Request' link and click on 'add request'.
-    3. For customer select 'Nissan' and for requrest type see if 'dealer' is displayed"
-
-    Dealer as the request type option should not be displayed.
+    When Log on to CRM using username/password as 'callcenrter/crmiscool'.
+    And Go to 'Request' link and click on 'add request'.
+    And For customer select 'Nissan' and for requrest type see if 'dealer' is displayed"
+    Then Dealer as the request type option should not be displayed.
 
 
 
 
     Scenario: Restrict "callcenter" from searching for dealer request (Basic search tab)
 
-    "1. Log on to CRM.
-    2. In basic search BOX enter iN ""123"" and click on search.
-    3. When results are displayed, sort by request type and see if 'dealer' requests are displayed. vin field, enter in single or multiple vins and click on search"
-
-    Dealer requests shouldn't be displayed. 
+    When Log on to CRM.
+    And In basic search BOX enter iN ""123" and click on search.
+    And  When results are displayed, sort by request type and see if 'dealer' requests are displayed. vin field, enter in single or multiple vins and click on search
+    Then Dealer requests shouldn't be displayed. 
 
 
 
 
     Scenario: Restrict "callcenter" from searching for dealer request (advance serch tab)
 
-    """1. Log on to CRM using username/password as 'callcenrter/crmiscool'.
-    2. Go to advance search tab and from request type dropdown field see if 'dealer' is displayed.
-    "
-
-    Dealer' option shouldn't be displayed.
+    When Log on to CRM using username/password as 'callcenrter/crmiscool'.
+    And Go to advance search tab and from request type dropdown field see if 'dealer' is displayed.
+    Then Dealer' option shouldn't be displayed.
 
 
 
 
     Scenario: Restrict "callcenter" from viewing for dealer request
 
-    "1. Log on to CRM using sample/crmpasswordgoeshere as the user name and password.
-    2. Search for a dealer request and when results are displayed, write down any dealer request ID.
-    3. Log out and log back in using callcenter/crmiscool account.
-    4. And in basic search page, enter in the dealer request ID and see if the result is displayed
-    "
-
-    As the result shouldn't display.
+    When Log on to CRM using sample/crmpasswordgoeshere as the user name and password.
+    And Search for a dealer request and when results are displayed, write down any dealer request ID.
+    And Log out and log back in using callcenter/crmiscool account.
+    And in basic search page, enter in the dealer request ID and see if the result is displayed
+    Then the result shouldn't display.
 
 
 
 
     Scenario: Callcenter user should not be allowed to choose preferred contact method 
 
-    "1. Log on to CRM using callcenter/crmiscool and create home request.
-    2. And in add request page, check to see if you are able to choose preferred contact method"
-
-    User should not be able to select/choose preferred contact method.
+    When Log on to CRM using callcenter/crmiscool and create home request
+    And in add request page, check to see if you are able to choose preferred contact method
+    Then User should not be able to select/choose preferred contact method
 
 
 
@@ -893,11 +877,9 @@ Feature: TO DO
 
     Scenario: Callcenter user should not be allowed to see preferred contact method (basic search page)
 
-    "1. Log on to CRM using callcenter/crmiscool.
-    2. And in basic search page, enter in '123' and click on search button."
-
-    "1. Callcenter user should only see home request in the search results.
-    2. And when viewing the request callcenter user shouldn't be able see preferred contact method as the user is unable to edit request. Also home requet shouldn't have preferred contact method option to begin with. "
+    When Log on to CRM using callcenter/crmiscool.
+    And in basic search page, enter in '123' and click on search button.
+    Then Callcenter user should only see home request in the search results and when viewing the request callcenter user shouldn't be able see preferred contact method as the user is unable to edit request. Also home requet shouldn't have preferred contact method option to begin with
 
 
 
@@ -906,11 +888,9 @@ Feature: TO DO
 
     Scenario: Cancelling an appointment should change the request status to 'P'ending
 
-    "1. Log on to CRM and search for scheduled requests and when results shows up, view a request.
-    2. Then cancel the appointment."
-
-    "1. Upon cancelling the appointment, the request status should be changed to 'P'ending and in the appointment audit log section should log the chagen accordingly.
-    2. Also in the request history audit table the log should be recorded as well."
+    When Log on to CRM and search for scheduled requests and when results shows up, view a request.
+    And cancel the appointment.
+    Then Upon cancelling the appointment, the request status should be changed to Pending and in the appointment audit log section should log the chagen accordingly and in the request history audit table the log should be recorded as well.
 
 
 
@@ -918,10 +898,10 @@ Feature: TO DO
 
     Scenario: Lower case vins should be decoded
 
-    "1. Log on to CRM and go to add request page.
-    2. Enter in a vin in lower case."
-
-    The system should decode the year, make, model and trim of the vehicle. 
+    When Log on to CRM 
+    And go to add request page
+    And Enter in a vin in lower case
+    Then the system should decode the year, make, model and trim of the vehicle
 
 
 
@@ -929,10 +909,9 @@ Feature: TO DO
 
     Scenario: Show friendly message when ESB times out for get availability
 
-    "1. Log on to CRM and launch schedule appointment section or edit an appointment.
-    2. Then disconnect from internet/wifi and click on 'check availability'."
-
-    If and when ESB times out, user should see the following friendly message "We are experiencing problems with checking availabilities. Please try again later."
+    When Log on to CRM and launch schedule appointment section or edit an appointment.
+    And disconnect from internet/wifi and click on 'check availability'
+    Then If and when ESB times out, user should see the following friendly message "We are experiencing problems with checking availabilities. Please try again later."
 
 
 
@@ -964,13 +943,11 @@ Feature: TO DO
 
     Scenario: Request status updates should be driven by Click-Enabled customer (Complete)
 
-    "1. Log on to CRM and search for requests that is in 'C'omplte status.
-    2. Click on a request from the list to view it.
-    3. Then click on request status icon to launch 'update status' window.
-    4. In 'Update Status' window see if 'C'omplete option is clickable and selectable."
-
-    "1. User shouldn't see anything else but 'C'omplete as the status and there should be no new status option.
-    2. And clicking on the 'save' button shouldn't cause any error and able to close the window after ward."
+    When Log on to CRM and search for requests that is in 'C'omplte status.
+    And Click on a request from the list to view it.
+    And Then click on request status icon to launch 'update status' window.
+    And In 'Update Status' window see if 'C'omplete option is clickable and selectable."
+    Then User shouldn't see anything else but 'C'omplete as the status and there should be no new status option, and clicking on the 'save' button shouldn't cause any error and able to close the window after ward."
 
 
 
@@ -1229,10 +1206,9 @@ Feature: TO DO
 
     Scenario: Modify the scheduled endpoint to use a different time window
 
-    "1. Log on to CRM and see if there are any inspections assigned to the engineer you're associated with in within - 8 hours from current time and also if there is anything assigned for current date.
-    2. If so, then log in to Aim inspect app and see if inspections from the past and current inspection shows up in the app. "
-
-    Those inspections should show up in the app.
+    When Log on to CRM and see if there are any inspections assigned to the engineer you're associated with in within - 8 hours from current time and also if there is anything assigned for current date.
+    And If so, then log in to Aim inspect app and see if inspections from the past and current inspection shows up in the app. 
+    Then Those inspections should show up in the app.
 
 
 
@@ -1252,11 +1228,10 @@ Feature: TO DO
 
     Scenario: Dealer request should populate with lease data whenever it exists (pending)
 
-    "1. Create/use existing a home request.
-    2. Import a dealer request with matching home account number.
-    3. Check CRM and Click scheduler and verify if lessee info is displaying."
-
-    Lessee's info should display for dealer request that matches the account number in CRM and as well as in Click scheduler.
+    When Create/use existing a home request
+    And Import a dealer request with matching home account number
+    And Check CRM and Click scheduler and verify if lessee info is displaying
+    Then Lessee's info should display for dealer request that matches the account number in CRM and as well as in Click scheduler
 
 
 
@@ -1264,12 +1239,11 @@ Feature: TO DO
 
     Scenario: Dealer request should populate with lease data whenever it exists (Scheduled)
 
-    "1. Create a home request.
-    2. Schedule an inspection.
-    3. Import a dealer request with matching home account number.
-    4. Check CRM and Click scheduler and verify if lessee info is displaying."
-
-    Lessee's info should display for dealer request that matches the account number in CRM and as well as in Click scheduler.
+    When Create a home request
+    And Schedule an inspection
+    And Import a dealer request with matching home account number.
+    And Check CRM and Click scheduler and verify if lessee info is displaying
+    Then Lessee's info should display for dealer request that matches the account number in CRM and as well as in Click scheduler
 
 
 
@@ -1277,36 +1251,33 @@ Feature: TO DO
 
     Scenario: Dealer request should populate with lease data whenever it exists (Acknowledged)
 
-    "1. Create a home request.
-    2. Scheduled an inspection then go to Click and chencge the status of the appointment to Acknowledged.
-    3. Import a dealer request with matching home account number.
-    4. Check CRM and Click scheduler and verify if lessee info is displaying."
-
-    Lessee's info should display for dealer request that matches the account number in CRM and as well as in Click scheduler.
+    When Create a home request.
+    And Scheduled an inspection then go to Click and chencge the status of the appointment to Acknowledged.
+    And Import a dealer request with matching home account number.
+    And Check CRM and Click scheduler and verify if lessee info is displaying.
+    Then Lessee's info should display for dealer request that matches the account number in CRM and as well as in Click scheduler.
 
 
 
 
     Scenario: Dealer request should populate with lease data whenever it exists (Dispatched)
 
-    "1. Create a home request.
-    2. Scheduled an inspection then go to Click and change the status of the appointment to Dispatched.
-    3. Import a dealer request with matching home account number.
-    4. Check CRM and Click scheduler and verify if lessee info is displaying."
-
-    Lessee's info should display for dealer request that matches the account number in CRM and as well as in Click scheduler.
+    When Create a home request
+    And Scheduled an inspection then go to Click and change the status of the appointment to Dispatched
+    And Import a dealer request with matching home account number.
+    And Check CRM and Click scheduler and verify if lessee info is displaying
+    Then Lessee's info should display for dealer request that matches the account number in CRM and as well as in Click scheduler
 
 
 
 
     Scenario: Dealer request should populate with lease data whenever it exists (on site)
 
-    "1. Create a home request.
-    2. Scheduled an inspection then go to Click and change the status of the appointment to 'on site'.
-    3. Import a dealer request with matching home account number.
-    4. Check CRM and Click scheduler and verify if lessee info is displaying."
-
-    Lessee's info should display for dealer request that matches the account number in CRM and as well as in Click scheduler.
+    When Create a home request
+    And Scheduled an inspection then go to Click and change the status of the appointment to 'on site'
+    And Import a dealer request with matching home account number.
+    And Check CRM and Click scheduler and verify if lessee info is displaying
+    Then Lessee's info should display for dealer request that matches the account number in CRM and as well as in Click scheduler
 
 
 
@@ -1329,11 +1300,9 @@ Feature: TO DO
 
     Need to set holiday date(s) in core.sla_date table prior to import. For example if you're importing a dealer req for today (07-28-2017) and the sla date is set to 2 days from today which is 08-01-2017. So if you set holiday as 08-01-2017 then sla date should be 08-02-2017
 
-    "1. Import a dealer request.
-    2. After import is successful go to click and see what's the SLA date. 
-    "
-
-    Check req.inspection_request-sla_date column against the request and the sla date should be two days after the import date excluding the holiday.
+    When Import a dealer request
+    And After import is successful go to click and see what's the SLA date
+    Then Check req.inspection_request-sla_date column against the request and the sla date should be two days after the import date excluding the holiday
 
 
 
@@ -1342,10 +1311,9 @@ Feature: TO DO
 
     Create an organization that has a different location and inspection location
 
-    "Import a dealer request for Nissan for that organization.
-    In the body of JSON, enter in a completely different address than the billing address or inspection location of the org."
-
-    It creates an appointment to the address of the inspection location of the orginazation
+    When Import a dealer request for Nissan for that organization
+    And In the body of JSON, enter in a completely different address than the billing address or inspection location of the org
+    Then it creates an appointment to the address of the inspection location of the orginazation
 
 
 
@@ -1356,11 +1324,10 @@ Feature: TO DO
 
     Request needs to be on either potential/pending status
 
-    "1. Search for a request that is in 'potential/pending' status. 
-    2. Select a request and note down the account number and vin.
-    3. Then setup the request data and in the json body modify some data and then insert the account number and vin that was noted and send an update request to /api/v1/lease/import. "
-
-    The request data is updated.
+    When Search for a request that is in 'potential/pending' status 
+    And Select a request and note down the account number and vin
+    And  setup the request data and in the json body modify some data and then insert the account number and vin that was noted and send an update request to /api/v1/lease/import
+    Then the request data is updated
 
 
 
@@ -1370,11 +1337,10 @@ Feature: TO DO
 
     Request needs to be on 'On-hold' status
 
-    "Search for a request that is in 'On-hold' status. 
-    Select a requerst and note down the account number and vin.
-    Then setup the request's data and in the json body modify some data and then insert the account number and vin from above step and send an update request to /api/v1/lease/import. "
-
-    The request data is not updated.
+    When Search for a request that is in 'On-hold' status. 
+    And Select a requerst and note down the account number and vin
+    And setup the request's data and in the json body modify some data and then insert the account number and vin from above step and send an update request to /api/v1/lease/import
+    Then the request data is not updated
 
 
 
