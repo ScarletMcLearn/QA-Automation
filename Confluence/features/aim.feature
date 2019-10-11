@@ -25,6 +25,15 @@
         And click Log In
         Then AIM Inspection page is displayed
 
+
+    Scenario: Logout of AIM Inspect site
+
+        Given Browser is opened
+        And current url is AIM Inspect site   // https://crm-qa.aiminspect.com/
+        And user is logged in
+        When click on Log Out button
+        Then user is logged out
+
     
 
     Scenario: Go to Dashboard
@@ -186,4 +195,40 @@
         And input comment in field
         And click Add
         Then comment can be seen in Internal Comments section
+
+
+    Scenario: Navigate to Add Organization Page
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is AIM Inspect site 
+        When hover over Request tab
+        And click the Add organization
+        Then Add Organization page is shown
+
+
+    Scenario: Add Organization 
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is AIM Inspect site 
+        When hover over Request tab
+        And click the Add organization
+        And Add Organization page is shown
+        And fill up Add Organization form
+        And click Submit
+        Then AIM Inspect home page is displayed
+
+
+    Scenario: See Organization Exists
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is AIM Inspect site 
+        When click Basic Search box
+        And input Organization name
+        And click Search
+        And click Submit
+        Then Organization is displayed in search results
+        
 
