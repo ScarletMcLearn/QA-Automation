@@ -232,3 +232,12 @@
         Then Organization is displayed in search results
         
 
+    Scenario: If User logs in and there is already an inspection Completed
+
+        Given Browser is opened
+        And current page is AIM Inspect site
+        And user has a Completed Inspection
+        When log in to AIM Inspect site
+        Then can see Completed Report PDF
+         
+        
