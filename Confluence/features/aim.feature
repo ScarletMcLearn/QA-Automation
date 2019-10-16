@@ -8,13 +8,31 @@
         Then AIM Inspect site is displayed
 
 
-    Scenario: Incorrect credentials do not allow login
+    Scenario: Both incorrect credentials do not allow login
 
         Given Browser is opened
         When navigated to AIM Inspect site   // https://crm-qa.aiminspect.com/
         And enter incorrect Username and Password
         And click Log In
         Then Invalid Login message is displayed
+
+
+     Scenario: Incorrect Username do not allow login
+
+        Given Browser is opened
+        When navigated to AIM Inspect site   // https://crm-qa.aiminspect.com/
+        And enter incorrect Username and Password
+        And click Log In
+        Then Invalid Username message is displayed  
+
+
+    Scenario: Incorrect Password do not allow login
+
+        Given Browser is opened
+        When navigated to AIM Inspect site   // https://crm-qa.aiminspect.com/
+        And enter incorrect Username and Password
+        And click Log In
+        Then Incorrect Password message is displayed  
 
 
     Scenario: Correct credentials allow succesful login
