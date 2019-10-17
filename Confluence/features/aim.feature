@@ -257,5 +257,99 @@
         And user has a Completed Inspection
         When log in to AIM Inspect site
         Then can see Completed Report PDF
-         
+
+
+    Scenario: Dropdown Request menu is shown
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is AIM Inspect site 
+        When hover cursor over Request tab
+        Then dropdown Request menu is shown 
+
+
+    Scenario: Inspection Request page is shown
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is AIM Inspect site 
+        When hover cursor over Request tab
+        And dropdown Request menu is shown 
+        And clicks on Add request
+        Then inspection request page is shown 
+
+
+    Scenario: Inspection Request page is shown
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is Inspection Request page 
+        When click customer type 
+        Then dropdown  menu is shown 
+
+
+    Scenario: Customer dropdown menu is shown
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is Inspection Request page 
+        When click customer type 
+        Then customer dropdown menu is shown 
+
+
+    Scenario: Request Type dropdown menu is shown
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is Inspection Request page 
+        When click Request Type 
+        Then Request Type dropdown menu is shown 
+       
+
+
+    Scenario: If Inspection already requested then redirected to Inspection Request Detail page
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is Inspection Request page
+        And account number exists
+        And  account has inspection requsted already
+        When click customer type 
+        And select TFS from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then redirected to Inspection Requested Detail page for that account
+
+
+    Scenario: If Inspection not already requested then form is rendered
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is Inspection Request page
+        When click customer type 
+        And select TFS from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then Dealer Request form is rendered 
+
+
+    
+    Scenario: If Inspection not already requested then form is rendered
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is Inspection Request page
+        When click customer type 
+        And select TFS from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Dealer Request form is rendered 
+        And fill up the form with 
+        required data 
+
+    
+
         
