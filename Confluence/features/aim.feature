@@ -307,6 +307,13 @@
        
 
 
+
+
+
+
+
+
+
     Scenario: If Inspection already requested then redirected to Inspection Request Detail page
 
         Given Browser is opened
@@ -332,11 +339,11 @@
         And select Dealer from Request Type dropdown menu
         And enter account number
         And click find
-        Then Dealer Request form is rendered 
+        Then Inspection Request form is rendered 
 
 
     
-    Scenario: If Inspection not already requested then form is rendered
+    Scenario: Inspection Request form submitted successfully 
 
         Given Browser is opened
         And logged in to AIM Inspect site
@@ -347,8 +354,69 @@
         And enter account number
         And click find
         And Dealer Request form is rendered 
-        And fill up the form with 
+        And fill up all the form fields with 
         required data 
+        And click submit 
+        And schedule appointment window is shown       # check
+        And fill up schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form submitted successfully with only mandatory fields 
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is Inspection Request page
+        When click customer type 
+        And select TFS from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Dealer Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       # check
+        And fill up mandatory fields in schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form not submitted without mandatory fields 
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is Inspection Request page
+        When click customer type 
+        And select TFS from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Dealer Request form is rendered 
+        And leave mandatory fields empty 
+        And click submit 
+        Then form is not accepted and error message is shown
+
+
+    Scenario: Schedule Appointment form not submitted without mandatory fields 
+
+        Given Browser is opened
+        And logged in to AIM Inspect site
+        And current page is Inspection Request page
+        When click customer type 
+        And select TFS from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Dealer Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       # check
+        And leave mandatory fields empty 
+        And click submit
+        Then form is not accepted and error message is shown
 
     
 
