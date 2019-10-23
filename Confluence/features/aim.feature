@@ -1261,6 +1261,40 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
 
 
+
+
+
+    Scenario: Advanced Requests Search Form with no values returns all Requests
+
+        Given user is logged in 
+        And current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Requests
+        And clicks  Advanced Search
+        And leaves Advanced Search form empty
+        And clicks search button
+        Then all request search results will be displayed
+
+
+
+
+
+
+
+    Scenario: Organization Search Form with no values returns all Organizations
+
+        Given user is logged in 
+        And current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And leaves Advanced Search form empty
+        And clicks search button
+        Then all organization search results will be displayed
+
+
+
+
+
     
 
 
