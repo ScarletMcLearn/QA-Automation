@@ -1,52 +1,21 @@
+Feature: AIM Site functionalities
 
     Background: 
 
         Given Browser is opened
         And nagivated to AIM inspect site // https://crm-qa.aiminspect.com/
         And AIM Inspect site is displayed 
+        And correct user name and password is entered
+        And login form is submitted
 
 
     Scenario: Launch AIM Inspect site
     
-        Given Browser is opened
-        And logged in to AIM Inspect site
-        When navigated to AIM Inspect site   // https://crm-qa.aiminspect.com/
+        When logged in to AIM Inspect site
         Then AIM Inspect site is displayed
 
 
-    Scenario: Both incorrect credentials do not allow login
-
-        When enter incorrect Username and Password
-        And click Log In
-        Then Invalid Login message is displayed
-
-
-     Scenario: Incorrect Username do not allow login
-
-        When enter incorrect Username and Password
-        And click Log In
-        Then Invalid Username message is displayed  
-
-
-    Scenario: Incorrect Password do not allow login
-
-        When enter incorrect Username and Password
-        And click Log In
-        Then Incorrect Password message is displayed  
-
-
-    Scenario: Correct credentials allow succesful login
-
-        When enter correct Username and Password
-        And click Log In
-        Then AIM Inspection page is displayed
-
-
-    Scenario: Logout of AIM Inspect site
-
-        Given user is logged in
-        When click on Log Out button
-        Then user is logged out
+    
 
     
 
@@ -238,7 +207,7 @@
 
     Scenario: Page count tab is displayed on Dashboard 
 
-        Given more than 27 Overdue Inspection 
+        Given more than 25 Overdue Inspection 
         When click on Dashboard
         And click on Overdue Inspections 
         Then pages count tab is displayed 
@@ -247,12 +216,78 @@
 
     Scenario: Page count tab is working on Dashboard 
 
-        Given more than 27 Overdue Inspection 
+        Given more than 25 Overdue Inspection 
         When click on Dashboard
         And click on Overdue Inspections 
         And pages count tab is displayed 
         And click on page 2
         Then results updated 
+
+
+    Scenario: Overdue Inspections Table Data is displayed correctly
+
+        Given Following Data Exists
+        | Conf # | Status | Type | Customer | Name | VIN | City | State | Request Date | SLA Date | 
+        | 1099690 | Pending | Dealer | HYUNDAI | Andres J Bredeweg | 5NPD84LF6HH097866 | EL PASO | TX | Oct 22, 2019 | Oct 24, 2019 
+        | 1099684 | Pending | Dealer | VCI | KEVIN RINK | J2222603 | VALDOSTA | GA | Oct 22, 2019 | Oct 24, 2019 |
+        And click on Dashboard 
+        And click on Overdue Inspection 
+        Then Data is shown in Overdue Inspections Table 
+
+
+    Scenario: Due Today Table Data is displayed correctly
+
+        Given Following Data Exists
+        | Conf # | Status | Type | Customer | Name | VIN | City | State | Request Date | SLA Date | 
+        | 1099690 | Pending | Dealer | HYUNDAI | Andres J Bredeweg | 5NPD84LF6HH097866 | EL PASO | TX | Oct 22, 2019 | Oct 24, 2019 
+        | 1099684 | Pending | Dealer | VCI | KEVIN RINK | J2222603 | VALDOSTA | GA | Oct 22, 2019 | Oct 24, 2019 |
+        And click on Dashboard 
+        And click on Due Today 
+        Then Data is shown in Due Today Table 
+
+
+    Scenario: Awaiting CSR Table Data is displayed correctly
+
+        Given Following Data Exists
+        | Conf # | Status | Type | Customer | Name | VIN | City | State | Request Date | SLA Date | 
+        | 1099690 | Pending | Dealer | HYUNDAI | Andres J Bredeweg | 5NPD84LF6HH097866 | EL PASO | TX | Oct 22, 2019 | Oct 24, 2019 
+        | 1099684 | Pending | Dealer | VCI | KEVIN RINK | J2222603 | VALDOSTA | GA | Oct 22, 2019 | Oct 24, 2019 |
+        And click on Dashboard 
+        And click on Awaiting CSR 
+        Then Data is shown in Awaiting CSR Table 
+
+
+    Scenario: Awaiting Dispatch Table Data is displayed correctly
+
+        Given Following Data Exists
+        | Conf # | Status | Type | Customer | Name | VIN | City | State | Request Date | SLA Date | 
+        | 1099690 | Pending | Dealer | HYUNDAI | Andres J Bredeweg | 5NPD84LF6HH097866 | EL PASO | TX | Oct 22, 2019 | Oct 24, 2019 
+        | 1099684 | Pending | Dealer | VCI | KEVIN RINK | J2222603 | VALDOSTA | GA | Oct 22, 2019 | Oct 24, 2019 |
+        And click on Dashboard 
+        And click on Awaiting Dispatch 
+        Then Data is shown in Awaiting Dispatch Table 
+
+
+    Scenario: Awaiting Quality Table Data is displayed correctly
+
+        Given Following Data Exists
+        | Conf # | Status | Type | Customer | Name | VIN | City | State | Request Date | SLA Date | 
+        | 1099690 | Pending | Dealer | HYUNDAI | Andres J Bredeweg | 5NPD84LF6HH097866 | EL PASO | TX | Oct 22, 2019 | Oct 24, 2019 
+        | 1099684 | Pending | Dealer | VCI | KEVIN RINK | J2222603 | VALDOSTA | GA | Oct 22, 2019 | Oct 24, 2019 |
+        And click on Dashboard 
+        And click on Awaiting Quality 
+        Then Data is shown in Awaiting Quality Table 
+
+
+    Scenario: Open Requests Table Data is displayed correctly
+
+        Given Following Data Exists
+        | Conf # | Status | Type | Customer | Name | VIN | City | State | Request Date | SLA Date | 
+        | 1099690 | Pending | Dealer | HYUNDAI | Andres J Bredeweg | 5NPD84LF6HH097866 | EL PASO | TX | Oct 22, 2019 | Oct 24, 2019 
+        | 1099684 | Pending | Dealer | VCI | KEVIN RINK | J2222603 | VALDOSTA | GA | Oct 22, 2019 | Oct 24, 2019 |
+        And click on Dashboard 
+        And click on Open Requests 
+        Then Data is shown in Open Requests Table 
 
 
 
@@ -1356,6 +1391,176 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And leaves Advanced Search form empty
         And clicks search button
         Then all organization search results will be displayed
+
+
+    Scenario: Advanced Search Form with VINs seperated by comma returns those in results if exists
+
+        Given the following VINs exists
+        | 2C3CDZBT0JH259828 | KM8J23A44GU231323 |
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And enters the given data in the VIN field seperated by comma
+        And click search
+        Then the results with those VINs will be shown
+
+
+    Scenario: Advanced Search Form with VINs seperated by space returns those in results if exists
+
+        Given the following VINs exists
+        | 2C3CDZBT0JH259828 | KM8J23A44GU231323 |
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And enters the given data in the VIN field seperated by comma
+        And click search
+        Then the results with those VINs will be shown
+
+
+    Scenario: Advanced Search Form with VIN returns that in results if exists
+
+        Given the VIN 2C3CDZBT0JH259828 exists
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And enters the given data in the VIN field
+        And click search
+        Then the result with that VIN will be shown
+
+
+
+    Scenario: Advanced Search Form with VIN returns no result found if does not exist
+
+        Given the VIN 345465756 does not exist
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And enters the given data in the VIN field
+        And click search
+        Then the result will show no result found 
+
+
+    Scenario: Advanced Search Form with Dealer Name returns that in results if exists
+
+        Given the Dealer Alley exists
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And enters the given data in the Dealer Name field
+        And click search
+        Then the result with that Dealer Name will be shown
+
+
+    Scenario: Advanced Search Form with Dealer Name returns no result found if does not exist
+
+        Given the Dealer Allesdfsdy does not exist
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And enters the given data in the Dealer Name field
+        And click search
+        Then the result will show no result found 
+
+
+
+    Scenario: Advanced Search Form with Contact First Name returns that in results if exists
+
+        Given the Contact Eric exists
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And enters the given data in the Contact First Name field
+        And click search
+        Then the result with that Contact First Name will be shown
+
+
+    Scenario: Advanced Search Form with Contact First Name returns no result found if does not exist
+
+        Given the Contact Allesdfsdy does not exist
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And enters the given data in the Contact First Name field
+        And click search
+        Then the result will show no result found 
+
+
+
+    Scenario: Advanced Search Form with Contact Last Name returns that in results if exists
+
+        Given the Contact Eric exists
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And enters the given data in the Contact Last Name field
+        And click search
+        Then the result with that Contact First Name will be shown
+
+
+    Scenario: Advanced Search Form with Contact Last Name returns no result found if does not exist
+
+        Given the Contact Allesdfsdy does not exist
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And enters the given data in the Contact Last Name field
+        And click search
+        Then the result will show no result found 
+        
+
+
+    Scenario: Advanced Search Form with Phone returns that in results if exists
+
+        Given the Phone 00880077888 exists
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And enters the given data in the Phone field
+        And click search
+        Then the result with that Phone will be shown
+
+
+    Scenario: Advanced Search Form Country Dropdown Menu is working
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And clicks on Country Drop down menu 
+        Then countries are shown
+
+
+    # TO DO
+    Scenario: Specific Country Results are shown from advanced search
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And clicks on Country Dropdown menu 
+        And selects United States of America - US from Dropdown menu
+        And clicks search
+        Then USA results will be shown   
+
+
+    Scenario: Advanced Search Form Inspection Type Dropdown Menu is working
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And clicks on Country Drop down menu 
+        Then countries are shown    
+
+
+
+    
+
+    
+
+
+    
+
+
+
+
 
 
 
