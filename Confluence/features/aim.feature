@@ -1538,7 +1538,74 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And clicks on Country Dropdown menu 
         And selects United States of America - US from Dropdown menu
         And clicks search
-        Then USA results will be shown   
+        Then USA results will be shown  
+
+
+    Scenario: State Dropdown menu inactive without selecting option from Country Dropdown menu
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        Then State Dropdown menu is inactive 
+
+
+    Scenario: State Dropdown menu active with when selected option from Country Dropdown menu
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And select an option from Country Dropdown menu
+        Then State Dropdown menu is active 
+
+
+    Scenario: State Dropdown menu shows states of the Country selected
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And select Canada - CA from Country Dropdown menu
+        Then State Dropdown menu is active 
+        And shows only States of Canada
+
+
+
+    Scenario: Advanced Search Form Status Dropdown Menu is working
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And clicks on Status Drop down menu 
+        Then different status are shown  
+
+
+    Scenario: Reason Dropdown menu inactive without selecting option from Status Dropdown menu
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        Then Reason Dropdown menu is inactive 
+
+
+    Scenario: Reason Dropdown menu active with when selected option from Status Dropdown menu
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And select an option from Status Dropdown menu
+        Then Reason Dropdown menu is active 
+
+
+
+
+    # TO DO !!!!!!!
+    Scenario: Reason Dropdown menu shows reasons of the Status selected
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And select Canada - CA from Country Dropdown menu
+        Then State Dropdown menu is active 
+        And shows only States of Canada
 
 
     Scenario: Advanced Search Form Inspection Type Dropdown Menu is working
@@ -1546,8 +1613,36 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         When user clicks Request
         And clicks search Requests
         And clicks Advanced Search
-        And clicks on Country Drop down menu 
-        Then countries are shown    
+        And clicks on Inspection Type Drop down menu 
+        Then different inspection types are shown 
+
+
+    Scenario: Advanced Search Form Customer Dropdown Menu is working
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And clicks on Customer Drop down menu 
+        Then different Customer types are shown    
+
+
+    Scenario: Advanced Search Form Appointment Status Dropdown Menu is working
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And clicks on Appointment Status Dropdown menu 
+        Then different Appointment Status are shown  
+
+
+    Scenario: Advanced Search Form Assigned Engineer Dropdown Menu is working
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And clicks on Assigned Engineer Dropdown menu 
+        Then different Assigned Engineer are shown    
+
 
 
 
