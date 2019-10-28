@@ -1569,6 +1569,18 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
 
 
+    Scenario: Specific State Results are shown from advanced search
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And select Canada - CA from Country Dropdown menu
+        And selects Alaska - AK from States Dropdown menu
+        And click Search
+        Then Search results show Alaska State results
+
+
+
     Scenario: Advanced Search Form Status Dropdown Menu is working
 
         When user clicks Request
@@ -1596,6 +1608,16 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
 
 
+    # TO DO !!!!
+    Scenario: Reason Dropdown menu results
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And select an option from Status Dropdown menu
+        Then Reason Dropdown menu is active 
+
+
 
     # TO DO !!!!!!!
     Scenario: Reason Dropdown menu shows reasons of the Status selected
@@ -1617,13 +1639,35 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then different inspection types are shown 
 
 
+    Scenario: Advanced Search Form Specific Inspection Type results are shown
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And clicks on Inspection Type Drop down menu 
+        And selects Home from Dropdown menu
+        And clicks search
+        Then search results show Home Inspection Type 
+
+
     Scenario: Advanced Search Form Customer Dropdown Menu is working
 
         When user clicks Request
         And clicks search Requests
         And clicks Advanced Search
         And clicks on Customer Drop down menu 
-        Then different Customer types are shown    
+        Then different Customer types are shown 
+
+
+    Scenario: Advanced Search Form Specific Customer results are shown
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And clicks on Customer Drop down menu 
+        And selects US Bank from Dropdown menu
+        And clicks search
+        Then search results show US Bank Results   
 
 
     Scenario: Advanced Search Form Appointment Status Dropdown Menu is working
@@ -1632,7 +1676,19 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And clicks search Requests
         And clicks Advanced Search
         And clicks on Appointment Status Dropdown menu 
-        Then different Appointment Status are shown  
+        Then different Appointment Status are shown 
+
+
+
+    Scenario: Advanced Search Form Appointment Status Dropdown Menu shows specific results
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And clicks on Appointment Status Dropdown menu 
+        And selects Pending from Status Dropdown menu
+        And clicks search
+        Then only Pending results will be shown 
 
 
     Scenario: Advanced Search Form Assigned Engineer Dropdown Menu is working
@@ -1641,7 +1697,18 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And clicks search Requests
         And clicks Advanced Search
         And clicks on Assigned Engineer Dropdown menu 
-        Then different Assigned Engineer are shown    
+        Then different Assigned Engineer are shown   
+
+
+    Scenario: Advanced Search Form specific Assigned Engineer results are shown
+
+        When user clicks Request
+        And clicks search Requests
+        And clicks Advanced Search
+        And clicks on Assigned Engineer Dropdown menu 
+        And selects 7-UXUI2 from menu
+        And clicks search
+        Then results show 7-UXUI2  
 
 
 
