@@ -400,8 +400,7 @@ Feature: AIM Site functionalities
 
     Scenario: See Organization Exists
 
-        Given logged in to AIM Inspect site
-        And current page is AIM Inspect site 
+        Given current page is AIM Inspect site 
         When click Basic Search box
         And input Organization name
         And click Search
@@ -419,16 +418,14 @@ Feature: AIM Site functionalities
 
     Scenario: Dropdown Request menu is shown
 
-        Given logged in to AIM Inspect site
-        And current page is AIM Inspect site 
+        Given current page is AIM Inspect site 
         When hover cursor over Request tab
         Then dropdown Request menu is shown 
 
 
     Scenario: Inspection Request page is shown
 
-        Given logged in to AIM Inspect site
-        And current page is AIM Inspect site 
+        Given current page is AIM Inspect site 
         When hover cursor over Request tab
         And dropdown Request menu is shown 
         And clicks on Add request
@@ -437,24 +434,21 @@ Feature: AIM Site functionalities
 
     Scenario: Inspection Request page is shown
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page 
+        Given current page is Inspection Request page 
         When click customer type 
         Then dropdown  menu is shown 
 
 
     Scenario: Customer dropdown menu is shown
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page 
+        Given current page is Inspection Request page 
         When click customer type 
         Then customer dropdown menu is shown 
 
 
     Scenario: Request Type dropdown menu is shown
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page 
+        Given current page is Inspection Request page 
         When click Request Type 
         Then Request Type dropdown menu is shown 
        
@@ -469,8 +463,7 @@ Feature: AIM Site functionalities
 
     Scenario: If Inspection already requested by TFS Dealer then redirected to Inspection Request Detail page
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
@@ -483,8 +476,7 @@ Feature: AIM Site functionalities
 
     Scenario: If Inspection not already requested by TFS Dealer then form is rendered
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select TFS from customer dropdown menu
         And select Dealer from Request Type dropdown menu
@@ -496,8 +488,7 @@ Feature: AIM Site functionalities
     
     Scenario: Inspection Request form submitted successfully by TFS Dealer 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select TFS from customer dropdown menu
         And select Dealer from Request Type dropdown menu
@@ -515,8 +506,7 @@ Feature: AIM Site functionalities
 
     Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by TFS Dealer 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select TFS from customer dropdown menu
         And select Dealer from Request Type dropdown menu
@@ -534,8 +524,7 @@ Feature: AIM Site functionalities
 
     Scenario: Inspection Request form not submitted by TFS Dealer without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select TFS from customer dropdown menu
         And select Dealer from Request Type dropdown menu
@@ -549,8 +538,7 @@ Feature: AIM Site functionalities
 
     Scenario: Schedule Appointment form not submitted by TFS Dealer without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select TFS from customer dropdown menu
         And select Dealer from Request Type dropdown menu
@@ -575,8 +563,7 @@ Feature: AIM Site functionalities
 
     Scenario: If Inspection already requested by CHRYSLER SANTANDER Home then redirected to Inspection Request Detail page
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
@@ -602,8 +589,7 @@ Feature: AIM Site functionalities
     
     Scenario: Inspection Request form submitted successfully by CHRYSLER SANTANDER Home 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select CHRYSLER SANTANDER from customer dropdown menu
         And select Home from Request Type dropdown menu
@@ -621,8 +607,7 @@ Feature: AIM Site functionalities
 
     Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by CHRYSLER SANTANDER Home 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select CHRYSLER SANTANDER from customer dropdown menu
         And select Home from Request Type dropdown menu
@@ -640,8 +625,7 @@ Feature: AIM Site functionalities
 
     Scenario: Inspection Request form not submitted by CHRYSLER SANTANDER Home without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select CHRYSLER SANTANDER from customer dropdown menu
         And select Home from Request Type dropdown menu
@@ -655,8 +639,7 @@ Feature: AIM Site functionalities
 
     Scenario: Schedule Appointment form not submitted by CHRYSLER SANTANDER Home without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select CHRYSLER SANTANDER from customer dropdown menu
         And select Home from Request Type dropdown menu
@@ -680,8 +663,7 @@ Feature: AIM Site functionalities
 
  Scenario: If Inspection already requested by CHRYSLER SANTANDER DEALER then redirected to Inspection Request Detail page
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
@@ -694,8 +676,7 @@ Feature: AIM Site functionalities
 
     Scenario: If Inspection not already requested by CHRYSLER SANTANDER DEALER then form is rendered
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select CHRYSLER SANTANDER from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -707,8 +688,7 @@ Feature: AIM Site functionalities
     
     Scenario: Inspection Request form submitted successfully by CHRYSLER SANTANDER DEALER 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select CHRYSLER SANTANDER from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -726,8 +706,7 @@ Feature: AIM Site functionalities
 
     Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by CHRYSLER SANTANDER DEALER 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select CHRYSLER SANTANDER from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -745,8 +724,7 @@ Feature: AIM Site functionalities
 
     Scenario: Inspection Request form not submitted by CHRYSLER SANTANDER DEALER without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select CHRYSLER SANTANDER from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -760,8 +738,7 @@ Feature: AIM Site functionalities
 
     Scenario: Schedule Appointment form not submitted by CHRYSLER SANTANDER DEALER without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select CHRYSLER SANTANDER from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -784,8 +761,7 @@ Feature: AIM Site functionalities
 
     Scenario: If Inspection already requested by HYUNDAI DEALER then redirected to Inspection Request Detail page
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
@@ -798,8 +774,7 @@ Feature: AIM Site functionalities
 
     Scenario: If Inspection not already requested by HYUNDAI DEALER then form is rendered
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select HYUNDAI from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -811,8 +786,7 @@ Feature: AIM Site functionalities
     
     Scenario: Inspection Request form submitted successfully by HYUNDAI DEALER 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select HYUNDAI from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -830,8 +804,7 @@ Feature: AIM Site functionalities
 
     Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by HYUNDAI DEALER 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select HYUNDAI from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -849,8 +822,7 @@ Feature: AIM Site functionalities
 
     Scenario: Inspection Request form not submitted by HYUNDAI DEALER without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select HYUNDAI from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -864,8 +836,7 @@ Feature: AIM Site functionalities
 
     Scenario: Schedule Appointment form not submitted by HYUNDAI DEALER without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select HYUNDAI from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -887,8 +858,7 @@ Feature: AIM Site functionalities
 
 Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Inspection Request Detail page
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
@@ -901,8 +871,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: If Inspection not already requested by HYUNDAI HOME then form is rendered
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select HYUNDAI from customer dropdown menu
         And select HOME from Request Type dropdown menu
@@ -914,8 +883,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
     
     Scenario: Inspection Request form submitted successfully by HYUNDAI HOME 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select HYUNDAI from customer dropdown menu
         And select HOME from Request Type dropdown menu
@@ -933,8 +901,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by HYUNDAI HOME 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select HYUNDAI from customer dropdown menu
         And select HOME from Request Type dropdown menu
@@ -952,8 +919,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Inspection Request form not submitted by HYUNDAI HOME without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select HYUNDAI from customer dropdown menu
         And select HOME from Request Type dropdown menu
@@ -967,8 +933,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Schedule Appointment form not submitted by HYUNDAI HOME without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select HYUNDAI from customer dropdown menu
         And select HOME from Request Type dropdown menu
@@ -989,8 +954,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: If Inspection already requested by NISSAN HOME then redirected to Inspection Request Detail page
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
@@ -1003,8 +967,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: If Inspection not already requested by NISSAN HOME then form is rendered
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select HOME from Request Type dropdown menu
@@ -1016,8 +979,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
     
     Scenario: Inspection Request form submitted successfully by NISSAN HOME 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select HOME from Request Type dropdown menu
@@ -1035,8 +997,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by NISSAN HOME 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select HOME from Request Type dropdown menu
@@ -1054,8 +1015,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Inspection Request form not submitted by NISSAN HOME without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select HOME from Request Type dropdown menu
@@ -1069,8 +1029,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Schedule Appointment form not submitted by NISSAN HOME without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select HOME from Request Type dropdown menu
@@ -1091,8 +1050,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: If Inspection already requested by NISSAN DEALER then redirected to Inspection Request Detail page
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
@@ -1105,8 +1063,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: If Inspection not already requested by NISSAN DEALER then form is rendered
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -1118,8 +1075,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
     
     Scenario: Inspection Request form submitted successfully by NISSAN DEALER 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -1137,8 +1093,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by NISSAN DEALER 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -1156,8 +1111,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Inspection Request form not submitted by NISSAN DEALER without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -1171,8 +1125,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Schedule Appointment form not submitted by NISSAN DEALER without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select DEALER from Request Type dropdown menu
@@ -1198,8 +1151,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: If Inspection already requested by CHRYSLER SANTANDER then redirected to Inspection Request Detail page
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
@@ -1212,8 +1164,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: If Inspection not already requested by CHRYSLER SANTANDER then form is rendered
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select MARSHALLING YARD from Request Type dropdown menu
@@ -1225,8 +1176,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
     
     Scenario: Inspection Request form submitted successfully by CHRYSLER SANTANDER 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select MARSHALLING YARD from Request Type dropdown menu
@@ -1241,8 +1191,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by CHRYSLER SANTANDER 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select MARSHALLING YARD from Request Type dropdown menu
@@ -1257,8 +1206,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Inspection Request form not submitted by CHRYSLER SANTANDER without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select MARSHALLING YARD from Request Type dropdown menu
@@ -1279,8 +1227,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: If Inspection already requested by HYUNDAI then redirected to Inspection Request Detail page
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
@@ -1293,8 +1240,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: If Inspection not already requested by HYUNDAI then form is rendered
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select MARSHALLING YARD from Request Type dropdown menu
@@ -1306,8 +1252,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
     
     Scenario: Inspection Request form submitted successfully by HYUNDAI 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select MARSHALLING YARD from Request Type dropdown menu
@@ -1322,8 +1267,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by HYUNDAI 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select MARSHALLING YARD from Request Type dropdown menu
@@ -1338,8 +1282,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Inspection Request form not submitted by HYUNDAI without mandatory fields 
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
         And select NISSAN from customer dropdown menu
         And select MARSHALLING YARD from Request Type dropdown menu
@@ -1367,8 +1310,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Advanced Requests Search Form with no values returns all Requests
 
-        Given user is logged in 
-        And current URL is AIM Inspect site home page
+        Given current URL is AIM Inspect site home page
         When user overs over Request tab
         And click Search Requests
         And clicks  Advanced Search
@@ -1384,8 +1326,7 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
     Scenario: Organization Search Form with no values returns all Organizations
 
-        Given user is logged in 
-        And current URL is AIM Inspect site home page
+        Given current URL is AIM Inspect site home page
         When user overs over Request tab
         And click Search Organizations
         And leaves Advanced Search form empty
@@ -1709,6 +1650,9 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And selects 7-UXUI2 from menu
         And clicks search
         Then results show 7-UXUI2  
+
+
+    
 
 
 
