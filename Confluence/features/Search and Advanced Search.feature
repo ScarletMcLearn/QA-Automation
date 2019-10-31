@@ -105,6 +105,174 @@ Feature: AIM Site functionalities
         And click Search
         And click Submit
         Then Organization is displayed in search results
+
+
+
+    Scenario: Basic Search with existing VIN outputs results with VIN
+
+        Given current page is AIM Inspect site
+        And VIN exists
+        When click Request
+        And click search request
+        And click Basic search
+        And click search bar 
+        And input VIN 
+        And click search
+        Then results including specified VIN is shown  
+
+
+
+    Scenario: Basic Search with nonexisting VIN outputs results without VIN
+
+        Given current page is AIM Inspect site
+        And VIN does not exist
+        When click Request
+        And click search request
+        And click Basic search
+        And click search bar 
+        And input VIN 
+        And click search
+        Then results do not include specified VIN  
+
+
+
+    Scenario: Basic Search with existing phone outputs results with phone
+
+        Given current page is AIM Inspect site
+        And phone exists
+        When click Request
+        And click search request
+        And click Basic search
+        And click search bar 
+        And input phone 
+        And click search
+        Then results including specified phone is shown  
+
+
+
+    Scenario: Basic Search with nonexisting phone outputs results without phone
+
+        Given current page is AIM Inspect site
+        And phone does not exist
+        When click Request
+        And click search request
+        And click Basic search
+        And click search bar 
+        And input phone 
+        And click search
+        Then results do not include specified phone  
+
+
+
+    Scenario: Basic Search with existing Conf outputs results with Conf
+
+        Given current page is AIM Inspect site
+        And Conf exists
+        When click Request
+        And click search request
+        And click Basic search
+        And click search bar 
+        And input Conf 
+        And click search
+        Then results including specified Conf is shown  
+
+
+
+    Scenario: Basic Search with nonexisting Conf outputs results without Conf
+
+        Given current page is AIM Inspect site
+        And Conf does not exist
+        When click Request
+        And click search request
+        And click Basic search
+        And click search bar 
+        And input Conf 
+        And click search
+        Then results do not include specified Conf  
+
+
+    Scenario: Basic Search with existing Account outputs results with Account
+
+        Given current page is AIM Inspect site
+        And Account exists
+        When click Request
+        And click search request
+        And click Basic search
+        And click search bar 
+        And input Account 
+        And click search
+        Then results including specified Account is shown  
+
+
+
+    Scenario: Basic Search with nonexisting Account outputs results without Account
+
+        Given current page is AIM Inspect site
+        And Account does not exist
+        When click Request
+        And click search request
+        And click Basic search
+        And click search bar 
+        And input Account 
+        And click search
+        Then results do not include specified Account  
+
+
+
+    Scenario: Basic Search with existing Dealer Name outputs results with Dealer Name
+
+        Given current page is AIM Inspect site
+        And Dealer Name exists
+        When click Request
+        And click search request
+        And click Basic search
+        And click search bar 
+        And input Dealer Name 
+        And click search
+        Then results including specified Dealer Name is shown  
+
+
+
+    Scenario: Basic Search with nonexisting Dealer Name outputs results without Dealer Name
+
+        Given current page is AIM Inspect site
+        And Dealer Name does not exist
+        When click Request
+        And click search request
+        And click Basic search
+        And click search bar 
+        And input Dealer Name 
+        And click search
+        Then results do not include specified Dealer Name  
+
+
+
+    Scenario: Basic Search with existing Lesse Name outputs results with Lesse Name
+
+        Given current page is AIM Inspect site
+        And Lesse Name exists
+        When click Request
+        And click search request
+        And click Basic search
+        And click search bar 
+        And input Lesse Name 
+        And click search
+        Then results including specified Lesse Name is shown  
+
+
+
+    Scenario: Basic Search with nonexisting Lesse Name outputs results without Lesse Name
+
+        Given current page is AIM Inspect site
+        And Lesse Name does not exist
+        When click Request
+        And click search request
+        And click Basic search
+        And click search bar 
+        And input Lesse Name 
+        And click search
+        Then results do not include specified Lesse Name  
+
         
 
 
