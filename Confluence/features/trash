@@ -1,4 +1,4 @@
-Scenario: If Inspection already requested by CHRYSLER SANTANDER then redirected to Inspection Request Detail page
+Scenario: If Inspection already requested by HYUNDAI then redirected to Inspection Request Detail page
 
         Given Browser is opened
         And logged in to AIM Inspect site
@@ -13,7 +13,7 @@ Scenario: If Inspection already requested by CHRYSLER SANTANDER then redirected 
         Then redirected to Inspection Requested Detail page for that account
 
 
-    Scenario: If Inspection not already requested by CHRYSLER SANTANDER then form is rendered
+    Scenario: If Inspection not already requested by HYUNDAI then form is rendered
 
         Given Browser is opened
         And logged in to AIM Inspect site
@@ -27,7 +27,7 @@ Scenario: If Inspection already requested by CHRYSLER SANTANDER then redirected 
 
 
     
-    Scenario: Inspection Request form submitted successfully by CHRYSLER SANTANDER 
+    Scenario: Inspection Request form submitted successfully by HYUNDAI 
 
         Given Browser is opened
         And logged in to AIM Inspect site
@@ -44,7 +44,7 @@ Scenario: If Inspection already requested by CHRYSLER SANTANDER then redirected 
         Then newly created inspection request notification message is shown
 
 
-    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by CHRYSLER SANTANDER 
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by HYUNDAI 
 
         Given Browser is opened
         And logged in to AIM Inspect site
@@ -61,7 +61,7 @@ Scenario: If Inspection already requested by CHRYSLER SANTANDER then redirected 
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form not submitted by CHRYSLER SANTANDER without mandatory fields 
+    Scenario: Inspection Request form not submitted by HYUNDAI without mandatory fields 
 
         Given Browser is opened
         And logged in to AIM Inspect site
