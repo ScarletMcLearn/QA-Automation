@@ -1551,6 +1551,324 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then Mexico States are shown in dropdown menu
 
 
+
+
+
+
+
+
+     Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+
+    Scenario: Organization Search Form with Mexico selected from Country dropdown menu and AGU from States dropdown menu returns AGU in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Mexico from the options
+        And clicks States dropdown menu
+        And selects AGU from dropdown menu
+        And clicks search
+        Then AGU results are shown
+
+        
+
+
+   
+
+
+
+
+
+
+
+
+
     Scenario: Organization Search Form with US selected from Country dropdown menu shows US states in States dropdown menu 
 
         Given current URL is AIM Inspect site home page
