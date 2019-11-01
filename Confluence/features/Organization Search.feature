@@ -58,6 +58,20 @@
         Then all organization search results with ALLY will be displayed
 
 
+
+    Scenario: Organization Search Form with Customer Type ALLY  and Code Type Auction Code returns Auction Code ALLY results 
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Customer Dropdown menu
+        And selects ALLY from Dropdown menu
+        And clicks Code Type Dropdown menu
+        And selects Auction Code
+        And clicks search button
+        Then all organization search results with Auction Code ALLY will be displayed
+
+
     
     Scenario: Organization Search Form with Customer Type TFS returns TFS results 
 
@@ -83,6 +97,20 @@
 
 
 
+    Scenario: Organization Search Form with Customer Type VCI and Code Type VCI Dealer Code returns VCI and VCI Dealer Code results 
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Customer Dropdown menu
+        And selects VCI from Dropdown menu
+        And clicks the Code Type Dropdown menu
+        And selects VCI Dealer Code 
+        And clicks search button
+        Then all organization search results with VCI and VCI Dealer Code will be displayed
+
+
+
     Scenario: Organization Search Form with Customer Type CHRYSLER STYDER returns CHRYSLER STYDER results 
 
         Given current URL is AIM Inspect site home page
@@ -95,15 +123,29 @@
 
 
 
-    Scenario: Organization Search Form with Customer Type MENHEIM returns MENHEIM results 
+    Scenario: Organization Search Form with Customer Type MANHEIM returns MANHEIM results 
 
         Given current URL is AIM Inspect site home page
         When user overs over Request tab
         And click Search Organizations
         And clicks Customer Dropdown menu
-        And selects MENHEIM from Dropdown menu
+        And selects MANHEIM from Dropdown menu
         And clicks search button
-        Then all organization search results with MENHEIM will be displayed
+        Then all organization search results with MANHEIM will be displayed
+
+
+
+    Scenario: Organization Search Form with Customer Type MANHEIM and Code Type Auction Access Number returns MANHEIM and Auction Access Number results 
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Customer Dropdown menu
+        And selects MANHEIM from Dropdown menu
+        And clicks the Code Type Dropdown menu
+        And selects Auction Access Number 
+        And clicks search button
+        Then all organization search results with MANHEIM and Auction Access Number will be displayed
 
 
 
@@ -119,6 +161,19 @@
 
 
 
+    Scenario: Organization Search Form with Customer Type HYUNDAI  and Code Type Auction Code returns Auction Code HYUNDAI results 
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Customer Dropdown menu
+        And selects HYUNDAI from Dropdown menu
+        And clicks Code Type Dropdown menu
+        And selects Auction Code
+        And clicks search button
+        Then all organization search results with Auction Code HYUNDAI will be displayed
+
+
     Scenario: Organization Search Form with Customer Type NISSAN returns NISSAN results 
 
         Given current URL is AIM Inspect site home page
@@ -128,6 +183,35 @@
         And selects NISSAN from Dropdown menu
         And clicks search button
         Then all organization search results with NISSAN will be displayed
+
+
+
+
+    Scenario: Organization Search Form with Customer Type NISSAN and Code Type Dealer Code returns NISSAN and NISSAN Dealer Code results 
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Customer Dropdown menu
+        And selects NISSAN from Dropdown menu
+        And clicks the Code Type Dropdown menu
+        And selects Dealer Code 
+        And clicks search button
+        Then all organization search results with NISSAN and Dealer Code will be displayed
+
+
+
+    Scenario: Organization Search Form with Customer Type NISSAN and Code Type NNA Dealer Code returns NISSAN and NNA Dealer Code results 
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Customer Dropdown menu
+        And selects NISSAN from Dropdown menu
+        And clicks the Code Type Dropdown menu
+        And selects NNA Dealer Code 
+        And clicks search button
+        Then all organization search results with NISSAN and NNA Dealer Code will be displayed
 
 
 
@@ -537,15 +621,15 @@
 
 
 
-    Scenario: Organization Search Form with Customer Type MENHEIM returns MENHEIM results 
+    Scenario: Organization Search Form with Customer Type MANHEIM returns MANHEIM results 
 
         Given current URL is AIM Inspect site home page
         When user overs over Request tab
         And click Search Organizations
         And clicks Customer Dropdown menu
-        And selects MENHEIM from Dropdown menu
+        And selects MANHEIM from Dropdown menu
         And clicks search button
-        Then all organization search results with MENHEIM will be displayed
+        Then all organization search results with MANHEIM will be displayed
 
 
 
@@ -2042,6 +2126,29 @@
         And selects Alberta from dropdown menu
         And clicks search
         Then Alberta results are shown
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ###############################################################
+
+
+        # organization type
 
 
 
