@@ -1563,6 +1563,735 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
 
 
+
+
+
+
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and AL from States dropdown menu returns AL in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects AL from dropdown menu
+        And clicks search
+        Then AL results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and AK from States dropdown menu returns AK in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects AK from dropdown menu
+        And clicks search
+        Then AK results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and AZ from States dropdown menu returns AZ in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects AZ from dropdown menu
+        And clicks search
+        Then AZ results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and AR from States dropdown menu returns AR in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects AR from dropdown menu
+        And clicks search
+        Then AR results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and CA from States dropdown menu returns CA in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects CA from dropdown menu
+        And clicks search
+        Then CA results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and CO from States dropdown menu returns CO in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects CO from dropdown menu
+        And clicks search
+        Then CO results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and CT from States dropdown menu returns CT in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects CT from dropdown menu
+        And clicks search
+        Then CT results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and DE from States dropdown menu returns DE in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects DE from dropdown menu
+        And clicks search
+        Then DE results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and DC from States dropdown menu returns DC in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects DC from dropdown menu
+        And clicks search
+        Then DC results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and FL from States dropdown menu returns FL in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects FL from dropdown menu
+        And clicks search
+        Then FL results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and GA from States dropdown menu returns GA in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects GA from dropdown menu
+        And clicks search
+        Then GA results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and HI from States dropdown menu returns HI in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects HI from dropdown menu
+        And clicks search
+        Then HI results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and ID from States dropdown menu returns ID in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects ID from dropdown menu
+        And clicks search
+        Then ID results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and IL from States dropdown menu returns IL in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects IL from dropdown menu
+        And clicks search
+        Then IL results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and IN from States dropdown menu returns IN in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects IN from dropdown menu
+        And clicks search
+        Then IN results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and IA from States dropdown menu returns IA in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects IA from dropdown menu
+        And clicks search
+        Then IA results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and KS from States dropdown menu returns KS in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects KS from dropdown menu
+        And clicks search
+        Then KS results are shown
+
+    
+    Scenario: Organization Search Form with US selected from Country dropdown menu and KY from States dropdown menu returns KY in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects KY from dropdown menu
+        And clicks search
+        Then KY results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and LA from States dropdown menu returns LA in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects LA from dropdown menu
+        And clicks search
+        Then LA results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and ME from States dropdown menu returns ME in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects ME from dropdown menu
+        And clicks search
+        Then ME results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and MD from States dropdown menu returns MD in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects MD from dropdown menu
+        And clicks search
+        Then MD results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and MA  from States dropdown menu returns MA in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects MA from dropdown menu
+        And clicks search
+        Then MA results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and MI from States dropdown menu returns MI in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects MI from dropdown menu
+        And clicks search
+        Then MI results are shown
+
+
+    
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and MN from States dropdown menu returns MN in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects MN from dropdown menu
+        And clicks search
+        Then MN results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and MS from States dropdown menu returns MS in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects MS from dropdown menu
+        And clicks search
+        Then MS results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and MO from States dropdown menu returns MO in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects MO from dropdown menu
+        And clicks search
+        Then MO results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and MT from States dropdown menu returns MT in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects MT from dropdown menu
+        And clicks search
+        Then MT results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and NE from States dropdown menu returns NE in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects NE from dropdown menu
+        And clicks search
+        Then NE results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and NV from States dropdown menu returns NV in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects NV from dropdown menu
+        And clicks search
+        Then NV results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and NH from States dropdown menu returns NH in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects NH from dropdown menu
+        And clicks search
+        Then NH results are shown
+
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and NJ from States dropdown menu returns NJ in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects NJ from dropdown menu
+        And clicks search
+        Then NJ results are shown
+
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and NM from States dropdown menu returns NM in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects NM from dropdown menu
+        And clicks search
+        Then NM results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and NY from States dropdown menu returns NY in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects NY from dropdown menu
+        And clicks search
+        Then NY results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and NC from States dropdown menu returns NC in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects NC from dropdown menu
+        And clicks search
+        Then NC results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and ND from States dropdown menu returns ND in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects ND from dropdown menu
+        And clicks search
+        Then ND results are shown
+
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and OH from States dropdown menu returns OH in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects OH from dropdown menu
+        And clicks search
+        Then OH results are shown
+
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and OK from States dropdown menu returns OK in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects OK from dropdown menu
+        And clicks search
+        Then OK results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and OR from States dropdown menu returns OR in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects OR from dropdown menu
+        And clicks search
+        Then OR results are shown
+
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and PA from States dropdown menu returns PA in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects PA from dropdown menu
+        And clicks search
+        Then PA results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and PR from States dropdown menu returns PR in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects PR from dropdown menu
+        And clicks search
+        Then PR results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and RI from States dropdown menu returns RI in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects RI from dropdown menu
+        And clicks search
+        Then RI results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and SC from States dropdown menu returns SC in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects SC from dropdown menu
+        And clicks search
+        Then SC results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and SD from States dropdown menu returns SD in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects SD from dropdown menu
+        And clicks search
+        Then SD results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and TN from States dropdown menu returns TN in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects TN from dropdown menu
+        And clicks search
+        Then TN results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and TX from States dropdown menu returns TX in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects TX from dropdown menu
+        And clicks search
+        Then TX results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and UT from States dropdown menu returns UT in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects UT from dropdown menu
+        And clicks search
+        Then UT results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and VT from States dropdown menu returns VT in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects VT from dropdown menu
+        And clicks search
+        Then VT results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and VI from States dropdown menu returns VI in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects VI from dropdown menu
+        And clicks search
+        Then VI results are shown
+
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and WA from States dropdown menu returns WA in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects WA from dropdown menu
+        And clicks search
+        Then WA results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and WV from States dropdown menu returns WV in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects WV from dropdown menu
+        And clicks search
+        Then WV results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and WI from States dropdown menu returns WI in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects WI from dropdown menu
+        And clicks search
+        Then WI results are shown
+
+
+    Scenario: Organization Search Form with US selected from Country dropdown menu and WY from States dropdown menu returns WY in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects US from the options
+        And clicks States dropdown menu
+        And selects WY from dropdown menu
+        And clicks search
+        Then WY results are shown
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     Scenario: Organization Search Form with Canada selected from Country dropdown menu shows Canada states in States dropdown menu 
 
@@ -1697,12 +2426,8 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then SK results are shown
 
 
-        ############################
-        # TO DO
-        ############################
 
-
-    Scenario: Organization Search Form with Canada selected from Country dropdown menu and Alberta from States dropdown menu returns Alberta in search results
+    Scenario: Organization Search Form with Canada selected from Country dropdown menu and NT from States dropdown menu returns NT in search results
 
         Given current URL is AIM Inspect site home page
         When user overs over Request tab
@@ -1710,12 +2435,12 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And clicks Country Dropdown menu
         And selects Canada from the options
         And clicks States dropdown menu
-        And selects Alberta from dropdown menu
+        And selects NT from dropdown menu
         And clicks search
-        Then Alberta results are shown
+        Then NT results are shown
 
 
-    Scenario: Organization Search Form with Canada selected from Country dropdown menu and Alberta from States dropdown menu returns Alberta in search results
+    Scenario: Organization Search Form with Canada selected from Country dropdown menu and NU from States dropdown menu returns NU in search results
 
         Given current URL is AIM Inspect site home page
         When user overs over Request tab
@@ -1723,12 +2448,12 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And clicks Country Dropdown menu
         And selects Canada from the options
         And clicks States dropdown menu
-        And selects Alberta from dropdown menu
+        And selects NU from dropdown menu
         And clicks search
-        Then Alberta results are shown
+        Then NU results are shown
 
 
-    Scenario: Organization Search Form with Canada selected from Country dropdown menu and Alberta from States dropdown menu returns Alberta in search results
+    Scenario: Organization Search Form with Canada selected from Country dropdown menu and YT from States dropdown menu returns YT in search results
 
         Given current URL is AIM Inspect site home page
         When user overs over Request tab
@@ -1736,9 +2461,9 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And clicks Country Dropdown menu
         And selects Canada from the options
         And clicks States dropdown menu
-        And selects Alberta from dropdown menu
+        And selects YT from dropdown menu
         And clicks search
-        Then Alberta results are shown
+        Then YT results are shown
 
 
     Scenario: Organization Search Form with Canada selected from Country dropdown menu and Alberta from States dropdown menu returns Alberta in search results
