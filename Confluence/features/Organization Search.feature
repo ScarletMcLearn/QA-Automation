@@ -2150,6 +2150,19 @@
 
         # organization type
 
+    Scenario: Organization Search Form with Canada selected from Country dropdown menu and Alberta from States dropdown menu returns Alberta in search results
+
+        Given current URL is AIM Inspect site home page
+        When user overs over Request tab
+        And click Search Organizations
+        And clicks Country Dropdown menu
+        And selects Canada from the options
+        And clicks States dropdown menu
+        And selects Alberta from dropdown menu
+        And clicks search
+        Then Alberta results are shown
+        
+
 
 
 

@@ -323,6 +323,96 @@ Feature: AIM Site Login and Dashboard Functionalities
 
 
 
+
+    Scenario: No States selected on Dashboard shows no counts
+
+        When click on State Dropdown menu
+        And unselects all states
+        And clicks blank space on dashboard 
+        Then Dashboard updated to no counts
+
+
+
+
+    
+    Scenario: All States selected on Dashboard shows all states counts
+
+        When click on State Dropdown menu
+        And selects all states
+        And clicks blank space on dashboard 
+        Then Dashboard updated to all states counts
+
+
+
+    Scenario: Alabama selected on Dashboard shows Alabama counts
+
+        When click on State Dropdown menu
+        And selects Alabama
+        And clicks blank space on dashboard 
+        Then Dashboard updated to Alabama counts
+
+
+
+
+
+
+    Scenario: Changing Overdue Inspection to Cancel, decrease Overdue Inspection count and increase Awaiting Quality count
+
+        When click on Dashboard
+        And click on Overdue Inspections
+        And see the result count
+        And click the status of the first result
+        And inspection request detail page is displayed
+        And click status from inspection request detail page
+        And update status form is displayed
+        And change status to Cancel
+        And add a comment
+        And click save 
+        And click on Dashboard 
+        Then Overdue Inspections count decrease by 1 and Awaiting Quality count increase by 1
+
+
+
+    Scenario: Changing Due Today to Cancel, decrease Due Today count, Awaiting Quality Count, and  Overdue Inspection count
+
+        When click on Dashboard
+        And click on Overdue Inspections
+        And see the result count
+        And click the status of the first result
+        And inspection request detail page is displayed
+        And click status from inspection request detail page
+        And update status form is displayed
+        And change status to Cancel
+        And add a comment
+        And click save 
+        And click on Dashboard 
+        Then Due Today count, Awaiting Quality Count, and  Overdue Inspection count decrease by 1 
+
+
+
+    Scenario: Changing Awaiting CSR to Cancel, decrease Awaiting CSR count
+
+        When click on Dashboard
+        And click on Awaiting CSR
+        And see the result count
+        And click the status of the first result
+        And inspection request detail page is displayed
+        And click status from inspection request detail page
+        And update status form is displayed
+        And change status to Cancel
+        And add a comment
+        And click save 
+        And click on Dashboard 
+        Then Awaiting CSR count decrease by 1 
+
+
+
+
+
+
+
+
+
   To do # Request
   - Basic Search
   - Advance search
