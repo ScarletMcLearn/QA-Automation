@@ -625,6 +625,17 @@ Feature: AIM Site functionalities
         Then results show 7-UXUI2  
 
 
+
+
+
+    Scenario: Nav search bar fills Basic search form
+
+        When user clicks nav search bar
+        And enters text in field 
+        And presses enter
+        Then Basic search form results with the text is shown 
+
+
     
 
 
