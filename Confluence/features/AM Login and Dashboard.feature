@@ -352,6 +352,30 @@ Feature: AIM Site Login and Dashboard Functionalities
         Then Dashboard updated to Alabama counts
 
 
+    Scenario: Alaska selected on Dashboard shows Alaska counts
+
+        When click on State Dropdown menu
+        And selects Alaska
+        And clicks blank space on dashboard 
+        Then Dashboard updated to Alaska counts
+
+
+    Scenario: Arizona selected on Dashboard shows Arizona counts
+
+        When click on State Dropdown menu
+        And selects Arizona
+        And clicks blank space on dashboard 
+        Then Dashboard updated to Arizona counts
+
+
+    Scenario: Arizona, Alaska and Alabama selected on Dashboard shows total counts of Arizona, Alaska and Alabama
+
+        When click on State Dropdown menu
+        And selects  Arizona, Alaska and Alabama
+        And clicks blank space on dashboard 
+        Then Dashboard updated to  Arizona, Alaska and Alabama counts summed
+
+
 
 
 
@@ -404,6 +428,57 @@ Feature: AIM Site Login and Dashboard Functionalities
         And click save 
         And click on Dashboard 
         Then Awaiting CSR count decrease by 1 
+
+
+
+    Scenario: Changing Awaiting Dispatch to Cancel, decrease Awaiting Dispatch count
+
+        When click on Dashboard
+        And click on Awaiting Dispatch
+        And see the result count
+        And click the status of the first result
+        And inspection request detail page is displayed
+        And click status from inspection request detail page
+        And update status form is displayed
+        And change status to Cancel
+        And add a comment
+        And click save 
+        And click on Dashboard 
+        Then Awaiting Dispatch count decrease by 1 
+
+
+
+    Scenario: Changing Awaiting Quality to Cancel, decrease Awaiting Quality count and Overdue Inspections count
+
+        When click on Dashboard
+        And click on Awaiting Quality
+        And see the result count
+        And click the status of the first result
+        And inspection request detail page is displayed
+        And click status from inspection request detail page
+        And update status form is displayed
+        And change status to Cancel
+        And add a comment
+        And click save 
+        And click on Dashboard 
+        Then Awaiting Quality count and Overdue Inspections count decrease by 1 
+
+
+
+    Scenario: Changing Open Request to Cancel, decrease Open Request count
+
+        When click on Dashboard
+        And click on Open Request
+        And see the result count
+        And click the status of the first result
+        And inspection request detail page is displayed
+        And click status from inspection request detail page
+        And update status form is displayed
+        And change status to Cancel
+        And add a comment
+        And click save 
+        And click on Dashboard 
+        Then Open Request count decrease by 1 
 
 
 
