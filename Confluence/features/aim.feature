@@ -1287,6 +1287,72 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then form is not accepted and error message is shown
 
 
+
+
+    Scenario: Inspection Request detail page shows all sections
+
+        When user goes to a particular inspection requests detail page 
+        Then all Inspection Request detail page sections are visible  
+
+
+    Scenario: Inspection Request detail page shows all Lesse info section information
+
+        When user goes to a particular inspection requests detail page 
+        And Lesse info section is shown 
+        Then Lesse info section displays all relevant information 
+
+
+    Scenario: Inspection Request detail page shows all Dealer info section information
+
+        When user goes to a particular inspection requests detail page 
+        And Dealer info section is shown 
+        Then Dealer info section displays all relevant information 
+
+
+    Scenario: Inspection Request detail page shows all Vehicle Info section information
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        Then Vehicle info section displays all relevant information 
+
+
+    Scenario: Inspection Request detail page shows all Dispositions section information
+
+        When user goes to a particular inspection requests detail page 
+        And Dispositions section is shown 
+        Then Dispositions section displays all relevant information 
+
+
+    Scenario: Inspection Request detail page shows all Current Appointment Detail section information
+
+        When user goes to a particular inspection requests detail page 
+        And Current Appointment Detail section is shown 
+        Then Current Appointment Detail section displays all relevant information 
+
+
+    Scenario: Inspection Request detail page shows all Appointments section information
+
+        When user goes to a particular inspection requests detail page 
+        And Appointments section is shown 
+        Then Appointments section displays all relevant information 
+
+
+    Scenario: Inspection Request detail page shows all Internal Comments section information
+
+        When user goes to a particular inspection requests detail page 
+        And Internal Comments section is shown 
+        Then Internal Comments section displays all relevant information 
+
+
+    Scenario: Inspection Request detail page shows all Request History section information
+
+        When user goes to a particular inspection requests detail page 
+        And Request History section is shown 
+        Then Request History section displays all relevant information 
+
+
+
+
     
 
     

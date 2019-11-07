@@ -2229,6 +2229,13 @@
         
 
 
+    Scenario: Completed Organization Search form cleared by clicking reset
+
+        Given organization search form is completed 
+        And user clicks reset 
+        Then organization search form is cleared 
+
+
 
 
 

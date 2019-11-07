@@ -637,10 +637,70 @@ Feature: AIM Site functionalities
 
 
     
+    Scenario: Basic search with Active Records Only unselected and VIN in search box returns inactive results
+
+        When user hovers over request
+        And clicks search request
+        And clicks basic search
+        And enters vin in search box
+        And unselects Active Records Only checkbox
+        And clicks search
+        Then inactive vin results will also be shown
 
 
+    Scenario: Basic search with Active Records Only unselected and Phone in search box returns inactive results
+
+        When user hovers over request
+        And clicks search request
+        And clicks basic search
+        And enters Phone in search box
+        And unselects Active Records Only checkbox
+        And clicks search
+        Then inactive Phone results will also be shown
 
 
+    Scenario: Basic search with Active Records Only unselected and Conf# in search box returns inactive results
+
+        When user hovers over request
+        And clicks search request
+        And clicks basic search
+        And enters Conf# in search box
+        And unselects Active Records Only checkbox
+        And clicks search
+        Then inactive Conf# results will also be shown
+
+
+    Scenario: Basic search with Active Records Only unselected and Account in search box returns inactive results
+
+        When user hovers over request
+        And clicks search request
+        And clicks basic search
+        And enters Account in search box
+        And unselects Active Records Only checkbox
+        And clicks search
+        Then inactive Account results will also be shown
+
+
+    Scenario: Basic search with Active Records Only unselected and Dealer Name in search box returns inactive results
+
+        When user hovers over request
+        And clicks search request
+        And clicks basic search
+        And enters Dealer Name in search box
+        And unselects Active Records Only checkbox
+        And clicks search
+        Then inactive Dealer Name results will also be shown
+
+
+    Scenario: Basic search with Active Records Only unselected and Lesse Name in search box returns inactive results
+
+        When user hovers over request
+        And clicks search request
+        And clicks basic search
+        And enters Lesse Name in search box
+        And unselects Active Records Only checkbox
+        And clicks search
+        Then inactive Lesse Name results will also be shown
     
 
     
