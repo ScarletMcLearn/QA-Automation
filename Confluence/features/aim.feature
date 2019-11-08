@@ -323,7 +323,7 @@ Feature: AIM Site functionalities
 
 
 
-    Scenario: Edit Lessee info
+    Scenario: Edit Lessee info form displayed
 
         Given current page is single inspection search result detail page 
         When find Lessee Info section
@@ -331,14 +331,59 @@ Feature: AIM Site functionalities
         And click on Lessee Info edit button
         Then edit Lessee Info page is shown 
 
+    Scenario: Edit Lessee info form accepted with all required fields
 
-    Scenario: Edit Dealer info
+        Given current page is single inspection search result detail page 
+        When find Dealer Info section
+        And hover over Lessee Info edit button
+        And click on Lessee Info edit button
+        And edit Lessee Info page is shown 
+        And User inputs all the required fields
+        And clicks Save
+        Then Lessee info is edited sucessfully
+
+
+     Scenario: Edit Lessee info form not accepted without all required fields
+
+        Given current page is single inspection search result detail page 
+        When find Lessee Info section
+        And hover over Lessee Info edit button
+        And click on Lessee Info edit button
+        And edit Lessee Info page is shown 
+        And clicks Save
+        Then Required Fields error message displayed
+
+
+    Scenario: Edit Dealer info form displayed
 
         Given current page is single inspection search result detail page 
         When find Dealer Info section
         And hover over Dealer Info edit button
         And click on Dealer Info edit button
         Then edit Dealer Info page is shown 
+
+#################
+    Scenario: Edit Dealer info form accepted with all required fields
+
+        Given current page is single inspection search result detail page 
+        When find Dealer Info section
+        And hover over Dealer Info edit button
+        And click on Dealer Info edit button
+        And edit Dealer Info page is shown 
+        And User inputs all the required fields
+        And clicks Save
+        Then Dealer info is edited sucessfully
+
+
+     Scenario: Edit Dealer info form not accepted without all required fields
+
+        Given current page is single inspection search result detail page 
+        When find Dealer Info section
+        And hover over Dealer Info edit button
+        And click on Dealer Info edit button
+        And edit Dealer Info page is shown 
+        And clicks Save
+        Then Required Fields error message displayed
 
 
     Scenario: Add Disposition
@@ -2171,6 +2216,131 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And User closes Add Disposition window
         Then comment updated in Current Appointmnet Detail section  
 
+
+
+
+
+    Scenario: Inspection Request Update Status form displayed
+
+        Given current page is inspection request detail page 
+        And status is Pending 
+        When click Pending status 
+        Then Update status form is shown
+
+
+    Scenario: Inspection Request Detail Status updated to Hold with Reason Awaiting Quality
+
+        Given current page is inspection request detail page 
+        And status is Pending 
+        When click Pending status 
+        And Update status form is shown
+        And click Hold status 
+        And click Reason Dropdown menu
+        And select Awaiting Quality 
+        And click save 
+        Then Inspection Request Detail page updated with status from Pending to Hold with Reason Awaiting Quality
+
+    Scenario: Inspection Request Detail Status updated to Hold with Reason Awaiting Dispatch
+
+        Given current page is inspection request detail page 
+        And status is Pending 
+        When click Pending status 
+        And Update status form is shown
+        And click Hold status 
+        And click Reason Dropdown menu
+        And select Awaiting Dispatch 
+        And click save 
+        Then Inspection Request Detail page updated with status from Pending to Hold with Reason Awaiting Dispatch
+
+    Scenario: Inspection Request Detail Status updated to Hold with Reason Awaiting CSR Action
+
+        Given current page is inspection request detail page 
+        And status is Pending 
+        When click Pending status 
+        And Update status form is shown
+        And click Hold status 
+        And click Reason Dropdown menu
+        And select Awaiting CSR Action 
+        And click save 
+        Then Inspection Request Detail page updated with status from Pending to Hold with Reason Awaiting CSR Action
+
+    Scenario: Inspection Request Detail Status updated to Hold with Reason Awaiting Helpdesk
+
+        Given current page is inspection request detail page 
+        And status is Pending 
+        When click Pending status 
+        And Update status form is shown
+        And click Hold status 
+        And click Reason Dropdown menu
+        And select Awaiting Helpdesk 
+        And click save 
+        Then Inspection Request Detail page updated with status from Pending to Hold with Reason Awaiting Helpdesk
+
+    Scenario: Inspection Request Detail Status updated to Hold with Reason Awaiting Financial info
+
+        Given current page is inspection request detail page 
+        And status is Pending 
+        When click Pending status 
+        And Update status form is shown
+        And click Hold status 
+        And click Reason Dropdown menu
+        And select Awaiting Financial info 
+        And click save 
+        Then Inspection Request Detail page updated with status from Pending to Hold with Reason Awaiting Financial info
+
+    Scenario: Inspection Request Detail Status updated to Hold with Reason Awaiting Client
+
+        Given current page is inspection request detail page 
+        And status is Pending 
+        When click Pending status 
+        And Update status form is shown
+        And click Hold status 
+        And click Reason Dropdown menu
+        And select Awaiting Client 
+        And click save 
+        Then Inspection Request Detail page updated with status from Pending to Hold with Reason Awaiting Client
+
+    Scenario: Inspection Request Detail Status updated to Hold with Reason Awaiting Date
+
+        Given current page is inspection request detail page 
+        And status is Pending 
+        When click Pending status 
+        And Update status form is shown
+        And click Hold status 
+        And click Reason Dropdown menu
+        And select Awaiting Date 
+        And click save 
+        Then Inspection Request Detail page updated with status from Pending to Hold with Reason Awaiting Date
+
+
+
+
+    Scenario: Inspection Request Detail Status updated to Cancel with Reason Per Aim Request
+
+        Given current page is inspection request detail page 
+        And status is Pending 
+        When click Pending status 
+        And Update status form is shown
+        And click Cancel status 
+        And click Reason Dropdown menu
+        And select Per Aim Request
+        And enter a comment for internal use
+        And click save 
+        Then Inspection Request Detail page updated with status from Pending to Cancel with Reason Per Aim Request
+
+
+    Scenario: Inspection Request Detail Status updated to Cancel with Reason Per Customer Request
+
+        Given current page is inspection request detail page 
+        And status is Pending 
+        When click Pending status 
+        And Update status form is shown
+        And click Cancel status 
+        And click Reason Dropdown menu
+        And select Per Customer Request 
+        And enter a comment for internal use
+        And click save 
+        Then Inspection Request Detail page updated with status from Pending to Cancel with Reason Per Customer Request
     
 # TO DO
 # https://crm-uat.aiminspect.com/#!/inspection-request/add
