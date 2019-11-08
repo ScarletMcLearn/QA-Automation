@@ -2342,6 +2342,21 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And click save 
         Then Inspection Request Detail page updated with status from Pending to Cancel with Reason Per Customer Request
     
+
+
+    Scenario: Organization detail page is shown
+
+        Given organization exists
+        When user clicks Request tab 
+        And clicks search organization 
+        And organization search page is shown
+        And clicks search button 
+        And organization search results are shown 
+        And clicks on a result
+        Then organization detail page is shown  
+
+
+        
 # TO DO
 # https://crm-uat.aiminspect.com/#!/inspection-request/add
 # CUSTOMER : MANHEIM
