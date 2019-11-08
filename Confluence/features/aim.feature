@@ -1640,11 +1640,397 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then Vehicle info section displays all relevant information 
 
 
-    Scenario: Inspection Request detail page shows all Vehicle Info section information
+    Scenario: Inspection Request detail page edit Vehicle Info form appears
 
         When user goes to a particular inspection requests detail page 
         And Vehicle info section is shown 
-        Then Vehicle info section displays all relevant information 
+        And user clicks edit vehicle info button
+        Then edit Vehicle info form displayed  
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN information
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with incorrect VIN
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters incorrect VIN
+        And clicks Save 
+        Then Incorrect VIN error message is displayed 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock #
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # information
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year information
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make information
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Gray
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Gray
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Gray information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Black
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Black
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Black information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Blue
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Blue
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Blue information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Brown
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Brown
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Brown information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Gold
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Gold
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Gold information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Green
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Green
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Green information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Orange
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Orange
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Orange information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Red
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Red
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Red information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Silver
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Silver
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Silver information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color White
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color White
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color White information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Yellow
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Yellow
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Yellow information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Tan
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Tan
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Tan information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Violet
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Violet
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Violet information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Pink
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Pink
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Pink information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Grey
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Grey
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Grey information 
+
+
+    Scenario: Inspection Request detail page edit Vehicle Info successful with proper VIN and Stock # and Year and Make and Model and Trim and Color Other
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        And user clicks edit vehicle info button
+        And edit Vehicle info form displayed  
+        And enters proper VIN
+        And enters Stock #
+        And enters Year
+        And enters Make
+        And enters Model
+        And enters Trim
+        And clicks color dropdown menu
+        And selects color Other
+        And clicks Save 
+        Then Vehicle Info section updated with new VIN and Stock # and Year and Make and Model and Trim and color Other information 
+
+
+
+
+
 
 
     Scenario: Inspection Request detail page shows all Dispositions section information
