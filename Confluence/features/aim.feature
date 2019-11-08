@@ -354,6 +354,322 @@ Feature: AIM Site functionalities
         Then Disposition is added in Disposition section
 
 
+
+    Scenario: Add Incoming Call Busy Signal Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Incoming Call from call type options
+        And click disposition type dropdown menu 
+        And select Busy Signal disposition type from dropdown menu
+        And click Add
+        Then Incoming Call Busy Signal Disposition is added in Disposition section
+
+
+    Scenario: Add Incoming Call Contact made Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Incoming Call from call type options
+        And click disposition type dropdown menu 
+        And select Contact made disposition type from dropdown menu
+        And click Add
+        Then Incoming Call Contact made Disposition is added in Disposition section
+
+
+    Scenario: Add Incoming Call Inspector Unavailable Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Incoming Call from call type options
+        And click disposition type dropdown menu 
+        And select Inspector Unavailable disposition type from dropdown menu
+        And click Add
+        Then Incoming Call Inspector Unavailable Disposition is added in Disposition section
+
+
+    Scenario: Add Incoming Call Left message with someone Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Incoming Call from call type options
+        And click disposition type dropdown menu 
+        And select Left message with someone disposition type from dropdown menu
+        And click Add
+        Then Incoming Call Left message with someone Disposition is added in Disposition section
+
+
+    Scenario: Add Incoming Call Lessee Requests Cancel Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Incoming Call from call type options
+        And click disposition type dropdown menu 
+        And select Lessee Requests Cancel disposition type from dropdown menu
+        And click Add
+        Then Incoming Call Lessee Requests Cancel Disposition is added in Disposition section
+
+
+    Scenario: Add Incoming Call Lessee Uncooperative Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Incoming Call from call type options
+        And click disposition type dropdown menu 
+        And select Lessee Uncooperative disposition type from dropdown menu
+        And click Add
+        Then Incoming Call Lessee Uncooperative Disposition is added in Disposition section
+
+
+    Scenario: Add Incoming Call Need Contact Name Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Incoming Call from call type options
+        And click disposition type dropdown menu 
+        And select Need Contact Name disposition type from dropdown menu
+        And click Add
+        Then Incoming Call Need Contact Name Disposition is added in Disposition section
+
+    Scenario: Add Incoming Call No Answer Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Incoming Call from call type options
+        And click disposition type dropdown menu 
+        And select No Answer disposition type from dropdown menu
+        And click Add
+        Then Incoming Call No Answer Disposition is added in Disposition section
+
+    Scenario: Add Incoming Call Purchase Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Incoming Call from call type options
+        And click disposition type dropdown menu 
+        And select Purchase disposition type from dropdown menu
+        And click Add
+        Then Incoming Call Purchase Disposition is added in Disposition section
+
+    Scenario: Add Incoming Call Scheduled Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Incoming Call from call type options
+        And click disposition type dropdown menu 
+        And select Scheduled disposition type from dropdown menu
+        And click Add
+        Then Incoming Call Scheduled Disposition is added in Disposition section
+
+    Scenario: Add Incoming Call Voice Mail Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Incoming Call from call type options
+        And click disposition type dropdown menu 
+        And select Voice Mail disposition type from dropdown menu
+        And click Add
+        Then Incoming Call Voice Mail Disposition is added in Disposition section
+
+
+    
+
+
+    Scenario: Add Outgoing Call Busy Signal Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Outgoing Call from call type options
+        And click disposition type dropdown menu 
+        And select Busy Signal disposition type from dropdown menu
+        And click Add
+        Then Outgoing Call Busy Signal Disposition is added in Disposition section
+
+
+    Scenario: Add Outgoing Call Contact made Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Outgoing Call from call type options
+        And click disposition type dropdown menu 
+        And select Contact made disposition type from dropdown menu
+        And click Add
+        Then Outgoing Call Contact made Disposition is added in Disposition section
+
+
+    Scenario: Add Outgoing Call Inspector Unavailable Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Outgoing Call from call type options
+        And click disposition type dropdown menu 
+        And select Inspector Unavailable disposition type from dropdown menu
+        And click Add
+        Then Outgoing Call Inspector Unavailable Disposition is added in Disposition section
+
+
+    Scenario: Add Outgoing Call Left message with someone Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Outgoing Call from call type options
+        And click disposition type dropdown menu 
+        And select Left message with someone disposition type from dropdown menu
+        And click Add
+        Then Outgoing Call Left message with someone Disposition is added in Disposition section
+
+
+    Scenario: Add Outgoing Call Lessee Requests Cancel Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Outgoing Call from call type options
+        And click disposition type dropdown menu 
+        And select Lessee Requests Cancel disposition type from dropdown menu
+        And click Add
+        Then Outgoing Call Lessee Requests Cancel Disposition is added in Disposition section
+
+
+    Scenario: Add Outgoing Call Lessee Uncooperative Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Outgoing Call from call type options
+        And click disposition type dropdown menu 
+        And select Lessee Uncooperative disposition type from dropdown menu
+        And click Add
+        Then Outgoing Call Lessee Uncooperative Disposition is added in Disposition section
+
+
+    Scenario: Add Outgoing Call Need Contact Name Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Outgoing Call from call type options
+        And click disposition type dropdown menu 
+        And select Need Contact Name disposition type from dropdown menu
+        And click Add
+        Then Outgoing Call Need Contact Name Disposition is added in Disposition section
+
+    Scenario: Add Outgoing Call No Answer Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Outgoing Call from call type options
+        And click disposition type dropdown menu 
+        And select No Answer disposition type from dropdown menu
+        And click Add
+        Then Outgoing Call No Answer Disposition is added in Disposition section
+
+    Scenario: Add Outgoing Call Purchase Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Outgoing Call from call type options
+        And click disposition type dropdown menu 
+        And select Purchase disposition type from dropdown menu
+        And click Add
+        Then Outgoing Call Purchase Disposition is added in Disposition section
+
+    Scenario: Add Outgoing Call Scheduled Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Outgoing Call from call type options
+        And click disposition type dropdown menu 
+        And select Scheduled disposition type from dropdown menu
+        And click Add
+        Then Outgoing Call Scheduled Disposition is added in Disposition section
+
+    Scenario: Add Outgoing Call Voice Mail Disposition
+
+        Given current page is single inspection search result detail page 
+        When find Dispositions section
+        And hover over Add Disposition button
+        And click Add Disposition button
+        And Add Disposition page is displayed
+        And select Outgoing Call from call type options
+        And click disposition type dropdown menu 
+        And select Voice Mail disposition type from dropdown menu
+        And click Add
+        Then Outgoing Call Voice Mail Disposition is added in Disposition section
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
     Scenario: Schedule Appointment
 
         Given current page is single inspection search result detail page 
@@ -375,6 +691,14 @@ Feature: AIM Site functionalities
         And input comment in field
         And click Add
         Then comment can be seen in Internal Comments section
+
+
+    Scenario: Internal Comment shows all relavent information 
+
+        Given current page is inspection request detail page
+        And current Inspection Request detail page has internal comment 
+        When User finds Internal Comments section
+        Then Internal Comments section includes internal comment(s) with all proper data  
 
 
     Scenario: Navigate to Add Organization Page
@@ -1316,11 +1640,26 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then Vehicle info section displays all relevant information 
 
 
+    Scenario: Inspection Request detail page shows all Vehicle Info section information
+
+        When user goes to a particular inspection requests detail page 
+        And Vehicle info section is shown 
+        Then Vehicle info section displays all relevant information 
+
+
     Scenario: Inspection Request detail page shows all Dispositions section information
 
         When user goes to a particular inspection requests detail page 
         And Dispositions section is shown 
         Then Dispositions section displays all relevant information 
+
+
+    Scenario: Inspection Request detail page shows Dispositions empty message if does not exist
+
+        Given internal comment does not exist
+        When user goes to a particular inspection requests detail page 
+        And Dispositions section is shown 
+        Then Dispositions section displays does not exist text  
 
 
     Scenario: Inspection Request detail page shows all Current Appointment Detail section information
@@ -1330,11 +1669,60 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then Current Appointment Detail section displays all relevant information 
 
 
+    Scenario: Appointment Audits displayed when clicks Appointment from Appointments section of Inspection Request detail page
+
+        Given Appointment exists in Appointment Detail page 
+        When user goes to a particular inspection requests detail page 
+        And Appointments section is shown 
+        And user clicks Appointment from Appointments
+        Then Appointment Audit list is displayed 
+
+
+
+
+
+# To do
+
+    Scenario: Appointment Audits detail displayed when clicks Appointment from Appointmen Audits 
+
+        Given Appointment exists in Appointment Detail page 
+        When user goes to a particular inspection requests detail page 
+        And Appointments section is shown 
+        And user clicks Appointment from Appointments
+        Then Appointment Audit list is displayed 
+
+
+
+    Scenario: Appointment Audits window closed when clicks CLOSE
+
+        Given Appointment exists in Appointment Detail page 
+        When user goes to a particular inspection requests detail page 
+        And Appointments section is shown 
+        And user clicks Appointment from Appointments
+        And Appointment Audit list is displayed 
+        And when user clicks close button 
+        Then Appointment Audit list window is closed and Appointment Detail page is shown 
+
+
+    Scenario: Appointment Audits window closed when clicks cross button
+
+        Given Appointment exists in Appointment Detail page 
+        When user goes to a particular inspection requests detail page 
+        And Appointments section is shown 
+        And user clicks Appointment from Appointments
+        And Appointment Audit list is displayed 
+        And when user clicks cross button 
+        Then Appointment Audit list window is closed and Appointment Detail page is shown 
+
+
+
     Scenario: Inspection Request detail page shows all Appointments section information
 
         When user goes to a particular inspection requests detail page 
         And Appointments section is shown 
         Then Appointments section displays all relevant information 
+
+
 
 
     Scenario: Inspection Request detail page shows all Internal Comments section information
@@ -1344,16 +1732,58 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then Internal Comments section displays all relevant information 
 
 
+    Scenario: Inspection Request detail page shows Internal Comments empty message if does not exist
+
+        Given internal comment does not exist
+        When user goes to a particular inspection requests detail page 
+        And Internal Comments section is shown 
+        Then Internal Comments section displays does not exist text  
+
+
     Scenario: Inspection Request detail page shows all Request History section information
 
+        Given Request History exists
         When user goes to a particular inspection requests detail page 
         And Request History section is shown 
         Then Request History section displays all relevant information 
 
 
+    Scenario: Inspection Request detail page shows all Request History section information
+
+        Given Request History exists
+        When user goes to a particular inspection requests detail page 
+        And Request History section is shown 
+        And user clicks a particular request history row
+        Then particular Request History row's all relevant information are shown
+
+
 
 
     
+    Scenario: Add inspector Comment to Current Appointment Detail
+
+        Given Inspection Comment does not exist
+        And current page is Inspection Request Detail page 
+        When user clicks Comment for inspector
+        And Edit Inspector Comment window shown
+        And user enters comment
+        And clicks save 
+        And Add Disposition window shown 
+        And User closes Add Disposition window
+        Then comment added in Current Appointmnet Detail section  
+
+
+    Scenario: Edit inspector Comment on Current Appointment Detail
+
+        Given Inspection Comment does exist
+        And current page is Inspection Request Detail page 
+        When user clicks on Edit inspector Comment
+        And Edit Inspector Comment window shown
+        And user enters comment
+        And clicks save 
+        And Add Disposition window shown 
+        And User closes Add Disposition window
+        Then comment updated in Current Appointmnet Detail section  
 
     
 # TO DO
