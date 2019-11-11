@@ -2238,6 +2238,80 @@
 
 
 
+    Scenario: Using valid ZIP and organization result exist show appropriate results 
+
+        Given ZIP valid 
+        And Organizaiton with ZIP exists 
+        When user click Request
+        And click Search Organizations
+        And enters ZIP in ZIP field 
+        And clicks Search
+        Then results shown including inputted ZIP
+
+
+    Scenario: Using invalid ZIP show no results 
+
+        Given ZIP invalid 
+        When user click Request
+        And click Search Organizations
+        And enters ZIP in ZIP field 
+        And clicks Search
+        Then no results shown
+
+
+    Scenario: Using valid ZIP and organization result does not exist show no results 
+
+        Given ZIP valid 
+        And Organizaiton with ZIP does not exists 
+        When user click Request
+        And click Search Organizations
+        And enters ZIP in ZIP field 
+        And clicks Search
+        Then no results shown 
+
+
+
+    Scenario: Organization Search form with Organization Name shows results with Organization Name specified 
+
+        When user click Request
+        And click Search Organizations
+        And enters Organization Name in Organization Name field 
+        And clicks Search
+        Then results show Organizations with given Organization Name 
+
+
+
+
+    Scenario: Using valid Organization Code and organization result exist show appropriate results 
+
+        Given ZIP valid 
+        And Organizaiton with Organization Code exists 
+        When user click Request
+        And click Search Organizations
+        And enters Organization Code in Organization Code field 
+        And clicks Search
+        Then results shown including inputted Organization Code
+
+
+    Scenario: Using invalid Organization Code show no results 
+
+        Given Organization Code invalid 
+        When user click Request
+        And click Search Organizations
+        And enters Organization Code in Organization Code field 
+        And clicks Search
+        Then no results shown
+
+
+    Scenario: Using valid Organization Code and organization result does not exist show no results 
+
+        Given Organization Code valid 
+        And Organizaiton with Organization Code does not exists 
+        When user click Request
+        And click Search Organizations
+        And enters Organization Code in Organization Code field 
+        And clicks Search
+        Then no results shown 
 
 
 
