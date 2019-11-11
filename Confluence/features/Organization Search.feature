@@ -1,4 +1,12 @@
+Feature: 
 
+    Background: 
+
+        Given Browser is opened
+        And nagivated to AIM inspect site // https://crm-qa.aiminspect.com/
+        And AIM Inspect site is displayed 
+        And correct user name and password is entered
+        And login form is submitted
 
 
 
@@ -2314,6 +2322,18 @@
         Then no results shown 
 
 
+
+
+    Scenario: Organization detail page is shown
+
+        Given organization exists
+        When user clicks Request tab 
+        And clicks search organization 
+        And organization search page is shown
+        And clicks search button 
+        And organization search results are shown 
+        And clicks on a result
+        Then organization detail page is shown  
 
 
 
