@@ -27,3 +27,25 @@ Feature:
         And fill up Add Organization form
         And click Submit
         Then AIM Inspect home page is displayed
+
+
+
+
+
+    
+    Scenario: Add Dealer Chase US AL Organization
+
+        Given current page is New Organization page 
+        When User click Customer Dropdown menu
+        And select Chase
+        And click Organization Type Dropdown menu 
+        And selects Dealer 
+        And clicks Organization name field
+        And enters Organization name
+        And selects US from Billing Address dropdown menu 
+        And clicks Street 1 field
+        And enters a valid Street
+        And clicks City field
+        And enters a valid City
+        And clicks State dropdown menu 
+        And selects AL from state

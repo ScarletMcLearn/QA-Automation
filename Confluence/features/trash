@@ -1,83 +1,13 @@
-Scenario: If Inspection already requested by HYUNDAI then redirected to Inspection Request Detail page
-
-        Given Browser is opened
-        And logged in to AIM Inspect site
-        And current page is Inspection Request page
-        And account number exists
-        And  account has inspection requsted already
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        Then redirected to Inspection Requested Detail page for that account
-
-
-    Scenario: If Inspection not already requested by HYUNDAI then form is rendered
-
-        Given Browser is opened
-        And logged in to AIM Inspect site
-        And current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        Then Inspection Request form is rendered 
 
 
     
-    Scenario: Inspection Request form submitted successfully by HYUNDAI 
-
-        Given Browser is opened
-        And logged in to AIM Inspect site
-        And current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        And Request form is rendered 
-        And fill up all the form fields with 
-        required data 
-        And click submit 
-        Then newly created inspection request notification message is shown
 
 
-    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by HYUNDAI 
-
-        Given Browser is opened
-        And logged in to AIM Inspect site
-        And current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        And Request form is rendered 
-        And fill up all the mandatory form fields with 
-        required data 
-        And click submit 
-        Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form not submitted by HYUNDAI without mandatory fields 
-
-        Given Browser is opened
-        And logged in to AIM Inspect site
-        And current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        And Request form is rendered 
-        And leave mandatory fields empty 
-        And click submit 
-        Then form is not accepted and error message is shown
 
 
-    
+
 
     
 

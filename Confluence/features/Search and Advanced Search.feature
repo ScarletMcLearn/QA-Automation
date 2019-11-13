@@ -1,4 +1,4 @@
-Feature: AIM Site functionalities
+Feature: Search and Advanced Search functionalities
 
     Background: 
 
