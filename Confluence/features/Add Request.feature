@@ -40,6 +40,11 @@ Feature: Add Request functionalities
        
 
 
+    Scenario: Add Request page is loading 
+
+
+
+
 
 
 
@@ -961,3 +966,6 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And leave mandatory fields empty 
         And click submit 
         Then form is not accepted and error message is shown
+
+
+
