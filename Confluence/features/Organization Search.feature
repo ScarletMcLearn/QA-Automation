@@ -22,6 +22,19 @@ Feature:
 
 
 
+    Scenario: Organization Search Form with Active Records Only unchecked and no values returns all Organizations and inactive records
+
+        Given current URL is AIM Inspect site home page
+        When user hovers cursor over Request tab
+        And click Search Organizations
+        And leaves Search form empty
+        And unchecks Active Records Only field 
+        And clicks search button
+        Then all organization search results with no inactive records will be displayed 
+
+
+
+
     Scenario: Organization Search Form Customer Type dropdown menu functioning 
 
         Given current URL is AIM Inspect site home page
@@ -733,6 +746,28 @@ Feature:
         And clicks search
         Then Auction results are shown
 
+
+
+    Scenario: Organization Search Form Organization type dropdown menu shows organization types
+
+        Given current URL is AIM Inspect site home page
+        When user hovers cursor over Request tab
+        And click Search Organizations
+        And clicks Organization type Dropdown menu
+        Then different Organization types are shown
+
+
+
+
+    Scenario: Organization Search Form Code type dropdown menu shows Code types
+
+        Given current URL is AIM Inspect site home page
+        When user hovers cursor over Request tab
+        And click Search Organizations
+        And clicks Customer dropdown menu 
+        And selects a customer from dropdown menu
+        And clicks Code type Dropdown menu
+        Then different Code types are shown
 
 
 

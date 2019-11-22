@@ -40,13 +40,317 @@ Feature: Add Request functionalities
        
 
 
-    Scenario: Add Request page is loading 
+    
+
+    Scenario: Lessee Info section is shown 
+
+        Given current page is Inspection Request page 
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        Then Lesse Info section is shown 
 
 
 
 
 
+    Scenario: No Account number error message is shown if no account number provided 
 
+        Given current page is Inspection Request page 
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        And Lesse Info section is shown 
+        And clicks Account number field 
+        Then Find button inactive and error message shown for no account number entered
+
+
+
+
+    Scenario: No requests found error message is shown if account number does not exist
+
+        Given current page is Inspection Request page 
+        And account number does not exist
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        And Lesse Info section is shown 
+        And clicks Account number field 
+        And enters account number
+        And clicks find button
+        Then No requests found error message is shown
+
+
+
+    Scenario: Lessee info form is expanded if request does not exist
+
+        Given current page is Inspection Request page 
+        And account number does not exist
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        And Lesse Info section is shown 
+        And clicks Account number field 
+        And enters account number
+        And clicks find button
+        And No requests found error message is shown
+        Then Lesse info form is expanded
+
+
+
+
+    Scenario: Lessee info form shows errors if empty
+
+        Given current page is Inspection Request page 
+        And account number does not exist
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        And Lesse Info section is shown 
+        And clicks Account number field 
+        And enters account number
+        And clicks find button
+        And No requests found error message is shown
+        And Lesse info form is expanded
+        And click submit
+        Then 12 incomplete error messages shown on same form
+
+
+
+    Scenario: Lessee info form shows 7 errors with only first name
+
+        Given current page is Inspection Request page 
+        And account number does not exist
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        And Lesse Info section is shown 
+        And clicks Account number field 
+        And enters account number
+        And clicks find button
+        And No requests found error message is shown
+        And Lesse info form is expanded
+        And clicks first name field
+        And enters a first name 
+        And click submit
+        Then 7 incomplete error messages shown on same form
+
+
+
+    Scenario: Lessee info form shows 6 errors with only first name and last name
+
+        Given current page is Inspection Request page 
+        And account number does not exist
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        And Lesse Info section is shown 
+        And clicks Account number field 
+        And enters account number
+        And clicks find button
+        And No requests found error message is shown
+        And Lesse info form is expanded
+        And clicks first name field
+        And enters a first name 
+        And clicks last name field
+        And enters a last name 
+        And click submit
+        Then 6 incomplete error messages shown on same form
+
+
+
+
+    Scenario: Lessee info form shows 5 errors with only first name and last name and Street 1
+
+        Given current page is Inspection Request page 
+        And account number does not exist
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        And Lesse Info section is shown 
+        And clicks Account number field 
+        And enters account number
+        And clicks find button
+        And No requests found error message is shown
+        And Lesse info form is expanded
+        And clicks first name field
+        And enters a first name 
+        And clicks last name field
+        And enters a last name
+        And clicks Street 1 field
+        And enters a Street 1 
+        And click submit
+        Then 5 incomplete error messages shown on same form
+
+
+
+
+    Scenario: Lessee info form shows 4 errors with only first name and last name and Street 1 and Zip
+
+        Given current page is Inspection Request page 
+        And account number does not exist
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        And Lesse Info section is shown 
+        And clicks Account number field 
+        And enters account number
+        And clicks find button
+        And No requests found error message is shown
+        And Lesse info form is expanded
+        And clicks first name field
+        And enters a first name 
+        And clicks last name field
+        And enters a last name
+        And clicks Street 1 field
+        And enters a Street 1 
+        And clicks zip field
+        And enters zip
+        And click submit
+        Then 4 incomplete error messages shown on same form
+
+
+
+
+    Scenario: Lessee info form shows 3 errors with only first name and last name and Street 1 and Zip and State
+
+        Given current page is Inspection Request page 
+        And account number does not exist
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        And Lesse Info section is shown 
+        And clicks Account number field 
+        And enters account number
+        And clicks find button
+        And No requests found error message is shown
+        And Lesse info form is expanded
+        And clicks first name field
+        And enters a first name 
+        And clicks last name field
+        And enters a last name
+        And clicks Street 1 field
+        And enters a Street 1 
+        And clicks zip field
+        And enters zip
+        And clicks states dropdown menu
+        And selects a state
+        And click submit
+        Then 3 incomplete error messages shown on same form
+
+
+
+
+    Scenario: Lessee info form shows 2 errors with only first name and last name and Street 1 and Zip and State amd City
+
+        Given current page is Inspection Request page 
+        And account number does not exist
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        And Lesse Info section is shown 
+        And clicks Account number field 
+        And enters account number
+        And clicks find button
+        And No requests found error message is shown
+        And Lesse info form is expanded
+        And clicks first name field
+        And enters a first name 
+        And clicks last name field
+        And enters a last name
+        And clicks Street 1 field
+        And enters a Street 1 
+        And clicks zip field
+        And enters zip
+        And clicks states dropdown menu
+        And selects a state
+        And clicks city field
+        And enters a city
+        And click submit
+        Then 2 incomplete error messages shown on same form
+
+
+
+
+
+    Scenario: Lessee info form shows 1 error with only first name and last name and Street 1 and Zip and State amd City and State originally tested in
+
+        Given current page is Inspection Request page 
+        And account number does not exist
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        And Lesse Info section is shown 
+        And clicks Account number field 
+        And enters account number
+        And clicks find button
+        And No requests found error message is shown
+        And Lesse info form is expanded
+        And clicks first name field
+        And enters a first name 
+        And clicks last name field
+        And enters a last name
+        And clicks Street 1 field
+        And enters a Street 1 
+        And clicks zip field
+        And enters zip
+        And clicks states dropdown menu
+        And selects a state
+        And clicks city field
+        And enters a city
+        And clicks State originally tested in dropdown menu
+        And selects a state
+        And click submit
+        Then 1 incomplete error messages shown on same form
+
+
+
+
+    Scenario: Lessee info form shows 1 error with only first name and last name and Street 1 and Zip and State amd City and State originally tested in and VIN
+
+        Given current page is Inspection Request page 
+        And account number does not exist
+        And VIN is valid
+        When clicks customer type dropdown menu
+        And selects a customer 
+        And clicks request type dropdown menu
+        And selects a request type 
+        And Lesse Info section is shown 
+        And clicks Account number field 
+        And enters account number
+        And clicks find button
+        And No requests found error message is shown
+        And Lesse info form is expanded
+        And clicks first name field
+        And enters a first name 
+        And clicks last name field
+        And enters a last name
+        And clicks Street 1 field
+        And enters a Street 1 
+        And clicks zip field
+        And enters zip
+        And clicks states dropdown menu
+        And selects a state
+        And clicks city field
+        And enters a city
+        And clicks State originally tested in dropdown menu
+        And selects a state
+        And clicks VIN field
+        And enters a VIN
+        And click submit
+        Then 0 incomplete error messages shown on same form and form submitted
 
 
 
