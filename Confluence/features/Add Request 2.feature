@@ -355,7 +355,6 @@ Feature: Add Request functionalities
 
 
 
-
     Scenario: If Inspection already requested by TFS Dealer then redirected to Inspection Request Detail page
 
         Given current page is Inspection Request page
@@ -436,6 +435,398 @@ Feature: Add Request functionalities
         Given current page is Inspection Request page
         When click customer type 
         And select TFS from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And leave mandatory fields empty 
+        And click submit
+        Then form is not accepted and error message is shown
+
+
+
+
+
+
+
+
+     Scenario: If Inspection already requested by TFS Home then redirected to Inspection Request Detail page
+
+        Given current page is Inspection Request page
+        And account number exists
+        And  account has inspection requsted already
+        When click customer type 
+        And select TFS from customer dropdown menu
+        And select Home from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then redirected to Inspection Requested Detail page for that account
+
+
+    Scenario: If Inspection not already requested by TFS Home then form is rendered
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select TFS from customer dropdown menu
+        And select Home from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then Inspection Request form is rendered 
+
+
+    
+    Scenario: Inspection Request form submitted successfully by TFS Home 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select TFS from customer dropdown menu
+        And select Home from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by TFS Home 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select TFS from customer dropdown menu
+        And select Home from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up mandatory fields in schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form not submitted by TFS Home without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select TFS from customer dropdown menu
+        And select Home from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And leave mandatory fields empty 
+        And click submit 
+        Then form is not accepted and error message is shown
+
+
+    Scenario: Schedule Appointment form not submitted by TFS Home without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select TFS from customer dropdown menu
+        And select Home from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And leave mandatory fields empty 
+        And click submit
+        Then form is not accepted and error message is shown
+
+
+
+
+
+
+     Scenario: If Inspection already requested by Chrysler Santander Dealer then redirected to Inspection Request Detail page
+
+        Given current page is Inspection Request page
+        And account number exists
+        And  account has inspection requsted already
+        When click customer type 
+        And select Chrysler Santander from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then redirected to Inspection Requested Detail page for that account
+
+
+    Scenario: If Inspection not already requested by Chrysler Santander Dealer then form is rendered
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Chrysler Santander from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then Inspection Request form is rendered 
+
+
+    
+    Scenario: Inspection Request form submitted successfully by Chrysler Santander Dealer 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Chrysler Santander from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Chrysler Santander Dealer 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Chrysler Santander from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up mandatory fields in schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form not submitted by Chrysler Santander Dealer without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Chrysler Santander from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And leave mandatory fields empty 
+        And click submit 
+        Then form is not accepted and error message is shown
+
+
+    Scenario: Schedule Appointment form not submitted by Chrysler Santander Dealer without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Chrysler Santander from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And leave mandatory fields empty 
+        And click submit
+        Then form is not accepted and error message is shown
+
+
+
+
+
+
+     
+
+
+
+     Scenario: If Inspection already requested by Hyundai Dealer then redirected to Inspection Request Detail page
+
+        Given current page is Inspection Request page
+        And account number exists
+        And  account has inspection requsted already
+        When click customer type 
+        And select Hyundai from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then redirected to Inspection Requested Detail page for that account
+
+
+    Scenario: If Inspection not already requested by Hyundai Dealer then form is rendered
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Hyundai from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then Inspection Request form is rendered 
+
+
+    
+    Scenario: Inspection Request form submitted successfully by Hyundai Dealer 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Hyundai from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Hyundai Dealer 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Hyundai from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up mandatory fields in schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form not submitted by Hyundai Dealer without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Hyundai from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And leave mandatory fields empty 
+        And click submit 
+        Then form is not accepted and error message is shown
+
+
+    Scenario: Schedule Appointment form not submitted by Hyundai Dealer without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Hyundai from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And leave mandatory fields empty 
+        And click submit
+        Then form is not accepted and error message is shown
+
+
+
+
+     Scenario: If Inspection already requested by Nissan Dealer then redirected to Inspection Request Detail page
+
+        Given current page is Inspection Request page
+        And account number exists
+        And  account has inspection requsted already
+        When click customer type 
+        And select Nissan from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then redirected to Inspection Requested Detail page for that account
+
+
+    Scenario: If Inspection not already requested by Nissan Dealer then form is rendered
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Nissan from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then Inspection Request form is rendered 
+
+
+    
+    Scenario: Inspection Request form submitted successfully by Nissan Dealer 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Nissan from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Nissan Dealer 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Nissan from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up mandatory fields in schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form not submitted by Nissan Dealer without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Nissan from customer dropdown menu
+        And select Dealer from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And leave mandatory fields empty 
+        And click submit 
+        Then form is not accepted and error message is shown
+
+
+    Scenario: Schedule Appointment form not submitted by Nissan Dealer without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Nissan from customer dropdown menu
         And select Dealer from Request Type dropdown menu
         And enter account number
         And click find
@@ -543,7 +934,6 @@ Feature: Add Request functionalities
         And click submit
         Then form is not accepted and error message is shown
 
-    
 
 
 
@@ -551,25 +941,24 @@ Feature: Add Request functionalities
 
 
 
-    Scenario: If Inspection already requested by CHRYSLER SANTANDER Home then redirected to Inspection Request Detail page
+     Scenario: If Inspection already requested by TFS Home then redirected to Inspection Request Detail page
 
         Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
-        And select CHRYSLER SANTANDER from customer dropdown menu
+        And select TFS from customer dropdown menu
         And select Home from Request Type dropdown menu
         And enter account number
         And click find
         Then redirected to Inspection Requested Detail page for that account
 
 
-    Scenario: If Inspection not already requested by CHRYSLER SANTANDER Home then form is rendered
+    Scenario: If Inspection not already requested by TFS Home then form is rendered
 
-        Given logged in to AIM Inspect site
-        And current page is Inspection Request page
+        Given current page is Inspection Request page
         When click customer type 
-        And select CHRYSLER SANTANDER from customer dropdown menu
+        And select TFS from customer dropdown menu
         And select Home from Request Type dropdown menu
         And enter account number
         And click find
@@ -577,11 +966,11 @@ Feature: Add Request functionalities
 
 
     
-    Scenario: Inspection Request form submitted successfully by CHRYSLER SANTANDER Home 
+    Scenario: Inspection Request form submitted successfully by TFS Home 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select CHRYSLER SANTANDER from customer dropdown menu
+        And select TFS from customer dropdown menu
         And select Home from Request Type dropdown menu
         And enter account number
         And click find
@@ -595,11 +984,11 @@ Feature: Add Request functionalities
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by CHRYSLER SANTANDER Home 
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by TFS Home 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select CHRYSLER SANTANDER from customer dropdown menu
+        And select TFS from customer dropdown menu
         And select Home from Request Type dropdown menu
         And enter account number
         And click find
@@ -613,11 +1002,11 @@ Feature: Add Request functionalities
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form not submitted by CHRYSLER SANTANDER Home without mandatory fields 
+    Scenario: Inspection Request form not submitted by TFS Home without mandatory fields 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select CHRYSLER SANTANDER from customer dropdown menu
+        And select TFS from customer dropdown menu
         And select Home from Request Type dropdown menu
         And enter account number
         And click find
@@ -627,11 +1016,11 @@ Feature: Add Request functionalities
         Then form is not accepted and error message is shown
 
 
-    Scenario: Schedule Appointment form not submitted by CHRYSLER SANTANDER Home without mandatory fields 
+    Scenario: Schedule Appointment form not submitted by TFS Home without mandatory fields 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select CHRYSLER SANTANDER from customer dropdown menu
+        And select TFS from customer dropdown menu
         And select Home from Request Type dropdown menu
         And enter account number
         And click find
@@ -644,44 +1033,42 @@ Feature: Add Request functionalities
         And click submit
         Then form is not accepted and error message is shown
 
-    
 
 
 
 
 
-
- Scenario: If Inspection already requested by CHRYSLER SANTANDER DEALER then redirected to Inspection Request Detail page
+     Scenario: If Inspection already requested by Chrysler Santander Home then redirected to Inspection Request Detail page
 
         Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
-        And select CHRYSLER SANTANDER from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Chrysler Santander from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         Then redirected to Inspection Requested Detail page for that account
 
 
-    Scenario: If Inspection not already requested by CHRYSLER SANTANDER DEALER then form is rendered
+    Scenario: If Inspection not already requested by Chrysler Santander Home then form is rendered
 
         Given current page is Inspection Request page
         When click customer type 
-        And select CHRYSLER SANTANDER from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Chrysler Santander from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         Then Inspection Request form is rendered 
 
 
     
-    Scenario: Inspection Request form submitted successfully by CHRYSLER SANTANDER DEALER 
+    Scenario: Inspection Request form submitted successfully by Chrysler Santander Home 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select CHRYSLER SANTANDER from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Chrysler Santander from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -694,12 +1081,12 @@ Feature: Add Request functionalities
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by CHRYSLER SANTANDER DEALER 
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Chrysler Santander Home 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select CHRYSLER SANTANDER from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Chrysler Santander from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -712,12 +1099,12 @@ Feature: Add Request functionalities
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form not submitted by CHRYSLER SANTANDER DEALER without mandatory fields 
+    Scenario: Inspection Request form not submitted by Chrysler Santander Home without mandatory fields 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select CHRYSLER SANTANDER from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Chrysler Santander from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -726,12 +1113,12 @@ Feature: Add Request functionalities
         Then form is not accepted and error message is shown
 
 
-    Scenario: Schedule Appointment form not submitted by CHRYSLER SANTANDER DEALER without mandatory fields 
+    Scenario: Schedule Appointment form not submitted by Chrysler Santander Home without mandatory fields 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select CHRYSLER SANTANDER from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Chrysler Santander from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -743,43 +1130,42 @@ Feature: Add Request functionalities
         And click submit
         Then form is not accepted and error message is shown
 
-    
 
 
 
 
 
-    Scenario: If Inspection already requested by HYUNDAI DEALER then redirected to Inspection Request Detail page
+     Scenario: If Inspection already requested by Manheim Home then redirected to Inspection Request Detail page
 
         Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
-        And select HYUNDAI from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Manheim from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         Then redirected to Inspection Requested Detail page for that account
 
 
-    Scenario: If Inspection not already requested by HYUNDAI DEALER then form is rendered
+    Scenario: If Inspection not already requested by Manheim Home then form is rendered
 
         Given current page is Inspection Request page
         When click customer type 
-        And select HYUNDAI from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Manheim from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         Then Inspection Request form is rendered 
 
 
     
-    Scenario: Inspection Request form submitted successfully by HYUNDAI DEALER 
+    Scenario: Inspection Request form submitted successfully by Manheim Home 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select HYUNDAI from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Manheim from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -792,12 +1178,12 @@ Feature: Add Request functionalities
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by HYUNDAI DEALER 
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Manheim Home 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select HYUNDAI from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Manheim from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -810,12 +1196,12 @@ Feature: Add Request functionalities
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form not submitted by HYUNDAI DEALER without mandatory fields 
+    Scenario: Inspection Request form not submitted by Manheim Home without mandatory fields 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select HYUNDAI from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Manheim from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -824,12 +1210,12 @@ Feature: Add Request functionalities
         Then form is not accepted and error message is shown
 
 
-    Scenario: Schedule Appointment form not submitted by HYUNDAI DEALER without mandatory fields 
+    Scenario: Schedule Appointment form not submitted by Manheim Home without mandatory fields 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select HYUNDAI from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Manheim from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -841,42 +1227,40 @@ Feature: Add Request functionalities
         And click submit
         Then form is not accepted and error message is shown
 
-    
 
 
 
-
-Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Inspection Request Detail page
+     Scenario: If Inspection already requested by Hyundai Home then redirected to Inspection Request Detail page
 
         Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
-        And select HYUNDAI from customer dropdown menu
-        And select HOME from Request Type dropdown menu
+        And select Hyundai from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         Then redirected to Inspection Requested Detail page for that account
 
 
-    Scenario: If Inspection not already requested by HYUNDAI HOME then form is rendered
+    Scenario: If Inspection not already requested by Hyundai Home then form is rendered
 
         Given current page is Inspection Request page
         When click customer type 
-        And select HYUNDAI from customer dropdown menu
-        And select HOME from Request Type dropdown menu
+        And select Hyundai from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         Then Inspection Request form is rendered 
 
 
     
-    Scenario: Inspection Request form submitted successfully by HYUNDAI HOME 
+    Scenario: Inspection Request form submitted successfully by Hyundai Home 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select HYUNDAI from customer dropdown menu
-        And select HOME from Request Type dropdown menu
+        And select Hyundai from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -889,12 +1273,12 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by HYUNDAI HOME 
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Hyundai Home 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select HYUNDAI from customer dropdown menu
-        And select HOME from Request Type dropdown menu
+        And select Hyundai from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -907,12 +1291,12 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form not submitted by HYUNDAI HOME without mandatory fields 
+    Scenario: Inspection Request form not submitted by Hyundai Home without mandatory fields 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select HYUNDAI from customer dropdown menu
-        And select HOME from Request Type dropdown menu
+        And select Hyundai from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -921,12 +1305,12 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then form is not accepted and error message is shown
 
 
-    Scenario: Schedule Appointment form not submitted by HYUNDAI HOME without mandatory fields 
+    Scenario: Schedule Appointment form not submitted by Hyundai Home without mandatory fields 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select HYUNDAI from customer dropdown menu
-        And select HOME from Request Type dropdown menu
+        And select Hyundai from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -938,41 +1322,40 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And click submit
         Then form is not accepted and error message is shown
 
-    
 
 
 
-    Scenario: If Inspection already requested by NISSAN HOME then redirected to Inspection Request Detail page
+     Scenario: If Inspection already requested by Nissan Home then redirected to Inspection Request Detail page
 
         Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select HOME from Request Type dropdown menu
+        And select Nissan from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         Then redirected to Inspection Requested Detail page for that account
 
 
-    Scenario: If Inspection not already requested by NISSAN HOME then form is rendered
+    Scenario: If Inspection not already requested by Nissan Home then form is rendered
 
         Given current page is Inspection Request page
         When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select HOME from Request Type dropdown menu
+        And select Nissan from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         Then Inspection Request form is rendered 
 
 
     
-    Scenario: Inspection Request form submitted successfully by NISSAN HOME 
+    Scenario: Inspection Request form submitted successfully by Nissan Home 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select HOME from Request Type dropdown menu
+        And select Nissan from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -985,12 +1368,12 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by NISSAN HOME 
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Nissan Home 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select HOME from Request Type dropdown menu
+        And select Nissan from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -1003,12 +1386,12 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form not submitted by NISSAN HOME without mandatory fields 
+    Scenario: Inspection Request form not submitted by Nissan Home without mandatory fields 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select HOME from Request Type dropdown menu
+        And select Nissan from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -1017,12 +1400,12 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then form is not accepted and error message is shown
 
 
-    Scenario: Schedule Appointment form not submitted by NISSAN HOME without mandatory fields 
+    Scenario: Schedule Appointment form not submitted by Nissan Home without mandatory fields 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select HOME from Request Type dropdown menu
+        And select Nissan from customer dropdown menu
+        And select Home from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -1034,41 +1417,48 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         And click submit
         Then form is not accepted and error message is shown
 
-    
 
 
 
-    Scenario: If Inspection already requested by NISSAN DEALER then redirected to Inspection Request Detail page
+
+
+
+
+
+
+
+
+     Scenario: If Inspection already requested by Chrysler Santander Marshalling Yard then redirected to Inspection Request Detail page
 
         Given current page is Inspection Request page
         And account number exists
         And  account has inspection requsted already
         When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Chrysler Santander from customer dropdown menu
+        And select Marshalling Yard from Request Type dropdown menu
         And enter account number
         And click find
         Then redirected to Inspection Requested Detail page for that account
 
 
-    Scenario: If Inspection not already requested by NISSAN DEALER then form is rendered
+    Scenario: If Inspection not already requested by Chrysler Santander Marshalling Yard then form is rendered
 
         Given current page is Inspection Request page
         When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Chrysler Santander from customer dropdown menu
+        And select Marshalling Yard from Request Type dropdown menu
         And enter account number
         And click find
         Then Inspection Request form is rendered 
 
 
     
-    Scenario: Inspection Request form submitted successfully by NISSAN DEALER 
+    Scenario: Inspection Request form submitted successfully by Chrysler Santander Marshalling Yard 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Chrysler Santander from customer dropdown menu
+        And select Marshalling Yard from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -1081,12 +1471,12 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by NISSAN DEALER 
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Chrysler Santander Marshalling Yard 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Chrysler Santander from customer dropdown menu
+        And select Marshalling Yard from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -1099,12 +1489,12 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then newly created inspection request detail page is shown
 
 
-    Scenario: Inspection Request form not submitted by NISSAN DEALER without mandatory fields 
+    Scenario: Inspection Request form not submitted by Chrysler Santander Marshalling Yard without mandatory fields 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Chrysler Santander from customer dropdown menu
+        And select Marshalling Yard from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -1113,12 +1503,108 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
         Then form is not accepted and error message is shown
 
 
-    Scenario: Schedule Appointment form not submitted by NISSAN DEALER without mandatory fields 
+    Scenario: Schedule Appointment form not submitted by Chrysler Santander Marshalling Yard without mandatory fields 
 
         Given current page is Inspection Request page
         When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select DEALER from Request Type dropdown menu
+        And select Chrysler Santander from customer dropdown menu
+        And select Marshalling Yard from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And leave mandatory fields empty 
+        And click submit
+        Then form is not accepted and error message is shown
+
+
+
+
+
+     Scenario: If Inspection already requested by Hyundai Marshalling Yard then redirected to Inspection Request Detail page
+
+        Given current page is Inspection Request page
+        And account number exists
+        And  account has inspection requsted already
+        When click customer type 
+        And select Hyundai from customer dropdown menu
+        And select Marshalling Yard from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then redirected to Inspection Requested Detail page for that account
+
+
+    Scenario: If Inspection not already requested by Hyundai Marshalling Yard then form is rendered
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Hyundai from customer dropdown menu
+        And select Marshalling Yard from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then Inspection Request form is rendered 
+
+
+    
+    Scenario: Inspection Request form submitted successfully by Hyundai Marshalling Yard 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Hyundai from customer dropdown menu
+        And select Marshalling Yard from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Hyundai Marshalling Yard 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Hyundai from customer dropdown menu
+        And select Marshalling Yard from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up mandatory fields in schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form not submitted by Hyundai Marshalling Yard without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Hyundai from customer dropdown menu
+        And select Marshalling Yard from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And leave mandatory fields empty 
+        And click submit 
+        Then form is not accepted and error message is shown
+
+
+    Scenario: Schedule Appointment form not submitted by Hyundai Marshalling Yard without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Hyundai from customer dropdown menu
+        And select Marshalling Yard from Request Type dropdown menu
         And enter account number
         And click find
         And Request form is rendered 
@@ -1136,235 +1622,5 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
 
 
-
-
-
-    Scenario: If Inspection already requested by CHRYSLER SANTANDER then redirected to Inspection Request Detail page
-
-        Given current page is Inspection Request page
-        And account number exists
-        And  account has inspection requsted already
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        Then redirected to Inspection Requested Detail page for that account
-
-
-    Scenario: If Inspection not already requested by CHRYSLER SANTANDER then form is rendered
-
-        Given current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        Then Inspection Request form is rendered 
-
-
     
-    Scenario: Inspection Request form submitted successfully by CHRYSLER SANTANDER 
-
-        Given current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        And Request form is rendered 
-        And fill up all the form fields with 
-        required data 
-        And click submit 
-        Then newly created inspection request notification message is shown
-
-
-    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by CHRYSLER SANTANDER 
-
-        Given current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        And Request form is rendered 
-        And fill up all the mandatory form fields with 
-        required data 
-        And click submit 
-        Then newly created inspection request detail page is shown
-
-
-    Scenario: Inspection Request form not submitted by CHRYSLER SANTANDER without mandatory fields 
-
-        Given current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        And Request form is rendered 
-        And leave mandatory fields empty 
-        And click submit 
-        Then form is not accepted and error message is shown
-
-
-
-
-
-
-
-
-
-    Scenario: If Inspection already requested by HYUNDAI then redirected to Inspection Request Detail page
-
-        Given current page is Inspection Request page
-        And account number exists
-        And  account has inspection requsted already
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        Then redirected to Inspection Requested Detail page for that account
-
-
-    Scenario: If Inspection not already requested by HYUNDAI then form is rendered
-
-        Given current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        Then Inspection Request form is rendered 
-
-
-    
-    Scenario: Inspection Request form submitted successfully by HYUNDAI 
-
-        Given current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        And Request form is rendered 
-        And fill up all the form fields with 
-        required data 
-        And click submit 
-        Then newly created inspection request notification message is shown
-
-
-    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by HYUNDAI 
-
-        Given current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        And Request form is rendered 
-        And fill up all the mandatory form fields with 
-        required data 
-        And click submit 
-        Then newly created inspection request detail page is shown
-
-
-    Scenario: Inspection Request form not submitted by HYUNDAI without mandatory fields 
-
-        Given current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        And Request form is rendered 
-        And leave mandatory fields empty 
-        And click submit 
-        Then form is not accepted and error message is shown
-
-
-
-
-
-
-    Scenario: If Inspection already requested by HYUNDAI then redirected to Inspection Request Detail page
-
-        Given Browser is opened
-        And logged in to AIM Inspect site
-        And current page is Inspection Request page
-        And account number exists
-        And  account has inspection requsted already
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        Then redirected to Inspection Requested Detail page for that account
-
-
-    Scenario: If Inspection not already requested by HYUNDAI then form is rendered
-
-        Given Browser is opened
-        And logged in to AIM Inspect site
-        And current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        Then Inspection Request form is rendered 
-
-
-    
-    Scenario: Inspection Request form submitted successfully by HYUNDAI 
-
-        Given Browser is opened
-        And logged in to AIM Inspect site
-        And current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        And Request form is rendered 
-        And fill up all the form fields with 
-        required data 
-        And click submit 
-        Then newly created inspection request notification message is shown
-
-
-    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by HYUNDAI 
-
-        Given Browser is opened
-        And logged in to AIM Inspect site
-        And current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        And Request form is rendered 
-        And fill up all the mandatory form fields with 
-        required data 
-        And click submit 
-        Then newly created inspection request detail page is shown
-
-
-    Scenario: Inspection Request form not submitted by HYUNDAI without mandatory fields 
-
-        Given Browser is opened
-        And logged in to AIM Inspect site
-        And current page is Inspection Request page
-        When click customer type 
-        And select NISSAN from customer dropdown menu
-        And select MARSHALLING YARD from Request Type dropdown menu
-        And enter account number
-        And click find
-        And Request form is rendered 
-        And leave mandatory fields empty 
-        And click submit 
-        Then form is not accepted and error message is shown
-
-
 
