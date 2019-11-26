@@ -1368,3 +1368,504 @@ Scenario: If Inspection already requested by HYUNDAI HOME then redirected to Ins
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    Scenario: Inspection Request form successfully submitted by Manheium Long Term Order 
+
+        Given current page is Inspection Request page
+        And organization named exists
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Long Term Order from Request Type dropdown menu
+        And click Added by Dropdown menu
+        And select Organization Name from menu 
+        And input Organization Name in text box 
+        And clicks find
+        And uncheck Use Organization Default Location 
+        And enter valid Address 
+        And click Qauntity text box 
+        And enter valid Qauntity
+        And select Yes I can provide more details about vehicle
+        And enter details about vehicles
+        And click submit 
+        Then form successfully submitted 
+
+
+
+    Scenario: Inspection Request form shows errors by Manheium Long Term Order if Organization Name does not exist 
+
+        Given current page is Inspection Request page
+        And organization named does not exist
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Long Term Order from Request Type dropdown menu
+        And click Added by Dropdown menu
+        And select Organization Name from menu 
+        And input Organization Name in text box 
+        And clicks find
+        Then error message is shown  
+
+
+
+    Scenario: Inspection Request form shows errors by Manheium Long Term Order if Auction Acces Number does not exist 
+
+        Given current page is Inspection Request page
+        And Auction Acces Number does not exist
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Long Term Order from Request Type dropdown menu
+        And click Added by Dropdown menu
+        And select Auction Acces Number from menu 
+        And input Auction Acces Number in text box 
+        And clicks find
+        Then error message is shown  
+
+
+
+    Scenario: Inspection Request form successfully submitted by Manheium Long Term Order using Auction Acces Number
+
+        Given current page is Inspection Request page
+        And organization named exists
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Long Term Order from Request Type dropdown menu
+        And click Added by Dropdown menu
+        And select Auction Acces Number from menu 
+        And input Auction Acces Number in text box 
+        And clicks find
+        And uncheck Use Organization Default Location 
+        And enter valid Address 
+        And click Qauntity text box 
+        And enter valid Qauntity
+        And select Yes I can provide more details about vehicle
+        And enter details about vehicles
+        And click submit 
+        Then form successfully submitted 
+
+
+
+
+        Scenario: If Inspection already requested by Manheim Third Party Inspection then redirected to Inspection Request Detail page
+
+        Given current page is Inspection Request page
+        And account number exists
+        And  account has inspection requsted already
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Third Party Inspection from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then redirected to Inspection Requested Detail page for that account
+
+
+    Scenario: If Inspection not already requested by Manheim Third Party Inspection then form is rendered
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Third Party Inspection from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then Inspection Request form is rendered 
+
+
+    
+    Scenario: Inspection Request form submitted successfully by Manheim Third Party Inspection 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Third Party Inspection from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Manheim Third Party Inspection 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Third Party Inspection from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up mandatory fields in schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form not submitted by Manheim Third Party Inspection without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Third Party Inspection from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And leave mandatory fields empty 
+        And click submit 
+        Then form is not accepted and error message is shown
+
+
+    Scenario: Schedule Appointment form not submitted by Manheim Third Party Inspection without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Third Party Inspection from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And leave mandatory fields empty 
+        And click submit
+        Then form is not accepted and error message is shown
+
+
+
+
+
+
+        Scenario: If Inspection already requested by Manheim Post Sale Inspection then redirected to Inspection Request Detail page
+
+        Given current page is Inspection Request page
+        And account number exists
+        And  account has inspection requsted already
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Post Sale Inspection from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then redirected to Inspection Requested Detail page for that account
+
+
+    Scenario: If Inspection not already requested by Manheim Post Sale Inspection then form is rendered
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Post Sale Inspection from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then Inspection Request form is rendered 
+
+
+    
+    Scenario: Inspection Request form submitted successfully by Manheim Post Sale Inspection 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Post Sale Inspection from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Manheim Post Sale Inspection 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Post Sale Inspection from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up mandatory fields in schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form not submitted by Manheim Post Sale Inspection without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Post Sale Inspection from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And leave mandatory fields empty 
+        And click submit 
+        Then form is not accepted and error message is shown
+
+
+    Scenario: Schedule Appointment form not submitted by Manheim Post Sale Inspection without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Post Sale Inspection from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And leave mandatory fields empty 
+        And click submit
+        Then form is not accepted and error message is shown
+
+
+
+
+
+
+
+        Scenario: If Inspection already requested by Manheim Mobile Sale  then redirected to Inspection Request Detail page
+
+        Given current page is Inspection Request page
+        And account number exists
+        And  account has inspection requsted already
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Mobile Sale  from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then redirected to Inspection Requested Detail page for that account
+
+
+    Scenario: If Inspection not already requested by Manheim Mobile Sale  then form is rendered
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Mobile Sale  from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then Inspection Request form is rendered 
+
+
+    
+    Scenario: Inspection Request form submitted successfully by Manheim Mobile Sale  
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Mobile Sale  from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Manheim Mobile Sale  
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Mobile Sale  from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up mandatory fields in schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form not submitted by Manheim Mobile Sale  without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Mobile Sale  from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And leave mandatory fields empty 
+        And click submit 
+        Then form is not accepted and error message is shown
+
+
+    Scenario: Schedule Appointment form not submitted by Manheim Mobile Sale  without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Mobile Sale  from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And leave mandatory fields empty 
+        And click submit
+        Then form is not accepted and error message is shown
+
+
+
+
+
+        Scenario: If Inspection already requested by Manheim NextGear then redirected to Inspection Request Detail page
+
+        Given current page is Inspection Request page
+        And account number exists
+        And  account has inspection requsted already
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select NextGear from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then redirected to Inspection Requested Detail page for that account
+
+
+    Scenario: If Inspection not already requested by Manheim NextGear then form is rendered
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select NextGear from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then Inspection Request form is rendered 
+
+
+    
+    Scenario: Inspection Request form submitted successfully by Manheim NextGear 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select NextGear from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Manheim NextGear 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select NextGear from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up mandatory fields in schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form not submitted by Manheim NextGear without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select NextGear from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And leave mandatory fields empty 
+        And click submit 
+        Then form is not accepted and error message is shown
+
+
+    Scenario: Schedule Appointment form not submitted by Manheim NextGear without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select NextGear from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And leave mandatory fields empty 
+        And click submit
+        Then form is not accepted and error message is shown
+
+
+
+
+    Scenario: Inspection Request form successfully submitted by Manheium Long Term Order without more vehicle info
+
+        Given current page is Inspection Request page
+        And organization named exists
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select Long Term Order from Request Type dropdown menu
+        And click Added by Dropdown menu
+        And select Organization Name from menu 
+        And input Organization Name in text box 
+        And clicks find
+        And uncheck Use Organization Default Location 
+        And enter valid Address 
+        And click Qauntity text box 
+        And enter valid Qauntity
+        And select No, I only have the number.
+        And click submit 
+        Then form successfully submitted 
+
+
+
+
+
+
+
+
+
+

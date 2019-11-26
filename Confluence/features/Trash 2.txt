@@ -1,0 +1,96 @@
+    Scenario: If Inspection already requested by Manheim NextGear then redirected to Inspection Request Detail page
+
+        Given current page is Inspection Request page
+        And account number exists
+        And  account has inspection requsted already
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select NextGear from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then redirected to Inspection Requested Detail page for that account
+
+
+    Scenario: If Inspection not already requested by Manheim NextGear then form is rendered
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select NextGear from Request Type dropdown menu
+        And enter account number
+        And click find
+        Then Inspection Request form is rendered 
+
+
+    
+    Scenario: Inspection Request form submitted successfully by Manheim NextGear 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select NextGear from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form and Schedule Request form submitted successfully with only mandatory fields by Manheim NextGear 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select NextGear from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And fill up mandatory fields in schedule appointment form
+        And click submit
+        Then newly created inspection request detail page is shown
+
+
+    Scenario: Inspection Request form not submitted by Manheim NextGear without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select NextGear from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And leave mandatory fields empty 
+        And click submit 
+        Then form is not accepted and error message is shown
+
+
+    Scenario: Schedule Appointment form not submitted by Manheim NextGear without mandatory fields 
+
+        Given current page is Inspection Request page
+        When click customer type 
+        And select Manheim from customer dropdown menu
+        And select NextGear from Request Type dropdown menu
+        And enter account number
+        And click find
+        And Request form is rendered 
+        And fill up all the mandatory form fields with 
+        required data 
+        And click submit 
+        And schedule appointment window is shown       
+        And leave mandatory fields empty 
+        And click submit
+        Then form is not accepted and error message is shown
+
+
+
+
+
