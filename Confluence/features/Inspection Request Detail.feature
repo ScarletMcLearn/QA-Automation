@@ -710,4 +710,99 @@ Feature: Inspection Request Detail functionalities
     
 
 
+
     
+    Scenario: Edit Lessse info from Inspection Request detail page 
+
+        Given current page is inspection request detail page
+        When user clicks Edit Lessee Info button
+        And Edit Lessee info form is shown 
+        And user changes form data
+        And clicks Save 
+        Then Lessee info data changed on Inspection Request detail page
+
+
+
+    Scenario: Edit Dealer info from Inspection Request detail page 
+
+        Given current page is inspection request detail page
+        When user clicks Edit Dealer Info button
+        And Edit Dealer info form is shown 
+        And user changes form data
+        And clicks Save 
+        Then Dealer info data changed on Inspection Request detail page
+
+
+
+    Scenario: Edit Vehicle info from Inspection Request detail page 
+
+        Given current page is inspection request detail page
+        When user clicks Edit Vehicle Info button
+        And Edit Vehicle info form is shown 
+        And user changes form data
+        And clicks Save 
+        Then Vehicle info data changed on Inspection Request detail page
+
+
+
+    Scenario: Add Disposition from Inspection Request detail page 
+
+        Given current page is inspection request detail page
+        When user clicks Add Disposition 
+        And Add Disposition form is shown
+        And user fills Add Disposition form 
+        And clicks submit 
+        Then Inspection Request detail page has disposition added
+
+
+
+    Scenario: Add Internal Comment to Inspection Request detail page
+
+        Given current page is inspection request detail page
+        When user clicks Add Internal Comment 
+        And Add Internal Comment form is shown
+        And user fills Internal Comment form 
+        And clicks submit 
+        Then Inspection Request detail page has Internal Comment added
+
+
+
+    Scenario: Add Inspector Comment to Inspection Request detail page
+
+        Given current page is inspection request detail page
+        When user clicks Add Inspector Comment 
+        And Add Inspector Comment form is shown
+        And user fills Inspector Comment form 
+        And clicks submit 
+        And Add Disposition form is shown
+        And user fills Add Disposition form 
+        And clicks submit 
+        Then Inspection Request detail page has Inspector Comment added
+
+
+
+    Scenario: Edit Internal Comment on Inspection Request detail page
+
+        Given current page is inspection request detail page
+        And Internal Comment exists for detail page
+        When user clicks Edit Internal Comment 
+        And Edit Internal Comment form is shown
+        And user fills Edit Internal Comment form 
+        And clicks submit 
+        Then Inspection Request detail page has Internal Comment Edited
+
+
+
+    Scenario: Appointment Audits with details are shown
+
+        Given current page is inspection request detail page
+        And Appointment Audit exists for detail page
+        When user clicks on an Appointment Audit
+        Then Appointment Audits details window is shown
+
+
+
+
+
+
+
