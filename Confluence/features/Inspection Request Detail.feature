@@ -755,6 +755,17 @@ Feature: Inspection Request Detail functionalities
         Then Inspection Request detail page has disposition added
 
 
+    
+    Scenario: Add Disposition form not submitted without required fields 
+
+        Given current page is inspection request detail page
+        When user clicks Add Disposition 
+        And Add Disposition form is shown
+        And clicks submit 
+        Then error message is shown
+        And submit button is inactive
+
+
 
     Scenario: Add Internal Comment to Inspection Request detail page
 
@@ -781,6 +792,17 @@ Feature: Inspection Request Detail functionalities
 
 
 
+    Scenario: Add Internal Comment form not submitted without required fields
+
+        Given current page is inspection request detail page
+        When user clicks Add Internal Comment 
+        And Add Internal Comment form is shown
+        And clicks submit 
+        Then error message is shown to fill required fields
+
+
+
+
     Scenario: Edit Internal Comment on Inspection Request detail page
 
         Given current page is inspection request detail page
@@ -802,6 +824,197 @@ Feature: Inspection Request Detail functionalities
 
 
 
+
+    Scenario: UTC for Scheduled Hold Request Detail Page with Missed Appointment and Subreason
+
+        Given current page is inspection request detail page
+        And status is Scheduled Hold
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And UTC is clickable
+        And clicks UTC
+        And UTC Window is shown
+        And Select reason Missed Appointment
+        And select a subreason from dropdown menu 
+        And add a comment 
+        And click save 
+        Then appointment is cancelled and information Missed Appointment is shown in Appointments section 
+        And Current Appontment Detail has cancelled message 
+
+
+
+    Scenario: UTC for Scheduled Hold Request Detail Page with Extended Lease
+
+        Given current page is inspection request detail page
+        And status is Scheduled Hold
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And UTC is clickable
+        And clicks UTC
+        And UTC Window is shown
+        And Select reason Extended Lease 
+        And add a comment 
+        And click save 
+        Then appointment is cancelled and information Extended Lease is shown in Appointments section 
+        And Current Appontment Detail has cancelled message 
+
+
+    Scenario: UTC for Scheduled Hold Request Detail Page with Weather
+
+        Given current page is inspection request detail page
+        And status is Scheduled Hold
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And UTC is clickable
+        And clicks UTC
+        And UTC Window is shown
+        And Select reason Weather 
+        And add a comment 
+        And click save 
+        Then appointment is cancelled and information Weather is shown in Appointments section 
+        And Current Appontment Detail has cancelled message 
+
+
+
+    Scenario: UTC for Scheduled Hold Request Detail Page with Vehicle Purchased/Sold
+
+        Given current page is inspection request detail page
+        And status is Scheduled Hold
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And UTC is clickable
+        And clicks UTC
+        And UTC Window is shown
+        And Select reason Vehicle Purchased/Sold 
+        And add a comment 
+        And click save 
+        Then appointment is cancelled and information Vehicle Purchased/Sold is shown in Appointments section 
+        And Current Appontment Detail has cancelled message 
+
+
+
+
+
+
+
+    Scenario: UTC for Scheduled Delivered Request Detail Page with Vehicle Unavailable
+
+        Given current page is inspection request detail page
+        And status is Scheduled Delivered
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And UTC is clickable
+        And clicks UTC
+        And UTC Window is shown
+        And Select reason Vehicle Unavailable
+        And select a subreason from dropdown menu
+        And select earliest available date 
+        And add a comment 
+        And click save 
+        Then appointment is cancelled and information Vehicle Unavailable is shown in Appointments section 
+        And Current Appontment Detail has cancelled message 
+
+
+
+
+    Scenario: UTC for Scheduled Delivered Request Detail Page with Previously Inspected
+
+        Given current page is inspection request detail page
+        And status is Scheduled Delivered
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And UTC is clickable
+        And clicks UTC
+        And UTC Window is shown
+        And Select reason Previously Inspected
+        And add a comment 
+        And click save 
+        Then appointment is cancelled and information Previously Inspected is shown in Appointments section 
+        And Current Appontment Detail has cancelled message 
+
+
+
+    Scenario: UTC for Scheduled Delivered Request Detail Page with Weather
+
+        Given current page is inspection request detail page
+        And status is Scheduled Delivered
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And UTC is clickable
+        And clicks UTC
+        And UTC Window is shown
+        And Select reason Weather
+        And add a comment 
+        And click save 
+        Then appointment is cancelled and information Weather is shown in Appointments section 
+        And Current Appontment Detail has cancelled message 
+
+
+
+
+
+
+    Scenario: UTC for Pending Delivered Request Detail Page with Vehicle Unavailable
+
+        Given current page is inspection request detail page
+        And status is Pending Delivered
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And UTC is clickable
+        And clicks UTC
+        And UTC Window is shown
+        And Select reason Vehicle Unavailable
+        And select a subreason from dropdown menu
+        And select earliest available date 
+        And add a comment 
+        And click save 
+        Then appointment is cancelled and information Vehicle Unavailable is shown in Appointments section 
+        And Current Appontment Detail has cancelled message 
+
+
+
+
+    Scenario: UTC for Pending Delivered Request Detail Page with Previously Inspected
+
+        Given current page is inspection request detail page
+        And status is Pending Delivered
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And UTC is clickable
+        And clicks UTC
+        And UTC Window is shown
+        And Select reason Previously Inspected
+        And add a comment 
+        And click save 
+        Then appointment is cancelled and information Previously Inspected is shown in Appointments section 
+        And Current Appontment Detail has cancelled message 
+
+
+
+    Scenario: UTC for Pending Delivered Request Detail Page with Weather
+
+        Given current page is inspection request detail page
+        And status is Pending Delivered
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And UTC is clickable
+        And clicks UTC
+        And UTC Window is shown
+        And Select reason Weather
+        And add a comment 
+        And click save 
+        Then appointment is cancelled and information Weather is shown in Appointments section 
+        And Current Appontment Detail has cancelled message 
+
+
+
+
+
+    Scenario: UTC for Pending Marshalling Yard Request Detail Page with Vehicle Unavailable
+
+        Given current page is inspection request detail page
+        And status is Pending Marshalling Yard
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And UTC is clickable
+        And clicks UTC
+        And UTC Window is shown
+        And Select reason Vehicle Unavailable
+        And select a subreason from dropdown menu
+        And select earliest available date 
+        And add a comment 
+        And click save 
+        Then appointment is cancelled and information Vehicle Unavailable is shown in Appointments section 
+        And Current Appontment Detail has cancelled message 
 
 
 
