@@ -3,7 +3,7 @@ Feature: LSS Logins / Schedule Appointment
     Scenario: Launch LSS Site
 
         Given Browser is opened
-        And navigated to AIM Inspect Site   //https://selfschedule.aiminspect.com/
+        And navigated to AIM Inspect Site   #https:#selfschedule.aiminspect.com/
         Then Lessee selfschedule site is displayed
         And Home page has 3 sections: Header, Body and Footer
 
@@ -12,26 +12,26 @@ Feature: LSS Logins / Schedule Appointment
         Given I am on LSS Home page Header section
         And I see site Logo
         And I see the link "About AiM"
-        And clicking on the link goes to //http://homepage.aiminspections.com/about-us/
+        And clicking on the link goes to #http:#homepage.aiminspections.com/about-us/
 
         Given I am on LSS Home page Body section
         And Body section has the followings:Title, Paragraph, Button and Link
-        Title: "Trusted inspectors. Honest evaluation. Timely service."
-        Paragraph 1: "Welcome to Alliance Inspection Management, the most trusted inspection company in North America."
-        Paragraph 2: "Please proceed to select the most convenient date and time for your complimentary pre-inspection."
-        Button: "Schedule Appointment"
-        Link: "Log in"
+        # Title: "Trusted inspectors. Honest evaluation. Timely service."
+        # Paragraph 1: "Welcome to Alliance Inspection Management, the most trusted inspection company in North America."
+        # Paragraph 2: "Please proceed to select the most convenient date and time for your complimentary pre-inspection."
+        # Button: "Schedule Appointment"
+        # Link: "Log in"
 
         Given I am on LSS Home page Footer section
         And Footer section contains 3 links and Text
-        And clicking on "Privacy Policy" link navigates to: "https://selfschedule-qa.aiminspect.com/privacy"
-        And clicking on "Terms of Service" link navigates to: "https://selfschedule-qa.aiminspect.com/terms"
-        And clicking on "Contact Us" link navigates to: "https://selfschedule-qa.aiminspect.com/contact-us"
+        And clicking on "Privacy Policy" link navigates to: "https:#selfschedule-qa.aiminspect.com/privacy"
+        And clicking on "Terms of Service" link navigates to: "https:#selfschedule-qa.aiminspect.com/terms"
+        And clicking on "Contact Us" link navigates to: "https:#selfschedule-qa.aiminspect.com/contact-us"
         And Footer Text: "© 2019 Alliance Inspection Management"
 
     Scenario: Go to LSS Login 
 
-        Given current page is Home Page     //https://selfschedule-qa.aiminspect.com/log-in   
+        Given current page is Home Page     #https:#selfschedule-qa.aiminspect.com/log-in   
         And clicked on 'Schedule Appointment' button  | And login link is clicked
         Then LSS Log in site is displayed             | Then LSS Login page displays 
 		
@@ -255,12 +255,12 @@ Feature: LSS Logins / Schedule Appointment
         When click on 'Confirm appointment' button
         Then 'confirmation' page is displayed
 
-// CHECK
+# CHECK
     Scenario:  Verify that the appointment is scheduled in CRM
 
         Given scheduled an appointment through LSS
         And the appointment is tied to a request and request is scheduled in CRM
-        When logs in to https://crm-qa.aiminspect.com 
+        When logs in to https:#crm-qa.aiminspect.com 
         And uses 'CSR/DISPATCH' as the user
         And the password is 'crmisnice'
         And search for the request using the confirmation # displayed in LSS
@@ -294,7 +294,7 @@ Feature: LSS Logins / Schedule Appointment
         And clicks on 'Get started' button.
         Then 'Existing appointment' page is displayed
 
-// CHECK
+# CHECK
     Scenario: Display alternative message when invalid location     address is entered and  schedule a request
 
         Given user is logged on to LSS site.
@@ -302,5 +302,4 @@ Feature: LSS Logins / Schedule Appointment
         And is on on 'Review request' page.
         When click on 'send request'
         Then confirmation message "Appointment Requested" displayed
-
 
