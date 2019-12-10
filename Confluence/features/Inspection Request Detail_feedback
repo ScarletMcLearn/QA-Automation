@@ -28,7 +28,7 @@ Feature: Inspection Request Detail functionalities
 
 
 
-    #### Scenario Status should be at the very top of test case
+
     Scenario: Inspection Request Update Status form displayed
 
         Given current page is inspection request detail page 
@@ -247,7 +247,12 @@ Feature: Inspection Request Detail functionalities
 
 
 
-    #### Should be under Disposition section at the top
+
+
+
+
+
+
     Scenario: Add Disposition from Inspection Request detail page 
 
         Given current page is inspection request detail page
@@ -288,6 +293,13 @@ Feature: Inspection Request Detail functionalities
         When user goes to a particular inspection requests detail page 
         And Dispositions section is shown 
         Then Dispositions section displays does not exist text  
+
+
+
+
+
+
+    
 
 
     Scenario: Inspection Request detail page shows all Current Appointment Detail section information
@@ -520,6 +532,100 @@ Feature: Inspection Request Detail functionalities
 
 
 
+    Scenario: Cancel Current Appointment with reason Vehicle Purchased by Dealership
+
+        Given current page is inspection request detail page
+        And current appointment exists 
+        When user clicks the 3 dots in the Current Appointment section 
+        And Cancel is clickable 
+        And clicks Cancel 
+        And Cancel Appointment window is shown 
+        And click reason dropdown menu 
+        And selects reason Vehicle Purchased by Dealership 
+        And click add internal comment field 
+        And enter an internal comment 
+        And click confirm 
+        Then Appointment cancelled and shown in Appointments section  
+
+
+    Scenario: Cancel Current Appointment with reason Customer/Dealer refused appontment
+
+        Given current page is inspection request detail page
+        And current appointment exists 
+        When user clicks the 3 dots in the Current Appointment section 
+        And Cancel is clickable 
+        And clicks Cancel 
+        And Cancel Appointment window is shown 
+        And click reason dropdown menu 
+        And selects reason Customer/Dealer refused appontment 
+        And click add internal comment field 
+        And enter an internal comment 
+        And click confirm 
+        Then Appointment cancelled in Appointments section 
+
+
+
+    Scenario: Cancel and Reschedule Current Appointment 
+
+        Given current page is inspection request detail page
+        And current appointment exists 
+        When user clicks the 3 dots in the Current Appointment section 
+        And Cancel is clickable 
+        And clicks Cancel 
+        And Cancel Appointment window is shown 
+        And click reason dropdown menu 
+        And selects reason Customer/Dealer refused appontment 
+        And click add internal comment field 
+        And enter an internal comment 
+        And click Reschedule button
+        And Schedule Appointment window is shown 
+        And select new appointment date
+        And select new appointment time 
+        And click save 
+        Then Appoints section has rescheduled Appointment information 
+
+
+
+    Scenario: Edit Current Appointment 
+
+        Given current page is inspection request detail page
+        And current appointment exists 
+        When user clicks the 3 dots in the Current Appointment section 
+        And Edit is clickable 
+        And clicks Edit 
+        And Edit Appointment window is shown 
+        And click States dropdown menu 
+        And selects state US 
+        And clicks Street 1
+        And enters a new Street address  
+        And select new appointment date
+        And select new appointment time 
+        And click Internal Comment field 
+        And enters Internal Comment 
+        And click save 
+        Then Appoints section has edited Appointment information 
+
+
+
+    
+
+
+
+    Scenario: Add Inspector Comment to Inspection Request detail page
+
+        Given current page is inspection request detail page
+        And inspector has no comment 
+        When user clicks Add Inspector Comment 
+        And Add Inspector Comment form is shown
+        And user fills Inspector Comment form 
+        And clicks submit 
+        And Add Disposition form is shown
+        And user fills Add Disposition form 
+        And clicks submit 
+        Then Inspection Request detail page has Inspector Comment added
+
+
+
 
 
 
@@ -535,7 +641,8 @@ Feature: Inspection Request Detail functionalities
 
 
 
-#### Scenarios should be laied out by order, section after section should not be jumping buttom to top or other way!
+
+
     Scenario: Appointment Audits detail displayed when clicks Appointment from Appointmen Audits 
 
         Given Appointment exists in Appointment Detail page 
@@ -577,6 +684,53 @@ Feature: Inspection Request Detail functionalities
 
 
 
+    Scenario: Appointment Audits with details are shown
+
+        Given current page is inspection request detail page
+        And Appointment Audit exists for detail page
+        When user clicks on an Appointment Audit
+        Then Appointment Audits details window is shown
+
+
+
+
+
+
+    Scenario: Add Internal Comment form not submitted without required fields
+
+        Given current page is inspection request detail page
+        When user clicks Add Internal Comment 
+        And Add Internal Comment form is shown
+        And clicks submit 
+        Then error message is shown to fill required fields
+
+    Scenario: Add Internal Comment to Inspection Request detail page
+
+        Given current page is inspection request detail page
+        When user clicks Add Internal Comment 
+        And Add Internal Comment form is shown
+        And user fills Internal Comment form 
+        And clicks submit 
+        Then Inspection Request detail page has Internal Comment added
+
+
+
+
+    Scenario: Edit Internal Comment on Inspection Request detail page
+
+        Given current page is inspection request detail page
+        And Internal Comment exists for detail page
+        When user clicks Edit Internal Comment 
+        And Edit Internal Comment form is shown
+        And user fills Edit Internal Comment form 
+        And clicks submit 
+        Then Inspection Request detail page has Internal Comment Edited
+        
+
+
+    
+
+
     Scenario: Inspection Request detail page shows all Internal Comments section information
 
         When user goes to a particular inspection requests detail page 
@@ -590,6 +744,18 @@ Feature: Inspection Request Detail functionalities
         When user goes to a particular inspection requests detail page 
         And Internal Comments section is shown 
         Then Internal Comments section displays does not exist text  
+
+
+
+
+    Scenario: Internal Comment shows all relavent information 
+
+        Given current page is inspection request detail page
+        And current Inspection Request detail page has internal comment 
+        When User finds Internal Comments section
+        Then Internal Comments section includes internal comment(s) with all proper data  
+
+
 
 
     Scenario: Inspection Request detail page shows all Request History section information
@@ -623,13 +789,7 @@ Feature: Inspection Request Detail functionalities
     
 
 
-#### Scenarios should be ordered as top to bottom fashion
-    Scenario: Internal Comment shows all relavent information 
 
-        Given current page is inspection request detail page
-        And current Inspection Request detail page has internal comment 
-        When User finds Internal Comments section
-        Then Internal Comments section includes internal comment(s) with all proper data  
 
 
     
@@ -649,61 +809,15 @@ Feature: Inspection Request Detail functionalities
 
 
 
-#### Order correctly
-    Scenario: Add Internal Comment to Inspection Request detail page
-
-        Given current page is inspection request detail page
-        When user clicks Add Internal Comment 
-        And Add Internal Comment form is shown
-        And user fills Internal Comment form 
-        And clicks submit 
-        Then Inspection Request detail page has Internal Comment added
-
-
-#### bring it to correct section
-    Scenario: Add Inspector Comment to Inspection Request detail page
-
-        Given current page is inspection request detail page
-        When user clicks Add Inspector Comment 
-        And Add Inspector Comment form is shown
-        And user fills Inspector Comment form 
-        And clicks submit 
-        And Add Disposition form is shown
-        And user fills Add Disposition form 
-        And clicks submit 
-        Then Inspection Request detail page has Inspector Comment added
-
-
-#### add this to appropriate section
-    Scenario: Add Internal Comment form not submitted without required fields
-
-        Given current page is inspection request detail page
-        When user clicks Add Internal Comment 
-        And Add Internal Comment form is shown
-        And clicks submit 
-        Then error message is shown to fill required fields
 
 
 
-#### add this in correct section
-    Scenario: Edit Internal Comment on Inspection Request detail page
-
-        Given current page is inspection request detail page
-        And Internal Comment exists for detail page
-        When user clicks Edit Internal Comment 
-        And Edit Internal Comment form is shown
-        And user fills Edit Internal Comment form 
-        And clicks submit 
-        Then Inspection Request detail page has Internal Comment Edited
 
 
 
-    Scenario: Appointment Audits with details are shown
 
-        Given current page is inspection request detail page
-        And Appointment Audit exists for detail page
-        When user clicks on an Appointment Audit
-        Then Appointment Audits details window is shown
+
+    
 
 
 
@@ -712,8 +826,6 @@ Feature: Inspection Request Detail functionalities
 
 
 #### to do: add the following test case
-did not see any test case for Cancel appointment
-did not see anything about Edit appointment details
 did not see Schedule test case
 did not see Send to Scheduler test case
 Also add disposition pop up cases
