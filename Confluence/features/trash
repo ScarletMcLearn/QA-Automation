@@ -1,13 +1,30 @@
-Assignment Manager Test case & coverage:
-**Features***
-- Login
-- Dashboard
-- Search Requests (basic and advanced)
-- Add Requests
-- Search Organizations 
-- Add Organizations
-- Request Page Details
+and this section is very much related with Request Status, Appointment Status and inspection type 
+
+so this is what i need today from you by EOD, complete Request Detail page Test Case
+
+capture:
+- Request Status test case in relation with Current Appointment Detail Section
+- Appointment Status test case in relation with Current Appointment Detail section
+- Inspection Type in relation with Current Appointment Detail 
 
 
-RPD - UTC - Scheduled, Hold Nissan, Home; S,  D; P, D; P, MY;
-NUTC - Scheduled, TPI; P, TPI; P, H;
+combination and individual
+
+but capture all possible scenarios
+
+
+
+P Hm / P MY / P Lng trm order / P Thrd prty inspctn -> S
+P D -> S, S2S
+P MY  -> E C UTC
+P Mbl S, P PSI -> E C
+Po Hm, P Hm -> S
+Ptntl Ho -> S
+On Ho D, On Ho MY, On Ho Hm  -> E C UTC
+Oh Ho, TPI, OH LTO -> E C
+Dta Rv P -> E C
+S D, S Hm, S MY -> E C UTC
+S TPI, S NGC, S MblS, S LTO, S PSI  -> E C
+ATL LTO -> E C
+ATL TPI -> E C
+ATL P -> E C
