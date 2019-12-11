@@ -1,0 +1,16 @@
+    Scenario:
+
+        Given current page is inspection request detail page
+        And status is Pending Home 
+        And appointment date availability exists
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And Schedule is clickable
+        And clicks Schedule
+        And Schedule Appointment Window is shown
+        And select new appointment date
+        And click check availability
+
+        And add a comment 
+        And click save 
+        Then appointment is cancelled and information Previously Inspected is shown in Appointments section 
+        And Current Appontment Detail has cancelled message 
