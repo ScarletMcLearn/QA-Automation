@@ -1,4 +1,4 @@
-    Scenario:
+Scenario: Change Status from Pending Home to Scheduled Home in Current Appointment Detail section   
 
         Given current page is inspection request detail page
         And status is Pending Home 
@@ -9,8 +9,10 @@
         And Schedule Appointment Window is shown
         And select new appointment date
         And click check availability
-
-        And add a comment 
+        And selects an available time 
+        And clicks force create 
+        And select an Assigned Inspector
+        And select a Call Type
         And click save 
-        Then appointment is cancelled and information Previously Inspected is shown in Appointments section 
-        And Current Appontment Detail has cancelled message 
+        Then Appointments section has the new Scheduled Appointment
+        And Current Appointment Status changed 

@@ -607,6 +607,41 @@ Feature: Inspection Request Detail functionalities
 
 
 
+    Scenario: Change Status from Pending Home to Scheduled Home in Current Appointment Detail section   
+
+        Given current page is inspection request detail page
+        And status is Pending Home 
+        And appointment date availability exists
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And Schedule is clickable
+        And clicks Schedule
+        And Schedule Appointment Window is shown
+        And select new appointment date
+        And click check availability
+        And selects an available time 
+        And clicks force create 
+        And select an Assigned Inspector
+        And select a Call Type
+        And click save 
+        Then Appointments section has the new Scheduled Appointment
+        And Current Appointment Status changed 
+
+
+
+
+    Scenario: Change Status from Pending Dealer Cancelled to Pending Dealer Open in Current Appointment Detail section using Send to Scheduler   
+
+        Given current page is inspection request detail page
+        And status is Pending Home 
+        And appointment date availability exists
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And Send to Scheduler is clickable
+        And clicks Send to Scheduler
+        And Send to Scheduler Window is shown
+        And click Confirm 
+        Then Appointments section has the new Open Appointment 
+        And Current Appointment Status changed 
+
     
 
 

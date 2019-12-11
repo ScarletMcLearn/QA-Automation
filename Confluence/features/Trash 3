@@ -1,0 +1,12 @@
+Scenario: Change Status from Pending Dealer Cancelled to Pending Dealer Open in Current Appointment Detail section using Send to Scheduler   
+
+        Given current page is inspection request detail page
+        And status is Pending Home 
+        And appointment date availability exists
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And Send to Scheduler is clickable
+        And clicks Send to Scheduler
+        And Send to Scheduler Window is shown
+        And click Confirm 
+        Then Appointments section has the new Open Appointment 
+        And Current Appointment Status changed 
