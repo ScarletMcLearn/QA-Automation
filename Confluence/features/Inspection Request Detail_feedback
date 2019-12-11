@@ -642,6 +642,84 @@ Feature: Inspection Request Detail functionalities
         Then Appointments section has the new Open Appointment 
         And Current Appointment Status changed 
 
+
+
+    Scenario: Schedule Appointment for Pending Marshall Yard in Current Appointment Detail section   
+
+        Given current page is inspection request detail page
+        And status is Pending Marshall Yard
+        And no current appointment exists
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And Schedule is clickable
+        And clicks Schedule
+        And Schedule Appointment Window is shown
+        And select new appointment date
+        And enters a time 
+        And select an Assigned Inspector
+        And select a Call Type
+        And click save 
+        Then Appointments section has the new Scheduled Appointment
+        And Current Appointment Status changed 
+
+
+
+    Scenario: Schedule Appointment for Pending Long Term Order in Current Appointment Detail section   
+
+        Given current page is inspection request detail page
+        And status is Pending Long Term Order
+        And no current appointment exists
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And Schedule is clickable
+        And clicks Schedule
+        And Schedule Appointment Window is shown
+        And select new appointment date
+        And enters a time 
+        And select an Assigned Inspector
+        And select a Call Type
+        And click save 
+        Then Appointments section has the new Scheduled Appointment
+        And Current Appointment Status changed 
+
+
+
+    
+    Scenario: Schedule Appointment for Pending Third Party Inspection in Current Appointment Detail section   
+
+        Given current page is inspection request detail page
+        And status is Pending Third Party Inspection
+        And no current appointment exists
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And Schedule is clickable
+        And clicks Schedule
+        And Schedule Appointment Window is shown
+        And select new appointment date
+        And enters a time 
+        And select an Assigned Inspector
+        And select a Call Type
+        And click save 
+        Then Appointments section has the new Scheduled Appointment
+        And Current Appointment Status changed 
+
+
+    Scenario: Change Status from Pending Home to Scheduled Home in Current Appointment Detail section   
+
+        Given current page is inspection request detail page
+        And status is Pending Home 
+        And appointment date availability exists
+        When user clicks the 3 dots in the Current Appointment Detail section 
+        And Schedule is clickable
+        And clicks Schedule
+        And Schedule Appointment Window is shown
+        And select new appointment date
+        And click check availability
+        And selects an available time 
+        And clicks force create 
+        And select an Assigned Inspector
+        And select a Call Type
+        And click save 
+        Then Appointments section has the new Scheduled Appointment
+        And Current Appointment Status changed 
+
     
 
 
