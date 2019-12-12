@@ -253,14 +253,36 @@ Feature: Inspection Request Detail functionalities
 
 
 
-    Scenario: Add Disposition from Inspection Request detail page 
+    Scenario: Add Disposition from with Incoming Call from Inspection Request detail page 
 
         Given current page is inspection request detail page
         When user clicks Add Disposition 
         And Add Disposition form is shown
-        And user fills Add Disposition form 
+        And clicks call type Incoming Call 
+        And click Disposition Type dropdown menu 
+        And select Busy Signal from dropdown menu 
+        And click Comment text field 
+        And enter a call comment  
         And clicks submit 
         Then Inspection Request detail page has disposition added
+
+
+
+    Scenario: Add Disposition from with Outgoing Call from Inspection Request detail page 
+
+        Given current page is inspection request detail page
+        When user clicks Add Disposition 
+        And Add Disposition form is shown
+        And clicks call type Outgoing Call 
+        And click Disposition Type dropdown menu 
+        And select Busy Signal from dropdown menu 
+        And click Comment text field 
+        And enter a call comment  
+        And clicks submit 
+        Then Inspection Request detail page has disposition added
+
+
+
 
 
     
@@ -361,7 +383,7 @@ Feature: Inspection Request Detail functionalities
         Given current page is inspection request detail page
         And status is Scheduled Hold
         When user clicks the 3 dots in the Current Appointment Detail section 
-        And UTC is clickable
+        And UTC is clickable 
         And clicks UTC
         And UTC Window is shown
         And Select reason Extended Lease 
@@ -724,6 +746,32 @@ Feature: Inspection Request Detail functionalities
 
 
 
+    Scenario: Cancelling Edit Appointment from Current Appointment shows Add Disposition popup
+
+        Given current page is inspection request detail page
+        And current appointment is scheduled
+        When user clicks the 3 dots in the Current Appointment section 
+        And Edit is clickable 
+        And clicks Edit 
+        And Edit Appointment window is shown  
+        And clicks Cancel button 
+        Then Add Disposition popup is shown    
+
+
+
+    Scenario: Cancelling Cancel Appointment from Current Appointment shows Add Disposition popup
+
+        Given current page is inspection request detail page
+        And current appointment is scheduled
+        When user clicks the 3 dots in the Current Appointment section 
+        And Cancel is clickable 
+        And clicks Cancel 
+        And Cancel Appointment window is shown  
+        And clicks Cancel button 
+        Then Add Disposition popup is shown 
+
+
+
     Scenario: Add Inspector Comment to Inspection Request detail page
 
         Given current page is inspection request detail page
@@ -733,7 +781,11 @@ Feature: Inspection Request Detail functionalities
         And user fills Inspector Comment form 
         And clicks submit 
         And Add Disposition form is shown
-        And user fills Add Disposition form 
+        And clicks call type Incoming Call 
+        And click Disposition Type dropdown menu 
+        And select Busy Signal from dropdown menu 
+        And click Comment text field 
+        And enter a call comment  
         And clicks submit 
         Then Inspection Request detail page has Inspector Comment added
 
