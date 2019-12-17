@@ -1,16 +1,23 @@
 from behave import given, when, then
 
+from time import sleep
+
+
 @given(u'Browser is opened')
 def step_impl(context):
-    assert False
+    context.driver()
+    context.driver.implicitly_wait(2)
 
 @given(u'nagivated to AIM inspect site // https://crm-qa.aiminspect.com/')
 def step_impl(context):
-    assert False
+    context.driver.get('https://crm-qa.aiminspect.com/')
+    context.driver.implicitly_wait(200)
+    # assert False
 
 @given(u'AIM Inspect site is displayed')
 def step_impl(context):
-    assert False
+    # C105
+    assert context.driver.title == 'AiM Assignment Manager'
 
 @given(u'correct user name and password is entered')
 def step_impl(context):
@@ -1055,9 +1062,7 @@ def step_impl(context):
   
 
 
-@given(u'navigated to AIM Inspect Site   # https://selfschedule.aiminspect.com/')
-def step_impl(context):
-    assert False
+
 
 @then(u'Lessee selfschedule site is displayed')
 def step_impl(context):
@@ -1740,9 +1745,11 @@ def step_impl(context):
 
 
 
-@given(u'navigated to AIM Inspect Site   //https://selfschedule.aiminspect.com/')
+@given(u'navigated to AIM Inspect Site   //https://qa.aiminspect.com/')
 def step_impl(context):
-    assert False
+    context.browser.get('https://qa.aiminspect.com/')
+    context.browser.implicitly_wait(200)
+    # assert False
 
 @given(u'Account number is entered')
 def step_impl(context):

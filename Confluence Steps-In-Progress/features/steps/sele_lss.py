@@ -96,6 +96,61 @@ def give_val_to_field(field, val):
     field.send_keys(val)
 
 
+# VIN / AC Cases
+def no_vin_field(context):
+    vin_f = get_vin_ele(context)
+    give_val_to_field(vin_f, '')
+
+def no_ac_field(context):
+    vin_f = get_acc_no_ele(context)
+    give_val_to_field(vin_f, '')
+
+
+# Error messages
+def only_vin_error_message(context):
+    return context.find_elements_by_class_name('error-message')[0].text == 'Enter a valid VIN'
+
+def only_ac_no_error_message(context):
+    return context.find_elements_by_class_name('error-message')[0].text == 'Enter a valid account number'
+
+def both_vin_and_ac_no_error_message(context):
+    return context.find_elements_by_class_name('error-message')[0].text == 'Enter a valid VIN' and context.find_elements_by_class_name('error-message')[1].text == 'Enter a valid account number'
+
+
+def valid_vin_invalid_ac_no_error_message(context):
+    vin_f = get_vin_ele(context)
+    give_val_to_field(vin_f, '2C4RDGCG1HR678206')
+
+    ac_no_f = get_acc_no_ele(context)
+    give_val_to_field(ac_no_f, 'invalidacno')
+
+    context.find_element_by_xpath('//button[text()="Get started"]').send_keys('\n')
+
+    return context.find_element_by_class_name('error-message').text == 'We were unable to match the VIN and account number you entered. Please check your entries and try again.'
+
+
+def invalid_vin_valid_ac_no_error_message(context):
+    vin_f = get_vin_ele(context)
+    give_val_to_field(vin_f, 'invalid')
+
+    ac_no_f = get_acc_no_ele(context)
+    give_val_to_field(ac_no_f, 'jghj')
+
+    context.find_element_by_xpath('//button[text()="Get started"]').send_keys('\n')
+
+    return context.find_element_by_class_name('error-message').text == 'We were unable to match the VIN and account number you entered. Please check your entries and try again.'
+
+
+
+def invalid_vin_valid_ac_no_error_message(context):
+    vin_f = get_vin_ele(context)
+    give_val_to_field(vin_f, 'invalid')
+    ac_no_f = get_acc_no_ele(context)
+    give_val_to_field(ac_no_f, 'jghj')
+    context.find_element_by_xpath('//button[text()="Get started"]').send_keys('\n')
+    context.implicitly_wait(30)
+    return context.find_element_by_class_name('error-message').text == 'We were unable to match the VIN and account number you entered. Please check your entries and try again.'
+
 
 
 
