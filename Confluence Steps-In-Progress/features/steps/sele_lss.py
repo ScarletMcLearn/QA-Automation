@@ -52,6 +52,52 @@ def check_about_section(context):
     return about == 'About AiM'
 
 
+def get_schedule_appointment_button(context):
+    return context.find_element_by_xpath('//button[text()="Schedule Appointment"]')
+
+def click_schedule_appointment_button(context, btn):
+    btn.send_keys('\n')
+
+
+def check_login_page_displayed(context):
+    welcome_heading_displayed = context.find_element_by_tag_name('h1').text == 'Welcome'
+
+    vin_field_displayed = bool(context.find_element_by_id('vin')) == True 
+
+    acc_no_field_displayed = bool(context.find_element_by_id('accountNo')) == True 
+
+    get_started_btn_displayed = bool(context.find_element_by_xpath('//button[text()="Get started"]'))
+
+    need_help_link_displayed = bool(context.find_element_by_xpath('//button[text()="Need help?"]'))
+
+    login_url_true = context.current_url == 'https://selfschedule-qa.aiminspect.com/log-in'
+
+
+    return welcome_heading_displayed and vin_field_displayed and acc_no_field_displayed and get_started_btn_displayed and need_help_link_displayed
+
+
+# Login Page Elements 
+def get_vin_ele(context):
+    return context.find_element_by_id('vin')
+
+def get_acc_no_ele(context):
+    return context.find_element_by_id('accountNo')
+
+def get_get_started_ele(context):
+    return context.find_element_by_xpath('//button[text()="Get started"]')
+
+def get_need_help_ele(context):
+    return context.find_element_by_xpath('//button[text()="Need help?"]')
+
+
+def give_val_to_field(field, val):
+    field.send_keys(Keys.CONTROL+'a')
+    field.send_keys(Keys.DELETE)
+    field.send_keys(val)
+
+
+
+
 
 # cntxt = open_browser()
 
