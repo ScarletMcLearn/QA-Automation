@@ -47,6 +47,12 @@ def check_logo(context):
     return logo_extension == 'svg'
 
 
+def check_about_section(context):
+    about = context.find_elements_by_class_name('hidden-xs')[0].text.split('\n')[0]
+    return about == 'About AiM'
+
+
+
 # cntxt = open_browser()
 
 # go_to(cntxt, "https://selfschedule-qa.aiminspect.com")
