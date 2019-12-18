@@ -154,12 +154,36 @@ def invalid_vin_valid_ac_no_error_message(context):
 
 
 
-# cntxt = open_browser()
+# About Page
+def get_about_page_url(context):
+    return context.find_element_by_link_text('About AiM').get_attribute('href')
 
-# go_to(cntxt, "https://selfschedule-qa.aiminspect.com")
+def click_about_page_navbar_item(context):
+    context.get(get_about_page_url(context))
 
-# print(check_title(cntxt, 'Lessee Self Schedule'))
+    
 
-# print(check_body(cntxt))
+def about_page_navbar_displayed(context):
+    menu_items= context.find_element_by_id('shiftnav-toggle-main').text.split('\n')
+    main_menu_text_is_shown = menu_items[0] == 'Main Menu'
+    about_text_is_shown = menu_items[1] == 'Accounts'
+    about_page_aim_logo_is_shown = bool(context.find_element_by_id('aim_logo'))
+    about_page_title_is_shown = context.find_element_by_class_name("main-title").text == 'About Us'
 
-# close_browser(cntxt)
+    about_page_pic = context.find_element_by_class_name("wp-image-2502").get_attribute('src').split('.')[-1]
+    about_page_pic_is_shown = about_page_pic == 'png'
+
+    about_page_body_is_shown = bool(context.find_element_by_class_name('avia_textblock'))
+
+    about_page_portfolio_box_is_shown = bool(context.find_element_by_id('portfoliobox-2'))
+
+    about_page_services = context.find_elements_by_class_name('news-link')
+
+    about_page_services_correct = about_page_services[0].text == "Claims Management" and about_page_services[1].text == "Technology Solutions" and about_page_services[2].text == "Floorplan Audit" and about_page_services[3].text == "MarketConnect" and about_page_services[4].text == "Vehicle Inspections" 
+
+    about_page_footer_is_displayed = bool(context.find_element_by_id('socket'))
+    about_page_text_is_correct = context.find_element_by_id('socket').text == '© Copyright 2017 - Alliance Inspection Management'
+
+    return about_page_text_is_correct and about_page_footer_is_displayed and about_page_services_correct and about_page_portfolio_box_is_shown and about_page_body_is_shown and about_page_pic_is_shown and about_page_title_is_shown and about_page_aim_logo_is_shown and about_text_is_shown and main_menu_text_is_shown
+
+
