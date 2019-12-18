@@ -154,8 +154,21 @@ def invalid_vin_valid_ac_no_error_message(context):
 
 
 
+
+
+# Helper Functions
+
+def get_url_by_text(context, text):
+    return context.find_element_by_link_text(text).get_attribute('href')
+
+def click_url(context, text):
+    context.get(get_url_by_text(context, text))
+
+
 # About Page
+
 def get_about_page_url(context):
+    # this only works when zoomed out
     return context.find_element_by_link_text('About AiM').get_attribute('href')
 
 def click_about_page_navbar_item(context):
