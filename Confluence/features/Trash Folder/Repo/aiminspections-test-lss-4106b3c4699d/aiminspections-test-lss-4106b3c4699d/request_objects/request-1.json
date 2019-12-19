@@ -1,0 +1,54 @@
+{
+  "inspectionType": 2,
+  "inspectionLocation": {
+	"country": "US",
+	"street1": "34405 12 Mile Rd",
+	"city": "Farmington Hills",
+	"state": "MI",
+	"zip": "48331"
+  },
+  "preferredDays": [],
+  "vehicles": [
+	{
+	  "color": "blue",
+	  "isInvalid": false,
+	  "vin": "1N4AA5AP0DC822236",
+	  "make": "NISSAN",
+	  "model": "MAXIMA",
+	  "year": "2013",
+	  "trim": "4dr Sdn SLX",
+	  "stockNo": "12345"
+	}
+  ],
+  "vehicleQuantity": 1,
+  "accountNo": "239482394823",
+  "customer": "NISSAN",
+  "lesseeLocation": {
+	"country": "US",
+	"street1": "34405 12 Mile Rd",
+	"city": "Farmington Hills",
+	"state": "MI",
+	"zip": "48331"
+  },
+  "lesseeFirstName": "Joe",
+  "lesseeLastName": "Smith",
+  "lesseeEmail": "joe.smith@yahoo.info",
+  "spokenLanguage": "en",
+  "writtenLanguage": "en",
+  "stateOfOrigin": "MI",
+  "phoneNumbers": [
+	{
+	  "tags": [
+		"home",
+		"primary"
+	  ],
+	  "number": "1234567890"
+	},
+	{
+	  "tags": [
+		"business"
+	  ],
+	  "number": "2345678901"
+	}
+  ]
+}

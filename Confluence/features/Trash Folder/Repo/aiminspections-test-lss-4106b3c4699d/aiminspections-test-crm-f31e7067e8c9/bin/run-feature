@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+oops () {
+	echo "Error: please specify which feature to run."
+	echo "Usage:"
+	echo "./bin/run-feature features/example-feature.feature"
+	exit
+}
+
+if [ -z "$1" ]
+	then oops
+fi
+
+npm test -- --spec $1
+
