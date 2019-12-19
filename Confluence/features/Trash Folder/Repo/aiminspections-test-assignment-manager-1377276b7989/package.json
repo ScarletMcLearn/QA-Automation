@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "chai": "^3.5.0",
+    "cucumber": "^1.3.3",
+    "gherkin-parser": "",
+    "replacestream": "4.0.2",
+    "selenium-standalone": "^6.0.1",
+    "wdio-cucumber-framework": "^0.2.17",
+    "wdio-selenium-standalone-service": "0.0.8",
+    "wdio-spec-reporter": "^0.0.3",
+    "webdriverio": "^4.2.11",
+    "request-promise": ""
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/wdio",
+    "qa": "./node_modules/.bin/wdio --spec",
+    "mobile": "./node_modules/.bin/wdio --cucumberOpts.tags=@mobile --spec",
+    "tablet": "./node_modules/.bin/wdio --cucumberOpts.tags=@tablet --spec",
+    "desktop": "./node_modules/.bin/wdio --cucumberOpts.tags=@desktop --spec"
+  }
+}
