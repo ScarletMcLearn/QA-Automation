@@ -218,6 +218,8 @@ def check_number_of_paras(context, num):
 
 
 
+
+
 # Privacy Policy Page
 def click_privacy_policy_url(context):
     click_url(context, 'Privacy Policy')
@@ -251,6 +253,22 @@ def check_terms_page_body(context):
 
 
 # Contact Page
+def click_contact_page_url(context):
+    click_url(context, 'Contact Us')
+
+def check_contact_page_heading(context):
+    return check_text(context, 'h2', 'Contact Us')
+
+def check_contact_page_body(context):
+    h2 = get_subheading(context)
+    sz_correct = len(h2) == 1 
+    no_of_paras_correct = len(context.find_elements_by_tag_name('h4')) == 1 
+    para_text_correct = context.find_elements_by_tag_name('h4')[0].text == 'Please contact our team to help with your appointment.'
+
+    contact_page_pic = context.find_element_by_class_name("csr-icon").get_attribute('src').split('.')[-1]
+    contact_page_pic_is_shown = contact_page_pic == 'png'
+
+    return sz_correct and no_of_paras_correct and para_text_correct and contact_page_pic_is_shown
 
 
 
