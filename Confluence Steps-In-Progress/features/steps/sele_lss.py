@@ -200,3 +200,36 @@ def about_page_navbar_displayed(context):
     return about_page_text_is_correct and about_page_footer_is_displayed and about_page_services_correct and about_page_portfolio_box_is_shown and about_page_body_is_shown and about_page_pic_is_shown and about_page_title_is_shown and about_page_aim_logo_is_shown and about_text_is_shown and main_menu_text_is_shown
 
 
+
+
+
+# Helper Functions 2
+def get_heading(context):
+    return context.find_elements_by_tag_name('h1')[0].text
+
+def get_subheading(context):
+    return context.find_elements_by_tag_name('h2')
+
+def check_text(context, tag, text):
+    return context.find_elements_by_tag_name(tag)[0].text == text
+
+
+# Privacy Policy Page
+def click_privacy_policy_url(context):
+    click_url(context, 'Privacy Policy')
+
+def check_privacy_policy_page_heading(context):
+    return check_text(context, 'h1', 'Privacy Policy')
+
+def check_privacy_policy_page_subheadings(context):
+    h2 = get_subheading(context)
+    sz_correct = len(h2) == 15
+    #
+    sub_heading_texts_correct = h2[0].text == 'Introduction' and h2[1].text == 'Information We Collect' and h2[2].text == 'How We May Use the Information We Collect' and h2[3].text == 'Applications, Widgets and Social Media' and h2[4].text == 'Advertising Networks' and h2[5].text == 'Information We Share' and h2[6].text == 'Your Choices' and h2[7].text == 'Data Transfers' and h2[8].text == 'Your California Privacy Rights' and h2[9].text == 'Access and Correction' and h2[10].text == 'Links' and h2[11].text == 'Data Security' and h2[12].text == 'Disputes' and h2[13].text == 'Updates to this Privacy Statement' and h2[14].text == 'How to Contact Us'
+    #
+    return sz_correct and sub_heading_texts_correct
+
+
+
+
+
