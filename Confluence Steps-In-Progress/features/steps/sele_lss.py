@@ -207,7 +207,7 @@ def about_page_navbar_displayed(context):
 def get_heading(context):
     return context.find_elements_by_tag_name('h1')[0].text
 
-def get_subheading(context):
+def get_subheadings(context):
     return context.find_elements_by_tag_name('h2')
 
 def check_text(context, tag, text):
@@ -228,7 +228,7 @@ def check_privacy_policy_page_heading(context):
     return check_text(context, 'h1', 'Privacy Policy')
 
 def check_privacy_policy_page_subheadings(context):
-    h2 = get_subheading(context)
+    h2 = get_subheadings(context)
     sz_correct = len(h2) == 15
     #
     sub_heading_texts_correct = h2[0].text == 'Introduction' and h2[1].text == 'Information We Collect' and h2[2].text == 'How We May Use the Information We Collect' and h2[3].text == 'Applications, Widgets and Social Media' and h2[4].text == 'Advertising Networks' and h2[5].text == 'Information We Share' and h2[6].text == 'Your Choices' and h2[7].text == 'Data Transfers' and h2[8].text == 'Your California Privacy Rights' and h2[9].text == 'Access and Correction' and h2[10].text == 'Links' and h2[11].text == 'Data Security' and h2[12].text == 'Disputes' and h2[13].text == 'Updates to this Privacy Statement' and h2[14].text == 'How to Contact Us'
@@ -246,7 +246,7 @@ def check_terms_page_heading(context):
     return check_text(context, 'h1', 'Site and Service Terms and Conditions')
 
 def check_terms_page_body(context):
-    h2 = get_subheading(context)
+    h2 = get_subheadings(context)
     sz_correct = len(h2) == 1 
     no_of_paras_correct = len(context.find_elements_by_tag_name('p')) == 17 
     return sz_correct and no_of_paras_correct
@@ -260,7 +260,7 @@ def check_contact_page_heading(context):
     return check_text(context, 'h2', 'Contact Us')
 
 def check_contact_page_body(context):
-    h2 = get_subheading(context)
+    h2 = get_subheadings(context)
     sz_correct = len(h2) == 1 
     no_of_paras_correct = len(context.find_elements_by_tag_name('h4')) == 1 
     para_text_correct = context.find_elements_by_tag_name('h4')[0].text == 'Please contact our team to help with your appointment.'
@@ -269,6 +269,27 @@ def check_contact_page_body(context):
     contact_page_pic_is_shown = contact_page_pic == 'png'
 
     return sz_correct and no_of_paras_correct and para_text_correct and contact_page_pic_is_shown
+
+
+
+# Existing Appointment Login
+
+def click_schedule_appointment_button(context):
+    btn = context.find_element_by_class_name('btn-primary')
+    #
+    if btn.text == 'Schedule Appointment':
+        btn.click()
+
+
+def login_to_account_with_existing_appointment(context):
+    vin_f = get_vin_ele(context)
+    give_val_to_field(vin_f, '5YJ3E1EB7JF116345')
+    ac_no_f = get_acc_no_ele(context)
+    give_val_to_field(ac_no_f, '2213123')
+    context.find_element_by_xpath('//button[text()="Get started"]').send_keys('\n')
+    context.implicitly_wait(30)
+
+def appointment_already_scheduled_page(context):
 
 
 
