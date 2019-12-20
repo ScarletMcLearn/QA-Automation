@@ -213,6 +213,10 @@ def get_subheading(context):
 def check_text(context, tag, text):
     return context.find_elements_by_tag_name(tag)[0].text == text
 
+def check_number_of_paras(context, num):
+    return len(context.find_elements_by_tag_name('p')) == num
+
+
 
 # Privacy Policy Page
 def click_privacy_policy_url(context):
@@ -227,9 +231,26 @@ def check_privacy_policy_page_subheadings(context):
     #
     sub_heading_texts_correct = h2[0].text == 'Introduction' and h2[1].text == 'Information We Collect' and h2[2].text == 'How We May Use the Information We Collect' and h2[3].text == 'Applications, Widgets and Social Media' and h2[4].text == 'Advertising Networks' and h2[5].text == 'Information We Share' and h2[6].text == 'Your Choices' and h2[7].text == 'Data Transfers' and h2[8].text == 'Your California Privacy Rights' and h2[9].text == 'Access and Correction' and h2[10].text == 'Links' and h2[11].text == 'Data Security' and h2[12].text == 'Disputes' and h2[13].text == 'Updates to this Privacy Statement' and h2[14].text == 'How to Contact Us'
     #
-    return sz_correct and sub_heading_texts_correct
+    no_of_paras_correct = len(context.find_elements_by_tag_name('p')) == 36
+    return sz_correct and sub_heading_texts_correct and no_of_paras_correct
 
 
+
+# Terms Page
+def click_terms_page_url(context):
+    click_url(context, 'Terms of Service') 
+
+def check_terms_page_heading(context):
+    return check_text(context, 'h1', 'Site and Service Terms and Conditions')
+
+def check_terms_page_body(context):
+    h2 = get_subheading(context)
+    sz_correct = len(h2) == 1 
+    no_of_paras_correct = len(context.find_elements_by_tag_name('p')) == 17 
+    return sz_correct and no_of_paras_correct
+
+
+# Contact Page
 
 
 
