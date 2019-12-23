@@ -289,7 +289,7 @@ def login_to_account_with_existing_appointment(context):
     context.find_element_by_xpath('//button[text()="Get started"]').send_keys('\n')
     context.implicitly_wait(30)
 
-def appointment_already_scheduled_page(context):
+def appointment_already_scheduled_page_displayed(context):
     currently_on_existing_appointment_page = context.current_url == 'https://selfschedule-qa.aiminspect.com/existing-appointment'
     existing_appointment_page_logo_shown = context.find_element_by_class_name('rocket-icon').get_attribute('src').split('.')[-1] == 'png'
     existing_appointment_page_heading_shown = context.find_element_by_tag_name('h2').text == 'It looks like you already have an appointment scheduled.'
