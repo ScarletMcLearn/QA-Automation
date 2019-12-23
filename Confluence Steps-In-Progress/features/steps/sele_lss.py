@@ -290,6 +290,16 @@ def login_to_account_with_existing_appointment(context):
     context.implicitly_wait(30)
 
 def appointment_already_scheduled_page(context):
-
+    currently_on_existing_appointment_page = context.current_url == 'https://selfschedule-qa.aiminspect.com/existing-appointment'
+    existing_appointment_page_logo_shown = context.find_element_by_class_name('rocket-icon').get_attribute('src').split('.')[-1] == 'png'
+    existing_appointment_page_heading_shown = context.find_element_by_tag_name('h2').text == 'It looks like you already have an appointment scheduled.'
+    confirmation_number_shown = bool(context.find_element_by_id('confirmationNo').text)
+    appointment_date_time_shown = bool(context.find_element_by_id('dateTime').text)
+    appointment_loc_shown = bool(context.find_element_by_id('apptLocation').text)
+    info_text_shown = context.find_element_by_tag_name('h5').text == 'If you have any questions about your appointment, please contact our team.'
+    help_contact_shown = bool(context.find_elements_by_class_name('contact-container')[0].text)
+    call_center_hours_shown = bool(context.find_element_by_id('callCenterHours').text)
+    #
+    return currently_on_existing_appointment_page and existing_appointment_page_logo_shown and existing_appointment_page_heading_shown and confirmation_number_shown and appointment_date_time_shown and appointment_loc_shown and info_text_shown and help_contact_shown and call_center_hours_shown
 
 
