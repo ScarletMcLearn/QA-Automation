@@ -303,3 +303,25 @@ def appointment_already_scheduled_page_displayed(context):
     return currently_on_existing_appointment_page and existing_appointment_page_logo_shown and existing_appointment_page_heading_shown and confirmation_number_shown and appointment_date_time_shown and appointment_loc_shown and info_text_shown and help_contact_shown and call_center_hours_shown
 
 
+
+# Inspection Completed Login
+
+def login_to_account_with_completed_appointment(context):
+    vin_f = get_vin_ele(context)
+    give_val_to_field(vin_f, 'WVWGA0167GW537860')
+    ac_no_f = get_acc_no_ele(context)
+    give_val_to_field(ac_no_f, '20191101NHah01')
+    context.find_element_by_xpath('//button[text()="Get started"]').send_keys('\n')
+    context.implicitly_wait(30)
+
+def inspection_completed_page_displayed(context):
+    currently_on_inspection_completed_page = context.current_url == 'https://selfschedule-qa.aiminspect.com/condition'
+    greeting_message_shown = 'Hello' in context.find_element_by_class_name('col-xs-12').text == True
+    headbar_shown = bool(context.find_element_by_class_name('header-bar'))
+    headbar_text_correct = context.find_element_by_class_name('header-bar').text == 'Overview'
+    vin_shown = len(context.find_elements_by_class_name('vin')) > 0
+    inspection_date_and_status_shown = len(context.find_elements_by_class_name('inspection-fact')) == 2
+    view_cr_button_exists = bool(context.find_element_by_partial_link_text('View CR').get_attribute('href'))
+    
+
+
