@@ -359,6 +359,7 @@ def get_cr_button_url(context):
     return context.find_elements_by_partial_link_text('View CR')[0].get_attribute('href')
 
 def cr_pdf_displayed(context, url):
+    # click_view_cr_button(context)
     # cr_pdf_displayed(context, get_cr_button_url(context))
     context.switch_to.window(context.window_handles[1])
     new_tab_url = context.current_url
