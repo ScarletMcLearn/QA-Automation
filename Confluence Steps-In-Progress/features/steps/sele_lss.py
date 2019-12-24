@@ -316,12 +316,52 @@ def login_to_account_with_completed_appointment(context):
 
 def inspection_completed_page_displayed(context):
     currently_on_inspection_completed_page = context.current_url == 'https://selfschedule-qa.aiminspect.com/condition'
-    greeting_message_shown = 'Hello' in context.find_element_by_class_name('col-xs-12').text == True
+    greeting_message_shown = ('Hello' in context.find_element_by_class_name('col-xs-12').text) == True
     headbar_shown = bool(context.find_element_by_class_name('header-bar'))
     headbar_text_correct = context.find_element_by_class_name('header-bar').text == 'Overview'
     vin_shown = len(context.find_elements_by_class_name('vin')) > 0
     inspection_date_and_status_shown = len(context.find_elements_by_class_name('inspection-fact')) == 2
     view_cr_button_exists = bool(context.find_element_by_partial_link_text('View CR').get_attribute('href'))
-    
+    get_nav_tabs = context.find_elements_by_class_name('nav-tabs')
+    nav_tabs_displayed = get_nav_tabs[0].text == 'STANDARD PHOTOS\nDAMAGE PHOTOS'
+    #
+    return nav_tabs_displayed and view_cr_button_exists and inspection_date_and_status_shown and vin_shown and headbar_text_correct and headbar_shown and greeting_message_shown and currently_on_inspection_completed_page
 
 
+def standard_photos_tab_active_by_default(context):
+    return context.find_elements_by_class_name('active')[0].text == 'STANDARD PHOTOS'
+
+def click_damaged_photos_tab(context):
+    context.find_element_by_partial_link_text('DAMAGE PHOTOS').click()
+
+def damaged_photos_tab_active(context):
+    return context.find_elements_by_class_name('active')[0].text == 'DAMAGE PHOTOS'
+
+def standard_photos_tab_inactive(context):
+    return context.find_elements_by_tag_name('li')[3].get_attribute('class') == ''
+
+def damage_photos_tab_inactive(context):
+    return context.find_elements_by_tag_name('li')[4].get_attribute('class') == ''
+
+def click_img(context):
+    context.find_elements_by_class_name('vehicle-photo')[1].click()
+
+def image_shown(context):
+    return context.find_elements_by_class_name('vehicle-photo')[1].get_attribute('src').split('.')[-1] == 'jpg'
+
+def view_cr_button_shown(context):
+    return bool(context.find_elements_by_partial_link_text('View CR')[0])
+
+def click_view_cr_button(context):
+    return context.find_elements_by_partial_link_text('View CR')[0].click()
+
+def get_cr_button_url(context):
+    return context.find_elements_by_partial_link_text('View CR')[0].get_attribute('href')
+
+def cr_pdf_displayed(context, url):
+    # cr_pdf_displayed(context, get_cr_button_url(context))
+    context.switch_to.window(context.window_handles[1])
+    new_tab_url = context.current_url
+    context.close()
+    context.switch_to.window(context.window_handles[0])
+    return new_tab_url == url
