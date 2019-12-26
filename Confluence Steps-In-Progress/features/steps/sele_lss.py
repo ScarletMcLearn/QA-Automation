@@ -366,3 +366,32 @@ def cr_pdf_displayed(context, url):
     context.close()
     context.switch_to.window(context.window_handles[0])
     return new_tab_url == url
+
+
+
+
+# 20191217jp01
+# 1N4AL3AP3FC470996
+def login_to_account_with_no_appointment(context):
+    vin_f = get_vin_ele(context)
+    give_val_to_field(vin_f, '1N4AL3AP3FC470996')
+    ac_no_f = get_acc_no_ele(context)
+    give_val_to_field(ac_no_f, '20191217jp01')
+    context.find_element_by_xpath('//button[text()="Get started"]').send_keys('\n')
+    context.implicitly_wait(30)
+
+def verify_account_info_page_shown(context):
+    progress_meter_shown = bool(context.find_elements_by_class_name('progress-meter')[0])
+    verify_account_page_heading_shown = bool(context.find_element_by_tag_name('h1'))
+    verify_account_page_subheading_shown = bool(context.find_element_by_tag_name('h2'))
+    lesse_name_shown = bool(context.find_element_by_id('lesseeName'))
+    account_no_shown = bool(context.find_element_by_id('accountNo'))
+    vin_shown = bool(context.find_element_by_id('vehicleVin'))
+    sth_is_wrong_button_shown = bool(context.find_element_by_class_name('btn-default'))
+    confirm_button_shown = bool(context.find_element_by_class_name('btn-primary'))
+    return progress_meter_shown and verify_account_page_heading_shown and verify_account_page_subheading_shown and lesse_name_shown and account_no_shown and vin_shown and sth_is_wrong_button_shown and confirm_button_shown
+
+
+
+
+
