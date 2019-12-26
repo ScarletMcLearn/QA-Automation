@@ -381,6 +381,8 @@ def login_to_account_with_no_appointment(context):
     context.implicitly_wait(30)
 
 def verify_account_info_page_shown(context):
+    verify_account_url_navigated = context.current_url ==
+'https://selfschedule-qa.aiminspect.com/account'
     progress_meter_shown = bool(context.find_elements_by_class_name('progress-meter')[0])
     verify_account_page_heading_shown = bool(context.find_element_by_tag_name('h1'))
     verify_account_page_subheading_shown = bool(context.find_element_by_tag_name('h2'))
@@ -389,9 +391,44 @@ def verify_account_info_page_shown(context):
     vin_shown = bool(context.find_element_by_id('vehicleVin'))
     sth_is_wrong_button_shown = bool(context.find_element_by_class_name('btn-default'))
     confirm_button_shown = bool(context.find_element_by_class_name('btn-primary'))
-    return progress_meter_shown and verify_account_page_heading_shown and verify_account_page_subheading_shown and lesse_name_shown and account_no_shown and vin_shown and sth_is_wrong_button_shown and confirm_button_shown
+    return progress_meter_shown and verify_account_page_heading_shown and verify_account_page_subheading_shown and lesse_name_shown and account_no_shown and vin_shown and sth_is_wrong_button_shown and confirm_button_shown and verify_account_url_navigated
+
+
+def click_something_is_wrong_btn(context):
+    context.find_element_by_class_name('btn-default').click()
+    context.implicitly_wait(30)
+
+
+def get_assistance_page_is_shown(context):
+    current_url_is_get_assistance_url = context.current_url == 'https://selfschedule-qa.aiminspect.com/get-assistance'
+    para_text_correct = context.find_elements_by_tag_name('h4')[0].text == 'Please contact our team to help with your appointment.'
+    hours_shown = bool(context.find_element_by_class_name('hours'))
+    csr_icon_shown = bool(context.find_element_by_class_name('csr-icon'))
+    return csr_icon_shown and hours_shown and para_text_correct and current_url_is_get_assistance_url
+
+
+def click_confirm_button(context):
+    context.find_element_by_class_name('btn-primary').click()
 
 
 
 
+def contact_info_page_shown(context):
+    verify_contact_url_navigated = context.current_url == 'https://selfschedule-qa.aiminspect.com/contact'
+    progress_meter_shown = bool(context.find_elements_by_class_name('progress-meter')[0])
+    contact_info_page_heading_shown = bool(context.find_element_by_tag_name('h1'))
+    contact_info_page_subheading_shown = bool(context.find_element_by_tag_name('h2'))
+    phone_field_shown = bool(context.find_element_by_id('phone'))
+    phone_dropdown_menu_shown = bool(context.find_elements_by_class_name('lss-form-input')[0])
+    email_field_shown = bool(context.find_element_by_id('email'))
+    back_button_shown = bool(context.find_element_by_class_name('btn-default'))
+    continue_button_shown = bool(context.find_element_by_class_name('btn-primary'))
+    return continue_button_shown and continue_button_shown and back_button_shown and email_field_shown and phone_dropdown_menu_shown and phone_field_shown and contact_info_page_heading_shown and contact_info_page_subheading_shown and verify_contact_url_navigated and progress_meter_shown and progress_meter_shown
 
+def get_phone_field(context):
+    return context.find_element_by_id('phone')
+
+def get_email_field(context):
+    return context.find_element_by_id('email')
+
+def no_phone_error_message_shown(context):
