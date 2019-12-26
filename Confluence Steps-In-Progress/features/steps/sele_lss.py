@@ -432,3 +432,34 @@ def get_email_field(context):
     return context.find_element_by_id('email')
 
 def no_phone_error_message_shown(context):
+    give_val_to_field(get_phone_field(context), "")
+    context.find_element_by_class_name('lss-form-input').click()
+    give_val_to_field(get_phone_field(context), "")
+    error_message_correct = context.find_elements_by_class_name('error-message')[0].text == 'This field is required'
+    return error_message_correct
+
+
+def invalid_phone_error_message_shown(context):
+    give_val_to_field(get_phone_field(context), "")
+    context.find_element_by_class_name('lss-form-input').click()
+    give_val_to_field(get_phone_field(context), "1")
+    error_message_correct = context.find_elements_by_class_name('error-message')[0].text == 'Enter a valid phone number'
+    return error_message_correct
+
+
+def no_email_error_message_shown(context):
+    give_val_to_field(get_email_field(context), "")
+    context.find_element_by_class_name('lss-form-input').click()
+    give_val_to_field(get_email_field(context), "")
+    error_message_correct = context.find_elements_by_class_name('error-message')[0].text == 'Enter a valid email address'
+    return error_message_correct
+
+
+def invalid_email_error_message_shown(context):
+    give_val_to_field(get_email_field(context), "")
+    context.find_element_by_class_name('lss-form-input').click()
+    give_val_to_field(get_email_field(context), "abc")
+    error_message_correct = context.find_elements_by_class_name('error-message')[0].text == 'Enter a valid email address'
+    return error_message_correct
+
+    
