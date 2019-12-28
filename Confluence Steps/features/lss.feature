@@ -88,4 +88,94 @@ Scenario: Log in to LSS without entering vin and account number
         And (2) "Enter a valid account number"
 
 
+Scenario: Log in to LSS entering VIN but account number 
+   
+         Given current page is LSS Log in
+         And VIN is entered
+         And no Account number is entered
+         And Get Started is clicked
+         Then error-message displays "Enter a valid account number"
 
+
+
+Scenario: Log in to LSS without entering VIN but Account number 
+   
+         Given current page is LSS Log in
+         And no VIN is entered
+         And Account number is entered
+         And Get Started is clicked
+         Then error-message displays "Enter a valid VIN"
+
+
+Scenario: Log in to LSS site with invalid vin and invalid account number
+
+        Given current page is LSS Log in 
+        And entered an invalid vin 
+        And entered an invalid account
+        And Get Started is clicked
+        Then error-message displayed "We were unable to match the VIN and account number you entered. Please check your entries and try again." 
+
+
+
+Scenario: Login to LSS site with valid vin and invalid account number
+
+    Given current page is LSS Log in 
+    And entered a valid vin 
+    And entered an invalid account
+    And Get Started is clicked
+    Then error-message displayed "We were unable to match the VIN and account number you entered. Please check your entries and try again." 
+
+
+
+
+Scenario: Login to LSS site with invalid vin and valid account number
+
+    Given current page is LSS Log in 
+    And entered an invalid vin 
+    And entered an invalid account
+    And Get Started is clicked
+    Then error-message displayed "We were unable to match the VIN and account number you entered. Please check your entries and try again."
+
+
+
+Scenario: Login to LSS site with valid VIN and valid account number
+
+    Given current page is LSS Log in 
+    And entered a valid VIN
+    And entered a valid account
+    And Get Started is clicked
+    Then Account Info page displays 
+
+
+
+	
+Scenario: If User logs in and there is already an inspection Completed
+
+    Given current page is LSS Log in 
+    And entered a inspection Completed valid VIN
+    And entered a inspection Completed valid account
+    And Get Started is clicked
+	Then navigated to inspection completed page 
+    # To Do
+	# And page title display: Hello, and Lessee's 1st Name
+	And header-text display: Overview
+	And main-photo displays
+    # To Do
+	# And Vehicle's Year / Make / Model displays
+	And VIN Displays
+    And Inspection Date and Status: "Completed" displays
+	# And Status: "Completed" displays
+	And Button: "View CR" displays
+	And nav-tabs: "STANDARD PHOTOS" selected by default displays
+	And all the photos taken by the inspector dispalys
+	And nav-tabs: "DAMAGE PHOTOS" displays
+	And User can view the PDF file
+
+
+Scenario: If User Logs in but there is no appointment scheduled
+		
+    Given current page is LSS Log in 
+    And entered a no appointment scheduled valid VIN
+    And entered a no appointment scheduled valid account
+    And Get Started is clicked
+	Then User can schedule an appointment
