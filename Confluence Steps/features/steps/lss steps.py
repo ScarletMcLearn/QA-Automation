@@ -419,16 +419,23 @@ def step_impl(context):
 
 @given(u'confirm button is clicked')
 def step_impl(context):
+    context.driver.implicitly_wait(30)
     context.driver.find_element_by_class_name('btn-primary').click()
+
+    # print(bool(context.driver.find_element_by_class_name('btn-primary')))
+    # FReD
+    btn = context.driver.find_element_by_class_name('btn-primary')
+
+    context.driver.execute_script("arguments[0].click();", btn)
     context.driver.implicitly_wait(30)
 
 @then(u'Contact info page is displayed')
 def step_impl(context):
     # assert False
 
-    # wait = WebDriverWait(context.driver, 10)
-    # wait.until(
-    #     lambda driver: context.driver.current_url == 'https://selfschedule-qa.aiminspect.com/contact')
+    wait = WebDriverWait(context.driver, 10)
+    wait.until(
+        lambda driver: context.driver.current_url == 'https://selfschedule-qa.aiminspect.com/contact')
     context.driver.implicitly_wait(30)
 
     verify_contact_url_navigated = context.driver.current_url == 'https://selfschedule-qa.aiminspect.com/contact'

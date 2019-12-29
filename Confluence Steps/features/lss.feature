@@ -204,4 +204,21 @@ Scenario: Confirm Account information is correct in order to go to contact info 
     Then Contact info page is displayed
 
 
+Scenario: Update Lessee contact info
+
+    Given current page is LSS Log in 
+    And entered a no appointment scheduled valid VIN
+    And entered a no appointment scheduled valid account
+    And Get Started is clicked
+    # And entered correct information
+    And confirm button is clicked
+    And user is on Contact Info page
+    And the 'continue' button is disabled
+    When phone number "1234567890" is entered
+    And "(mobile/work/home/other)" is selected as phone type 
+    And email entered is "r@p.com"
+    And continue button is enabled
+    And continue button is clicked
+    Then inspection location page is displayed
+
 		
