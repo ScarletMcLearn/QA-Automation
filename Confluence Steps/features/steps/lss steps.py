@@ -566,27 +566,50 @@ def step_impl(context):
 def step_impl(context):
     assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/location'
 
+
+# import time
 @when(u'continue button is disabled')
 def step_impl(context):
+    # time.sleep(30)
     assert context.driver.find_element_by_class_name('btn-primary').is_enabled(), False
 
 @when(u'select location type "Home".')
 def step_impl(context):
-    assert False
+    Select(context.driver.find_element_by_class_name('lss-form-input')).select_by_visible_text('Home')
+    # assert False
 
 @when(u'select presence "I will be there".')
 def step_impl(context):
-    assert False
+    Select(context.driver.find_elements_by_class_name('lss-form-input')[3]).select_by_visible_text('I will be there')
+    # assert False
 
 @when(u'enter address "34405 12 Mile RD, Warren, MI 48331"')
 def step_impl(context):
-    assert False
+    give_val_to_field(context.driver.find_element_by_id('location.street1'), '34405 12 Mile RD') 
+    
+    give_val_to_field(context.driver.find_element_by_id('location.city'), 'Warren') 
+
+    Select(context.driver.find_elements_by_class_name('lss-form-input')[2]).select_by_visible_text('Michigan')
+
+    give_val_to_field(context.driver.find_element_by_id('location.zip'), '48331') 
+    # assert False
 
 @then(u'continue button is enabled.')
 def step_impl(context):
-    assert False
+    assert context.driver.find_element_by_class_name('continue-button').is_enabled(), True
+    # assert False
 
+import time
 @then(u'Schedule Appointment page is displayed')
 def step_impl(context):
-    assert False
+    # time.sleep(60)
+    wait = WebDriverWait(context.driver, 60)
+    wait.until(
+        lambda driver: context.driver.current_url == 'https://selfschedule-qa.aiminspect.com/schedule')
+    assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/schedule'
 
+
+@then(u'continue button is clicked')
+def step_impl(context):
+    context.driver.implicitly_wait(30)
+    context.driver.find_element_by_class_name('btn-primary').click()

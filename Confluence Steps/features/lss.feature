@@ -281,11 +281,12 @@ Scenario: Click on back button to go back to account info page
 
 Scenario:  Able to move to Schedule page after entering in location type, address, availability information
 
+# FrED
+
     Given current page is LSS Log in 
     And entered a no appointment scheduled valid VIN
     And entered a no appointment scheduled valid account
     And Get Started is clicked
-    # And entered correct information
     And confirm button is clicked
     And user is on Contact Info page
     And the 'continue' button is disabled
@@ -295,9 +296,30 @@ Scenario:  Able to move to Schedule page after entering in location type, addres
     And continue button is enabled
     And continue button is clicked
     And user is on Inspection location page
-    And continue button is disabled
+    # Fred
+    # And the 'continue' button is disabled
     When select location type "Home".
     And select presence "I will be there".
     And enter address "34405 12 Mile RD, Warren, MI 48331"
     Then continue button is enabled.
+    And continue button is clicked
     And Schedule Appointment page is displayed
+
+
+Scenario: Click on back button to go back to contact info page
+
+    Given current page is LSS Log in 
+    And entered a no appointment scheduled valid VIN
+    And entered a no appointment scheduled valid account
+    And Get Started is clicked
+    And confirm button is clicked
+    And user is on Contact Info page
+    And the 'continue' button is disabled
+    When phone number "1234567890" is entered
+    And phone type work is selected 
+    And email entered is "r@p.com"
+    And continue button is enabled
+    And continue button is clicked
+    And user is on Inspection location page
+    And back button is clicked
+    Then Contact info page is displayed
