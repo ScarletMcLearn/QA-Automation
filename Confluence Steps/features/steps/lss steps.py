@@ -669,3 +669,31 @@ def step_impl(context):
     wait.until(
         lambda driver: context.driver.current_url == 'https://selfschedule-qa.aiminspect.com/review')
     assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/review'
+
+
+@when(u'Review Appointment page is displayed')
+def step_impl(context):
+    wait = WebDriverWait(context.driver, 60)
+    wait.until(
+        lambda driver: context.driver.current_url == 'https://selfschedule-qa.aiminspect.com/review')
+    assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/review'
+
+
+@when(u'all information are correct')
+def step_impl(context):
+    vin_displayed = bool(context.driver.find_element_by_id('vehicleVin'))
+    selected_date_displayed = bool(context.driver.find_element_by_id('selectedDate'))
+    selected_time_displayed = bool(context.driver.find_element_by_id('selectedTime'))
+    location_displayed = bool(context.driver.find_element_by_id('location'))
+    lesseeName_displayed = bool(context.driver.find_element_by_id('lesseeName'))
+    prefContactMethod_displayed = bool(context.driver.find_element_by_id('prefContactMethod'))
+    assert (prefContactMethod_displayed and lesseeName_displayed and location_displayed and selected_time_displayed and selected_date_displayed and vin_displayed), True
+
+@when(u'click on Send request button')
+def step_impl(context):
+    # assert False
+    context.driver.find_element_by_class_name('btn-primary').click()
+
+@then(u'\'confirmation\' page is displayed')
+def step_impl(context):
+    assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/confirmation'

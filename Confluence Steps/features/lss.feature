@@ -365,8 +365,45 @@ Scenario:  Move to 'review appointment' page after selecting date and time when 
     And Schedule Appointment page is displayed
     # Fred
     # And continue button is disabled
-    When select date
+    And select date
     And select time slot
     And continue button is enabled 
     And continue button is clicked
     Then Review Appointment page is displayed
+
+
+
+
+Scenario: Move to confirmation page after appointment scheduled and get confirmation ID
+
+    Given current page is LSS Log in 
+    And entered a no appointment scheduled valid VIN
+    And entered a no appointment scheduled valid account
+    And Get Started is clicked
+    And confirm button is clicked
+    And user is on Contact Info page
+    And continue button is disabled
+    When phone number "1234567890" is entered
+    And phone type work is selected 
+    And email entered is "r@p.com"
+    And continue button is enabled
+    And continue button is clicked
+    And user is on Inspection location page
+    # Fred
+    # And the 'continue' button is disabled
+    And select location type "Home".
+    And select presence "I will be there".
+    And enter address "34405 12 Mile RD, Warren, MI 48331"
+    And continue button is enabled.
+    And continue button is clicked
+    And Schedule Appointment page is displayed
+    # Fred
+    # And continue button is disabled
+    And select date
+    And select time slot
+    And continue button is enabled 
+    And continue button is clicked
+    And Review Appointment page is displayed
+    And all information are correct
+    And click on Send request button
+    Then 'confirmation' page is displayed
