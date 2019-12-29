@@ -164,7 +164,6 @@ Scenario: If User logs in and there is already an inspection Completed
 	# And Vehicle's Year / Make / Model displays
 	And VIN Displays
     And Inspection Date and Status: "Completed" displays
-	# And Status: "Completed" displays
 	And Button: "View CR" displays
 	And nav-tabs: "STANDARD PHOTOS" selected by default displays
 	And all the photos taken by the inspector dispalys
@@ -179,3 +178,30 @@ Scenario: If User Logs in but there is no appointment scheduled
     And entered a no appointment scheduled valid account
     And Get Started is clicked
 	Then User can schedule an appointment
+
+
+# To Run
+# behave -n 'Clicking something is wrong page '
+Scenario: Clicking something is wrong page will take user to get-assistance page (help page)
+
+    Given current page is LSS Log in 
+    And entered a no appointment scheduled valid VIN
+    And entered a no appointment scheduled valid account
+    And Get Started is clicked
+    And 'something is wrong' button is clicked
+    Then get-assistance page is displayed
+
+
+
+Scenario: Confirm Account information is correct in order to go to contact info page
+
+    Given current page is LSS Log in 
+    And entered a no appointment scheduled valid VIN
+    And entered a no appointment scheduled valid account
+    And Get Started is clicked
+    # And entered correct information
+    And confirm button is clicked
+    Then Contact info page is displayed
+
+
+		
