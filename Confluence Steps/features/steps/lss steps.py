@@ -534,3 +534,59 @@ def step_impl(context):
     # time.sleep
     assert context.driver.find_element_by_class_name('error-message').text, 'This field is required'
      
+
+
+@when(u'focus email field')
+def step_impl(context):
+    context.driver.find_element_by_id('email').click()
+    # assert False
+
+@when(u'click away from the email field')
+def step_impl(context):
+    context.driver.find_element_by_tag_name('h1').click()
+
+@then(u'email field required error message is displayed')
+def step_impl(context):
+    assert context.driver.find_element_by_class_name('error-message').text, 'Enter a valid email address'
+
+
+@when(u'back button is clicked')
+def step_impl(context):
+    context.driver.find_element_by_class_name('back-button').click()
+    # assert False
+
+@then(u'Account Info page is displayed')
+def step_impl(context):
+    assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/account'
+    #  False
+
+
+
+@when(u'user is on Inspection location page')
+def step_impl(context):
+    assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/location'
+
+@when(u'continue button is disabled')
+def step_impl(context):
+    assert context.driver.find_element_by_class_name('btn-primary').is_enabled(), False
+
+@when(u'select location type "Home".')
+def step_impl(context):
+    assert False
+
+@when(u'select presence "I will be there".')
+def step_impl(context):
+    assert False
+
+@when(u'enter address "34405 12 Mile RD, Warren, MI 48331"')
+def step_impl(context):
+    assert False
+
+@then(u'continue button is enabled.')
+def step_impl(context):
+    assert False
+
+@then(u'Schedule Appointment page is displayed')
+def step_impl(context):
+    assert False
+
