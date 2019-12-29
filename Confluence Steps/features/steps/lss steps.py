@@ -278,6 +278,22 @@ def step_impl(context):
     give_val_to_field(ac_no_f, '20191217jp01')
     # assert False
 
+@given(u'entered a Existing Appointment valid VIN')
+def step_impl(context):
+    vin_f = get_vin_ele(context)
+    give_val_to_field(vin_f, '1N4AA5AP3DC805530')
+
+
+@given(u'entered a Existing Appointment valid account')
+def step_impl(context):
+    ac_no_f = get_acc_no_ele(context)
+    give_val_to_field(ac_no_f, '346568967967')
+
+@then(u'\'Existing appointment\' page is displayed')
+def step_impl(context):
+    assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/existing-appointment'
+     
+
 @then(u'Account Info page displays')
 def step_impl(context):
     assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/account'
@@ -613,3 +629,6 @@ def step_impl(context):
 def step_impl(context):
     context.driver.implicitly_wait(30)
     context.driver.find_element_by_class_name('btn-primary').click()
+
+
+

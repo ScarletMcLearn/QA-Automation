@@ -147,6 +147,20 @@ Scenario: Login to LSS site with valid VIN and valid account number
     Then Account Info page displays 
 
 
+Scenario:  Take user to 'Existing appointment' page when trying schedule appointment when one already exists
+
+    Given current page is LSS Log in 
+    And entered a Existing Appointment valid VIN
+    And entered a Existing Appointment valid account
+    And Get Started is clicked
+    Then 'Existing appointment' page is displayed
+
+    # Given user is on LSS log in page
+    #     And uses vin and account number that is associated with a request that already has been 
+    #     When  vin field is inputted with '1N4AA5AP3DC805530'
+    #     And account field is inputted with '346568967967'
+    #     And clicks on 'Get started' button.
+    #     Then 'Existing appointment' page is displayed
 
 	
 Scenario: If User logs in and there is already an inspection Completed
