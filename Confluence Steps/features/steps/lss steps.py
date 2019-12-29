@@ -6,6 +6,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from selenium.webdriver.support.ui import Select
+
 # Helper Functions
 def get_schedule_appointment_button(context):
     return context.driver.find_element_by_xpath('//button[text()="Schedule Appointment"]')
@@ -451,3 +453,46 @@ def step_impl(context):
     back_button_shown = bool(context.driver.find_element_by_class_name('btn-default'))
     continue_button_shown = bool(context.driver.find_element_by_class_name('btn-primary'))
     assert continue_button_shown and continue_button_shown and back_button_shown and email_field_shown and phone_dropdown_menu_shown and phone_field_shown and contact_info_page_heading_shown and contact_info_page_subheading_shown and verify_contact_url_navigated and progress_meter_shown and progress_meter_shown
+
+
+@given(u'user is on Contact Info page')
+def step_impl(context):
+    assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/contact'
+    
+
+@given(u'the \'continue\' button is disabled')
+def step_impl(context):
+    assert context.driver.find_element_by_class_name('btn-primary').is_enabled(), False
+
+@when(u'phone number "1234567890" is entered')
+def step_impl(context):
+    phone_field = context.driver.find_element_by_id('phone')
+    give_val_to_field(phone_field, "1234567890")
+    # assert False
+
+@when(u'phone type work is selected')
+def step_impl(context):
+    phone_type = Select(context.driver.find_element_by_class_name('lss-form-input'))
+    phone_type.select_by_visible_text('Work')
+    # assert False
+
+@when(u'email entered is "r@p.com"')
+def step_impl(context):
+    email_field = context.driver.find_element_by_id('email')
+    give_val_to_field(email_field, "raman@saman.com")
+    # assert False
+
+@when(u'continue button is enabled')
+def step_impl(context):
+    assert context.driver.find_element_by_class_name('btn-primary').is_enabled(), False
+
+@when(u'continue button is clicked')
+def step_impl(context):
+    context.driver.find_element_by_class_name('btn-primary').click()
+    context.driver.implicitly_wait(30)
+    
+
+@then(u'inspection location page is displayed')
+def step_impl(context):
+    assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/location'
+
