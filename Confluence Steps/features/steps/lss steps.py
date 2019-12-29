@@ -583,10 +583,15 @@ def step_impl(context):
     assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/location'
 
 
+# To DO
 # import time
 @when(u'continue button is disabled')
 def step_impl(context):
     # time.sleep(30)
+    wait = WebDriverWait(context.driver, 60)
+    wait.until(
+        lambda driver: context.driver.current_url == 'https://selfschedule-qa.aiminspect.com/review')
+
     assert context.driver.find_element_by_class_name('btn-primary').is_enabled(), False
 
 @when(u'select location type "Home".')
@@ -632,3 +637,35 @@ def step_impl(context):
 
 
 
+@when(u'continue button is enabled.')
+def step_impl(context):
+    assert context.driver.find_element_by_class_name('continue-button').is_enabled(), True
+
+@when(u'Schedule Appointment page is displayed')
+def step_impl(context):
+    wait = WebDriverWait(context.driver, 60)
+    wait.until(
+        lambda driver: context.driver.current_url == 'https://selfschedule-qa.aiminspect.com/schedule')
+    assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/schedule'
+
+
+@given(u'continue button is disabled')
+def step_impl(context):
+    wait = web
+    assert context.driver.find_element_by_class_name('btn-primary').is_enabled(), False
+
+@when(u'select date')
+def step_impl(context):
+    context.driver.find_element_by_class_name('selectable').click()
+    # assert False
+
+@when(u'select time slot')
+def step_impl(context):
+    context.driver.find_element_by_id('choose-time-slot-8:00 AM - 12:00 PM').click()
+
+@then(u'Review Appointment page is displayed')
+def step_impl(context):
+    wait = WebDriverWait(context.driver, 60)
+    wait.until(
+        lambda driver: context.driver.current_url == 'https://selfschedule-qa.aiminspect.com/review')
+    assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/review'

@@ -348,7 +348,7 @@ Scenario:  Move to 'review appointment' page after selecting date and time when 
     And Get Started is clicked
     And confirm button is clicked
     And user is on Contact Info page
-    And the 'continue' button is disabled
+    And continue button is disabled
     When phone number "1234567890" is entered
     And phone type work is selected 
     And email entered is "r@p.com"
@@ -366,7 +366,7 @@ Scenario:  Move to 'review appointment' page after selecting date and time when 
     # Given user is on Appointment Schedule page
     # And user is logged in to the LSS site
     # And appointment dates are available
-    And the 'continue' button is disabled
+    And continue button is disabled
     When select date
     And select time slot
     And continue button is enabled 
