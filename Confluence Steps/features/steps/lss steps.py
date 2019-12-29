@@ -587,10 +587,10 @@ def step_impl(context):
 # import time
 @when(u'continue button is disabled')
 def step_impl(context):
-    # time.sleep(30)
-    wait = WebDriverWait(context.driver, 60)
-    wait.until(
-        lambda driver: context.driver.current_url == 'https://selfschedule-qa.aiminspect.com/review')
+    time.sleep(30)
+    # wait = WebDriverWait(context.driver, 60)
+    # wait.until(
+    #     EC.presence_of_element_located((By.CLASS_NAME, 'btn-primary')))
 
     assert context.driver.find_element_by_class_name('btn-primary').is_enabled(), False
 
@@ -651,7 +651,7 @@ def step_impl(context):
 
 @given(u'continue button is disabled')
 def step_impl(context):
-    wait = web
+    # wait = web
     assert context.driver.find_element_by_class_name('btn-primary').is_enabled(), False
 
 @when(u'select date')
@@ -661,7 +661,7 @@ def step_impl(context):
 
 @when(u'select time slot')
 def step_impl(context):
-    context.driver.find_element_by_id('choose-time-slot-8:00 AM - 12:00 PM').click()
+    context.driver.find_element_by_class_name('radio-inline').click()
 
 @then(u'Review Appointment page is displayed')
 def step_impl(context):

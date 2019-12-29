@@ -363,10 +363,8 @@ Scenario:  Move to 'review appointment' page after selecting date and time when 
     And continue button is enabled.
     And continue button is clicked
     And Schedule Appointment page is displayed
-    # Given user is on Appointment Schedule page
-    # And user is logged in to the LSS site
-    # And appointment dates are available
-    And continue button is disabled
+    # Fred
+    # And continue button is disabled
     When select date
     And select time slot
     And continue button is enabled 
