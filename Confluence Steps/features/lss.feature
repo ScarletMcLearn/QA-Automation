@@ -239,3 +239,15 @@ Scenario: Unable to move to inspection location page until Contact Info form is 
     Then continue button is disabled
 
 		
+Scenario: Leaving required phone field blank will display error message
+
+    Given current page is LSS Log in 
+    And entered a no appointment scheduled valid VIN
+    And entered a no appointment scheduled valid account
+    And Get Started is clicked
+    And confirm button is clicked
+    And user is on Contact Info page
+    
+    When focus phone field 
+    And click away from the phone field
+    Then phone field required error message is displayed

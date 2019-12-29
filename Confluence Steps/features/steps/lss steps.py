@@ -484,7 +484,7 @@ def step_impl(context):
 
 @when(u'continue button is enabled')
 def step_impl(context):
-    assert context.driver.find_element_by_class_name('btn-primary').is_enabled(), False
+    assert context.driver.find_element_by_class_name('btn-primary').is_enabled(), True
 
 @when(u'continue button is clicked')
 def step_impl(context):
@@ -496,3 +496,41 @@ def step_impl(context):
 def step_impl(context):
     assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/location'
 
+
+
+@when(u'phone number entered is \'5867765566\'')
+def step_impl(context):
+    phone_field = context.driver.find_element_by_id('phone')
+    give_val_to_field(phone_field, "5867765566")
+    # assert False
+
+@when(u'email is left empty')
+def step_impl(context):
+    # assert False
+    email_field = context.driver.find_element_by_id('email')
+    give_val_to_field(email_field, "")
+
+# FRED
+# import time
+@then(u'continue button is disabled')
+def step_impl(context):
+    # time.sleep(30)
+    assert context.driver.find_element_by_class_name('btn-primary').is_enabled(), False
+
+
+@when(u'focus phone field')
+def step_impl(context):
+    context.driver.find_element_by_id('phone').click()
+    
+
+
+@when(u'click away from the phone field')
+def step_impl(context):
+    context.driver.find_element_by_tag_name('h1').click()
+
+# import time
+@then(u'phone field required error message is displayed')
+def step_impl(context):
+    # time.sleep
+    assert context.driver.find_element_by_class_name('error-message').text, 'This field is required'
+     
