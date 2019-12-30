@@ -455,18 +455,23 @@ def step_impl(context):
     assert new_tab_url, url
 
 
+# Potential Home #######################################
+########################################################
+
 @given(u'entered a no appointment scheduled valid VIN')
 def step_impl(context):
     vin_f = get_vin_ele(context)
-    give_val_to_field(vin_f, '1N4AL3AP3FC470996')
+    give_val_to_field(vin_f, '2FMHK6DC0CBD00043')
     
     # assert False
 
 @given(u'entered a no appointment scheduled valid account')
 def step_impl(context):
     ac_no_f = get_acc_no_ele(context)
-    give_val_to_field(ac_no_f, '20191217jp01')
+    give_val_to_field(ac_no_f, '20191206ahNH002')
     # assert False
+
+########################################################
 
 @then(u'User can schedule an appointment')
 def step_impl(context):
@@ -773,6 +778,7 @@ def step_impl(context):
 @then(u'navigate to https://crm-qa.aiminspect.com')
 def step_impl(context):
     context.driver.get('https://crm-qa.aiminspect.com')
+    context.driver.implicitly_wait(30)
 
     # assert context.driver.find_element_by_tag_name('footer').text.find('AiM')
 
@@ -810,7 +816,8 @@ def step_impl(context):
 
 @then(u'will see the request status as on Hold -awaiting dispatch')
 def step_impl(context):
-    assert False
+    assert context.driver.find_elements_by_class_name('status-h')[0].get_attribute('title'), 'On Hold'
+     
 
 @then(u'Appointment status shows as Open')
 def step_impl(context):

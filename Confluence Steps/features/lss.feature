@@ -471,3 +471,15 @@ Scenario: Verify that the appointment is scheduled in CRM
     And view the request
     Then will see the request status as on Hold -awaiting dispatch   
 	And Appointment status shows as Open
+
+
+Scenario: Testy
+
+    Then navigate to https://crm-qa.aiminspect.com 
+    And use 'sample' as the user
+    And the password is 'Ok8crmlogin!'
+    And search for the request using the confirmation # displayed in LSS
+    And the request is displayed
+    And view the request
+    Then will see the request status as on Hold -awaiting dispatch   
+	And Appointment status shows as Open
