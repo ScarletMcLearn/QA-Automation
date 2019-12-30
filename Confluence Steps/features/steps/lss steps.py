@@ -315,6 +315,72 @@ def step_impl(context):
     assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/condition'
 
 
+
+@given(u'navigated to inspection completed page')
+def step_impl(context):
+    assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/condition'
+
+
+
+@when(u'click main-photo/vehicle-photo')
+def step_impl(context):
+    context.driver.find_element_by_class_name('vehicle-photo').click()
+    # assert False
+
+@then(u'an Overlay Modal Portal displays')
+def step_impl(context):
+    # context.driver.implicitly_wait(30)
+    assert bool(context.driver.find_element_by_class_name('ReactModal__Overlay--after-open')), True
+    # assert False
+
+@then(u'Overlay Modal Portal image title dispalys')
+def step_impl(context):
+    assert bool(context.driver.find_element_by_class_name('ReactModal__Overlay--after-open').text), True
+
+@then(u'Image displays')
+def step_impl(context):
+    context.driver.implicitly_wait(30)
+    assert bool(context.driver.find_element_by_class_name('ril-image-current').text), True
+
+@then(u'Zoom in, Zoom out and Close button displays')
+def step_impl(context):
+    ril__toolbar
+    assert len(context.driver.find_elements_by_class_name('ril__builtinButton')), 3
+
+@then(u'"Zoom in" and "Close" button are active on initial load')
+def step_impl(context):
+    a = context.driver.find_elements_by_class_name('ril__builtinButton')[0].is_enabled() == True
+    b = context.driver.find_elements_by_class_name('ril__builtinButton')[1].is_enabled() == False
+    c = context.driver.find_elements_by_class_name('ril__builtinButton')[2].is_enabled() == True
+
+    assert (a and b and c), True
+
+@then(u'Zoom in button is clicked it Zooms the Photo * 1x')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('ril__builtinButton')[0].click()
+    # assert False
+
+@then(u'Zoom out button gets active')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('ril__builtinButton')[1].is_enabled() == True
+    context.driver.find_elements_by_class_name('ril__builtinButton')[1].click()
+    # assert False
+
+@then(u'Zoom in can be 3x times')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('ril__builtinButton')[0].click()
+    context.driver.find_elements_by_class_name('ril__builtinButton')[0].click()
+    context.driver.find_elements_by_class_name('ril__builtinButton')[0].click()
+    
+    assert context.driver.find_elements_by_class_name('ril__builtinButton')[0].is_enabled(), False
+
+@then(u'Close button is clicked the "Overlay Modal Portal" closes')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('ril__builtinButton')[2].click()
+    # assert False
+
+
+
 # To Do
 @then(u'page title display: Hello, and Lessee\'s 1st Name')
 def step_impl(context):

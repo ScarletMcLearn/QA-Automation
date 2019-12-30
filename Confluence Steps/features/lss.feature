@@ -185,6 +185,26 @@ Scenario: If User logs in and there is already an inspection Completed
 	And User can view the PDF file
 
 
+Scenario: Main photo and photo gallery of standard and damage photo
+	
+    Given current page is LSS Log in 
+    And entered a inspection Completed valid VIN
+    And entered a inspection Completed valid account
+    And Get Started is clicked
+	And navigated to inspection completed page 
+    # And the the main-photo or the photos in Standard and damage photos are clickable
+	When click main-photo/vehicle-photo 
+    Then an Overlay Modal Portal displays
+	And Overlay Modal Portal image title dispalys 
+	And Image displays
+	And Zoom in, Zoom out and Close button displays
+	And "Zoom in" and "Close" button are active on initial load
+	And Zoom in button is clicked it Zooms the Photo * 1x
+	And Zoom out button gets active
+	And Zoom in can be 3x times		
+	And Close button is clicked the "Overlay Modal Portal" closes
+
+
 Scenario: If User Logs in but there is no appointment scheduled
 		
     Given current page is LSS Log in 
