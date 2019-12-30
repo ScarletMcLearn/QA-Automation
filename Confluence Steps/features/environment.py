@@ -23,3 +23,14 @@ def after_feature(context,feature):
 def after_all(context):
      print("Executing after all")
 
+
+# Added New
+take_screenshot = False 
+
+def after_step(context, step):
+     if take_screenshot:
+          if step.status == "failed":
+               context.driver.save_screenshot(context.scenario.name + " " + step.name + ".png")
+
+
+
