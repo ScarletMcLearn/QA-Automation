@@ -762,4 +762,48 @@ def step_impl(context):
 
 @then(u'\'confirmation\' page is displayed')
 def step_impl(context):
+    # Added
+    context.confirmation_number = context.driver.find_element_by_tag_name('h2').text[context.driver.find_element_by_tag_name('h2').text.find('#')+1:]
+    # Added
     assert context.driver.current_url, 'https://selfschedule-qa.aiminspect.com/confirmation'
+
+
+
+
+@then(u'navigate to https://crm-qa.aiminspect.com')
+def step_impl(context):
+    context.driver.get('https://crm-qa.aiminspect.com')
+
+    # assert context.driver.find_element_by_tag_name('footer').text.find('AiM')
+
+@then(u'use \'sample\' as the user')
+def step_impl(context):
+    give_val_to_field(context.driver.find_element_by_id('username'), 'sample')
+
+    # assert False
+
+@then(u'the password is \'Ok8crmlogin!\'')
+def step_impl(context):
+    give_val_to_field(context.driver.find_element_by_id('password'), 'Ok8crmlogin!')
+    # assert False
+
+@then(u'search for the request using the confirmation # displayed in LSS')
+def step_impl(context):
+    assert False
+
+@then(u'the request is displayed')
+def step_impl(context):
+    assert False
+
+@then(u'view the request')
+def step_impl(context):
+    assert False
+
+@then(u'will see the request status as on Hold -awaiting dispatch')
+def step_impl(context):
+    assert False
+
+@then(u'Appointment status shows as Open')
+def step_impl(context):
+    assert False
+
