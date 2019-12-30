@@ -789,15 +789,24 @@ def step_impl(context):
 
 @then(u'search for the request using the confirmation # displayed in LSS')
 def step_impl(context):
-    assert False
+    give_val_to_field(context.driver.find_element_by_id('basic-search-input'), context.confirmation_number)
+
+    context.driver.execute_script('alert("Press Search Button");')
+    time.sleep(30)
+    # assert False
 
 @then(u'the request is displayed')
 def step_impl(context):
-    assert False
+    assert context.driver.find_elements_by_class_name('ng-binding')[3].text, context.confirmation_number
+     
 
 @then(u'view the request')
 def step_impl(context):
-    assert False
+    context.driver.find_elements_by_class_name('ng-binding')[3].click()
+
+    url = 'https://crm-qa.aiminspect.com/#!/inspection-request/' + context.confirmation_number
+
+    assert context.driver.current_url, url
 
 @then(u'will see the request status as on Hold -awaiting dispatch')
 def step_impl(context):
