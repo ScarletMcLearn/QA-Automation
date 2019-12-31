@@ -8,6 +8,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from selenium.webdriver.support.ui import Select
 
+from lss_config import *
+# Can use lss_config variables in the functions 
+
+
 # Helper Functions
 def get_schedule_appointment_button(context):
     return context.driver.find_element_by_xpath('//button[text()="Schedule Appointment"]')

@@ -10,7 +10,8 @@ def before_feature(context, feature):
 
 #Scenario level objects are popped off context when scenario exits
 def before_scenario(context,scenario):
-     context.driver = webdriver.Chrome('/home/scarlet/Projects/Automation/Confluence/features/steps/chromedriver')
+     # ADD Chrome Driver Path Variable Here
+     context.driver = webdriver.Chrome('/home/scarlet/Projects/Automation/Confluence/features/steps/chromedriver')      # Chrome Driver Path 
      print("Before scenario\n")
 
 def after_scenario(context,scenario):
