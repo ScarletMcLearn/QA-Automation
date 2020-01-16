@@ -25,6 +25,7 @@ Feature: AIM Site Login and Dashboard Functionalities
         Then Dashboard data is displayed
 
 
+# Glitch
     Scenario: Overdue inspection is shown
 
         When click on Dashboard 
@@ -66,16 +67,19 @@ Feature: AIM Site Login and Dashboard Functionalities
         And click on Open Requests 
         Then Open Requests are displayed
 
+# ^ Glitch
 
     Scenario: States Dropdown menu on Dashboard
 
-        When click on Showing:All States 
+        When click on Dashboard 
+        And click on Showing:All States 
         Then All states Dropdown menu is displayed 
 
 
     Scenario: States Dropdown menu on Dashboard functioning
 
-        When click on Showing:All States 
+        When click on Dashboard 
+        And click on Showing:All States 
         And select an option from the menu
         Then Dashboard is updated to show information of the option selected 
 
