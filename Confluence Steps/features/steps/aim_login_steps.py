@@ -93,49 +93,188 @@ def step_impl(context):
     assert (current_url and open_requests_shown and awaiting_quality_shown and awaiting_dispatch_shown and awaiting_csr_shown and due_today_shown and overdue_inspections_shown), True
 
 
-@when(u'click on Overdue Inspection')
-def step_impl(context):
-    context.driver.find_elements_by_class_name('dashboard-box')[0].click()
-
 
 def does_result_exist(context, item_number):
     result = context.driver.find_elements_by_class_name('dashboard-count')[item_number].text
     return result != 0
 
-@then(u'Overdue Inspection are displayed')
-def step_impl(context):
+
+# Test Helper
+
+
+def click_on_dashboardbox(context, itm_num):
+    context.driver.find_elements_by_class_name('dashboard-box')[itm_num].click()
+
+def results_shown(context, itm_num, box_class_name, label_text):
     context.driver.implicitly_wait(15)
 
-    result = context.driver.find_elements_by_class_name('dashboard-count')[0].text
+    result = context.driver.find_elements_by_class_name('dashboard-count')[itm_num].text
 
     if result != 0:
     # if does_result_exist(context, 0):
-        context.driver.find_elements_by_class_name('overdue')[0].click()
+        context.driver.find_elements_by_class_name(box_class_name)[1].click()
         time.sleep(5)
         
-        assert (bool(context.driver.find_elements_by_id('dashboard-results-container')) and context.driver.find_elements_by_class_name('dashboard-indicator-label')[0].text == 'Overdue Inspections'), True 
+        assert (bool(context.driver.find_elements_by_id('dashboard-results-container')) and context.driver.find_elements_by_class_name('dashboard-indicator-label')[0].text == label_text), True   # nci
     else:
-        assert(context.driver.find_elements_by_class_name('crm-warning')[0].text), 'No Results Found.'
+        assert(context.driver.find_elements_by_class_name('crm-warning')[0].text), 'No Results Found.'  # nci
+
+
+#####
+
+@when(u'click on Overdue Inspection')
+def step_impl(context):
+    click_on_dashboardbox(context, 0)
+    # context.driver.find_elements_by_class_name('dashboard-box')[0].click()
+
+
+
+
+@then(u'Overdue Inspection are displayed')
+def step_impl(context):
+    results_shown(context, 0, 'overdue', 'Overdue Inspections')
+
+    # context.driver.implicitly_wait(15)
+
+    # result = context.driver.find_elements_by_class_name('dashboard-count')[0].text
+
+    # if result != 0:
+    # # if does_result_exist(context, 0):
+    #     context.driver.find_elements_by_class_name('overdue')[0].click()
+    #     time.sleep(5)
+
+    #     assert (bool(context.driver.find_elements_by_id('dashboard-results-container')) and context.driver.find_elements_by_class_name('dashboard-indicator-label')[0].text == 'Overdue Inspections'), True 
+    # else:
+    #     assert(context.driver.find_elements_by_class_name('crm-warning')[0].text), 'No Results Found.'
 
 
 
 
 @when(u'click on Due today')
 def step_impl(context):
-    context.driver.find_elements_by_class_name('dashboard-box')[1].click()
+    click_on_dashboardbox(context, 1)
+    # context.driver.find_elements_by_class_name('dashboard-box')[1].click()
 
 
 @then(u'Due today are displayed')
 def step_impl(context):
+    results_shown(context, 1, 'due-today', 'Due Today')
+
+    # context.driver.implicitly_wait(15)
+
+    # result = context.driver.find_elements_by_class_name('dashboard-count')[1].text
+
+    # if result != 0:
+    # # if does_result_exist(context, 0):
+    #     context.driver.find_elements_by_class_name('due-today')[1].click()
+    #     time.sleep(5)
+        
+    #     assert (bool(context.driver.find_elements_by_id('dashboard-results-container')) and context.driver.find_elements_by_class_name('dashboard-indicator-label')[0].text == 'Due Today'), True   # nci
+    # else:
+    #     assert(context.driver.find_elements_by_class_name('crm-warning')[0].text), 'No Results Found.'  # nci
+
+
+    # context.driver.implicitly_wait(15)
+
+    # result = context.driver.find_elements_by_class_name('dashboard-count')[1].text
+
+    # if result != 0:
+    # # if does_result_exist(context, 0):
+    #     assert (bool(context.driver.find_elements_by_id('dashboard-results-container')) and context.driver.find_elements_by_class_name('dashboard-indicator-label')[1].text == 'Overdue Inspections'), True 
+    # else:
+    #     assert(context.driver.find_elements_by_class_name('crm-warning')[1].text), 'No Results Found.'
+
+
+@when(u'click on Awaiting CSR')
+def step_impl(context):
+    click_on_dashboardbox(context, 2)
+    # context.driver.find_elements_by_class_name('dashboard-box')[2].click()
+
+
+@then(u'Awaiting CSR are displayed')
+def step_impl(context):
+    results_shown(context, 2, 'awaiting-on-hold', 'Awaiting CSR')
+
+    # context.driver.implicitly_wait(15)
+
+    # result = context.driver.find_elements_by_class_name('dashboard-count')[2].text
+
+    # if result != 0:
+    # # if does_result_exist(context, 0):
+    #     context.driver.find_elements_by_class_name('awaiting-on-hold')[1].click()
+    #     time.sleep(5)
+        
+    #     assert (bool(context.driver.find_elements_by_id('dashboard-results-container')) and context.driver.find_elements_by_class_name('dashboard-indicator-label')[0].text == 'Awaiting CSR'), True   # nci
+    # else:
+    #     assert(context.driver.find_elements_by_class_name('crm-warning')[0].text), 'No Results Found.'  # nci
+
+
+
+
+@when(u'click on Awaiting Dispatch')
+def step_impl(context):
+    click_on_dashboardbox(context, 3)
+    # context.driver.find_elements_by_class_name('dashboard-box')[3].click()
+
+
+@then(u'Awaiting Dispatch are displayed')
+def step_impl(context):
     context.driver.implicitly_wait(15)
 
-    result = context.driver.find_elements_by_class_name('dashboard-count')[1].text
+    result = context.driver.find_elements_by_class_name('dashboard-count')[3].text
 
     if result != 0:
     # if does_result_exist(context, 0):
-        assert (bool(context.driver.find_elements_by_id('dashboard-results-container')) and context.driver.find_elements_by_class_name('dashboard-indicator-label')[1].text == 'Overdue Inspections'), True 
+        context.driver.find_elements_by_class_name('awaiting-on-hold')[2].click()
+        time.sleep(5)
+        
+        assert (bool(context.driver.find_elements_by_id('dashboard-results-container')) and context.driver.find_elements_by_class_name('dashboard-indicator-label')[0].text == 'Awaiting Dispatch'), True   # nci
     else:
-        assert(context.driver.find_elements_by_class_name('crm-warning')[1].text), 'No Results Found.'
+        assert(context.driver.find_elements_by_class_name('crm-warning')[0].text), 'No Results Found.'  # nci
+
+
+    
+@when(u'click on Awaiting Quality')
+def step_impl(context):
+    click_on_dashboardbox(context, 4)
+
+
+@then(u'Awaiting Quality are displayed')
+def step_impl(context):
+    context.driver.implicitly_wait(15)
+
+    result = context.driver.find_elements_by_class_name('dashboard-count')[4].text
+
+    if result != 0:
+    # if does_result_exist(context, 0):
+        context.driver.find_elements_by_class_name('awaiting-on-hold')[4].click()
+        time.sleep(5)
+        
+        assert (bool(context.driver.find_elements_by_id('dashboard-results-container')) and context.driver.find_elements_by_class_name('dashboard-indicator-label')[0].text == 'Awaiting Quality'), True   # nci
+    else:
+        assert(context.driver.find_elements_by_class_name('crm-warning')[0].text), 'No Results Found.'  # nci
+
+
+
+@when(u'click on Open Requests')
+def step_impl(context):
+    click_on_dashboardbox(context, 5)
+
+
+@then(u'Open Requests are displayed')
+def step_impl(context):
+    context.driver.implicitly_wait(15)
+
+    result = context.driver.find_elements_by_class_name('dashboard-count')[5].text
+
+    if result != 0:
+    # if does_result_exist(context, 0):
+        context.driver.find_elements_by_class_name('open-requests')[1].click()
+        time.sleep(5)
+        
+        assert (bool(context.driver.find_elements_by_id('dashboard-results-container')) and context.driver.find_elements_by_class_name('dashboard-indicator-label')[0].text == 'Open Requests'), True   # nci
+    else:
+        assert(context.driver.find_elements_by_class_name('crm-warning')[0].text), 'No Results Found.'  # nci
 
 
 
