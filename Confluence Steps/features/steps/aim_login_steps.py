@@ -74,7 +74,8 @@ def step_impl(context):
 def step_impl(context):
     dashboard_link_found = context.driver.find_elements_by_class_name('navbar-link')[0].text == 'Dashboard'
     context.driver.find_elements_by_class_name('navbar-link')[0].send_keys('\n')
-    context.driver.implicitly_wait(60)
+    # context.driver.implicitly_wait(60)
+    time.sleep(10)
 
 
 
@@ -109,6 +110,9 @@ def step_impl(context):
 
     if result != 0:
     # if does_result_exist(context, 0):
+        context.driver.find_elements_by_class_name('overdue')[0].click()
+        time.sleep(5)
+        
         assert (bool(context.driver.find_elements_by_id('dashboard-results-container')) and context.driver.find_elements_by_class_name('dashboard-indicator-label')[0].text == 'Overdue Inspections'), True 
     else:
         assert(context.driver.find_elements_by_class_name('crm-warning')[0].text), 'No Results Found.'
