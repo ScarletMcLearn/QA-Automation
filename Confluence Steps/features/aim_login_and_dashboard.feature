@@ -106,7 +106,7 @@ Feature: AIM Site Login and Dashboard Functionalities
 
         When click on Dashboard
         And see subtext on Due Today
-        And click on Due Today
+        And click on Due Today box
         Then Due Today results count are same as the Due Today subtext
 
 
@@ -115,7 +115,7 @@ Feature: AIM Site Login and Dashboard Functionalities
 
         When click on Dashboard
         And see subtext on Awaiting CSR
-        And click on Awaiting CSR
+        And click on Awaiting CSR box
         Then Awaiting CSR results count are same as the Awaiting CSR subtext
 
 
@@ -123,7 +123,7 @@ Feature: AIM Site Login and Dashboard Functionalities
 
         When click on Dashboard
         And see subtext on Awaiting Dispatch
-        And click on Awaiting Dispatch
+        And click on Awaiting Dispatch box
         Then Awaiting Dispatch results count are same as the Awaiting Dispatch subtext
 
 
@@ -131,7 +131,7 @@ Feature: AIM Site Login and Dashboard Functionalities
 
         When click on Dashboard
         And see subtext on Awaiting Quality
-        And click on Awaiting Quality
+        And click on Awaiting Quality box
         Then Awaiting Quality results count are same as the Awaiting Quality subtext
 
 
@@ -139,7 +139,7 @@ Feature: AIM Site Login and Dashboard Functionalities
 
         When click on Dashboard
         And see subtext on Open Requests
-        And click on Open Requests
+        And click on Open Requests box
         Then Open Requests results count are same as the Open Requests subtext
 
 
