@@ -84,8 +84,7 @@ Feature: AIM Site Login and Dashboard Functionalities
 
 
 
-# Done upto here
-# Glitch
+
     Scenario: States Dropdown menu on Dashboard functioning
 
         When click on Dashboard 
