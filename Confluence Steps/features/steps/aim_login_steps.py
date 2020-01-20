@@ -415,3 +415,13 @@ def step_impl(context):
     index_2 = context.driver.find_elements_by_class_name('results-count')[0].text.find('\n')
     assert context.open_requests_count == context.driver.find_elements_by_class_name('results-count')[0].text[index_1:index_2]
 
+
+@when(u'select result from the results displayed')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('search-results')[0].click()
+    time.sleep(5)
+
+
+@then(u'selected result details are shown')
+def step_impl(context):
+    assert context.driver.current_url[0:51], 'https://crm-qa.aiminspect.com/#!/inspection-request'
