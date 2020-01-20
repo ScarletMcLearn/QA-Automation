@@ -76,6 +76,7 @@ def step_impl(context):
     context.driver.find_elements_by_class_name('navbar-link')[0].send_keys('\n')
     # context.driver.implicitly_wait(60)
     time.sleep(10)
+    context.overdue_inspections_count = context.driver.find_elements_by_class_name('dashboard-count')[0].text
 
 
 
@@ -282,6 +283,7 @@ def step_impl(context):
 def step_impl(context):
     time.sleep(30)
     context.driver.find_elements_by_class_name('md-select-value')[0].click()
+    
 
 
 @then(u'All states Dropdown menu is displayed')
@@ -293,7 +295,31 @@ def step_impl(context):
 def step_impl(context):
     context.driver.find_elements_by_class_name('md-checkbox-enabled')[1].click()
     context.driver.find_elements_by_class_name('md-checkbox-enabled')[0].send_keys(Keys.ESCAPE)
+    context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
 @then(u'Dashboard is updated to show information of the option selected')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then Dashboard is updated to show information of the option selected')
+    time.sleep(5)
+    assert context.overdue_inspections_count != context.driver.find_elements_by_class_name('dashboard-count')[0].text 
+
+
+
+@when(u'see subtext on Overdue Inspections')
+def step_impl(context):
+    context.overdue_inspections_count = context.driver.find_elements_by_class_name('dashboard-count')[0].text
+
+
+@when(u'click on Overdue Inspections')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('dashboard-box')[0].click()
+    time.sleep(10)
+
+    # raise NotImplementedError(u'STEP: When click on Overdue Inspections')
+
+
+@then(u'Overdue Inspections results count are same as the Overdue Inspections subtext')
+def step_impl(context):
+    index_1 = context.driver.find_elements_by_class_name('results-count')[0].text.find('of ') + 3
+    index_2 = context.driver.find_elements_by_class_name('results-count')[0].text.find('\n')
+    assert context.overdue_inspections_count == context.driver.find_elements_by_class_name('results-count')[0].text[index_1:index_2]
+
