@@ -316,10 +316,102 @@ def step_impl(context):
 
     # raise NotImplementedError(u'STEP: When click on Overdue Inspections')
 
+@when(u'click on Due Today box')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('dashboard-box')[1].click()
+    time.sleep(10)
+
+@when(u'click on Awaiting CSR box')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('dashboard-box')[2].click()
+    time.sleep(10)
+
+    
+
+@when(u'click on Awaiting Dispatch box')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('dashboard-box')[3].click()
+    time.sleep(10)
+
+
+@when(u'click on Awaiting Quality box')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('dashboard-box')[4].click()
+    time.sleep(10)
+
+@when(u'click on Open Requests box')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('dashboard-box')[5].click()
+    time.sleep(10)
 
 @then(u'Overdue Inspections results count are same as the Overdue Inspections subtext')
 def step_impl(context):
     index_1 = context.driver.find_elements_by_class_name('results-count')[0].text.find('of ') + 3
     index_2 = context.driver.find_elements_by_class_name('results-count')[0].text.find('\n')
     assert context.overdue_inspections_count == context.driver.find_elements_by_class_name('results-count')[0].text[index_1:index_2]
+
+
+
+@when(u'see subtext on Due Today')
+def step_impl(context):
+    context.due_today_count = context.driver.find_elements_by_class_name('dashboard-count')[1].text
+
+
+@then(u'Due Today results count are same as the Due Today subtext')
+def step_impl(context):
+    index_1 = context.driver.find_elements_by_class_name('results-count')[0].text.find('of ') + 3
+    index_2 = context.driver.find_elements_by_class_name('results-count')[0].text.find('\n')
+    assert context.due_today_count == context.driver.find_elements_by_class_name('results-count')[0].text[index_1:index_2]
+
+
+
+@when(u'see subtext on Awaiting CSR')
+def step_impl(context):
+    context.awaiting_csr_count = context.driver.find_elements_by_class_name('dashboard-count')[2].text
+
+
+@then(u'Awaiting CSR results count are same as the Awaiting CSR subtext')
+def step_impl(context):
+    index_1 = context.driver.find_elements_by_class_name('results-count')[0].text.find('of ') + 3
+    index_2 = context.driver.find_elements_by_class_name('results-count')[0].text.find('\n')
+    assert context.awaiting_csr_count == context.driver.find_elements_by_class_name('results-count')[0].text[index_1:index_2]
+
+
+@when(u'see subtext on Awaiting Dispatch')
+def step_impl(context):
+    context.awaiting_dispatch_count = context.driver.find_elements_by_class_name('dashboard-count')[3].text
+
+
+@then(u'Awaiting Dispatch results count are same as the Awaiting Dispatch subtext')
+def step_impl(context):
+    index_1 = context.driver.find_elements_by_class_name('results-count')[0].text.find('of ') + 3
+    index_2 = context.driver.find_elements_by_class_name('results-count')[0].text.find('\n')
+    assert context.awaiting_dispatch_count == context.driver.find_elements_by_class_name('results-count')[0].text[index_1:index_2]
+
+
+
+
+@when(u'see subtext on Awaiting Quality')
+def step_impl(context):
+    context.awaiting_quality_count = context.driver.find_elements_by_class_name('dashboard-count')[4].text
+
+
+@then(u'Awaiting Quality results count are same as the Awaiting Quality subtext')
+def step_impl(context):
+    index_1 = context.driver.find_elements_by_class_name('results-count')[0].text.find('of ') + 3
+    index_2 = context.driver.find_elements_by_class_name('results-count')[0].text.find('\n')
+    assert context.awaiting_quality_count == context.driver.find_elements_by_class_name('results-count')[0].text[index_1:index_2]
+
+
+
+@when(u'see subtext on Open Requests')
+def step_impl(context):
+    context.open_requests_count = context.driver.find_elements_by_class_name('dashboard-count')[5].text
+
+
+@then(u'Open Requests results count are same as the Open Requests subtext')
+def step_impl(context):
+    index_1 = context.driver.find_elements_by_class_name('results-count')[0].text.find('of ') + 3
+    index_2 = context.driver.find_elements_by_class_name('results-count')[0].text.find('\n')
+    assert context.open_requests_count == context.driver.find_elements_by_class_name('results-count')[0].text[index_1:index_2]
 
