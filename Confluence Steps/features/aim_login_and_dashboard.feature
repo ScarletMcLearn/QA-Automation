@@ -217,7 +217,7 @@ Feature: AIM Site Login and Dashboard Functionalities
 
 
 
-
+# To DO !!! > Page Count
     Scenario: Page count tab is displayed on Dashboard 
 
         Given more than 25 Overdue Inspection 
@@ -227,6 +227,7 @@ Feature: AIM Site Login and Dashboard Functionalities
 
 
 
+# To DO !!! > Page Count
     Scenario: Page count tab is working on Dashboard 
 
         Given more than 25 Overdue Inspection 
@@ -302,7 +303,7 @@ Feature: AIM Site Login and Dashboard Functionalities
         And click on Open Requests 
         Then Data is shown in Open Requests Table 
 
-
+# To DO Tables
 
 
 
@@ -310,16 +311,16 @@ Feature: AIM Site Login and Dashboard Functionalities
 
     Scenario: No Results found if does not exist
 
-        When click on Request 
-        And input text in search bar which does not exist # sdfsdf32423
+        # When click on Request 
+        When input text in search bar which does not exist # sdfsdf32423
         And click search
         Then 'No Results Found.' message is displayed
 
 
     Scenario: Results displayed if does exist
 
-        When click on Request 
-        And input text in search bar which does exist # asa
+        # When click on Request 
+        When input text in search bar which does exist # asa
         And click search
         Then search results are displayed
 
