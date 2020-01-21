@@ -329,7 +329,7 @@ Feature: AIM Site Login and Dashboard Functionalities
 
     Scenario: Search bar is displayed
 
-        When logged in 
+        # When logged in 
         Then search bar on navigation menu is displayed 
 
 
