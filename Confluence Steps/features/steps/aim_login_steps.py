@@ -425,3 +425,26 @@ def step_impl(context):
 @then(u'selected result details are shown')
 def step_impl(context):
     assert context.driver.current_url[0:51], 'https://crm-qa.aiminspect.com/#!/inspection-request'
+
+
+
+@then(u'Last updated date time stamp is shown')
+def step_impl(context):
+    # time.sleep(5)
+    assert context.driver.find_elements_by_tag_name('span')[4].text.find('Last updated: ') == 0
+
+
+
+
+@when(u'click on Export to Excel button')
+def step_impl(context):
+    export_button = context.driver.find_elements_by_class_name('results-export')[0]
+    if export_button.text == 'EXPORT TO EXCEL':
+        export_button.click()
+
+
+@then(u'Overdue Inspection Excel file is generated')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then Overdue Inspection Excel file is generated')
+
+
