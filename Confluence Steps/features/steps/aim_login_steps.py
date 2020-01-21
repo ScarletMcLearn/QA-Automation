@@ -448,3 +448,37 @@ def step_impl(context):
     raise NotImplementedError(u'STEP: Then Overdue Inspection Excel file is generated')
 
 
+
+# @when(u'click on Request')
+# def step_impl(context):
+#     raise NotImplementedError(u'STEP: When click on Request')
+
+
+@when(u'input text in search bar which does not exist # sdfsdf32423')
+def step_impl(context):
+    # raise NotImplementedError(u'STEP: When input text in search bar which does not exist # sdfsdf32423')
+    context.driver.find_element_by_id('basic-search-input').send_keys('sdfsdf32423')
+
+
+@when(u'click search')
+def step_impl(context):
+    # raise NotImplementedError(u'STEP: When click search')
+    context.driver.find_element_by_id('submit').send_keys('\n')
+    time.sleep(5)
+
+
+@then(u'\'No Results Found.\' message is displayed')
+def step_impl(context):
+    assert context.driver.find_elements_by_class_name('crm-warning')[0].text == 'No Results Found.'
+
+
+@when(u'input text in search bar which does exist # asa')
+def step_impl(context):
+    context.driver.find_element_by_id('basic-search-input').send_keys('asa')
+
+
+@then(u'search results are displayed')
+def step_impl(context):
+    assert True == bool(context.driver.find_element_by_id('search-results-container'))
+
+# //*[@id="search-results-container"]/div[2]
