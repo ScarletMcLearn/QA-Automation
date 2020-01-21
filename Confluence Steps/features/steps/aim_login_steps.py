@@ -482,3 +482,8 @@ def step_impl(context):
     assert True == bool(context.driver.find_element_by_id('search-results-container'))
 
 # //*[@id="search-results-container"]/div[2]
+
+
+@then(u'search bar on navigation menu is displayed')
+def step_impl(context):
+    assert bool(context.driver.find_element_by_id("input_0")) == True
