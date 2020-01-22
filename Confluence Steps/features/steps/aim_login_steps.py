@@ -487,3 +487,79 @@ def step_impl(context):
 @then(u'search bar on navigation menu is displayed')
 def step_impl(context):
     assert bool(context.driver.find_element_by_id("input_0")) == True
+
+
+
+@when(u'disselect All States option from the menu')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('md-checkbox-enabled')[0].click()
+    context.driver.find_elements_by_class_name('md-checkbox-enabled')[0].send_keys(Keys.ESCAPE)
+    context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+
+
+@when(u'selects Alabama from the menu')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('md-checkbox-enabled')[1].click()
+    context.driver.find_elements_by_class_name('md-checkbox-enabled')[1].send_keys(Keys.ESCAPE)
+    context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+
+@when(u'selects Alaska from the menu')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('md-checkbox-enabled')[2].click()
+    context.driver.find_elements_by_class_name('md-checkbox-enabled')[2].send_keys(Keys.ESCAPE)
+    context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+
+@when(u'selects Arizona from the menu')
+def step_impl(context):
+    context.driver.find_elements_by_class_name('md-checkbox-enabled')[3].click()
+    context.driver.find_elements_by_class_name('md-checkbox-enabled')[3].send_keys(Keys.ESCAPE)
+    context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+    
+
+@when(u'see the result count')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When see the result count')
+
+
+@when(u'click the status of the first result')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When click the status of the first result')
+
+
+@when(u'inspection request detail page is displayed')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When inspection request detail page is displayed')
+
+
+@when(u'click status from inspection request detail page')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When click status from inspection request detail page')
+
+
+@when(u'update status form is displayed')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When update status form is displayed')
+
+
+@when(u'change status to Cancel')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When change status to Cancel')
+
+
+@when(u'add a comment')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When add a comment')
+
+
+@when(u'click save')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When click save')
+
+
+@then(u'Overdue Inspections count decrease by 1 and Awaiting Quality count increase by 1')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then Overdue Inspections count decrease by 1 and Awaiting Quality count increase by 1')
