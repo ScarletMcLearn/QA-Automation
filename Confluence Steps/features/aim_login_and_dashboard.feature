@@ -340,48 +340,55 @@ Feature: AIM Site Login and Dashboard Functionalities
 
     Scenario: No States selected on Dashboard shows no counts
 
-        When click on State Dropdown menu
-        And unselects all states
-        And clicks blank space on dashboard 
-        Then Dashboard updated to no counts
+        When click on Dashboard 
+        And click on Showing:All States 
+        And disselect All States option from the menu
+        Then Dashboard is updated to show information of the option selected 
 
 
 
 
     
-    Scenario: All States selected on Dashboard shows all states counts
+    # Scenario: All States selected on Dashboard shows all states counts
 
-        When click on State Dropdown menu
-        And selects all states
-        And clicks blank space on dashboard 
-        Then Dashboard updated to all states counts
+    #     When click on State Dropdown menu
+    #     And selects all states
+    #     And clicks blank space on dashboard 
+    #     Then Dashboard updated to all states counts
 
 
 
     Scenario: Alabama selected on Dashboard shows Alabama counts
 
-        When click on State Dropdown menu
-        And selects Alabama
-        And clicks blank space on dashboard 
-        Then Dashboard updated to Alabama counts
+        # When click on State Dropdown menu
+        # And selects Alabama
+        # And clicks blank space on dashboard 
+        # Then Dashboard updated to Alabama counts
+
+        When click on Dashboard 
+        And click on Showing:All States 
+        And selects Alabama from the menu
+        Then Dashboard is updated to show information of the option selected
 
 
     Scenario: Alaska selected on Dashboard shows Alaska counts
 
-        When click on State Dropdown menu
-        And selects Alaska
-        And clicks blank space on dashboard 
-        Then Dashboard updated to Alaska counts
+        When click on Dashboard 
+        And click on Showing:All States 
+        And selects Alaska from the menu
+        Then Dashboard is updated to show information of the option selected
 
 
     Scenario: Arizona selected on Dashboard shows Arizona counts
 
-        When click on State Dropdown menu
-        And selects Arizona
-        And clicks blank space on dashboard 
-        Then Dashboard updated to Arizona counts
+        When click on Dashboard 
+        And click on Showing:All States 
+        And selects Arizona from the menu
+        Then Dashboard is updated to show information of the option selected
 
 
+
+# To Do !!!
     Scenario: Arizona, Alaska and Alabama selected on Dashboard shows total counts of Arizona, Alaska and Alabama
 
         When click on State Dropdown menu
@@ -505,4 +512,3 @@ Feature: AIM Site Login and Dashboard Functionalities
 #   To do # Request
 #   - Basic Search
 #   - Advance search
-  
