@@ -21,10 +21,220 @@ Feature: Add Request functionalities
         Then click homepage is shown 
 
 
+    Scenario: General Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        Then General Settings page is shown 
+
+
+    Scenario: Administration Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Administration Settings subbutton 
+        Then Administration Settings page is shown 
+
+
+    Scenario: Administration Settings Page options are working
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Administration Settings subbutton 
+        And change the options 
+        And Apply and Cancel buttons are shown 
+        And click Apply 
+        Then settings changed  
+
+
+    Scenario: Schedule UI Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Schedule UI subbutton 
+        Then Schedule UI Settings page is shown 
+
+
+    Scenario: Schedule UI Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Schedule UI subbutton 
+        And change the options 
+        And Apply and Cancel buttons are shown 
+        And click Apply 
+        Then settings changed  
+ 
+
+    Scenario: Security Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Security Settings subbutton 
+        Then Security Settings page is shown 
+
+
+    Scenario: Security Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Security Settings subbutton 
+        And change the options 
+        And Apply and Cancel buttons are shown 
+        And click Apply 
+        Then settings changed 
+
+
+    Scenario: Setup Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Setup Settings subbutton 
+        Then Setup Settings page is shown 
+
+    Scenario: Setup Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Setup Settings subbutton 
+        And change the options 
+        And Apply and Cancel buttons are shown 
+        And click Apply 
+        Then settings changed  
+
+
+    Scenario: Localization Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Localization Settings subbutton 
+        Then Localization Settings page is shown 
+
+    Scenario: Localization Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Localization Settings subbutton 
+        And change the options 
+        And Apply and Cancel buttons are shown 
+        And click Apply 
+        Then settings changed 
+
+    Scenario:  Service Excellence Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on  Service Excellence Settings subbutton 
+        Then  Service Excellence Settings page is shown 
+
+    Scenario:  Service Excellence Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on  Service Excellence Settings subbutton 
+        And change the options 
+        And Apply and Cancel buttons are shown 
+        And click Apply 
+        Then settings changed 
+
+
+    Scenario: Analytics Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Analytics Settings subbutton 
+        Then Analytics Settings page is shown
+
+
+    Scenario: Analytics Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Analytics Settings subbutton 
+        And change the options 
+        And Apply and Cancel buttons are shown 
+        And click Apply 
+        Then settings changed 
+
+
+    Scenario: Grant Access Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Grant Access Settings subbutton 
+        Then Grant Access Settings page is shown 
+
+
+    Scenario: Grant Access Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Grant Access Settings subbutton 
+        And change the options 
+        And Apply and Cancel buttons are shown 
+        And click Apply 
+        Then settings changed 
+
+# To Do - Shows nothing!
+    Scenario: Mobile Settings Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on General Settings subbutton 
+        And click on Mobile Settings subbutton 
+        Then Mobile Settings page is shown 
+  
+    #######################
+
+    Scenario: Schedule Policies Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        Then Schedule Policies page is shown 
+
+
+
     Scenario: Schedule Page is shown
 
         When click on menu button
-        Then sidebar is shown 
+        And sidebar is shown 
         And click on shedule button 
         Then schedule page is shown 
 
