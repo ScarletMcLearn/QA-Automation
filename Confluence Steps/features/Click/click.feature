@@ -219,7 +219,7 @@ Feature: Add Request functionalities
         And click on Mobile Settings subbutton 
         Then Mobile Settings page is shown 
   
-    #######################
+    
 
     Scenario: Schedule Policies Page is shown
 
@@ -229,6 +229,125 @@ Feature: Add Request functionalities
         And click on Schedule Policies subbutton 
         Then Schedule Policies page is shown 
 
+
+    Scenario: Schedule Policies Standard Rules Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Rules 
+        Then Schedule Policies Standard Rules Page is shown
+
+
+    Scenario: Schedule Policies Standard Rules Page specific rules are shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Rules 
+        And Schedule Policies Standard Rules Page is shown
+        And click a Rules set
+        Then specific rules are shown 
+
+
+    Scenario: Schedule Policies Standard Rules Page specific rule's detail is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Rules 
+        And Schedule Policies Standard Rules Page is shown
+        And click a Rules set
+        And specific rules are shown 
+        And click a specific rule 
+        Then rule details are shown
+
+    Scenario: Schedule Policies Standard Rules Page specific rule's detail is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Rules 
+        And Schedule Policies Standard Rules Page is shown
+        And click Active Rules All Rules slider button
+        Then rules list are updated
+
+# To Do
+# Edit Rule and Save 
+
+    Scenario: Edit Schedule Policies Standard Rule 
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Rules 
+        And Schedule Policies Standard Rules Page is shown
+        And click rename rule button 
+        And enter new rule name 
+        And click enter 
+        Then Rule is renamed 
+
+
+    Scenario: Clone Schedule Policies Standard Rule 
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Rules 
+        And Schedule Policies Standard Rules Page is shown
+        And click Clone Schedule Policy button 
+        Then Rule is Cloned 
+
+    Scenario: Delete Schedule Policies Standard Rule 
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Rules 
+        And Schedule Policies Standard Rules Page is shown
+        And click Delete Schedule Policy button 
+        And Delete Schedule Policy confirmation window is shown
+        And click Delete  
+        Then Rule is Deleted
+
+# To DO
+# Validate Schedule Policy button
+ 
+
+    Scenario: Schedule Policies Standard Objectives Page is shown
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Objectives 
+        Then Schedule Policies Standard Objectives Page is shown
+
+
+####################
 
 
     Scenario: Schedule Page is shown
