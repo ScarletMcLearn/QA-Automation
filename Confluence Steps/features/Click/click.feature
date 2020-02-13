@@ -347,8 +347,95 @@ Feature: Add Request functionalities
         Then Schedule Policies Standard Objectives Page is shown
 
 
-####################
+    Scenario: Add New Objectives Policy
 
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Objectives 
+        And Schedule Policies Standard Objectives Page is shown
+        And click Add New Objectives Policy button 
+        And click save 
+        Then new Objective Policy added 
+
+    Scenario: Edit Service ASAP on New Objectives Policy
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Objectives 
+        And Schedule Policies Standard Objectives Page is shown
+        And click Add New Objectives Policy button 
+        And click save 
+        And new Objective Policy added 
+        And click the new Objective Policy
+        And change Service ASAP slider 
+        And click Save 
+        Then Rule updated 
+
+
+    Scenario: Edit Minimize Overtime setting on New Objectives Policy
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Objectives 
+        And Schedule Policies Standard Objectives Page is shown
+        And click Add New Objectives Policy button 
+        And click save 
+        And new Objective Policy added 
+        And activate the Minimize Overtime 
+        And change Minimize Overtime slider 
+        And click Save 
+        Then Rule updated 
+
+
+    Scenario: Edit Preferred Resource setting on New Objectives Policy
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Objectives 
+        And Schedule Policies Standard Objectives Page is shown
+        And click Add New Objectives Policy button 
+        And click save 
+        And new Objective Policy added 
+        And activate the Preferred Resource
+        And change Preferred Resource slider 
+        And click Save 
+        Then Rule updated 
+
+    Scenario: Edit Prefer Internal Resource setting on New Objectives Policy
+
+        When click on menu button 
+        And sidebar is shown
+        And click on Configuration button 
+        And click on Schedule Policies subbutton 
+        And Schedule Policies page is shown 
+        And click Standard
+        And click Objectives 
+        And Schedule Policies Standard Objectives Page is shown
+        And click Add New Objectives Policy button 
+        And click save 
+        And new Objective Policy added 
+        And activate the Prefer Internal Resource
+        And change PPrefer Internal Resource slider 
+        And click Save 
+        Then Rule updated 
+# To Do
+# Delete Objective Policy
 
     Scenario: Schedule Page is shown
 
@@ -512,10 +599,205 @@ Feature: Add Request functionalities
     # To Do
     #  How to view NA and Tasks ?
 
+    Scenario: Centralized log is shown 
+        When click on menu button
+        And sidebar is shown 
+        And click on Support Tools 
+        And click Centralized Log button
+        Then Centralized Log page is shown 
+
+
+    Scenario: Centralized log detail is shown 
+        When click on menu button
+        And sidebar is shown 
+        And click on Support Tools 
+        And click Centralized Log button
+        And Centralized Log page is shown 
+        And click a log 
+        Then log detail is shown
+
+
+    Scenario: Refresh Centralized log page 
+        When click on menu button
+        And sidebar is shown 
+        And click on Support Tools 
+        And click Centralized Log button
+        And Centralized Log page is shown 
+        And click refresh 
+        Then page is refreshed
+
+
+    Scenario: Filter Results on Centralized log page 
+        When click on menu button
+        And sidebar is shown 
+        And click on Support Tools 
+        And click Centralized Log button
+        And Centralized Log page is shown 
+        And click on filter button 
+        And select filter
+        Then page shows updated search results
+
+
+# To Do
+# Filter Management
+
+# To Do
+# New Duplicate Delete buttons not working 
+
+
+
+    Scenario: Export Results from Centralized log page 
+        When click on menu button
+        And sidebar is shown 
+        And click on Support Tools 
+        And click Centralized Log button
+        And Centralized Log page is shown 
+        And click on Export button 
+        And confirm download
+        Then results are exported 
+
+    Scenario: Integration Monitor is shown 
+        When click on menu button
+        And sidebar is shown 
+        And click on Support Tools 
+        And click Integration Monitor button
+        Then Integration Monitor page is shown 
+
+
+    Scenario: Integration Monitor detail is shown 
+        When click on menu button
+        And sidebar is shown 
+        And click on Support Tools 
+        And click Integration Monitor button
+        And Integration Monitor page is shown 
+        And click a log 
+        Then Integration Monitor log detail is shown
+
+
+    Scenario: SXP Tool page is shown 
+        When click on menu button
+        And sidebar is shown 
+        And click on Support Tools 
+        And click SXP button
+        Then SXP page is shown
+
+
+# To DO
+# How to use SXP Page
+
+#############
+
+
+    Scenario: Tools page is shown 
+        When click on menu button
+        And sidebar is shown 
+        And click on Support Tools 
+        And click Tools button
+        Then Tools page is shown
+
+
+# To Do
+# Download Tools from Tools page
+
+    Scenario: User Login History page is shown 
+        When click on menu button
+        And sidebar is shown 
+        And click on Support Tools 
+        And click User Login History button
+        Then User Login History page is shown
+
+
+    Scenario: Export User Login History page is shown 
+        When click on menu button
+        And sidebar is shown 
+        And click on Support Tools 
+        And click User Login History button
+        And User Login History page is shown
+        And click Export 
+        And save file to location
+        Then User Login History is exported
+
+    Scenario: Search User Login History page  
+        When click on menu button
+        And sidebar is shown 
+        And click on Support Tools 
+        And click User Login History button
+        And User Login History page is shown 
+        And click search bar 
+        And enter text in search bar 
+        And press enter 
+        Then search results shown 
+
+
+    Scenario: Roles page is shown 
+        When click on menu button
+        And sidebar is shown 
+        And click on User Management 
+        And click on Roles button
+        Then Roles page is shown
+
+
+    Scenario: Duplicate Role from Roles Page
+        When click on menu button
+        And sidebar is shown 
+        And click on User Management 
+        And click on Roles button
+        And Roles page is shown
+        And click the checkbox beside first role 
+        And click duplicate 
+        And click apply 
+        And go back to Roles page 
+        Then role is duplicated 
+
+
+    Scenario: Delete Role from Roles Page
+        When click on menu button
+        And sidebar is shown 
+        And click on User Management 
+        And click on Roles button
+        And Roles page is shown
+        And click the checkbox beside first role 
+        And click delete 
+        And confirm delete 
+        Then role is deleted 
+
+    Scenario: Edit Role settings 
+        When click on menu button
+        And sidebar is shown 
+        And click on User Management 
+        And click on Roles button
+        And Roles page is shown
+
+# To Do
+# Create New Role 
+
+
+    Scenario: User Groups page is shown 
+        When click on menu button
+        And sidebar is shown 
+        And click on User Management 
+        And click on User Groups button
+        Then User Groups page is shown
+
+
+# To Do
+# Create, Duplicate, Delete New User Group 
+
+    Scenario: User List page is shown 
+        When click on menu button
+        And sidebar is shown 
+        And click on User Management 
+        And click on Users button
+        Then User List page is shown
+
+# To Do
+# Create, Duplicate, Delete New User 
+
+
     Scenario: Inspector Territory Page is shown
 
         When click on menu button
-        Then sidebar is shown 
+        And sidebar is shown 
         And click on Views button 
         And click on Inspector Territory button 
         Then Inspector Territory page is shown 
@@ -537,7 +819,7 @@ Feature: Add Request functionalities
     Scenario: Inspection Page is shown
 
         When click on menu button
-        Then sidebar is shown 
+        And sidebar is shown 
         And click on Views button 
         And click on Inspection button 
         Then Inspection page is shown 
@@ -546,7 +828,7 @@ Feature: Add Request functionalities
 
     # To Do
 
-    #  Doesnt work
+    #  Doesnt work Add, Duplicate, Delete
     Scenario: Add New Inspection 
 
         Given on Inspection page 
@@ -556,3 +838,148 @@ Feature: Add Request functionalities
         And enter required fields in General tab 
         And click Ok button 
         Then New NA is added. 
+
+
+    Scenario: Inspector Page is shown
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Inspector button 
+        Then Inspector page is shown 
+
+
+    Scenario: Duplicate Inspector from Inspector Page 
+
+        When click on menu button
+        Then sidebar is shown 
+        And click on Views button 
+        And click on Inspector button 
+        And Inspector page is shown 
+        And select an Inspector 
+        And click Duplicate 
+        And edit ID
+        And click Ok
+        Then Inspector is duplicated  
+
+
+    Scenario: Delete Inspector from Inspector Page 
+
+        When click on menu button
+        Then sidebar is shown 
+        And click on Views button 
+        And click on Inspector button 
+        And Inspector page is shown 
+        And select an Inspector 
+        And click Duplicate 
+        And edit ID
+        And click Ok
+        Then Inspector is duplicated
+
+# To Do
+# Cannot Delete, Add New inspector   
+
+
+    Scenario: User List Page is shown
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Custom User List button 
+        Then Custom User List  page is shown 
+
+# To DO
+# Create New SOUser
+
+
+    Scenario: Address Page is shown
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Address button 
+        Then Address page is shown 
+
+    Scenario: Add Address from Address Page
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Address button 
+        And Address page is shown 
+        And click new 
+        And enter required fields 
+        And click ok 
+        Then New Address is added
+
+    Scenario: Duplicate Address from Address Page
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Address button 
+        And Address page is shown 
+        And click duplicate 
+        And click ok 
+        Then Address is duplicated
+
+    Scenario: Delete Address from Address Page
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Address button 
+        And Address page is shown 
+        And click delete 
+        And click ok 
+        Then Address is deleted
+
+
+
+###########
+# To Do Tomorrow
+
+    Scenario: Address Page is shown
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Address button 
+        Then Address page is shown 
+
+    Scenario: Add Address from Address Page
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Address button 
+        And Address page is shown 
+        And click new 
+        And enter required fields 
+        And click ok 
+        Then New Address is added
+
+    Scenario: Duplicate Address from Address Page
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Address button 
+        And Address page is shown 
+        And click duplicate 
+        And click ok 
+        Then Address is duplicated
+
+    Scenario: Delete Address from Address Page
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Address button 
+        And Address page is shown 
+        And click delete 
+        And click ok 
+        Then Address is deleted
+
+# To Do
+# Analytics
