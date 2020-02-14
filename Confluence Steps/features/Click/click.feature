@@ -939,38 +939,45 @@ Feature: Add Request functionalities
 ###########
 # To Do Tomorrow
 
-    Scenario: Address Page is shown
+    Scenario: Non-availability Page is shown
 
         When click on menu button
         And sidebar is shown 
         And click on Views button 
-        And click on Address button 
-        Then Address page is shown 
+        And click on Non-availability button 
+        Then Non-availability page is shown 
 
-    Scenario: Add Address from Address Page
+    Scenario: Add Non-availability from Non-availability Page
 
         When click on menu button
         And sidebar is shown 
         And click on Views button 
-        And click on Address button 
-        And Address page is shown 
+        And click on Non-availability button 
+        And Non-availability page is shown 
         And click new 
         And enter required fields 
         And click ok 
-        Then New Address is added
+        Then New Non-availability is added
 
-    Scenario: Duplicate Address from Address Page
+
+    Scenario: Duplicate Non-availability from Non-availability Page
+
+# To Do
+# Cannot Duplicate
 
         When click on menu button
         And sidebar is shown 
         And click on Views button 
-        And click on Address button 
-        And Address page is shown 
+        And click on Non-availability button 
+        And Non-availability page is shown 
         And click duplicate 
         And click ok 
         Then Address is duplicated
 
-    Scenario: Delete Address from Address Page
+    Scenario: Delete Non-availability from Non-availability Page
+
+# To Do
+# Cannot Delete
 
         When click on menu button
         And sidebar is shown 
