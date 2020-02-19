@@ -41,6 +41,27 @@ Feature: Add Request functionalities
         Then schedule page is shown 
 
 
+    Scenario: Alerts Center is shown 
+
+        When click on Bell Icon 
+        Then Alert Center is shown 
+
+    Scenario: Profile Preferences page is shown 
+
+        When click on Profile Name
+        And click Profile 
+        Then Profile Preferences page is shown
+
+
+    Scenario: Edit Profile Preferences  
+
+        When click on Profile Name
+        And click Profile 
+        And change unit for distance
+        And click Apply 
+        Then Profile Preferences is updated
+
+
     Scenario: Add New NA
 
         Given on Schedule page 
@@ -175,6 +196,42 @@ Feature: Add Request functionalities
         When click options of first task
         And click Get Candidates button 
         Then Get Candidates window is shown 
+
+
+    Scenario: Show Gantt 
+
+        Given on Schedule page 
+        When click Gantt button  
+        Then Gantt is shown     
+
+
+    Scenario: Search Resource Result shown on Gantt if exist
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And input 'a' in search resource text field 
+        And press enter 
+        Then search results shown  
+
+
+    Scenario: Search Resource Result not shown on Gantt if does not exist
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And input 'acz' in search resource text field 
+        And press enter 
+        Then no search results shown  
+
+
+    Scenario: 
+
+    Scenario: Show Map 
+
+        Given on Schedule page 
+        When click Map button  
+        Then Map is shown    
 
 
     # To Do
@@ -456,3 +513,7 @@ Feature: Add Request functionalities
 
 # Delete inspector
 # Not working
+
+# Search bar not working
+
+# All schedule option beside search bar not working
