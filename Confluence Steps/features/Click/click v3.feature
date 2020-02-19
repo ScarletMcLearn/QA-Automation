@@ -96,7 +96,7 @@ Feature: Add Request functionalities
         And tasks exist
         When click options of first task
         And click Edit button 
-        And edit fields 
+        And edit any fields 
         And click Apply 
         Then Task is edited. 
 
@@ -207,26 +207,6 @@ Feature: Add Request functionalities
 
 
 
-# To DO
-# How to use SXP Page
-
-#############
-
-
-# To Do
-# Download Tools from Tools page
-
-
-
-# To Do
-# Create New Role 
-
-# To Do
-# Create, Duplicate, Delete New User Group 
-
-# To Do
-# Create, Duplicate, Delete New User 
-
 
     Scenario: Inspector Territory Page is shown
 
@@ -310,13 +290,7 @@ Feature: Add Request functionalities
         And click Ok
         Then Inspector is duplicated
 
-# To Do
-# Cannot Delete, Add New inspector   
 
-
-
-# To DO
-# Create New SOUser
 
 
     Scenario: Address Page is shown
@@ -365,24 +339,12 @@ Feature: Add Request functionalities
 
 
 
-###########
-# To Do Tomorrow
-
-# To Do
-# Having issues with these scenarios:
-
-# Delete Nonavailability from Non-availability Page
-
-
-# Duplicate Non-availability from Non-availability Page
 
 
 
 
-# Fixed !!! TRY AGAIN!!!
-# Add, Duplicate, Delete New inspector 
-# Delete Edit Fixed
-# Add, Duplicate Not Fixed
+
+
     Scenario: Add New Inspector from Inspector Page
 
         When click on menu button
@@ -413,24 +375,84 @@ Feature: Add Request functionalities
         Then Inspector is duplicated
 
 
-# Delete inspector
-# Not working
+    
 
-# Add New Inspector Territory
-# Fixed
 
+
+
+
+
+    Scenario: Add New Inspector Territory from Inspector Territory Page
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Inspector Territory button 
+        And click on New button
+        And New Inspector Territory page is shown 
+        And enter mandatory fields 
+        And click Ok 
+        Then New Inspector Territory is added
+
+    Scenario: Duplicate Inspector Territory from Inspector Territory Page
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Inspector Territory button 
+        And click on check mark beside a Territory
+        And click duplicate 
+        And New Inspector Territory page is shown 
+        And edit any mandatory field 
+        And click Ok 
+        Then Inspector Territory is duplicated
+
+
+    Scenario: Edit Inspector Territory from Inspector Territory Page
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Inspector Territory button 
+        And click on a Territory
+        And Inspector Territory edit page is shown 
+        And edit any field 
+        And click Ok 
+        Then Inspector Territory is edited
+
+
+    Scenario: Delete Inspector Territory from Inspector Territory Page
+
+        When click on menu button
+        And sidebar is shown 
+        And click on Views button 
+        And click on Inspector Territory button 
+        And click on check mark beside a Territory
+        And click delete 
+        And Confirm delete window is shown 
+        And click confirm 
+        Then Inspector Territory is deleted
+
+
+# To Do
+# Having issues with these scenarios:
+
+# Delete Nonavailability from Non-availability Page
+
+
+# Duplicate Non-availability from Non-availability Page
 # Add New Task, Duplicate Task, error NULL
 # See Task
 # Still Cannot 
 
-# Delete Objective Policy
-# Fixed
-
-# Edit Rule and Save
-# Fixed
 
 # Schedule Tasks
 # Unschedule
 
 # Schedule Tasks
 # Schedule
+
+# Reopen Agent Test Plan
+
+# Delete inspector
+# Not working
