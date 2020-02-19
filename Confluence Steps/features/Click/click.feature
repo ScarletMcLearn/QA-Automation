@@ -990,3 +990,55 @@ Feature: Add Request functionalities
 
 # To Do
 # Analytics
+
+
+
+# To Do
+# Having issues with these scenarios:
+
+# Delete Nonavailability from Non-availability Page
+# Fixed
+
+# Duplicate Non-availability from Non-availability Page
+# Fixed
+
+# Create New SOUser
+# Fixed
+
+# Add, Duplicate, Delete New inspector 
+# Delete Edit Fixed
+# Add, Duplicate Not Fixed
+
+
+# Add New Inspector Territory
+# Fixed
+
+# Create, Duplicate, Delete New User
+# Fixed
+
+# Create, Duplicate, Delete New User Group 
+# Fixed
+
+# Create New Role
+# Fixed
+
+# Download Tools from Tools page
+# Fixed
+
+# Using SXP Page
+# Fixed
+
+# Add New Task, Duplicate Task, error NULL
+# Still Cannot 
+
+# Delete Objective Policy
+# Fixed
+
+# Edit Rule and Save
+# Fixed
+
+# Schedule Tasks
+# Unschedule
+
+# Schedule Tasks
+# Schedule
