@@ -9,11 +9,11 @@ Feature: Add Request functionalities
         And nagivated to Click site // https://fse-na-sb-login.cloud.clicksoftware.com/tmindex.html?return_path=https://fse-na-sb.cloud.clicksoftware.com/
         And Click Site is displayed 
         And clicks on Username field 
-        And enters correct Username (ahussain@AIMD2)
+        And enters correct Username (ahussain@AIMD2 / ahussain@AIMSB)
         And click sign in button 
         And password field appears
         And click on password field 
-        And enters correct Password (F@v0rite1)
+        And enters correct Password (F@v0rite1 / p@55w0rd)
         And click sign in button
         
     Scenario: Click homepage is shown
@@ -133,6 +133,21 @@ Feature: Add Request functionalities
         Then Task status is updated. 
 
 
+
+    Scenario: See Task Details
+
+        Given on Schedule page 
+        And tasks exist
+        Then task details shown on card 
+
+    Scenario: See More Task Details
+
+        Given on Schedule page 
+        And tasks exist
+        When click more button on task
+        Then more task details shown 
+
+
     Scenario: Pin Task 
 
         Given on Schedule page 
@@ -202,7 +217,25 @@ Feature: Add Request functionalities
 
         Given on Schedule page 
         When click Gantt button  
-        Then Gantt is shown     
+        Then Gantt is shown   
+
+    Scenario: Change Date on Gantt using arrows 
+
+        Given on Schedule page 
+        When click Gantt button  
+        And click move one day forward 
+        Then date moves one day forward
+        And click move one day backward
+        Then date moves one day backward
+
+
+    Scenario: Change Date on Gantt using Calender 
+
+        Given on Schedule page 
+        When click Gantt button  
+        And click on Calender 
+        And select new date 
+        Then new date shown 
 
 
     Scenario: Search Resource Result shown on Gantt if exist
@@ -225,13 +258,335 @@ Feature: Add Request functionalities
         Then no search results shown  
 
 
-    Scenario: 
+    Scenario: Gantt Filter Excluded from Optimization results shown
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Gantt Filter
+        And check Excluded from Optimization box
+        And press ESC
+        Then updated filtered results shown  
+
+
+    Scenario: Gantt Filter Included in Optimization results shown
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Gantt Filter
+        And check Included in Optimization box
+        And press ESC
+        Then updated filtered results shown  
+
+
+    Scenario: Manage Gantt Filter Management window is shown
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Gantt Filter
+        And click on Manage
+        Then Filter Management window is shown  
+
+
+    Scenario: Manage Gantt Filter Management window System Filters shown
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Gantt Filter
+        And click on Manage
+        And uncheck all filters 
+        And check System Filters
+        Then System Filters shown 
+
+
+    Scenario: Manage Gantt Filter Management window My Filters shown
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Gantt Filter
+        And click on Manage
+        And uncheck all filters 
+        And check My Filters
+        Then My Filters shown 
+
+
+    Scenario: Delete Custom Filter from Gantt Filter Management window 
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Gantt Filter
+        And click on Manage
+        And click on a custom filter 
+        And click delete 
+        And click confirm
+        Then filter is deleted 
+
+
+    Scenario: Add Custom Filter from Gantt Filter Management window 
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Gantt Filter
+        And click on Manage
+        And click on a custom filter 
+        And click add 
+        And select a property
+        And select a condition 
+        And select a value 
+        And click apply
+        And click add condition 
+        And select a property
+        And select a condition 
+        And select a value 
+        And click apply
+        And click add condition 
+        And click delete condition on newly added condition 
+        And click apply
+        Then filter is added 
+
+
+    
+    Scenario: Add Advanced Custom Filter from Gantt Filter Management window 
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Gantt Filter
+        And click on Manage
+        And click on a custom filter 
+        And click add 
+        And select a property
+        And select a condition 
+        And select a value 
+        And click apply
+        And click add condition 
+        And select a property
+        And select a condition 
+        And select a value 
+        And click apply
+        And click Advanced filter 
+        And enter a valid expression 
+        And click apply
+        Then filter is added 
+
+
+
+    Scenario: Rename Custom Filter from Gantt Filter Management window 
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Gantt Filter
+        And click on Manage
+        And click on a custom filter 
+        And click rename 
+        And enter a new name 
+        And click blank space in filters list 
+        Then filter is renamed 
+
+
+
+    # To Do
+    # Save as in Add Filter Not Working 
+
+    Scenario: Change domain from Schedule page
+        Given on Schedule page
+        When click on working on n Domain(s)
+        And select new Domain(s)
+        And click apply
+        Then results filtered to selected domain(s)
+
+    Scenario: Change Gantt Resolution to Daily 
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Change Gantt Resolution
+        And click on Daily 
+        Then results updated 
+
+
+    Scenario: Change Gantt Resolution to Two Days 
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Change Gantt Resolution
+        And click on Two Days 
+        Then results updated 
+
+
+    Scenario: Change Gantt Resolution to Weekly 
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Change Gantt Resolution
+        And click on Weekly 
+        Then results updated 
+
+
+
+    Scenario: Change start date of Gantt  
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Change start date of Gantt 
+        And click on a new date 
+        Then results updated 
+
+
+    Scenario: Change display options of Gantt  
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Display Options icon 
+        And unselect all options 
+        And select all options 
+        Then display settings updated 
+
+
+    Scenario: Change working hours settings of Gantt  
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on Display Options icon 
+        And click change 
+        And change work week 
+        And change start time
+        And change end time 
+        And change is working option
+        And click apply 
+        Then working hours settings updated 
+
+
+# To Do
+# What is the cutleries icon
+# on Gantt
+# goes black on clicking
+
+
+
+    Scenario: Change Gantt timeframe   
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on the zoom in on time 
+        Then display changed 
+        And click on the zoom out on time 
+        Then display changed 
+        
+
+
+    Scenario: Show Home base on Gantt    
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on option button beside a inspector
+        And click show home base  
+        Then home base shown on map
+
+
+    Scenario: Show Daily route on Gantt    
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on option button beside a inspector
+        And click show Daily route  
+        Then Daily route shown on map
+
+
+
+    Scenario: Relocate route on Gantt    
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on option button beside a inspector
+        And click on Relocate resource  
+        And add a resource 
+        And click next 
+        And change time 
+        And click next 
+        And click target district
+        And click next 
+        And click home base
+        And click next
+        And click relocate
+        Then Resource Relocated
+
+
+    Scenario: Edit inspector details from Gantt 
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on option button beside a inspector
+        And click on Edit
+        And Edit Inspector window is shown 
+        And edit a field 
+        And click Ok 
+        Then inspctor editted 
+
+
+
+    Scenario: Call South East/Florida Central inspector from Gantt 
+
+        Given on Schedule page 
+        When click Gantt button  
+        And Gantt is shown 
+        And click on option button beside a South East/Florida Central inspector
+        And click on Call
+        Then Call option is shown  
+         
+
+
+# To DO
+# Schedule Idle Resource from Gant - Inspector Option 
+
+
 
     Scenario: Show Map 
 
         Given on Schedule page 
         When click Map button  
         Then Map is shown    
+
+
+    Scenario: Show Satellite Map 
+
+        Given on Schedule page 
+        When click Map button  
+        And click Satellite Map button 
+        Then Satellite Map is shown 
+
+
+    Scenario: Zoom in Map 
+
+        Given on Schedule page 
+        When click Map button  
+        And scroll down on map 
+        Then Map is zoomed in  
+
+
+    Scenario: Zoom out Map 
+
+        Given on Schedule page 
+        When click Map button  
+        And scroll down on map 
+        Then Map is zoomed out    
 
 
     # To Do
