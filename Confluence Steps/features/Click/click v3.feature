@@ -2,8 +2,8 @@ Feature: Add Request functionalities
 
     Background: 
 
-        # User Name: ahussain@AIMD2
-        # Password: F@v0rite1
+        # User Name: ahussain@AIMD2 / ahussain@AIMSB
+        # Password: F@v0rite1 / p@55w0rd
 
         Given Browser is opened
         And nagivated to Click site // https://fse-na-sb-login.cloud.clicksoftware.com/tmindex.html?return_path=https://fse-na-sb.cloud.clicksoftware.com/
@@ -599,10 +599,190 @@ Feature: Add Request functionalities
         Then 
 
 
-    Scenario: 
+    # Scenario: Add Completed Task to Clipboard
+
+    #     Given on Schedule page
+    #     And Completed Task 1101255:215178 exists 
+    #     When click on Search bar 
+    #     And enter Completed Task code in bar 
+    #     And press enter 
+    #     And click the result from dropdown menu 
+    #     Then task added to clipboard 
+
+
+    Scenario: Add Completed Task to Clipboard
+
+        Given on Schedule page
+        And Completed Task 1101255:215178 exists 
+        When click on Search bar 
+        And enter Completed Task code in bar 
+        And press enter 
+        And click the result from dropdown menu 
+        Then Completed task added to clipboard
+
+
+    Scenario: Change Completed Task to Scheduled
+
+        Given on Schedule page
+        And Completed Task 1101255:215178 exists 
+        When click on Search bar 
+        And enter Completed Task code in bar 
+        And press enter 
+        And click the result from dropdown menu
+        And click option menu 
+        And click change status 
+        And click Scheduled  
+        Then Completed task changed to Scheduled 
+
+
+    Scenario: Change Scheduled Task to Completed
+
+        Given on Schedule page
+        And Scheduled Task 1101255:215178 exists 
+        When click on Search bar 
+        And enter Scheduled Task code in bar 
+        And press enter 
+        And click the result from dropdown menu
+        And click option menu 
+        And click change status 
+        And click Completed  
+        Then Scheduled task changed to Completed 
+
+
+    Scenario: Change Scheduled Task to Dispatched
+
+        Given on Schedule page
+        And Scheduled Task 1101255:215178 exists 
+        When click on Search bar 
+        And enter Scheduled Task code in bar 
+        And press enter 
+        And click the result from dropdown menu
+        And click option menu 
+        And click change status 
+        And click Dispatched  
+        Then Scheduled task changed to Dispatched 
+
+
+
+    Scenario: Change Scheduled Task to Open
+
+        Given on Schedule page
+        And Scheduled Task 1101255:215178 exists 
+        When click on Search bar 
+        And enter Scheduled Task code in bar 
+        And press enter 
+        And click the result from dropdown menu
+        And click option menu 
+        And click change status 
+        And click Open  
+        Then Scheduled task changed to Open 
+
+
+    Scenario: Change Scheduled Task to Cancel
+
+        Given on Schedule page
+        And Scheduled Task 1101255:215178 exists 
+        When click on Search bar 
+        And enter Scheduled Task code in bar 
+        And press enter 
+        And click the result from dropdown menu
+        And click option menu 
+        And click change status 
+        And click Cancel  
+        Then Scheduled task changed to Cancel
+
+
+    
+    Scenario: Change Open Task to Cancel
+
+        Given on Schedule page
+        And Scheduled Task 1101255:215178 exists 
+        When click on Search bar 
+        And enter Open Task code in bar 
+        And press enter 
+        And click the result from dropdown menu
+        And click option menu 
+        And click change status 
+        And click Cancel  
+        Then Open task changed to Cancel
+
+
+
+    Scenario: Change Open Task to Rejected
+
+        Given on Schedule page
+        And Scheduled Task 1101255:215178 exists 
+        When click on Search bar 
+        And enter Open Task code in bar 
+        And press enter 
+        And click the result from dropdown menu
+        And click option menu 
+        And click change status 
+        And click Rejected  
+        Then Open task changed to Rejected
+
+
+    Scenario: Change Cancelled Task to Rejected
+
+        Given on Schedule page
+        And Cancelled Task 1101255:215178 exists 
+        When click on Search bar 
+        And enter Open Task code in bar 
+        And press enter 
+        And click the result from dropdown menu
+        And click option menu 
+        And click change status 
+        And click Rejected  
+        Then Cancelled task changed to Rejected
+
+        
+
+    Scenario: Add Scheduled Task to Clipboard
+
+        Given on Schedule page
+        And Scheduled Task 1103153:215955 exists 
+        When click on Search bar 
+        And enter Scheduled Task code in bar 
+        And press enter 
+        And click the result from dropdown menu 
+        Then Scheduled task added to clipboard 
+
+
+    Scenario: Add Open Task to Clipboard
+
+        Given on Schedule page
+        And Open Task 1103138:215948 exists 
+        When click on Search bar 
+        And enter Open Task code in bar 
+        And press enter 
+        And click the result from dropdown menu 
+        Then Open task added to clipboard 
+
+
+    Scenario: Add Dispatched Task to Clipboard
+
+        Given on Schedule page
+        And Dispatched Task 1103025:215899 exists 
+        When click on Search bar 
+        And enter Dispatched Task code in bar 
+        And press enter 
+        And click the result from dropdown menu 
+        Then Dispatched task added to clipboard 
+
+
     # Scheduled Home
     # https://crm-uat.aiminspect.com/#!/inspection-request/1102996
     # 1102996
+
+
+    # https://crm-uat.aiminspect.com/#!/inspection-request/1103025
+    # 1103025
+
+    # https://crm-uat.aiminspect.com/#!/inspection-request/1103138
+    # 1103138
+
+    # https://crm-uat.aiminspect.com/#!/inspection-request/1103153
+    # 1103153
 
     # To Do
     Scenario: Reshuffle  
