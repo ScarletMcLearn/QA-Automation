@@ -598,6 +598,12 @@ Feature: Add Request functionalities
         And click Get Schedule button 
         Then 
 
+
+    Scenario: 
+    # Scheduled Home
+    # https://crm-uat.aiminspect.com/#!/inspection-request/1102996
+    # 1102996
+
     # To Do
     Scenario: Reshuffle  
 
