@@ -1,0 +1,16 @@
+# pelican.yml
+# Example: https://cart-stg.aws.autodesk.com/services/v1/offerings?store=STORE-NAMER&productline=ACD&country=US
+# CART API INFO: https://cart.bicstg.autodesk.com/services/docs/
+
+---
+qa:
+   :url: https://cart.bicstg.autodesk.com/services/v5/pricedOfferings?
+
+staging:
+   :url: https://cart.bicstg.autodesk.com/services/v5/pricedOfferings?
+
+prod:
+   :url: https://cart.autodesk.com/services/v5/pricedOfferings?
+
+sle:
+   :url: https://cart.bicstg.autodesk.com/services/v5/pricedOfferings?

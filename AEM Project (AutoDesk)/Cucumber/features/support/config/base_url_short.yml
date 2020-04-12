@@ -1,0 +1,14 @@
+# http://stackoverflow.com/questions/25649848/running-cucumber-tests-on-different-environments
+# FOR BASE_URL_SHORT
+---
+qa:
+    :url: https://www-sle2.awsism.autodesk
+
+staging:
+    :url: https://www-pt.autodesk
+
+prod:
+    :url: https://www.autodesk
+
+sle:
+    :url: http://www-sle1.wpe.autodesk

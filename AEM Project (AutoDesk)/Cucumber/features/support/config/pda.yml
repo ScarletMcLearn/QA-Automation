@@ -1,0 +1,13 @@
+# pda.yml
+---
+qa:
+    :url: https://web-sle-engineering-app.awsism.autodesk.com/#/
+
+staging:
+    :url:
+
+prod:
+    :url:
+
+sle:
+    :url: https://web-sle-engineering-app.awsism.autodesk.com/#/

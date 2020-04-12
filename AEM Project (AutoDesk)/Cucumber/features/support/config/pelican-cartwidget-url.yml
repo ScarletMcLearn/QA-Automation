@@ -1,0 +1,15 @@
+# http://stackoverflow.com/questions/25649848/running-cucumber-tests-on-different-environments
+# FOR CART_WIDGET_URL
+---
+
+qa:
+    :url: https://cart2.bicdev.autodesk.com
+
+staging:
+    :url: https://cart.bicstg.autodesk.com
+
+prod:
+    :url: https://cart.autodesk.com
+
+sle:
+    :url: https://cart2.bicdev.autodesk.com

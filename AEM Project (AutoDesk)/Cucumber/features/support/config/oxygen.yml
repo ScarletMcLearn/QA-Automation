@@ -1,0 +1,13 @@
+# oxygen.yml
+---
+qa:
+    :url: https://accounts-staging.autodesk.com
+
+staging:
+    :url: https://accounts-staging.autodesk.com
+
+prod:
+    :url: https://accounts.autodesk.com
+
+sle:
+    :url: https://accounts-dev.autodesk.com

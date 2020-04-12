@@ -1,0 +1,18 @@
+# FOR SLE2 TEMP?
+# example: https://www-br-sle2.awsism.autodesk.com - Brazil pt-br
+# example: https://www-ca-sle2.awsism.autodesk.com/fr - Canada-FR ca-frn
+# USAGE:
+#  visit($SLE2_1_URL+(countrycode)+$SLE2_2_URL+(buypage))
+
+---
+qa:
+    :url: https://www-
+
+staging:
+    :url: https://www-pt.autodesk.com
+
+prod:
+    :url: https://www.autodesk.com
+
+sle:
+    :url: http://www-sle1-

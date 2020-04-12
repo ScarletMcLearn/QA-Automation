@@ -1,0 +1,7 @@
+# Base url for edu_download for CN local
+---
+qa:
+    :url: https://www-cn-sle2.awsism.autodesk.com
+
+staging:
+    :url: https://www-pt.autodesk.com.cn

@@ -1,0 +1,15 @@
+# http://stackoverflow.com/questions/25649848/running-cucumber-tests-on-different-environments
+# FOR QA_AUTOMATION_BASE_URL
+---
+
+qa:
+    :url: https://www-sle2.awsism.autodesk.com/store/qa-automation/
+
+staging:
+    :url: https://www-pt.autodesk.com/store/qa-automation/
+
+prod:
+    :url: https://www.autodesk.com/store/qa-automation/
+
+sle:
+    :url: http://www-sle1.wpe.autodesk.com/store/qa-automation

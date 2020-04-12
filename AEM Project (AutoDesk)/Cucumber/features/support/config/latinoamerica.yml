@@ -1,0 +1,15 @@
+# http://stackoverflow.com/questions/25649848/running-cucumber-tests-on-different-environments
+# FOR LATINOAMERICA_URL
+
+---
+qa:
+    :url: https://latinoamerica-sle2.awsism.autodesk.com
+
+staging:
+    :url: https://latinoamerica-pt.autodesk.com
+
+prod:
+    :url: https://latinoamerica.autodesk.com
+
+sle:
+    :url: http://latinoamerica-sle1.wpe.autodesk.com

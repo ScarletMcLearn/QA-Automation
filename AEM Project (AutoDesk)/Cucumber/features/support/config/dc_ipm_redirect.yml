@@ -1,0 +1,13 @@
+
+---
+qa:
+    :url: https://www-sle2.awsism.autodesk.com/services/ecommerce/redirect?
+
+staging:
+    :url: https://www-pt.autodesk.com/services/ecommerce/redirect?
+
+prod:
+    :url: https://www.autodesk.com/services/ecommerce/redirect?
+
+sle:
+    :url: http://www-sle1.wpe.autodesk.com/services/ecommerce/redirect?

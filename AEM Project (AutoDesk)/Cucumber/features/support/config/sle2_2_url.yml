@@ -1,0 +1,22 @@
+# FOR SLE2 TEMP?
+# example: https://www-br-sle2.awsism.autodesk.com - Brazil pt-br
+# example: https://www-ca-sle2.awsism.autodesk.com/fr - Canada-FR ca-frn
+# example: https://www-fr-sle2.awsism.autodesk.com/qa-automation/fsb-buy/buy-container/individual-plc/maya
+# USAGE:
+# visit('https://www-'+'(countrycode)'+'-sle2.awsism.autodesk.com')
+# OR
+# visit($base_url-sle2-1+(countrycode)+$base_url-sle2-2)
+# OR for CA or BE
+# visit($base_url-sle2-1+(countrycode)+$base_url-sle2-2+'/fr')
+---
+qa:
+    :url: -sle2.awsism.autodesk.com
+
+staging:
+    :url: https://www-pt.autodesk.com
+
+prod:
+    :url: https://www.autodesk.com
+
+sle:
+    :url: wpe.autodesk.com

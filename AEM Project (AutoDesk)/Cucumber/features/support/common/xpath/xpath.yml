@@ -1,0 +1,518 @@
+# xpath for all FEATURES
+#########################################################################################
+#########################################################################################
+# xpaths "DC-FSB-BUY"
+
+# Buy Container
+# -------------------------------
+buy_container_section: '//*[starts-with(@class,"buy-container section")]'
+buy_container: '//*[starts-with(@id,"buy-container-e5a")]'
+buy-container-error-container: '//*[starts-with(@class,"buy-container-error-container")]'
+buy_container_loading_container: "//*[@class='buy-container-loading-container']"
+
+# TASK for DEV: https://jira.autodesk.com/browse/PL-4793
+buy_container-seo: '//*[starts-with(@id,"buy-container-ff08")]'
+
+# maybe use this xpath/class below instead of the random generated number on "buy-container-xxx-xxxx"?
+buy_container-3: "//*[@class='buy-container section']"
+
+# Product related XPATH
+# -------------------------------
+product_name: "//*[@data-automation-id='buy-container-product-logo-name']"
+product_logo: "//*[@data-automation-id='buy-container-product-logo-image']"
+
+
+# Terms container related XPATH
+# -------------------------------
+legal_disclaimer: "//*[@data-automation-id='buy-container-legal-text']"
+
+# PLC Selector related XPATH
+# -------------------------------
+plc_selector: '//div[@data-automation-id="buy-container-plc-radio-selector"]/div'
+plc_name: '//span[@data-automation-id="buy-container-product-logo-name"]'
+
+plc_container: '//*[starts-with(@class,"buy-container-select-input-container")]'
+#plc_label: '//*[starts-with(@class,"buy-container-select-input-container")]/label/span'
+plc_label: "//*[@data-automation-id='buy-container-plc-selector-label']"
+plc_field: "//span[@data-automation-id='buy-container-product-logo-name']"
+
+# Terms related XPATH
+# -------------------------------
+subscription_terms_section: '//*[starts-with(@class,"buy-container-terms-container ")]'
+term_selector: '//*[starts-with(@class,"buy-container-terms-switcher")]'
+# term selected class
+#term_selected: "//*[@class='buy-container-term wd-mt-20 buy-container-term-selected']"
+term_selected: '//*[contains(@class,"buy-container-term-selected")]'
+# Used for each term box (Ex.: within term_1month )
+term_price:  ".//*[@data-automation-id='buy-container-term-billing-plan-price']"
+term_1-MONTH: "//*[@data-automation-id='buy-container-term-billing-plan-1-month']"
+term_1-YEAR: "//*[@data-automation-id='buy-container-term-billing-plan-1-year']"
+term_2-YEAR: "//*[@data-automation-id='buy-container-term-billing-plan-2-year']"
+term_3-YEAR: "//*[@data-automation-id='buy-container-term-billing-plan-3-year']"
+term_1-YEAR-SPECIAL-OFFER: "//*[@data-automation-id='buy-container-term-billing-plan-1-year-special-offer']"
+term_box: './/*[starts-with(@class,"buy-container-term-info")]'
+term_box_title: ".//*[starts-with(@class,'buy-container-term-billing-plan')]"
+term_box_price: ".//*[@data-automation-id='buy-container-term-billing-plan-price']"
+term_box_price_before_discount: ".//*[contains(@class,'wd-strikethrough')]"
+term_box_promotion: ".//*[contains(@class,'buy-container-term-promotion')]"
+promo_term: '//*[contains(@data-automation-id,"buy-container-term-active-promo")]'
+
+term_1-MONTH_price: "//div[1]/div[@class='buy-container-term-info wd-pt-16 wd-pb-20 clearfix disable-subhead']/div[2]/h3[@class='wd-font-24 term']"
+term_1-MONTH_strikethrough_price: "//div[1]/div[@class='buy-container-term-info wd-pt-16 wd-pb-20 clearfix disable-subhead']/div[2]/h4"
+term_1-YEAR_price: "//div[2]/div/div[@class='wd-ph-16'][2]/h3[@class='wd-font-24 term']"
+term_1-YEAR_strikethrough_price: "//div[2]/div/div[@class='wd-ph-16'][2]/h4[@class='wd-font-16 wd-strikethrough']"
+term_2-YEAR_price: "//div[3]/div/div[@class='wd-ph-16'][2]/h3[@class='wd-font-24 term']"
+term_2-YEAR_strikethrough_price: "//div[3]/div/div[@class='wd-ph-16'][2]/h4[@class='wd-font-16 wd-strikethrough']"
+term_3-YEAR_price: "//div[4]/div/div[@class='wd-ph-16'][2]/h3[@class='wd-font-24 term']"
+term_3-YEAR_strikethrough_price: "//div[4]/div/div[@class='wd-ph-16'][2]/h4[@class='wd-font-16 wd-strikethrough']"
+
+#term_3-YEAR: "//div[2]/div/div[@class='wd-ph-16'][2]/h3[@class='wd-font-24 term']"
+term_3-YEAR_subheadtext: "//div[@class='buy-container-term wd-mt-20 theme-term-price'][2]//h4[@class='wd-font-12 buy-container-term-billing-plan wd-color-adsk-blue']"
+term_3-YEAR_subheadtext_monthly: "//div[@class='buy-container-term wd-mt-20 theme-term-price'][2]//h4[@class='wd-font-12 buy-container-term-billing-plan wd-color-adsk-blue term']"
+term_3-YEAR_monthly: "//div[2]/div/div[@class='wd-ph-16'][2]/h3[@class='wd-font-24 monthly']"
+best_value_flag: "//div[@class='best-value']/div"
+term_3-YEAR_subheadtext_monthly: "//div[@class='buy-container-term wd-mt-20 theme-monthly-price'][2]//h4[@class='wd-font-12 buy-container-term-billing-plan wd-color-adsk-blue monthly']"
+term_3-YEAR_autorenewal: "//div[2]/div/div[@class='wd-ph-16'][1]/h3/span"
+
+
+# FSB-BUY Promotion related XPATH
+# -------------------------------
+buy_container_promotion: 'div[@class="wd-mh-16 buy-container-term-promotion"]'
+
+
+# Quantity & Support related XPATH
+# -------------------------------
+# QUANTITY
+quantity_input: "//div[contains(@class,'buy-container-summary-drawer-container')]//input[@class='buy-container-qty-input']"
+
+# SUPPORT
+# added blank space after last word as ID contains more stuff
+#support_container: "//*[@class='buy-container-advanced-support-container ']"
+support_container: '//*[starts-with(@class,"buy-container-advanced-support-container ")]'
+
+# SUPPORT SELECTOR
+# following 2 appears to be gone
+support_level_selector: "//*[@data-automation-id='buy-container-support-level-selector']"
+support_level_dropdown:  "//*[@data-automation-id='buy-container-support-level-selector']"
+
+# SUPPORT TOOLTIP
+support_tooltip_trigger: '//*[starts-with(@class,"wd-tooltip-trigger-icon")]'
+support_tooltip_trigger-2: './/*[starts-with(@class,"wd-tooltip-trigger ")]'
+support_tooltip_content: "//*[@class='wd-tooltip-target-content']"
+
+# Summary Drawer related XPATH
+# -------------------------------
+summary_drawer_productname: "//*[@data-automation-id='buy-container-summary-drawer-product-name']"
+summary_drawer_totalamount: "//*[@data-automation-id='buy-container-summary-drawer-term-pricing']"
+summary_drawer_cta_button: "//*[@data-automation-id='buy-container-call-to-action']"
+summary_drawer_cta_button_name: "//*[@data-automation-id='buy-container-call-to-action']/span[1]"
+#summary_drawer_cta_button_name: "//*[@class='e-chooser-vat-price']"
+summary_drawer_quantity: "//*[@data-automation-id='buy-container-quantity-selected']"
+summary_drawer_price: "//*[@data-automation-id='buy-container-summary-drawer-term-pricing']"
+summary_drawer_guarantee_label: '//*[starts-with(@class,"buy-container-call-to-action-guarantee")]'
+summary_drawer_vat_label: '//*[starts-with(@class,"buy-container-summary-drawer-vat")]'
+summary_drawer_quantity_label: '//*[starts-with(@class,"buy-container-summary-drawer")]/div[1]/p/span[1]'
+summary_drawer_section: '//*[starts-with(@class,"buy-container-summary-drawer ")]'
+summary_drawer_tooltip_label: "//*[@data-automation-id='buy-container-total-price-text']"
+summary_drawer_tooltip_trigger: "//*[@data-automation-id='buy-container-total-price-tooltip']"
+summary_drawer_tooltip_content: "//*[@class='wd-tooltip-target-content']"
+summary_drawer_price_before_discount: "//*[@data-automation-id='buy-container-summary-drawer-term-pricing-promo']"
+
+# Payment option related XPATH
+# -------------------------------
+payment_options:  "//*[starts-with(@class,'buy-container-payment-methods-container')]"
+payment_method_visa: "//*[@data-automation-id='buy-container-payment-methods-visa']"
+payment_method_mastercard: "//*[@data-automation-id='buy-container-payment-methods-mastercard']"
+payment_method_americanexpress: "//*[@data-automation-id='buy-container-payment-methods-americanexpress']"
+payment_method_discover: "//*[@data-automation-id='buy-container-payment-methods-discover']"
+payment_method_paypal: "//*[@data-automation-id='buy-container-payment-methods-paypal']"
+
+
+# Logos related XPATH
+# -------------------------------
+### norton logo xpath is set in author in the markup in (page properties)
+norton_logo: "//*[@data-automation-id='norton seal container']"
+norton_logo_container: '//*[starts-with(@class,"buy-container-norton-logo")]'
+norton_ssl_link: "//a[contains(text(),'ABOUT SSL CERTIFICATES')]"
+#product_logo: "//*[@data-automation-id='buy-container-product-logo']"
+
+#Cart Widget XPATH
+#-------------------------------------
+cart_widget: "//*[@id='cartLink']"
+buy_container_summary_drawer_container: '//*[starts-with(@class,"buy-container-summary-drawer-fixed")]'
+
+
+#Trade in promo form XPATH
+#--------------------------------------
+trade_in_promo_term_box: '//*[contains(@data-automation-id,"special-offer")]'
+trade_in_promo_form: "//*[@data-automation-id='buy-container-trade-in-form']"
+trade_in_promo_form_SN_description: '//div[@id="guideContainer-rootPanel-serialNumber___guideFieldLongDescription"]'
+trade_in_promo_first_name_container: "//*[@data-automation-id='buy-container-trade-in-form-first-name']"
+trade_in_promo_last_name_container: "//*[@data-automation-id='buy-container-trade-in-form-last-name']"
+trade_in_promo_email_container: "//*[@data-automation-id='buy-container-trade-in-form-email']"
+trade_in_promo_serial_number_container: "//*[@data-automation-id='buy-container-trade-in-form-serial-number']"
+trade_in_promo_first_name: "//*[@name='firstName']"
+trade_in_promo_last_name: "//*[@name='lastName']"
+trade_in_promo_email: "//*[@name='email']"
+trade_in_promo_serial_number: "//*[@name='serialNumber']"
+trade_in_promo_form_error: "//*[@class='buy-container-trade-in-form-text-input-error']/p"
+trade_in_undo_applied_offer: "//*[@class='js-undo-promo shown']"
+trade_in_banner_header: "//*[@class='js-trigger-link']"
+trade_in_banner_description: "//*[@class='snti-description']"
+
+#Serial number trade in Form XPATH
+#-----------------------------------------
+trade_in_banner:  "//*[@class='js-trigger-link']"
+trade_in_banner_icon:  "//*[@class='js-trigger-link wd-no-underline']"
+trade_in_banner_icon_inactive: "//*[@class='js-trigger-link wd-no-underline inactive']"
+trade_in_T&CLinkText: "//*[@class='snti-description']//a"
+trade_in_banner_inactive:  "//*[@class='js-trigger-link inactive']"
+trade_in_email:   "//*[@id='guideContainer-rootPanel-email___widget']"
+trade_in_serial_number:   "//*[@id='guideContainer-rootPanel-serialNumber___widget']"
+trade_in_email_error_msg: "//div[@id='guideContainer-rootPanel-email__']/div[@class='guideFieldError']"
+trade_in_sn_error_msg: "//div[@id='guideContainer-rootPanel-serialNumber__']/div[@class='guideFieldError']"
+trade_in_continue_button: "//*[@id='guideContainer-rootPanel-submit___widget']"
+trade_in_modal:  "//*[@class='wd-modal--window--body wd-pv-24 wd-ph-24']"
+trade_in_promo_form_fields: "//div[@class='wd-modal--window--body wd-pv-24 wd-ph-24']/"
+trade_in_email_field_label: "//div[@id='guideContainer-rootPanel-email__']/div/label"
+trade_in_old_SN_field_label: "//div[@id='guideContainer-rootPanel-serialNumber__']/div/label"
+trade_in_form_close_button: "//button[@class='js-close-modal']"
+
+#Reseller Affiliate Popup XPATH
+#-----------------------------------------
+reseller_affiliate_email:  "//input[@id='resellerInput']"
+reseller_affiliate_logo: "//img[@class='reseller-affiliate-logo']"
+reseller_affiliate_welcome_header: "//div[@class='affiliate-popup section']//div[@class='wd-modal--window--body wd-pv-24 wd-ph-24']/h2"
+reseller_affiliate_description: "//div[@class='affiliate-popup section']//div[@class='wd-modal--window--body wd-pv-24 wd-ph-24']/p"
+reseller_affiliate_agree: "//div[@class='affiliate-popup section']//button[@class='js-agree-button wd-cta wd-mt-10-sm']"
+reseller_affiliate_no_thanks: "//div[@class='affiliate-popup section']//h5/a"
+reseller_affiliate_close: "//button[@class='js-close-modal']"
+reseller_affiliate_invalid_email_error: "//span[@class='reseller-affiliate-invalid']"
+reseller_affiliate_required_email_error: "//span[@class='reseller-affiliate-require']"
+
+#Fsb service json test component path
+# -------------------------------
+component_path: "/qa-automation/fsb-buy/buy-container-service-validation/jcr:content/body-content/buy_container_78a6.adskProperties.json?language="
+
+
+#########################################################################################
+#########################################################################################
+# xpaths for Utility bar elements:
+
+# ------------------------------------------------------------------------------------------
+# xpaths for DC-COMMON - Search
+# ------------------------------------------------------------------------------------------
+
+# below is search component within utility bar - not the same as the component on the search-results page
+dc_search_utilitybar: '//input[@id="site-search-qt"]'
+# below is search component on search results page. - Not the one on utility bar
+dc_search_box: '//*[@class="search-box"]'
+dc_search_form_section: '//*[@class="search-form section"]'
+dc_search_box_field: '//input[@name="qt"]'
+# content area section of the search results page
+dc_search_results_content_area: '//*[@class="wd-google-search-success"]'
+dc_search_results_success: '//*[@class="wd-google-search-success"]'
+dc_search_success_results_area: '//*[@class="wd-google-search-success-results"]'
+dc_search_success_results_query: '//*[@class="wd-google-search-success-query"]'
+dc_search_results_failure: '//*[@class="wd-google-search-failure"]'
+
+
+#########################################################################################
+#########################################################################################
+
+# xpaths "DC-GEOPOPUP-REDIRECTS"
+#-------------------------------------------------------------------------------------------
+# for Geopopup
+#-------------------------------------------------------------------------------------------
+utility_bar: "//*[@class='utility-bar section']"
+wd-navigation-bar: "//*[@class='wd-navigation-bar']"
+geopopup: "//*[@class='geo-navigation-popup-container wd-font-14']"
+geopopup-hidden: "//*[@class='geo-navigation-popup-container wd-font-14 hide']"
+#-------------------------------------------------------------------------------------------
+# for subscribe page redirect alert (Geo-popup)
+#-------------------------------------------------------------------------------------------
+subscribe_redirect_alert: '//*[@class="geo-navigation-popup-container wd-font-14 geo-navigation-popup-container-dark"]'
+subscribe_redirect_alert_text: '//*[starts-with(@class,"geo-navigation-popup-local-message ")]'
+subscribe_redirect_alert_close: '//*[@class="geo-navigation-popup-container-close"]'
+subscribe_redirect_alert_return-us-site: '//*[starts-with(@class,"geo-navigation-popup-redirect ")]'
+subscribe_redirect_alert_choose-site: '//*[starts-with(@class,"geo-navigation-popup-stay-on-site ")]'
+#-------------------------------------------------------------------------------------------
+# Site selector
+#-------------------------------------------------------------------------------------------
+site_selector: "//*[@class='geo-navigation-site-selector wd-uppercase']"
+site_selector_link: "//*[@class='geo-navigation-site-selector wd-uppercase']"
+# these xpaths will only work on SLE2 and PT (not prod)
+site_selector_page_country_container: "//*[@class='qa-automation-site-selector-country-container grid-columns']"
+
+
+
+#########################################################################################
+#########################################################################################
+# xpaths "DC-OXYGEN_TRIAL-FLOW"
+
+#for common_steps.rb
+
+download_button: '//*[@class="oxygen-trial-flow section"]'
+prodinfo_next: '//a[contains(@class,"otfdl-button-product-information")]'
+usertype_next: '//*[contains(@class,"wd-button otfdl-button-user-type wd-button-responsive")]'
+companyinformationMarketo1_next: '//*[contains(@id,"companyinformationcta")]'
+companyinformationMarketo2_next: '//a[contains(@class,"otfdl-button-company-information")]'
+begin_download: '//div[@class="small-6 grid-columns"][1]/div[@class="wd-ph-16 wd-mv-12 wd-brw-1 wd-bc-smoke"]/a/span[1]'
+
+#-------------------------------------------------------------------------------------------
+#for Start_Screen.feature
+
+platforms_header: '//h3[1][contains(@class,"wd-color-adsk-blue")]'
+platforms_content: '//*[@id="oxygen-trial-flow-56-ea15"]/div[3]/div[2]/div/div/div/ul'
+platforms_link: '//*[@id="oxygen-trial-flow-56-ea15"]/div[3]/div[2]/div/div/div/p[1]'
+
+file_size_header: '//h3[2][contains(@class,"wd-color-adsk-blue")]'
+file_size_content: '//*[@id="oxygen-trial-flow-56-ea15"]/div[3]/div[2]/div/div/div/p[2]'
+
+recommended_header: '//h3[3][contains(@class,"wd-color-adsk-blue")]'
+recommended_content: '//*[@id="oxygen-trial-flow-56-ea15"]/div[3]/div[2]/div/div/div/p[3]'
+
+header: '//h2[@class="adsk-header"]'
+close_icon: '//a[@class="otfdl-lightbox-closebutton wd-no-underline"]'
+
+#-------------------------------------------------------------------------------------------
+#for Tooltips.feature
+
+tooltip_icon: '//*[@class="icon-info wd-icon-stack-inner"]'
+country_tooltip_icon: '//div[contains(@class,"otfdl-country-selection-tooltip")]//i[@class="icon-info wd-icon-stack-inner"]'
+downloadmanager_tooltip_icon: '//div[contains(@class,"otfdl-download-manager-tooltip")]//i[@class="icon-info wd-icon-stack-inner"]'
+product_tooltip_text: '//*[@id="wd-tooltip-target-2"]/div[2]/p'
+usertype_tooltip_text: '//*[@id="wd-tooltip-target-0"]'
+country_tooltip_text: '//*[@id="wd-tooltip-target-1"]'
+downloadmanager_tooltip_text: '//*[@id="wd-tooltip-target-3"]'
+
+#-------------------------------------------------------------------------------------------
+#for Privacy_Notice.feature
+
+country_selection: '//select[contains(@class,"otfdl-country-selector-input wd-mb-16")]'
+catB_checkbox: '//div[contains(@class,"row otfdl-marketing-email-category-b")]//input'
+catC_checkbox: '//div[contains(@class,"row otfdl-marketing-email-category-c")]//input'
+
+#-------------------------------------------------------------------------------------------
+#for trial_oxygen_flow_for_GDPR.feature
+
+cat_text: '//div[@class="text section"]/p[contains(text(),'
+categoryB_checkbox: '//div[contains(@class,"otfdl-marketing-email-category-b")]//input'
+categoryC_checkbox: '//div[contains(@class,"otfdl-marketing-email-category-c")]//input'
+PN_text: '//p[contains(@class,"otfdl-checkbox-label")]'
+begin_download_button_enable: '//a[@id="bodycontent-oxygentrialflowce-downloadcta"]'
+download_link_enable: '//a[@class="otfdl-download-manager-continue"]'
+#begin_download_button_disable: '//a[@class="wd-button otfdl-button-download wd-button-responsive wd-uppercase pc-brand wd-button-disabled"]'
+#download_link_disable: '//a[@class="otfdl-download-manager-continue wd-disabled"]'
+
+#-------------------------------------------------------------------------------------------
+#for UserType_Options.feature
+
+os_heading_text: '//*[contains(@class,"otfdl-os-selection-multi")]/h3'
+lang_heading_text: '//*[contains(@class,"otfdl-language-selection-box")]/h3'
+edu_heading_text: '//*[contains(@class,"otfdl-edu-license-box")]/h3'
+edu_text: '//*[contains(@class,"otfdl-edu-license-box")]/p'
+
+#-------------------------------------------------------------------------------------------
+#for Multiple_Products_Workflow.feature
+
+release_rdbtn: '//div[@class="wd-form--radio-input wd-mv-8 wd-font-14"][2]/label/input'
+system_requirements_link: '//a[@class="otfdl-button-sys-req-link"]'
+companyinformationMarketo_label: '//li[@class="otfdl-marketo-fields-item"][3]//div/label'
+companyinformationMarketo_company: '//*[@id="Company"]'
+companyinformationMarketo_state_field: '//*[@id="State"]'
+companyinformationMarketo_state_dropdown: '//select[@id="company-information-State"]'
+companyinformationMarketo_zip: '//*[@id="PostalCode"]'
+companyinformationMarketo_phone: '//*[@id="Phone"]'
+companyinformationMarketo_country: '//select[@data-wat-form-field-required="country-selector"]'
+companyinformationMarketo_errMsg: '//li[@class="otfdl-marketo-fields-item"][1]//div/p'
+
+#-------------------------------------------------------------------------------------------
+#for trial_collection.feature
+
+first_card_widget: '//a[@id="product-trial-download-button-0"]'
+first_download_lightbox : '//*[@id="lightbox-id-0"]'
+email_textbox_lightbox_for_first_card: "//div[@id='lightbox-id-0']//input[@type='email']"
+continue_button_lightbox_for_first_card: "//div[@id='lightbox-id-0']//span[contains(text(),'Continue-QA')]"
+accept_service_agreement_checkbox_for_first_card: "//div[@id='lightbox-id-0']//input[contains(@class,'ptdlb-accept-eula')]"
+accept_privacy_policy_checkbox_for_first_card: "//div[@id='lightbox-id-0']//input[contains(@class,'ptdlb-accept-privacy-policy')]"
+first_product_download_lightbox : '//*[@id="product-trial-download-lightbox-0"]'
+
+second_card_widget: '//a[@id="product-trial-download-button-1"]'
+second_download_lightbox : '//*[@id="lightbox-id-1"]'
+email_textbox_lightbox_for_second_card: "//div[@id='lightbox-id-1']//input[@type='email']"
+continue_button_lightbox_for_second_card: "//div[@id='lightbox-id-1']//span[contains(text(),'Continue-QA')]"
+accept_service_agreement_checkbox_for_second_card: "//div[@id='lightbox-id-1']//input[contains(@class,'ptdlb-accept-eula')]"
+accept_privacy_policy_checkbox_for_second_card: "//div[@id='lightbox-id-1']//input[contains(@class,'ptdlb-accept-privacy-policy')]"
+second_product_download_lightbox : '//*[@id="product-trial-download-lightbox-1"]'
+
+continue_button_download_lightbox: '//*[contains(text(),"Continue")]'
+
+thanks_link_lightbox : '//*[contains(text(),"No thanks")]'
+close_icon_lightbox: '//*[contains(@class,"icon-svg-close-thick")]'
+email_alert_first_email: "//div[@id='product-trial-download-lightbox-0']/div[1]/div[1]/div/p"
+
+first_products_free_trials_button: "//div[@class='row cc-product-grid wp-top-products wd-pb-32']//div[@class='decorative-box section wp-prodOrder-1']//span[1]"
+
+second_products_free_trials_button: "//div[@class='row cc-product-grid wp-top-products wd-pb-32']//div[@class='decorative-box section wp-prodOrder-2']//span[1]"
+
+#-------------------------------------------------------------------------------------------
+# for trial_download_without_email
+
+trial_download_button: "//*[@id='i730421965-adsk-trial-download-id']"
+trial_license_policy_lightbox : '//*[@id="trial-license-policy"]'
+trial_accept_checkbox : '//*[@id="adsk-trial-accept-eula"]'
+trial_accept_privacy_policy_checkbox : '//*[@id="adsk-trial-accept-privacy-policy"]'
+trial_lightbox_btn: '//*[@id="adsk-lightbox-next-btn"]'
+trial_close_icon_lightbox: '//*[contains(@class,"icon adsk-lightbox-close fr")]'
+trial_checkbox_error_message_lightbox: "//*[@id='adsk-trial-checkbox-error-message']"
+
+#-------------------------------------------------------------------------------------------
+# for trial_download_email_capture.feature
+
+trial_email_txtBox: "//*[@id='adsk-trial-download-email']"
+trial_download_btn: "//*[@id='i-1087605211-adsk-trial-download-id']"
+
+cart_page_product_price: '//*[contains(@class,"subtotal-currency ")]/strong'
+
+dr_cart_page_product_price: '//*[contains(@class,"prod-total ")]/span'
+dr_cart_page_subscription: '//*[contains(@class,"dr_lineItemProductName") or contains(@class,"product-name dr_prodName")]'
+dr_cart_page_qty: '//input[contains(@class,"dr_qtyInput ")]'
+dr_cart_total_price: "//*[@id='dr_priceTotal']/div[2]"
+#########################################################################################
+#########################################################################################
+
+
+
+
+#########################################################################################
+#########################################################################################
+# xpaths "PDA"
+
+# for PDA.feature
+
+pda_heading: '//*[@class="jumbotron ng-scope"]/h1'
+
+#########################################################################################
+#########################################################################################
+# xpaths "DC-FSB-SUPPORT"
+
+# for Fsb_Flyout.feature
+# -------------------------------
+
+clicking_flyout_tab: "//div[@class='wd-flyout-left-caption']"
+flyout_tab_closed: "//div[@class='wd-flyout-left']"
+flyout_tab_open: '//div[@class="wd-flyout-left wd-flyout-left-opened"]'
+flyout_title_caption: "//div[@class='wd-flyout-left-caption']"
+feedback_title_caption: "//div[@id='qualtrics-trigger']"
+
+live_chat_unavailable: '//div[@id="liveagent_button_offline_573V00000008OuL"]'
+link_to_faq_section: '//a[@data-flyout-section="faq"]'
+faq_section_page1: '//div[@id="wd-flyout-section-faq"]'
+
+category_subscription_question: '//a[@data-flyout-section="q17"]/p'
+category_all_question1: '//a[@data-flyout-section="q1"]/p'
+category_comparison_question3: '//a[@data-flyout-section="q3"]/p'
+category_product_use_question3: '//a[@data-flyout-section="q8"]/p'
+category_compatibility_question1: '//a[@data-flyout-section="q6"]/p'
+category_all_question10: '//a[@data-flyout-section="q10"]/p'
+
+faq_page_footer_link2: '//a[@data-flyout-faq="1"]'
+
+browse_by_dropdown: '//div[@class="wd-flyout-faq-filter"]/select'
+back_button_from FAQ_page: '//div[@id="wd-flyout-section-faq"]/div[@class="wd-flyout-back-container"]'
+back_button_from_Q_and_A_page: '//div[@id="wd-flyout-section-q1"]/div[@class="wd-flyout-back-container"]'
+
+# for Fsb_Anchor_Link_And_Accordion.feature
+# -------------------------------
+
+subscription_benefits_accordion_click: '//div[@class="responsive-list-item-0 responsive-list-item"]/div/div[1]/h2'
+system_requirements_accordion_click: '//div[@class="responsive-list-item-1 responsive-list-item"]/div/div[1]/h2'
+
+subscription_benefits_accordion_status: '//div[@class="responsive-list-item-0 responsive-list-item"]/div/div[1]'
+system_requirements_accordion_status: '//div[@class="responsive-list-item-1 responsive-list-item"]/div/div[1]'
+available_languages_accordion_status: '//div[@class="responsive-list-item-2 responsive-list-item"]/div/div[1]'
+
+subscription_benefits_anchor_link: '//ul[@class="wd-anchor-links wd-ph-0 wd-display-inline-block wd-color-gray-40"]/li[1]/a'
+system_requirements_anchor_link:   '//ul[@class="wd-anchor-links wd-ph-0 wd-display-inline-block wd-color-gray-40"]/li[2]/a'
+available_languages_anchor_link:   '//ul[@class="wd-anchor-links wd-ph-0 wd-display-inline-block wd-color-gray-40"]/li[3]/a'
+product_info_anchor_link: '//a[@class="wd-anchor-prodinfo-link"]'
+
+# for Fsb_Support.feature
+# -------------------------------
+system_requirement: '//div[@data-wat-linkname="system requirements:expand"]'
+sys_req_content: '//*[@id="accordion-panel-id-0-1"]/div/div/div[3]'
+
+sys_table: '//div[@id="solution"]'
+add_heading: '//*[@id="solution"]/table[2]/thead/tr/th'
+os: '(//div[@id="solution"]//table)[1]//*[contains(text(),"Operating System")]'
+cpu: '//div[@id="solution"]/table[1]//strong[contains(text(),"CPU Type")]'
+memory: '//div[@id="solution"]/table[1]//strong[contains(text(),"Memory")]'
+resolution: '//div[@id="solution"]/table[1]//strong[contains(text(),"Display Resolution")]'
+card: '//div[@id="solution"]/table[1]//strong[contains(text(),"Display Card")]'
+disk_space: '//div[@id="solution"]/table[1]//strong[contains(text(),"Disk Space")]'
+browser: '(//div[@id="solution"]//table)[1]//*[contains(text(),"Browser")]'
+pointing_device: '//div[@id="solution"]/table[1]//strong[contains(text(),"Pointing Device")]'
+digitizer: '//div[@id="solution"]/table[1]//strong[contains(text(),"Digitizer")]'
+media: '//div[@id="solution"]/table[1]//strong[contains(text(),"Media (DVD)")]'
+media_player: '//div[@id="solution"]/table[1]//strong[contains(text(),"ToolClips Media Player")]'
+network: '//div[@id="solution"]/table[1]//strong[contains(text(),"Network")]'
+framework: '//div[@id="solution"]/table[1]//strong[contains(text(),".NET Framework")]'
+available_languages: '//div[@data-wat-linkname="available languages:expand"]'
+language: '//div[@class="wd-language-list"]'
+language_section_content: '//*[@id="accordion-panel-id-0-2"]/div/div/div[1]/div/div/div'
+cart_value: '//*[@id="cartSummaryItemCount"]'
+add_to_cart: '//*[starts-with(@class,"buy-container-summary-drawer buy-container")]//a[@data-wat-configurator-link-type="add to cart"]'
+#add_to_cart: '//div[@class="buy-container-summary-drawer-container wd-mt-2-sm"]//a[@data-wat-configurator-link-type="add to cart"]'
+memory2: '//div[@id="solution"]/table[2]//strong[contains(text(),"Memory")]'
+card2: '//div[@id="solution"]/table[2]//strong[contains(text(),"Display Card")]'
+disk_space2: '//div[@id="solution"]/table[2]//strong[contains(text(),"Disk Space")]'
+
+
+#########################################################################################
+#########################################################################################
+# xpaths "WD-AU"
+
+#For Basic validation Seach on AU SITE
+# -------------------------------
+
+au_search_textbox: '//*[@type="search"]'
+au_search_header: '//*[@id="class-catalogue-results"]'
+
+au_search_video_thumbnail:  '//*[@id="class-catalogue-results"]/ul/li/div[1]/div/a/img'
+au_search_class_header: '//*[@id="class-catalogue-results"]/ul/li/div[2]/div/h4'
+au_search_class_title: '//*[@id="class-catalogue-results"]/ul/li/div[2]/div/a/h3'
+au_search_class_product: '//*[@id="class-catalogue-results"]/ul/li/div[2]/div/ul/li[1]'
+au_search_class_key_learning_header: '//h4[@class="wd-uppercase wd-font-14"]'
+au_search_class_key_learning_objective1: '//*[@id="show-details-0"]/div/ul/li[1]'
+au_signin_topnav_username: '//span[@class="au-masthead-user-name"]'
+au_dashboard_saved_classes_tab: '//a[@data-tab-id="#tabs_component_savedclasses"]'
+au_dashboard_saved_classes_content: '//*[@id="tabs_component_savedclasses"]/div/div/div/div[2]/div[2]/p'
+au_dashboard_saved_classes_content1: '//*[@id="tabs_component_savedclasses"]/div/div/div/div[2]/div[2]/p/a'
+
+#For COD page on AU SITE
+# -------------------------------
+au_sign_in_button_topnav: '//span[@class="au-masthead-sign-in au-masthead-inline"]/a'
+au_create_account_button_topnav: '//span[@class="au-masthead-create-account au-masthead-inline"]/a'
+
+au_placeholder_string: '//*[@placeholder="Search for Online Classes"]'
+###########################################################################################
+###########################################################################################
+
+
+###########################################################################################
+###########################################################################################
+
+# Free trials download flow cloud product
+
+trials_download_button_cloud_product: "//*[@id='oxygen-trial-flow-fd-c385-cta']"
+next_button_bim360: '//*[@id="bodycontent-oxygentrialflowfd-productselectioncta"]'
+product_option_bim360: "//div[@class='wd-form--radio-input wd-mv-8 wd-font-14']"
+begin_trials_downloadButton_cloud_products: "//*[@id='bodycontent-oxygentrialflowfd-cloudtrialcta']"
+go_to_education_community_button: "//*[@id='bodycontent-oxygentrialflowfd-educationcta']"
+optional_field_label: "//*[@class='otfdl-marketo-fields-item'][3]//label"
+
+
+###########################################################################################
+
+download_free_button: '//div[contains(@class,"button")]/a[@data-wat-content-name="ACDIST"]'

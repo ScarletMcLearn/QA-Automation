@@ -1,0 +1,15 @@
+# http://stackoverflow.com/questions/25649848/running-cucumber-tests-on-different-environments
+# FOR CART_WIDGET_URL
+---
+
+qa:
+    :url: https://checkout-sle2.wpe.autodesk.com/en-US
+
+staging:
+    :url: https://checkout-pt.autodesk.com/en-US
+
+prod:
+    :url: https://checkout.autodesk.com/en-US
+
+sle:
+    :url: https://checkout-sle1.wpe.autodesk.com/en-US

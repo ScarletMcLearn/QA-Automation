@@ -1,0 +1,14 @@
+# pelicanCart.yml
+
+---
+qa:
+    :url: https://cart.bicstg.autodesk.com/r?storeKey=
+
+staging:
+    :url: https://cart.bicstg.autodesk.com/r?storeKey=
+
+prod:
+    :url: https://cart.autodesk.com/r?storeKey=
+
+sle:
+    :url: https://cart.bicstg.autodesk.com/r?storeKey=

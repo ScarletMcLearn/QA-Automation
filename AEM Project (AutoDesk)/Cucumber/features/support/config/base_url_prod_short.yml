@@ -1,0 +1,24 @@
+# http://stackoverflow.com/questions/25649848/running-cucumber-tests-on-different-environments
+# FOR BASE_URL_SHORTP_PROD
+# NOTE:
+# You're probably using tab characters to indent your YAML file.
+# This is not permitted by the YAML spec:
+# To maintain portability, tab characters must not be used in indentation, since different systems treat tabs differently.
+#Note that most modern editors may be configured so that pressing the tab key results in the insertion of an appropriate number of spaces.
+###
+# ALSO MAKE SURE all /config/...yml files contain the same test environments.
+
+---
+qa:
+    :url: https://www.autodesk
+
+staging:
+    :url: https://www.autodesk
+
+prod:
+    :url: https://www.autodesk
+
+sle:
+    :url: https://www.autodesk
+
+

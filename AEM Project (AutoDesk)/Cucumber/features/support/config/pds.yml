@@ -1,0 +1,15 @@
+# pds.yml
+---
+qa:
+    :url: https://web-sle-engineering-svc.awsism.autodesk.com/products/
+
+staging:
+    # :url: https://web-pt-engineering-svc.autodesk.com/products/
+    :url: https://web-stg-engineering-svc-origin.wpe.autodesk.com/products/
+
+prod:
+    :url: https://web-engineering-svc.autodesk.com/products/
+    # :url: https://web-engineering-svc-origin.wpe-prd.autodesk.com/products/
+
+sle:
+    :url: https://web-sle-engineering-svc.awsism.autodesk.com/products/

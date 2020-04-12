@@ -1,0 +1,51 @@
+# xpath of seo tags for all elements on buy container
+
+
+# Buy Container-e5a-xxxx
+# USED-------------------------------
+buy_container_seo-1: //*[@itemscope]
+buy_container_seo-2: //*[@itemtype="https://schema.org/Product"]
+
+# buy-container-product-logo
+# USED-------------------------------
+buy_container_product_logo_seo: //*[@itemprop="logo"]
+
+# buy-container-product-name
+# USED-------------------------------
+buy_container_product_name_seo: //*[@itemprop="name"]
+
+# buy-container-loading-container
+# buy-container-terms-container
+# USED-------------------------------
+buy_container_terms_container_seo-1: //*[@itemprop="offers"]
+buy_container_terms_container_seo-2: //*[@itemscope]
+buy_container_terms_container_seo-3: //*[@itemtype="https://schema.org/AggregateOffer"]
+
+# NOT USED-------------------------------
+buy_container_terms_meta-currency_seo-1: //*[@itemprop="priceCurrency"]
+buy_container_terms_meta-currency_seo-2: //*[@content="USD"]
+buy_container_terms_meta-condition_seo-1: //*[@itemprop="itemCondition"]
+buy_container_terms_meta-condition_seo-1: //*[@href="https://schema.org/NewCondition"]
+buy_container_terms_meta-lowprice_seo: //*[@itemprop="lowPrice"]
+buy_container_terms_meta-highprice_seo: //*[@itemprop="highPrice"]
+
+
+# each Term Box
+# USED-------------------------------
+buy_container_term_seo-1: //*[@itemprop="offers"]
+buy_container_term_seo-2:  //*[@itemscope]
+buy_container_term_seo-3: //*[@itemtype="https://schema.org/Offer"]
+buy_container_term_name_seo: //*[@itemprop="name"]
+buy_container_term_price_seo: //*[@itemprop="price"]
+
+# NOT USED-------------------------------
+buy_container_term_availability_seo: //*[@itemprop="availability"]
+buy_container_term_link_seo: //*[@href="https://schema.org/InStock"]
+
+# -------------------------------
+# for Analytics
+pbyl_alert_data-wat-loc: //*[@data-wat-loc="geo selector modal"]
+pbyl_alert_data-wat-content-type: //*[@data-wat-content-type="geo selector"]
+pbyl_alert_data-wat-content-name: //*[@data-wat-content-name=]
+pbyl_alert_data-wat-content-name-ca: //*[@data-wat-content-name="ca modal"]
+pbyl_alert_data-wat-content-name-fr: //*[@data-wat-content-name="fr modal"]
