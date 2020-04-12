@@ -1,0 +1,43 @@
+#Xpaths for PWA
+
+need_help: "//div[contains(text(),'NEED HELP?')]"
+feedback: "//div[contains(text(),'FEEDBACK')]"
+notify: "//a[contains(@class,'subscribe-button')]"
+add_to_cart: "//a[@data-wat-configurator-link-type='add to cart']"
+heading: "//div[contains(@class,'pwa-buy-container')]//h2"
+error_page: "//h1[contains(text(),'There is no Internet connection')]"
+
+
+#Xpaths for PROD Navigation
+
+free_trial_link: "//a[@data-wat-val='free-trials']"
+all_products_link: "//a[@data-wat-val='all-products']"
+buy_link: "//a[@data-wat-val='buy']"
+cart_icon: "//a[@data-wat-val='cart widget']"
+sign_in_link: "//div[@class='wd-single-sign-on-profile-container']"
+geo: "//a[contains(@class,'geo-navigation-site-selector')]"
+menu_link: "//a[@data-wat-val='globalnav:open']"
+search_box: "//input[@id='site-search-qt']"
+search_icon: "//form[@id='cq-site-search']/svg"
+account_link: "//a[contains(text(),'Autodesk Account')]"
+free_trial_page: "//h1[@class='wp-title-buy-online']"
+all_products_page: "//div[@class='wp-banner-container standard-decorative-box']//h1[@class='wp-title']"
+buy_page: "//h1[@class='wp-title-buy-online']"
+checkout_page: "//div[@id='cart']//h3[contains(@class,'page-title')]"
+search_page: "//*[contains(text(),'Results for')]"
+account_page: "//h2[@class='ps-heading']"
+worldwide_page: "//h1[@class='pc-brand']"
+logo: "//a[@data-wat-val='adsk-logo']"
+free_trial: "//a[@class='free-trials-topnav']"
+all_products: "//a[@class='all-products-topnav']"
+buy: "//a[@class='buy-topnav']"
+cart: "//a[@id='cartLink']"
+search: "//form[@id='cq-site-search']"
+sign_in: '//a[contains(@class,"wd-sso-signed-out-menu-trigger")]'
+menu: "//li[@class='global-menu-toggle-li']"
+products: "//a[@data-wat-val='products']"
+support: "//a[@data-wat-val='Support and learning']"
+downloads: "//a[@data-wat-val='Downloads']"
+buy: "//a[@data-wat-val='buy']"
+about: "//a[@data-wat-val='About Autodesk']"
+name: "//p[contains(@class,'wd-single-sign-on-visitor-name')]"
