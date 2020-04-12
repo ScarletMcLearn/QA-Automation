@@ -1,0 +1,22 @@
+# http://stackoverflow.com/questions/25649848/running-cucumber-tests-on-different-environments
+# FOR BRAND_URL
+# NOTE:
+# You're probably using tab characters to indent your YAML file.
+# This is not permitted by the YAML spec:
+# To maintain portability, tab characters must not be used in indentation, since different systems treat tabs differently.
+#Note that most modern editors may be configured so that pressing the tab key results in the insertion of an appropriate number of spaces.
+###
+# ALSO MAKE SURE all /config/...yml files contain the same test environments.
+
+---
+qa:
+    :url: https://brand-sle2.wpe.autodesk.com
+
+staging:
+    :url: http://brand-pt.awsism.autodesk.com
+
+prod:
+    :url: http://brand.autodesk.com
+
+sle:
+    :url: http://brand-sle1.wpe.autodesk.com

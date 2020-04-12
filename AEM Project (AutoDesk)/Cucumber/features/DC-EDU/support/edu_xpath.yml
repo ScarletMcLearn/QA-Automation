@@ -1,0 +1,27 @@
+#For EDU_Download.feature
+
+release_selection: '//select[contains(@class,"edu-dl-v")]'
+os_selection: '//select[contains(@class,"edu-dl-os")]'
+language_selection: '//select[contains(@class,"edu-dl-la")]'
+license_type_selection: '//select[contains(@class,"edu-dl-s")]'
+sign_in: '//a[@class="sign-in-btn"]'
+accept_radio_button: '//*[@id="eulardaccept"]'
+install_now_button: '//button[@id="eulaaccept"]'
+subtitle: '//span[@id="tySubTitle"]'
+serial_number: '//*[@class="edu-dropdown-serial-number wd-bold"]'
+product_key: '//*[@class="edu-dropdown-product-key wd-bold"]'
+file_size: '//*[@class="edu-dropdown-file-size wd-bold"]'
+usage_rights: '//*[@class="edu-dropdown-seats wd-bold"]'
+help_link: '//a[@class="edu-dropdown-compare-link"]'
+benefit_link: '//a[@class="edu-dropdown-entitle-link"]'
+
+#For EDU_Oxygen.feature
+user_name_on_page: '//*[contains(@class,"wd-sso-signed-in-menu-title")]'
+user_name_on_utility_bar: '//div[@class="navigation-bar-sign-in-container"]/a'
+my_account_link: '//a[contains(@class, "edu-login-account")]'
+done_button: '//*[@id="done_btn"]'
+my_account_link_on_panel: '//*[@class="wd-display-flex"][2]/a'
+sign_out_link: '//a[contains(@class, "edu-login-logout")]'
+sign-in_button: '//a[@class="sign-in-btn"]'
+create_account: '//*[@class="create-account-btn"]'
+account_creation: '//*[@class="adsk-header"]'

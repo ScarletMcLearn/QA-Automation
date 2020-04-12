@@ -1,0 +1,34 @@
+#For Oxygen SSO.feature
+#New_SSO
+
+signed_in_icon: '//a[contains(@class,"wd-sso-signed-in-menu-trigger")]'
+sign_in_icon: '//span[@class="wd-sso-signed-out-menu-text"]'
+sign_in_link: '//a[@data-automation-id="sign-in:unauth"]'
+sign_out: '//a[@data-automation-id="sign-out"]'
+user_name: '//p[contains(@class,"wd-sso-signed-in-menu-title")]'
+default_name: '//p[contains(@class,"wd-sso-signed-out-menu-title")]'
+profile_page_done: '//*[@id="done_btn"]'
+free_trial_link: '//li[@class="nav-item"]/a[contains(text(),"Free trial")]'
+account_settings: '//a[@data-automation-id="show-profile"]'
+manage_products: '//a[@data-automation-id="manage-account"]'
+account_settings_unauth: '//a[@data-automation-id="autodesk-account:unauth"]'
+manage_products_unauth: '//a[@data-automation-id="manage-account:unauth"]'
+sign_in_text: '//div[@id="signin_header"]'
+link_path: '//div[contains(@class,"wd-sso-signed-in-menu-popup")]//a[contains(text(),'
+link_path_unauth: '//div[contains(@class,"wd-sso-signed-out-menu-popup")]//a[contains(text(),'
+
+#OLD_SSO
+
+oxygen_sign_in_button: '//*[@data-automation-id="user-name-utility-bar"]'
+oxygen_sign_in_panel: '//*[@class="sign-in-modal visibility-target-visible"]'
+oxygen_autodesk_account_link: '//*[2]/a[@class="wd-font-19 wd-bold"]'
+oxygen_my_account_link: '//*[@class="adsk-myaccount-link"]/a'
+oxygen_education_link: '//*[@class="wd-font-19 wd-bold topnav-oxygen-sign-in"]/a'
+
+
+#Seamless login
+
+accounts_sign_in: '//a[@id="signin_btn"]'
+accounts_signed_in: '//span[@class="fullname inline-element"]'
+accounts_sign_out: '//div[@class="adsk-options-menu"]//a[@id="signout_btn"]'
+new_user_signin_form: '//div[@id="mainPageWrapper"]'
