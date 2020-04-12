@@ -1,0 +1,17 @@
+
+#XPATHS for IPM
+
+close-button: '//div[@id="ipm-close"]'
+text-section: '//div[@class="default-content"]/div/div[1]/p[1]'
+days-left: '//div[contains(@data-ipm-param,"days-left") or contains(@class,"ipm-days-left")]'
+days-left-header: '//div[@class="ipm-header"]'
+brkpoint-text: '//div[@name="breakpoint-example"]'
+price: '//div[@id="price"]'
+subscribe-text: '//a[@class="ipm-cta ipm-themed ipm-undecorated ipm-uppercase ipm-bold ipm-ml-18"]/span[@class="ipm-font-13"]'
+default-GB: '//h3[@class="ipm-font-38 ipm-normal ipm-color-888 ipm-mb-22 ipm-pt-18"]'
+purchase-yes: '//p[@data-copy-type="ipm-purchase-yes"]'
+purchase-no: '//p[@data-copy-type="ipm-purchase-no"]'
+renewal-button-hide: '//a[contains(@class,"ipm-pt-6 ipm-pb-4 ipm-pr-6 hide")]'
+renewal-button: '//a[contains(@class,"ipm-pt-6 ipm-pb-4 ipm-pr-6")]'
+purchase_price: '//span[@data-pds-target="PRICING"]'
+text-section_custom_large: '//div[@class="custom-large-content"]/div/div[1]/p'

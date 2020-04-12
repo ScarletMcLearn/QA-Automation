@@ -1,0 +1,18 @@
+# FOR IPM ?????
+
+
+---
+qa:
+    #:url: https://ipm-qa-aem.autodesk.com/
+    #:url: https://ipm-int.aem.autodesk.com/
+    :url: https://ipm-aem.wpecs-qa.autodesk.com/
+
+staging:
+    :url: https://ipm-stg-aem.autodesk.com/
+
+prod:
+    :url: https://ipm-aem.autodesk.com/
+
+sle:
+    #:url: https://ipm-int.aem.autodesk.com/
+    :ulr: https://ipm-aem.wpecs-dev.autodesk.com/
