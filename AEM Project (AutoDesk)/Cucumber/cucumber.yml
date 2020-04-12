@@ -1,0 +1,147 @@
+default: -r features
+
+###########################
+# Project profiles
+###########################
+dc-fsb-buy: -r features/DC-FSB-BUY -r features/support
+dc-fsb-support: -r features/DC-FSB-SUPPORT -r features/support
+dc-geolocation: -r features/DC-Geolocation -r features/support
+dc-PByL: -r features/DC-PByL -r features/support
+dc-common: -r features/DC-COMMON -r features/support
+dc-trial-download: -r features/DC-Trial-Download -r features/support
+pds:  -r features/PDS -r features/support
+pda:  -r features/PDA -r features/support
+ww: -r features/WW -r features/support
+wd-au: -r features/WD-AU -r features/support
+brand-prod: -r features/BRAND-PROD -r features/support
+brand: -r features/BRAND -r features/support
+ipm: -r features/IPM -r features/support
+dc-edu: -r features/DC-EDU -r features/support
+dc-ipm: -r features/DC-IPM-Redirect -r features/support
+dc-sso: -r features/DC-Oxygen-SSO -r features/support
+dotorg-prod: -r features/DOTORG-PROD -r features/support
+dotorg: -r features/DOTORG -r features/support
+mcir:  -r features/MCIR -r features/support
+
+
+###########################
+# Jenkins profiles
+###########################
+parallel: --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json
+
+jenkins-sauce-dc-qa: -r features TEST_ENV=qa --Tags @DC --Tags @SMOKE,@SLE2 SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the jenkins profiles to run any cucumber tests via a jenkins job using SauceLabs
+jenkins-sauce-qa: -r features TEST_ENV=qa SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+jenkins-sauce-staging: -r features TEST_ENV=staging SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+jenkins-sauce-prod: -r features TEST_ENV=prod SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json
+jenkins-sauce-prod-ie: -r features TEST_ENV=prod SAUCE_ENV=SAUCE browser=IE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json
+jenkins-sauce-prod-ff: -r features TEST_ENV=prod SAUCE_ENV=SAUCE browser=firefox --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json
+
+
+#Use the dc-fsb-buy profiles below when running dc-fsb-buy tests via a Jenkins job using SauceLabs
+dc-fsb-buy-qa: -r features/DC-FSB-BUY -r features/support TEST_ENV=qa --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-fsb-buy-staging: -r features/DC-FSB-BUY -r features/support TEST_ENV=staging --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-fsb-buy-prod: -r features/DC-FSB-BUY -r features/support TEST_ENV=prod --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the dc-fsb-support profiles below when running dc-fsb-support tests via a Jenkins job using SauceLabs
+dc-fsb-support-qa: -r features/DC-FSB-SUPPORT -r features/support TEST_ENV=qa --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-fsb-support-staging: -r features/DC-FSB-SUPPORT -r features/support TEST_ENV=staging --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-fsb-support-prod: -r features/DC-FSB-SUPPORT -r features/support TEST_ENV=prod --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the dc-geolocation profiles below when running dc-geolocation tests via a Jenkins job using SauceLabs
+dc-geolocation-qa: -r features/DC-Geolocation -r features/support TEST_ENV=qa SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-geolocation-staging: -r features/DC-Geolocation -r features/support TEST_ENV=staging SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-geolocation-prod: -r features/DC-Geolocation -r features/support TEST_ENV=prod SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the dc-geopopup profiles below when running dc-geopopup-redirects tests via a Jenkins job using SauceLabs
+dc-geo-qa: -r features/DC-Geopopup-Redirects -r features/support TEST_ENV=qa --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-geo-staging: -r features/DC-Geopopup-Redirects -r features/support TEST_ENV=staging --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-geo-prod: -r features/DC-Geopopup-Redirects -r features/support TEST_ENV=prod --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+
+#Use the dc-oxygen-trial-download profiles below when running dc-oxygen-trial-download tests via a Jenkins job using SauceLabs
+dc-oxygen-trial-download-qa: -r features/DC-Oxygen-Trial-Download -r features/support TEST_ENV=qa SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-oxygen-trial-download-staging: -r features/DC-Oxygen-Trial-Download -r features/support TEST_ENV=staging SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-oxygen-trial-download-prod: -r features/DC-Oxygen-Trial-Download -r features/support TEST_ENV=prod SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the dc-oxygen-trial-download profiles below when running dc-oxygen-trial-download tests via a Jenkins job using SauceLabs
+dc-oxygen-trial-flow-qa: -r features/DC-Oxygen-Trial-Flow -r features/support TEST_ENV=qa SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-oxygen-trial-flow-staging: -r features/DC-Oxygen-Trial-Flow -r features/support TEST_ENV=staging SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-oxygen-trial-flow-prod: -r features/DC-Oxygen-Trial-Flow -r features/support TEST_ENV=prod SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the dc-PByL profiles below when running dc-PByL tests via a Jenkins job using SauceLabs
+dc-PByL-qa: -r features/DC-PByL -r features/support TEST_ENV=qa SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-PByL-staging: -r features/DC-PByL -r features/support TEST_ENV=staging SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-PByL-prod: -r features/DC-PByL -r features/support TEST_ENV=prod SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the dc-search profiles below when running dc-search tests via a Jenkins job using SauceLabs
+dc-common-qa: -r features/DC-COMMON -r features/support TEST_ENV=qa --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-common-staging: -r features/DC-COMMON -r features/support TEST_ENV=staging --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-common-prod: -r features/DC-COMMON -r features/support TEST_ENV=prod --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+# #Use the pds profiles below when running pds tests via a Jenkins job using SauceLabs
+# pds-qa: -r features -r features/support TEST_ENV=qa SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+# pds-staging: -r features -r features/support TEST_ENV=staging SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+# pds-prod: -r features -r features/support TEST_ENV=prod SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the pds profiles below when running pds tests via a Jenkins job
+pds-qa: -r features -r features/support TEST_ENV=qa --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+pds-staging: -r features -r features/support TEST_ENV=staging --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+pds-prod: -r features -r features/support TEST_ENV=prod --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the pda profiles below when running pda tests via a Jenkins job using SauceLabs
+pda-qa: -r features/PDA -r features/support TEST_ENV=qa SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+pda-staging: -r features/PDA -r features/support TEST_ENV=staging SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+pda-prod: -r features/PDA -r features/support TEST_ENV=prod SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the dc-trial-download profiles below when running pda tests via a Jenkins job using SauceLabs
+dc-trial-download-qa: -r features/DC-Trial-Download -r features/support TEST_ENV=qa --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-trial-download-staging: -r features/DC-Trial-Download -r features/support TEST_ENV=staging --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-trial-download-prod: -r features/DC-Trial-Download -r features/support TEST_ENV=prod --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the ww profiles below when running ww tests via a Jenkins job using SauceLabs
+ww-qa: -r features/WW -r features/support TEST_ENV=qa SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+ww-staging: -r features/WW -r features/support TEST_ENV=staging SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+ww-prod: -r features/WW -r features/support TEST_ENV=prod SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the wd-au profiles below when running ww tests via a Jenkins job using SauceLabs
+wd-au-qa: -r features/WD-AU -r features/support TEST_ENV=qa SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+wd-au-staging: -r features/WD-AU -r features/support TEST_ENV=staging SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+wd-au-prod: -r features/WD-AU -r features/support TEST_ENV=prod SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the ipm profiles below when running ww tests via a Jenkins job using SauceLabs
+ipm-qa: -r features/IPM -r features/support TEST_ENV=qa SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+ipm-staging: -r features/IPM -r features/support TEST_ENV=staging SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+ipm-prod: -r features/IPM -r features/support TEST_ENV=prod SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+
+#Use the brand site profiles below when running ww tests via a Jenkins job using SauceLabs
+brand-qa: -r features/BRAND -r features/support TEST_ENV=qa --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+brand-staging: -r features/BRAND -r features/support TEST_ENV=staging --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+brand-prod: -r features/BRAND -r features/support TEST_ENV=prod --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+
+#Use the dc-edu profiles below when running dc-edu tests via a Jenkins job using SauceLabs
+dc-edu-sle: -r features/DC-EDU -r features/support TEST_ENV=sle --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-edu-qa: -r features/DC-EDU -r features/support TEST_ENV=qa --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-edu-staging: -r features/DC-EDU -r features/support TEST_ENV=staging --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the dc ipm profiles below when running dc tests via a Jenkins job using SauceLabs
+dc-ipm-qa: -r features/DC-IPM-Redirect -r features/support TEST_ENV=qa SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-ipm-staging: -r features/DC-IPM-Redirect -r features/support TEST_ENV=staging SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-ipm-prod: -r features/DC-IPM-Redirect -r features/support TEST_ENV=prod SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the dc sso profiles below when running dc tests via a Jenkins job using SauceLabs
+dc-sso-qa: -r features/DC-Oxygen-SSO -r features/support TEST_ENV=qa --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-sso-staging: -r features/DC-Oxygen-SSO -r features/support TEST_ENV=staging --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dc-sso-prod: -r features/DC-Oxygen-SSOs -r features/support TEST_ENV=prod --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the dotorg profiles below when running dc tests via a Jenkins job using SauceLabs
+dotorg-qa: -r features/DOTORG -r features/support TEST_ENV=qa SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dotorg-staging: -r features/DOTORG -r features/support TEST_ENV=staging SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+dotorg-prod: -r features/DOTORG -r features/support TEST_ENV=prod SAUCE_ENV=SAUCE --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+
+#Use the mcir profiles below when running pda tests via a Jenkins job using SauceLabs
+mcir-qa: -r features/MCIR -r features/support TEST_ENV=qa --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty
+mcir-staging: -r features/MCIR -r features/support TEST_ENV=staging --format json_pretty -o ./results/results<%= ENV['TEST_ENV_NUMBER']%>.json --format pretty

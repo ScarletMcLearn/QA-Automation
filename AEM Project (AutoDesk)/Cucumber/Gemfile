@@ -1,0 +1,34 @@
+source 'https://rubygems.org'
+
+gem 'package', '~> 0.0.1'
+gem 'rubygems-update', '~> 2.6', '>= 2.6.11'
+gem 'cucumber', '~> 2.4'
+# CAPYBARA: step definition library for Cucumber
+gem 'capybara', '~> 2.13'
+gem 'chrome', '~> 0.1.0'
+gem 'chromedriver-helper', '~> 1.1'
+#gem 'chromedriver2-helper', '~> 0.0.10'
+# RSPEC: step definition library for Cucumber
+gem 'rspec', '~> 3.5'
+gem 'rspec-expectations'
+gem 'rspec-matcher'
+gem 'rspec-retry'
+gem 'json'
+gem 'httparty'
+gem 'certified', '~> 1.0'
+gem 'xpath', '~> 2.0'
+# Run any kind of code in parallel processes
+gem 'parallel', '~> 1.11', '>= 1.11.1'
+gem 'parallel_tests'
+gem 'selenium-webdriver', '~> 3.3'
+gem 'currencies', '~> 0.4.2'
+gem 'show_me_the_cookies', '~> 3.1'
+# To launch a Tunnel to SauceLabs
+gem 'sauce-connect', '~> 3.6', '>= 3.6.3'
+# to run tests in parallel on SauceLabs
+gem 'sauce_whisk', '~> 0.0.21'
+# page objects
+gem 'site_prism', '~> 2.9'
+gem 'adsk_headless', source: "https://art-bobcat.autodesk.com/artifactory/api/gems/autodesk-gems"
+gem 'test-unit'
+

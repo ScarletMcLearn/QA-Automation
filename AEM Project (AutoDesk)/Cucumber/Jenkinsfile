@@ -1,0 +1,217 @@
+#!groovy
+@Library('wpe-shared-library@psl_2.0')
+@Library('PSL@master') _
+import com.autodesk.wpe.dsl.build.AEMBuildHelper
+import com.autodesk.wpe.dsl.build.BuildInfo
+
+properties([
+    [
+        $class: 'ParametersDefinitionProperty', parameterDefinitions:
+        [
+            [
+                $class     : 'ChoiceParameterDefinition',
+                choices    : 'DC-PROD\nIPM-SLE2\nIPM-PT\nIPM-PROD\nDC-SLE2-MCIR\nDC-SLE2-COMMON\nDC-SLE2-Trial-Download\nDC-SLE2-Oxygen-SSO\nDC-SLE2-IPM-Redirect\nDC-SLE2-Geopopup-Redirects\nDC-SLE2-FSB-SUPPORT\nDC-SLE2-FSB-BUY\nDC-SLE2-EDU\nDC-SLE2-DOTORG\nDC-SLE2-BRAND\nDC-PT-MCIR\nDC-PT-EDU\nDC-PT-Common\nDC-PT-Trial-Download\nDC-PT-Oxygen-SSO\nDC-PT-FSB-BUY\nDC-PT-FSB-SUPPORT\nDC-PT-Geopopup-Redirects\nDC-PT-IPM-Redirect\nDC-PT-DOTORG\nDC-PT-BRAND',
+                description: 'Select Environment in which to test',
+                name       : 'USERPARAM'
+            ]
+        ]
+    ],
+    pipelineTriggers([cron('H 1 * * *'), githubPush()])])
+
+def buildParameters = "${params.USERPARAM}"
+def buildInfo = new BuildInfo(currentBuild: currentBuild, moduleName: "web", stack: "dc")
+def webDeliveryQA
+def aemBuildHelper = new AEMBuildHelper(this, "svc_d_artifactory", buildInfo)
+def dockerBuildHelper = aemBuildHelper.dockerBuildHelper
+
+def uiCucumberTestService = aemBuildHelper.uiCucumberTestService
+
+String jenkinsSlackCredentialsId = "wpe-slack-token"
+String slackChannel = "#efd-web-notifs"
+String slackMessage = ""
+String slackMessageColorCode = "danger"
+
+node('centos') {
+  try {
+    def newPomVersion = "${env.BUILD_STATIC_VERSION_AEM62}" + "." + "${env.BUILD_TIMESTAMP}"
+    def wdBuildDockerImage = dockerBuildHelper.getDockerImage(dockerBuildHelper.getWdBuildDockerImageName())
+    def wdTestDockerImage = dockerBuildHelper.getDockerImage("autodesk-docker-build-images.art-bobcat.autodesk.com/team-web-platform-engineering-docker/headlesstest/autodeskwdpricingtestcontainer:latest")
+
+    stage("Prepare environment") {
+      slackMessage += "Pipeline for: " + env.JOB_NAME + ", build number: " + env.BUILD_NUMBER + " on " + buildParameters
+      aemBuildHelper.prepareBuildEnvironment("${env.AEM_MAVEN_REPO}")
+      env.MAVEN_REPO = "${env.AEM_MAVEN_REPO}"
+      slackMessage += " --> Prepared the environment "
+    }
+
+    stage("Checkout from scm") {
+      checkout scm
+      wdBuildDockerImage.inside('-u root') {
+        sh 'git clean -fxd'
+      }
+      slackMessage += "--> Checked out the source and cleaned the workspace "
+    }
+
+    stage("Cucumber UI Testing stage") {
+      def testInputString
+      slackMessage += "--> Running automated tests on " + buildParameters + " "
+      if (buildParameters == "DC-PT-MCIR") {
+            testInputString = "--tags @SMOKE --tags @PT -p mcir-staging"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/MCIR")
+      }
+
+	  else if (buildParameters == "DC-PT-IPM-Redirect") {
+            testInputString = "--tags @REGRESSION --tags @PT -p dc-ipm-staging"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/DC-IPM-Redirect")
+      }
+
+	  else if (buildParameters == "DC-PT-Geopopup-Redirects") {
+            testInputString = "--tags @REGRESSION --tags @PT -p dc-geo-staging"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/DC-Geopopup-Redirects")
+      }
+
+	  else if (buildParameters == "DC-PT-FSB-SUPPORT") {
+            testInputString = "--tags @REGRESSION --tags @PT -p dc-fsb-support-staging"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/DC-FSB-SUPPORT")
+      }
+
+	  else if (buildParameters == "DC-PT-FSB-BUY") {
+            testInputString = "--tags @REGRESSION --tags @PT --tags ~@WIP -p dc-fsb-buy-staging"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/DC-FSB-BUY")
+      }
+
+	  else if (buildParameters == "DC-PT-Oxygen-SSO") {
+            testInputString = "--tags @REGRESSION --tags @PT --tags ~@WIP -p dc-sso-staging"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/DC-Oxygen-SSO")
+      }
+
+	  else if (buildParameters == "DC-PT-Trial-Download") {
+            testInputString = "--tags @REGRESSION --tags @PT -p dc-trial-download-staging"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/DC-Trial-Download")
+      }
+
+	  else if (buildParameters == "DC-PT-Common") {
+            testInputString = "--tags @REGRESSION --tags @PT -p dc-common-staging"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/DC-Common")
+      }
+
+	  else if (buildParameters == "DC-PT-EDU") {
+            testInputString = "--tags @REGRESSION --tags @PT -p dc-edu-staging"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/DC-EDU")
+      }
+
+	  else if (buildParameters == "DC-PT-BRAND") {
+            testInputString = "--tags @SMOKE --tags @PT -p brand-staging"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/BRAND")
+      }
+
+    else if (buildParameters == "DC-PT-DOTORG") {
+            testInputString = "--tags @SMOKE --tags @PT -p dotorg-staging"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/DOTORG")
+      }
+
+
+    else if (buildParameters == "DC-SLE2-BRAND") {
+            testInputString = "--tags @SMOKE --tags @SLE2 -p brand-qa"
+            currentBuild.result = uiCucumberTestService.runCucumberAutomationTestsNoSemaphore(wdTestDockerImage, testInputString,".","features/BRAND")
+      }
+
+	  else if (buildParameters == "DC-SLE2-DOTORG") {
+            testInputString = "--tags @SMOKE --tags @SLE2 -p dotorg-qa"
+            currentBuild.result = uiCucumberTestService.runCucumberAutomationTestsNoSemaphore(wdTestDockerImage, testInputString,".","features/DOTORG")
+      }
+
+	  else if (buildParameters == "DC-SLE2-EDU") {
+            testInputString = "--tags @REGRESSION --tags @SLE2 -p dc-edu-qa"
+            currentBuild.result = uiCucumberTestService.runCucumberAutomationTestsNoSemaphore(wdTestDockerImage, testInputString,".","features/DC-EDU")
+      }
+
+	  else if (buildParameters == "DC-SLE2-FSB-BUY") {
+            testInputString = "--tags @REGRESSION --tags @SLE2 --tags ~@WIP -p dc-fsb-buy-qa"
+            currentBuild.result = uiCucumberTestService.runCucumberAutomationTestsNoSemaphore(wdTestDockerImage, testInputString,".","features/DC-FSB-BUY")
+      }
+
+	  else if (buildParameters == "DC-SLE2-FSB-SUPPORT") {
+            testInputString = "--tags @REGRESSION --tags @SLE2 -p dc-fsb-support-qa"
+            currentBuild.result = uiCucumberTestService.runCucumberAutomationTestsNoSemaphore(wdTestDockerImage, testInputString,".","features/DC-FSB-SUPPORT")
+      }
+
+	  else if (buildParameters == "DC-SLE2-Geopopup-Redirects") {
+            testInputString = "--tags @REGRESSION --tags @SLE2 -p dc-geo-qa"
+            currentBuild.result = uiCucumberTestService.runCucumberAutomationTestsNoSemaphore(wdTestDockerImage, testInputString,".","features/DC-Geopopup-Redirects")
+      }
+
+	  else if (buildParameters == "DC-SLE2-IPM-Redirect") {
+            testInputString = "--tags @REGRESSION --tags @SLE2 -p dc-ipm-qa"
+            currentBuild.result = uiCucumberTestService.runCucumberAutomationTestsNoSemaphore(wdTestDockerImage, testInputString,".","features/DC-IPM-Redirect")
+      }
+
+	 else if (buildParameters == "DC-SLE2-Oxygen-SSO") {
+            testInputString = "--tags @REGRESSION --tags @SLE2 --tags ~@WIP -p dc-sso-qa"
+            currentBuild.result = uiCucumberTestService.runCucumberAutomationTestsNoSemaphore(wdTestDockerImage, testInputString,".","features/DC-Oxygen-SSO")
+      }
+
+	else if (buildParameters == "DC-SLE2-Trial-Download") {
+            testInputString = "--tags @REGRESSION --tags @SLE2 -p dc-trial-download-qa"
+            currentBuild.result = uiCucumberTestService.runCucumberAutomationTestsNoSemaphore(wdTestDockerImage, testInputString,".","features/DC-Trial-Download")
+      }
+
+	else if (buildParameters == "DC-SLE2-COMMON") {
+            testInputString = "--tags @REGRESSION --tags @SLE2 -p dc-common-qa"
+            currentBuild.result = uiCucumberTestService.runCucumberAutomationTestsNoSemaphore(wdTestDockerImage, testInputString,".","features/DC-COMMON")
+      }
+
+	 else if (buildParameters == "DC-SLE2-MCIR") {
+            testInputString = "--tags @SMOKE --tags @SLE2 -p mcir-qa"
+            currentBuild.result = uiCucumberTestService.runCucumberAutomationTestsNoSemaphore(wdTestDockerImage, testInputString,".","features/MCIR")
+	  }
+
+	 else if (buildParameters == "IPM-PT") {
+            testInputString = "--tags @REGRESSION --tags @PT -p ipm-staging"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/IPM")
+      }
+      else if (buildParameters == "IPM-PROD") {
+            testInputString = "--tags @REGRESSION --tags @PROD -p ipm-prod"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/IPM")
+      }
+      else if (buildParameters == "IPM-SLE2") {
+            testInputString = "--tags @REGRESSION --tags @SLE2 -p ipm-qa"
+            currentBuild.result = uiCucumberTestService.runCucumberAutomationTestsNoSemaphore(wdTestDockerImage, testInputString,".","features/IPM")
+      }
+
+
+      else { //Default to PROD
+            testInputString = "--tags @DC-PROD --tags ~@WIP -p jenkins-sauce-prod"
+            currentBuild.result = uiCucumberTestService.runContainerizedCucumberUIValidations(wdTestDockerImage, testInputString,".","features/DC-PROD")
+      }
+
+
+      if (currentBuild.result == 'FAILURE') {
+        error "Cucumber automation test failure."
+      }
+    }
+  }
+
+  catch (err) {
+    println("Caught an exception in the outer-try-block:\n" + err + "\n Setting currentBuild.result = FAILURE")
+    currentBuild.result = "FAILURE"
+    slackMessage += "--> " + currentBuild.result + " -- Caught an exception in the outer-try-block:\n" + err
+  }
+  finally {
+    if (currentBuild.result != "FAILURE") {
+      currentBuild.result = "SUCCESS"
+      slackMessageColorCode = "good"
+      slackMessage += "--> " + currentBuild.result
+    }
+    sendSlackMessage(jenkinsSlackCredentialsId, slackChannel, slackMessage, slackMessageColorCode)
+  }
+}
+
+void sendSlackMessage(String slackCredentialsId, slackChannel, String slackMessage, messageColorCode) {
+  withCredentials([[$class       : 'StringBinding',
+    credentialsId: slackCredentialsId, variable: 'mytoken']]) {
+    //Sending slack Notification
+    slackSend(message: slackMessage, teamDomain: 'autodesk',
+    token: env.mytoken, channel: slackChannel, color: messageColorCode)
+  }
+}
