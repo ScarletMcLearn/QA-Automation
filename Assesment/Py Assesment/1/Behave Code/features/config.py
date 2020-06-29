@@ -1,0 +1,1 @@
+browser = 'firefox'   # [options: 'chrome' | 'firefox']
