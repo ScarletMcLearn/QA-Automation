@@ -19,6 +19,7 @@ def get_firefox_with_cache_cleared():
 
     driver = webdriver.Firefox(executable_path=r'/home/scarlet/Projects/PyEnvs/WebScrapingEnv/geckodriver', firefox_profile=profile)
 
+    driver.maximize_window()
     return driver
 
 # Chrome
