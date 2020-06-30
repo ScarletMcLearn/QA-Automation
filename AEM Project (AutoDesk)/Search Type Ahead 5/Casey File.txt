@@ -1,0 +1,81 @@
+BLUE:
+Taiwan PT site not working
+https://www-pt.autodesk.com.cn/
+https://www-pt.autodesk.com.tw/
+https://www-pt.autodesk.ae/
+https://www-pt.autodesk.in/
+https://www-pt.autodesk.fr/
+https://www-pt.autodesk.it/
+https://www-pt.autodesk.co.uk/
+https://www-pt.autodesk.co.za/
+https://www-pt.autodesk.com.hk/
+https://www-pt.autodesk.com.au/
+https://www-pt.autodesk.ca/fr
+https://www-pt.autodesk.co.kr/
+https://www-pt.autodesk.pl/
+https://www-pt.autodesk.es/
+https://www-pt.autodesk.com.tr/
+https://www-pt.autodesk.com.br/
+https://www-pt.autodesk.be/fr
+https://www-pt.autodesk.dk/
+https://www-pt.autodesk.nl/
+https://www-pt.autodesk.pl/
+
+
+https://www-pt.autodesk.co.jp/site-selector
+
+
+##############
+
+Korea site not found
+Finland
+
+#################
+
+No Search TypeAhead Results
+https://www-pt.autodesk.ru/
+alias products
+
+https://www-pt.autodesk.co.jp/   <-< Search Bar also not working
+insight
+
+https://www-pt.autodesk.cz/     <-< Search Bar also not working
+https://www-pt.autodesk.be/nl   <-< Search Bar also not working
+vault
+
+###################
+
+Search Result page not working properly 
+https://www-pt.autodesk.ca/en/products/powerinspect/subscribe  <-< null written - PowerInspect Subscribe null
+
+
+#####################
+
+Site not displayed properly
+https://www-pt.autodesk.no/
+
+
+
+
+
+GREEN:
+
+https://www-pt.autodesk.be/fr   <-< Search Bar also not working
+https://www-pt.autodesk.be/nl   <-< Search Bar also not working
+3ds max
+
+https://www-pt.autodesk.pt/   <-< Search Bar also not working
+Alias products
+
+
+
+PT site not working
+https://www-pt.autodesk.com.sg/
+https://www-pt.autodesk.hu/
+https://latinoamerica-pt.autodesk.com/
+https://www-pt.autodesk.mx/
+https://www-pt.autodesk.co.nz/
+
+
+Result NOT Loading
+https://www-pt.autodesk.com/search?sn=en_US&qt=bim+360+design&p=0
