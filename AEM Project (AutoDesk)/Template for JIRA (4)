@@ -1,0 +1,59 @@
+Jira ticket creation tamplet:
+Title/SummaryRequired: Browser[IE11] | Env [SLE1] | shortly describe not too long (shortly) 
+Acceptance criteria:
+1. 
+2. 
+3.
+Environment: SLE1/2; PT ro Prod
+
+SummeryDescription: 
+1. Detailed description of the issue
+2. environment/URL
+3. Steps to recreate
+4. Screen shots/videos
+
+When verifying a Jira ticket bug or defect:
+Comment:
+Issue resolved, verified on [environment/URL], browsers[IE, FF, Chorme]
+What you have verifed shortly
+Screen shots/videos
+
+QA PASSED | Environment | Browsers
+
+When you working on a parrent ticket/sub task
+you need to find out if you need to create bug tickets or list them in the comment
+Currently you are collaborating with the dev and creating bugs as needed
+
+***soon as somthing assigned to you, you need to find out the Due date. By when you need to deliver.
+Test case: Test is the document which captures all the steps you took to verify the acceptance criteria or the requirments.
+Test case template attributes:
+1. Test steps 
+2. Test data
+3. Expected result
+4. Actual result
+5. Status [Pass/Fail]
+
+*** Soon as a ticket comes on QA, respensiblity of the QA is to find out the DUE date. And all the required documentations for that specific ticket.
+1. Once the ticket is complete [work done], update the ticket with your comment, attach any supporting document. 
+2. Close it, don't keep it assigned to yourslef in open/in-progress status. 
+*** if that is a test case sub task:
+1. you need to create test case
+2. upload the test case file
+3. Comment on the ticket 
+4. close the ticket once the test case is done. if the ticket has some mendatory fields that doesn't allow you to close the ticket, collaborate with your project scrumMaster and find out how to close it.{Epic Link
+A subtask cannot be assigned to an epic.
+Choose an epic to assign this issue to.}
+
+*** For QA:
+- To test anything you need few important things
+1. All the requirement documents [, or discriptive documents]
+2. comp, wireframe [visual documents]
+3. Acceptance criteria
+4. Environments/ URL of the site/app/feature the site
+5. Test Case
+6. Execute it the test case.
+7. once you done executing all your test case 
+8. you document all your findings [bugs, defects, comments] 
+9. update the ticket in the comment section
+10. Close it
+
