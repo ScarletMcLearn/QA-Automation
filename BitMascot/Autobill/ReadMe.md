@@ -66,8 +66,7 @@ Generate Report :
 
 For Particular Feature:
 
-behave -f allure_behave.formatter:AllureFormatter -o %allure_res
-ult_folder% -n 'Go to different Locale site'
+behave -f allure_behave.formatter:AllureFormatter -o %allure_result_folder% -n 'Go to different Locale site'
 
 allure serve %allure_result_folder%
 
