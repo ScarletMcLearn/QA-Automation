@@ -1,0 +1,21 @@
+1601204939842	geckodriver	INFO	Listening on 127.0.0.1:58403
+1601204939858	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileQPFcHv"
+1601204947383	Marionette	INFO	Listening on port 38777
+1601204947437	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript warning: https://dev-app.autobill.com/assets/utility/common-tasks-568f7f9e654ef1dcd5a87ee931559e9b.js, line 1: unreachable code after return statement
+1601204983227	Marionette	INFO	Stopped listening on port 38777
+1601205008918	geckodriver	INFO	Listening on 127.0.0.1:44161
+1601205009925	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiledp0FrS"
+1601205013061	Marionette	INFO	Listening on port 32951
+1601205013145	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 281: NS_ERROR_FAILURE: Should pass a non-null uri
+1601205040041	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1601205048586	Marionette	INFO	Stopped listening on port 32951
