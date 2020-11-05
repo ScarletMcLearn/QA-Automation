@@ -1,0 +1,9 @@
+{
+    "testFiles": "**/*.feature",
+
+    "env": {
+        "dev_url": "https://dev-app.autobill.com/",
+        "dev_username": "implementer@064dd957.local",
+        "dev_password": "implementer@064dd957.local"
+      }
+}
