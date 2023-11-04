@@ -1,0 +1,4404 @@
+{
+	"info": {
+		"_postman_id": "74a73b1e-0735-4010-9360-c5a36ca71fc1",
+		"name": "Opus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6272813"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup [Employer] [Verified]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"profile\": \"employer\",\n    \"account\": {\n        \"email\": \"employer@gmail.com\",\n        \"password\": \"helloadmin\"\n    },\n    \"employer\": {\n        \"company_name\": \"EWN Bangladesh\",\n        \"phone_number\": \"01711\",\n        \"city\": \"Dhaka\",\n        \"country\": \"Bangladesh\",\n        \"cr_number\": \"1234567890\",\n        \"avatar\": \"/avatar.jpg\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/signup/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"signup",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin3@admin.com\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"password\": \"helloadmin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/signup/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"signup",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 30 Jul 2023 13:00:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Sign up successfully\"\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@admin.com\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"password\": \"helloadmin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/signup/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"signup",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 30 Jul 2023 13:03:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"errors\": [\n        {\n            \"field\": \"email\",\n            \"message\": \"User Model with this Email already exists.\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Signup [Candidate] [Verified]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"profile\": \"candidate\",\n    \"account\": {\n        \"email\": \"candidate@gmail.com\",\n        \"password\": \"helloadmin\"\n    },\n    \"candidate\": {\n        \"name\": \"Candidate User\",\n        \"gender\": \"Male\",\n        \"phone_number\": \"01711\",\n        \"lat\": 34.34,\n        \"lon\": 90.2,\n        \"city\": \"Dhaka\",\n        \"country\": \"Bangladesh\",\n        \"candidate_skill\": [\n            {\n                \"skill_id\": 1,\n                \"skill_level\": 4\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/signup/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"signup",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin3@admin.com\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"password\": \"helloadmin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/signup/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"signup",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 30 Jul 2023 13:00:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Sign up successfully\"\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@admin.com\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"password\": \"helloadmin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/signup/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"signup",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 30 Jul 2023 13:03:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"errors\": [\n        {\n            \"field\": \"email\",\n            \"message\": \"User Model with this Email already exists.\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Login [Verified]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client-id",
+								"value": "{{CLIENT_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "client-secret",
+								"value": "{{CLIENT_SECRET}}",
+								"type": "text"
+							},
+							{
+								"key": "grant-type",
+								"value": "password",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"employer@gmail.com\",\n    \"password\": \"helloadmin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/login/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client-id",
+										"value": "{{CLIENT_ID}}",
+										"type": "text"
+									},
+									{
+										"key": "client-secret",
+										"value": "{{CLIENT_SECRET}}",
+										"type": "text"
+									},
+									{
+										"key": "grant-type",
+										"value": "password",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"admin@admin.com\",\n    \"password\": \"helloadmin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/login/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:00:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin, Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "168"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"oXOTYPxynu76MJaXQgyqApG3y8oeo9\",\n    \"expires_in\": 259200,\n    \"token_type\": \"Bearer\",\n    \"scope\": \"read write groups\",\n    \"refresh_token\": \"wE6RcFMjwmfl9Awyvqjm9wQ3XLQhek\"\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client-id",
+										"value": "{{CLIENT_ID}}",
+										"type": "text"
+									},
+									{
+										"key": "client-secret",
+										"value": "{{CLIENT_SECRET}}",
+										"type": "text"
+									},
+									{
+										"key": "grant-type",
+										"value": "password",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"admin@admin.com\",\n    \"password\": \"helloadmin1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/login/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 08:00:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin, Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"errors\": [\n        {\n            \"field\": \"detail\",\n            \"message\": \"Invalid username or password\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "client-id",
+								"value": "{{CLIENT_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "client-secret",
+								"value": "{{CLIENT_SECRET}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/user/logout/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									},
+									{
+										"key": "client-id",
+										"value": "{{CLIENT_ID}}",
+										"type": "text"
+									},
+									{
+										"key": "client-secret",
+										"value": "{{CLIENT_SECRET}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/user/logout/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"logout",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 09:31:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Log out successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Profile",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/user/delete/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "client-id",
+								"value": "{{CLIENT_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "client-secret",
+								"value": "{{CLIENT_SECRET}}",
+								"type": "text"
+							},
+							{
+								"key": "grant-type",
+								"value": "refresh_token",
+								"type": "text"
+							},
+							{
+								"key": "refresh-token",
+								"value": "{{REFRESH_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/user/refresh_token/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"refresh_token",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									},
+									{
+										"key": "client-id",
+										"value": "{{CLIENT_ID}}",
+										"type": "text"
+									},
+									{
+										"key": "client-secret",
+										"value": "{{CLIENT_SECRET}}",
+										"type": "text"
+									},
+									{
+										"key": "grant-type",
+										"value": "refresh_token",
+										"type": "text"
+									},
+									{
+										"key": "refresh-token",
+										"value": "{{REFRESH_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/user/refresh_token/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"refresh_token",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 09:44:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "168"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"JXw2sPCn2VbbG4WxzKUrfiXJqDRKfV\",\n    \"expires_in\": 259200,\n    \"token_type\": \"Bearer\",\n    \"scope\": \"read write groups\",\n    \"refresh_token\": \"eZu5HKtPLMsWKheW0bx2fdbJJx7mUb\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Password change",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"new_password\": \"helloadmin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/password_change/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"password_change",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"old_password\": \"helloadmin1\",\n    \"new_password\": \"helloadmin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/user/password_change/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"password_change",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 10:12:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Password change successfully\"\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"old_password\": \"helloadmin1\",\n    \"new_password\": \"helloadmin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/user/password_change/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"password_change",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 10:14:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "129"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"errors\": [\n        {\n            \"field\": \"new_password\",\n            \"message\": \"This password is too short. It must contain at least 8 characters.\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Password reset request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"candidate@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/password_reset_request/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"password_reset_request",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"admin@admin.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/user/password_reset_request/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"password_reset_request",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 11:49:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Otp send successfully\"\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"admin@admin.com1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/user/password_reset_request/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"password_reset_request",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 20 Aug 2023 13:22:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin, Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=yKLPzlS3EnJIiwbhb5ehiMJLtkP%2FjA4l45Ux0pNRRNcro3m4w%2F1m6Qw7%2FWY7VAUfHRZOL8g823cj2Baqec6wjiiiO%2FbVQrs3grT0jrur0bnlHpuOVZPuRFv95AcLYBcVW6LaAQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "7f9af22c6b42ba5f-DAC"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"errors\": [\n        {\n            \"field\": \"username\",\n            \"message\": \"Object with email=admin@admin.com1 does not exist.\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Password reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"employer@gmail.com\",\n    \"new_password\": \"helloadmin\",\n    \"otp\": 5858\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/password_reset/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"password_reset",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"admin@admin.com\",\n    \"new_password\": \"helloadmin\",\n    \"otp\": 577708\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/user/password_reset/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"password_reset",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 11:49:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Password reset successfully\"\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"admin@admin.com1\",\n    \"new_password\": \"helloadmin\",\n    \"otp\": 5858\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/user/password_reset/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"password_reset",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 20 Aug 2023 13:23:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin, Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=k9l7eX8lI1UQi89e1OYZLmpsphCZ%2BTkTDLOKdPdfp7XaIcvHshFYVCu4yW%2Bfkdu2Od57HSP6wu6dI7jWAbrZafbC0JYQnHn4fYAuf8oehCq2NVHBNK1pVwB5HXS9IPpZSlSgGA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "7f9af2caea3aba5f-DAC"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"errors\": [\n        {\n            \"field\": \"username\",\n            \"message\": \"Object with email=admin@admin.com1 does not exist.\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Resend verification code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/user/resend_verification_code/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"resend_verification_code",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/user/resend_verification_code/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"resend_verification_code",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 12:42:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Verification email resend successfully\"\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/user/resend_verification_code/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"resend_verification_code",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 12:56:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"errors\": [\n        {\n            \"field\": \"detail\",\n            \"message\": \"Email already verified\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Email verification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"otp\": 5858\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/verify/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"verify",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"otp\": 123456\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/user/verify/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"verify",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 12:52:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"errors\": [\n        {\n            \"field\": \"otp\",\n            \"message\": \"Invalid OTP\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Email change",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"farjanul10@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/change_email/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"change_email",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"farjanul10@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/user/change_email/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"change_email",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 13:08:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"errors\": [\n        {\n            \"field\": \"email\",\n            \"message\": {\n                \"detail\": \"Email already exist\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"farjanul10@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/user/change_email/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"user",
+										"change_email",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 31 Jul 2023 13:11:56 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Change email successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Employer",
+			"item": [
+				{
+					"name": "Employer Profile Update [Verifed]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_name\": \"EWN 2\",\n    \"description\": \"description update\",\n    \"lat\": \"23.774432\",\n    \"lon\": \"90.403063\",\n    \"website\": \"https://www.farjanul.com\",\n    \"job_industry\": 1,\n    \"avatar\": \"image/avatar.png\",\n    \"city\": \"Dhaka\",\n    \"country\": \"BD\",\n    \"phone_number\": \"121\",\n    \"cr_number\": \"CR132134234\",\n    \"establishment_date\": \"2023-12-12\",\n    \"no_of_employee\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/employer/update/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"employer",
+								"update",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Self Profile Details [Verified]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/employer/self/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"employer",
+								"self",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employer Details [Verifed]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/employer/ebd8e0f7-daed-4389-8cb3-de4822932c05/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"employer",
+								"ebd8e0f7-daed-4389-8cb3-de4822932c05",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job application list [Verified]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/job_application/applicants/cd4bdadf-e528-49b5-8fa0-82a5fe208c8b/?job_type_id=1&industry_id=1&salary__gte=10&salary__lte=2000000&lat=34.34&lon=90.2&radius=5",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job_application",
+								"applicants",
+								"cd4bdadf-e528-49b5-8fa0-82a5fe208c8b",
+								""
+							],
+							"query": [
+								{
+									"key": "job_type_id",
+									"value": "1"
+								},
+								{
+									"key": "industry_id",
+									"value": "1"
+								},
+								{
+									"key": "salary__gte",
+									"value": "10"
+								},
+								{
+									"key": "salary__lte",
+									"value": "2000000"
+								},
+								{
+									"key": "lat",
+									"value": "34.34"
+								},
+								{
+									"key": "lon",
+									"value": "90.2"
+								},
+								{
+									"key": "radius",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job application selected [Verfied]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/job_application/applicants/049f303c-911b-4494-b91e-f6e25e791390/selected/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job_application",
+								"applicants",
+								"049f303c-911b-4494-b91e-f6e25e791390",
+								"selected",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job application rejected [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/job_application/applicants/6ee5ae9d-b743-42d9-83ff-3e01bb4c96b1/rejected/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job_application",
+								"applicants",
+								"6ee5ae9d-b743-42d9-83ff-3e01bb4c96b1",
+								"rejected",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job application selected list [Verified]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/job_application/applicants/c82f8278-3c8a-434e-a94b-402128c297f2/?is_selected=true",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job_application",
+								"applicants",
+								"c82f8278-3c8a-434e-a94b-402128c297f2",
+								""
+							],
+							"query": [
+								{
+									"key": "is_selected",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add favorite candidate [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"candidate_id\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/employer_favorite_candidate/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"employer_favorite_candidate",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Favorite candidate list [Verfied but location filter is not possible]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/employer_favorite_candidate/?salary__gte=10000&salary__lte=15000&experience__gte=2&experience__lte=5&lat=34.34&lon=90.2&radius=5",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"employer_favorite_candidate",
+								""
+							],
+							"query": [
+								{
+									"key": "salary__gte",
+									"value": "10000"
+								},
+								{
+									"key": "salary__lte",
+									"value": "15000"
+								},
+								{
+									"key": "experience__gte",
+									"value": "2"
+								},
+								{
+									"key": "experience__lte",
+									"value": "5"
+								},
+								{
+									"key": "lat",
+									"value": "34.34"
+								},
+								{
+									"key": "lon",
+									"value": "90.2"
+								},
+								{
+									"key": "radius",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove favorite candidate [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/employer_favorite_candidate/b5c1261a-8ff2-4cdc-8b98-9ffef8d83237/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"employer_favorite_candidate",
+								"b5c1261a-8ff2-4cdc-8b98-9ffef8d83237",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidate review create [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"candidate_id\": 4,\n    \"rating\": 3,\n    \"description\": \"This is candidate review description.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/candidate_review/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"candidate_review",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Candidate",
+			"item": [
+				{
+					"name": "Preference",
+					"item": [
+						{
+							"name": "Get preference [Self] [Verified]",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/preference/self/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"preference",
+										"self",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create preference [Verified]",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"industry\": [1],\n    \"job_type\": [1],\n    \"radius\": 5,\n    \"salary_range\": [1000, 100000]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/preference/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"preference",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update preference [Verified]",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"industry\": [1],\n    \"job_type\": [1],\n    \"radius\": 5,\n    \"salary_range\": [500, 100000]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/preference/update/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"preference",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Job List Against Candidate Job Preference [Verified]",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/job/candidate-preference-job-list/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"job",
+										"candidate-preference-job-list",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Candidate Profile Update [Verfied]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Candidate User\",\n    \"summary\": \"summary\",\n    \"gender\": \"Male\",\n    \"designation\": \"designation\",\n    \"phone_number\": \"01711\",\n    \"lat\": 34.34,\n    \"lon\": 90.2,\n    \"city\": \"Dhaka\",\n    \"country\": \"Bangladesh 1\",\n    \"id_number\": \"1234567890\",\n    \"avatar\": \"/avatar.jpg\",\n    \"resume\": \"/resume.pdf\",\n    \"experience_in_year\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/candidate/update/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"candidate",
+								"update",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidate skill list [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/candidate_skill/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"candidate_skill",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidate Skill Update [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"skill_id\": 11,\n        \"skill_level\": 4\n    },\n    {\n        \"skill_id\": 10,\n        \"skill_level\": 3\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/candidate/update_skill/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"candidate",
+								"update_skill",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Self Profile Details [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/candidate/self/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"candidate",
+								"self",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidate Details [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/candidate/807e8d4e-1658-482e-ab64-23a91be38a32/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"candidate",
+								"807e8d4e-1658-482e-ab64-23a91be38a32",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidate favorite job list [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/candidate_favorite_job/?job_type_id=1&industry_id=1&salary__gte=10&salary__lte=2000000&lat=24.02&lon=90.34&radius=5",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"candidate_favorite_job",
+								""
+							],
+							"query": [
+								{
+									"key": "job_type_id",
+									"value": "1"
+								},
+								{
+									"key": "industry_id",
+									"value": "1"
+								},
+								{
+									"key": "salary__gte",
+									"value": "10"
+								},
+								{
+									"key": "salary__lte",
+									"value": "2000000"
+								},
+								{
+									"key": "lat",
+									"value": "24.02"
+								},
+								{
+									"key": "lon",
+									"value": "90.34"
+								},
+								{
+									"key": "radius",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add candidate favorite job [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"job_id\": 226\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/candidate_favorite_job/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"candidate_favorite_job",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidate favorite job delete [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/candidate_favorite_job/a150f103-9c90-43d6-adb7-315174274e04/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"candidate_favorite_job",
+								"a150f103-9c90-43d6-adb7-315174274e04",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidate Job Apply [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resume\": \"/resume.pdf\",\n    \"job_id\": 204,\n    \"cover_letter\": \"this is cover letter.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/job_application/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job_application",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidate Job Apply history [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/job_application/history/?salary__gte=10000&salary__lte=300000&lat=24.02&lon=90.34&radius=5",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job_application",
+								"history",
+								""
+							],
+							"query": [
+								{
+									"key": "salary__gte",
+									"value": "10000"
+								},
+								{
+									"key": "salary__lte",
+									"value": "300000"
+								},
+								{
+									"key": "lat",
+									"value": "24.02"
+								},
+								{
+									"key": "lon",
+									"value": "90.34"
+								},
+								{
+									"key": "radius",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job",
+			"item": [
+				{
+					"name": "Job post [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Python Developer\",\n    \"summary\": \"summary\",\n    \"application_deadline\": \"2023-12-30\",\n    \"lat\": 24.02,\n    \"lon\": 90.34,\n    \"city\": \"Dhaka\",\n    \"country\": \"Bangladesh\",\n    \"industry_id\": 1,\n    \"job_type_id\": 1,\n    \"contractual_period\": 1,\n    \"salary\": 12000,\n    \"description\": \"This is description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/job/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job update [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Python Developer 2\",\n    \"summary\": \"summary\",\n    \"application_deadline\": \"2023-12-30\",\n    \"lat\": 24.02,\n    \"lon\": 90.34,\n    \"city\": \"Dhaka\",\n    \"country\": \"Bangladesh\",\n    \"industry_id\": 1,\n    \"job_type_id\": 1,\n    \"contractual_period\": 1,\n    \"salary\": 12000,\n    \"description\": \"This is description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/job/7de7a7d9-78b0-4f04-82ca-6e597df3ad99/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job",
+								"7de7a7d9-78b0-4f04-82ca-6e597df3ad99",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job delete [Verified]",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/job/6bfee875-679e-4f86-984a-fb32f9307d3e/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job",
+								"6bfee875-679e-4f86-984a-fb32f9307d3e",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job List [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/job/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hot Job List [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/hotjobs/?q=python&job_type_id=1&industry_id=1&salary__gte=10&salary__lte=2000000&lat=24.02&lon=90.34&radius=5&contractual_period=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"hotjobs",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "python"
+								},
+								{
+									"key": "job_type_id",
+									"value": "1"
+								},
+								{
+									"key": "industry_id",
+									"value": "1"
+								},
+								{
+									"key": "salary__gte",
+									"value": "10"
+								},
+								{
+									"key": "salary__lte",
+									"value": "2000000"
+								},
+								{
+									"key": "lat",
+									"value": "24.02"
+								},
+								{
+									"key": "lon",
+									"value": "90.34"
+								},
+								{
+									"key": "radius",
+									"value": "5"
+								},
+								{
+									"key": "contractual_period",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job Details [Verified]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/job/ac939c36-4ffb-43be-8295-ed7383eef2d6/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job",
+								"ac939c36-4ffb-43be-8295-ed7383eef2d6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job List by Employer ID [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/job/employers/94/?q=python&job_type_id=1&industry_id=1&salary__gte=10&salary__lte=2000000&contractual_period=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job",
+								"employers",
+								"94",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "python"
+								},
+								{
+									"key": "job_type_id",
+									"value": "1"
+								},
+								{
+									"key": "industry_id",
+									"value": "1"
+								},
+								{
+									"key": "salary__gte",
+									"value": "10"
+								},
+								{
+									"key": "salary__lte",
+									"value": "2000000"
+								},
+								{
+									"key": "contractual_period",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Skill List [Verified]",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/skill/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"skill",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job type [Verified]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/job_type/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job_type",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job industry list [Verifed]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/job_industry/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job_industry",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job contractual period [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/job_contractual_period/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job_contractual_period",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job Filter & Search [Verified]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/job/?q=python&job_type_id=1&industry_id=1&salary__gte=10&salary__lte=2000000&contractual_period=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "python"
+								},
+								{
+									"key": "job_type_id",
+									"value": "1"
+								},
+								{
+									"key": "industry_id",
+									"value": "1"
+								},
+								{
+									"key": "salary__gte",
+									"value": "10"
+								},
+								{
+									"key": "salary__lte",
+									"value": "2000000"
+								},
+								{
+									"key": "contractual_period",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job Filter & Search based on location [Verified]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/job/?q=python&job_type_id=1&industry_id=1&salary__gte=10&salary__lte=2000000&lat=24.02&lon=90.34&radius=5",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "python"
+								},
+								{
+									"key": "job_type_id",
+									"value": "1"
+								},
+								{
+									"key": "industry_id",
+									"value": "1"
+								},
+								{
+									"key": "salary__gte",
+									"value": "10"
+								},
+								{
+									"key": "salary__lte",
+									"value": "2000000"
+								},
+								{
+									"key": "lat",
+									"value": "24.02"
+								},
+								{
+									"key": "lon",
+									"value": "90.34"
+								},
+								{
+									"key": "radius",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Map job list by user location [Verified]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/employer/jobs_by_nearest_employer/24.02/90.34/5/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"employer",
+								"jobs_by_nearest_employer",
+								"24.02",
+								"90.34",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Skill list by candidate UUID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/skill/fede1b65-3a11-4928-abcf-47bd34d16ca3/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"skill",
+								"fede1b65-3a11-4928-abcf-47bd34d16ca3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Promotion",
+			"item": [
+				{
+					"name": "Ads Show",
+					"item": [
+						{
+							"name": "Candidate Random [Verified]",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/candidate_ramdom/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"candidate_ramdom",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Job Random [Verified]",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/job_random/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"job_random",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Package List [Verified]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/package/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"package",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"promotion_uuid\": \"eb1ef9ff-6a13-4f17-94ff-28e228d3c1dc\",\n    \"promotion_type\": \"job\",\n    \"package_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/payment/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"payment",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"promotion_uuid\": \"c1a699f5-fc08-470c-a821-9b54278c3a31\",\n    \"promotion_type\": \"job\",\n    \"package_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/payment/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"payment",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 25 Oct 2023 15:54:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization, origin"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "515"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tran_ref\": \"TST2329800801646\",\n    \"tran_type\": \"Sale\",\n    \"cart_id\": \"1698249270553\",\n    \"cart_description\": \"job: c1a699f5-fc08-470c-a821-9b54278c3a31\",\n    \"cart_currency\": \"SAR\",\n    \"cart_amount\": \"10.00\",\n    \"tran_currency\": \"\",\n    \"tran_total\": \"0\",\n    \"callback\": \"https://yourdomain.com/yourcallback\",\n    \"return\": \"https://yourdomain.com/yourcallback\",\n    \"redirect_url\": \"https://secure.paytabs.sa/payment/wr/5FCAFF2182E4098F8B77077EB0E354D31B53874D7C25B6EB50CCF3DB\",\n    \"serviceId\": 2,\n    \"profileId\": 103867,\n    \"merchantId\": 51523,\n    \"trace\": \"PMNT0202.65393A38.0000AE4F\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Check Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/check/payment/asdasdasdasdasdasdsad/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"check",
+								"payment",
+								"asdasdasdasdasdasdsad",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Candidate Promotion [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"file\": \"file/promition/video.pm4\",\n    \"package_id\": 1,\n    \"summary\": \"This is summary\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/candidate_promotion/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"candidate_promotion",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Self Promotion List [Candidate] [Verified]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"file\": \"file/promition/video.pm4\",\n    \"package_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/candidate_promotion/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"candidate_promotion",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidate Promotion Update [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"file\": \"file/promition/video.pm3\",\n    \"summary\": \"This is summary 3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/candidate_promotion/b9bf5ab4-7769-4bcf-9a32-b668a6f520b6/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"candidate_promotion",
+								"b9bf5ab4-7769-4bcf-9a32-b668a6f520b6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job Promotion Create [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"file\": \"file/promition/video.pm4\",\n    \"package_id\": 1,\n    \"job_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/job_promotion/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job_promotion",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Self Promotion List [Job] [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/job_promotion/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job_promotion",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job Promotion Update [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"file\": \"file/promition/video.pm3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/job_promotion/dcc08bf7-ee10-4e0e-82a6-3b5a1799ceb3/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"job_promotion",
+								"dcc08bf7-ee10-4e0e-82a6-3b5a1799ceb3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Report type list [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/report_type/?type=General",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"report_type",
+								""
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "General"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report create [Job] [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"report_type\": 1,\n    \"ref_type\": \"Job\",\n    \"ref_uuid\": \"1b3c2da9-e3ff-43b2-984a-e089aff5ed4a\",\n    \"description\": \"This is description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/reports/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"reports",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report create [Candidate] [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"report_type\": 1,\n    \"ref_type\": \"Candidate\",\n    \"ref_uuid\": \"1b3c2da9-e3ff-43b2-984a-e089aff5ed4a\",\n    \"description\": \"This is description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/reports/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"reports",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report create [Employer] [Verified]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"report_type\": 1,\n    \"ref_type\": \"Employer\",\n    \"ref_uuid\": \"1b3c2da9-e3ff-43b2-984a-e089aff5ed4a\",\n    \"description\": \"This is description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/reports/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"reports",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report create [General] [Verified]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"report_type\": 1,\n    \"ref_type\": \"General\",\n    \"description\": \"This is description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/reports/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"reports",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Self reports list [Verified]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"report_type\": 1,\n    \"ref_type\": \"Candidate\",\n    \"ref_uuid\": \"1b3c2da9-e3ff-43b2-984a-e089aff5ed4a\",\n    \"description\": \"This is description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/reports/self/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"reports",
+								"self",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File Manage",
+			"item": [
+				{
+					"name": "File upload [Verified]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/omfsakib/Pictures/Screenshots/Screenshot from 2023-10-26 22-59-08.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/upload/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"upload",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "File Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/delete/f3bd7df2-9a56-45ef-9966-4a63897f3b0a/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"delete",
+								"f3bd7df2-9a56-45ef-9966-4a63897f3b0a",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Salary Range",
+			"item": [
+				{
+					"name": "Salary Range List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/salary_range/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"salary_range",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Experience Level",
+			"item": [
+				{
+					"name": "Experience Level List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/experience_level/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"experience_level",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Save FCM token [Verified]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"registration_id\": \"asdfghjklffdgdfgdfgsdgdgdfg22t\",\n    \"type\": \"ios\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/firebase_token/create/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"firebase_token",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User notification List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/notification/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"notification",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Notification read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/notification/d75295de-a736-40f4-ad77-887502281b41/read/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"notification",
+								"d75295de-a736-40f4-ad77-887502281b41",
+								"read",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Notification read all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/notification/read/all/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"notification",
+								"read",
+								"all",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "ZQpgjhDzj2bGxsndjCRVoFB8FSdePi",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://127.0.0.1:8000"
+		}
+	]
+}
